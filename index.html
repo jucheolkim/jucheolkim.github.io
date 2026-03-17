@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>오늘의 밑줄 · Vol.1</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap');
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: Georgia, serif; max-width: 100%; margin: 0 auto; padding: 20px; color: #1a1a1a; background: #fff; word-break: keep-all; }
+.header { text-align: center; border-top: 3px solid #1a1a1a; border-bottom: 3px solid #1a1a1a; padding: 12px 0; margin-bottom: 4px; }
+.header-sub { font-size: 11px; font-family: Arial, sans-serif; color: #888; letter-spacing: 2px; margin-bottom: 6px; }
+.header-title { font-size: 36px; font-weight: 800; letter-spacing: 0px; font-family: 'Nanum Myeongjo', Georgia, serif; white-space: nowrap; }
+.header-date { font-size: 11px; font-family: Arial, sans-serif; color: #888; margin-top: 6px; }
+.meta { display: flex; justify-content: space-between; border-bottom: 1px solid #e0e0e0; padding: 4px 0; margin-bottom: 28px; font-size: 10px; font-family: Arial, sans-serif; color: #888; }
+.article { margin-bottom: 28px; padding-bottom: 28px; border-bottom: 1px solid #e0e0e0; }
+.article-tag { font-size: 10px; font-family: Arial, sans-serif; color: #888; letter-spacing: 1px; border-top: 2px solid #1a1a1a; padding-top: 8px; margin-bottom: 8px; }
+.article-title { font-size: 24px; font-weight: bold; line-height: 1.3; margin-bottom: 12px; font-family: 'Nanum Myeongjo', Georgia, serif; letter-spacing: -0.5px; }
+.article-summary { font-size: 13px; color: #555; line-height: 1.75; margin-bottom: 14px; }
+.btn-wrap { display: flex; gap: 6px; margin-bottom: 14px; }
+.toggle-btn { font-size: 11px; font-family: Arial, sans-serif; color: #555; background: none; border: 1px solid #ccc; border-radius: 6px; padding: 4px 10px; cursor: pointer; }
+.toggle-btn:hover { background: #f5f5f5; }
+.article-detail { display: none; }
+.article-detail.open { display: block; }
+.detail-inner { border-left: 2px solid #e0e0e0; padding-left: 16px; }
+.section-label { font-size: 10px; font-family: Arial, sans-serif; color: #888; letter-spacing: 1px; margin-bottom: 6px; margin-top: 16px; }
+.detail-inner p { font-size: 13px; color: #555; line-height: 1.75; margin-bottom: 8px; }
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 8px; }
+.box { background: #f5f5f5; border-radius: 8px; padding: 10px 12px; }
+.box-label { font-size: 11px; font-family: Arial, sans-serif; color: #888; margin-bottom: 6px; }
+.box p { font-size: 12px; color: #555; line-height: 1.65; margin-bottom: 6px; }
+.news-item { margin-bottom: 14px; padding-bottom: 14px; border-bottom: 1px solid #e0e0e0; }
+.news-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+.badge { display: inline-block; font-size: 10px; font-family: Arial, sans-serif; background: #f5f5f5; color: #888; padding: 2px 8px; border-radius: 4px; margin-right: 6px; }
+.news-title { font-size: 13px; font-weight: bold; }
+.news-item p { font-size: 12px; color: #555; line-height: 1.7; margin-top: 6px; }
+.source { font-size: 10px; font-family: Arial, sans-serif; color: #aaa; border-top: 1px solid #e0e0e0; padding-top: 8px; margin-top: 16px; }
+.highlight { font-weight: bold; color: #1a1a1a; }
+.insight-p { font-size: 15px !important; color: #333 !important; line-height: 1.85 !important; margin-bottom: 10px !important; }
+.editor { border-top: 2px solid #1a1a1a; padding-top: 10px; margin-bottom: 16px; }
+.editor p { font-size: 16px; color: #1a1a1a; line-height: 1.85; font-style: italic; font-family: 'Nanum Myeongjo', Georgia, serif; font-weight: 800; }
+.footer { border-top: 1px solid #e0e0e0; padding-top: 8px; text-align: center; font-size: 10px; font-family: Arial, sans-serif; color: #aaa; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-sub">ONEDAY DIGEST</div>
+  <div class="header-title">오늘의 밑줄</div>
+  <div class="header-date">2026년 3월 18일 · Vol. 1</div>
+</div></div>
+<div class="meta">
+  <span>창업 · 브랜드 · AI·테크</span>
+  <span>출처 표기 기반 요약 콘텐츠</span>
+</div>
+
+<!-- Article 1 -->
+<div class="article">
+  <div class="article-tag">창업 철학 · Mario Schlosser · Oscar Health</div>
+  <div class="article-title">매 분을 기록한 남자가 40억 달러 회사를 만든 법</div>
+  <div class="article-summary">2012년부터 삶의 모든 분을 스프레드시트에 쌓아온 마리오 슐로서. 그는 그 56,000개 셀에서 자기 자신의 취약함을 발견했고, 그 발견이 Oscar Health의 출발점이 됐다. 시간 추적, 문제의 급진적 분해, 그리고 갈등을 향해 먼저 뛰어드는 용기—세 가지가 그의 무기였다.</div>
+  <div class="btn-wrap">
+    <button class="toggle-btn" onclick="var d=document.getElementById('d1'),b=this;d.classList.toggle('open');b.textContent=d.classList.contains('open')?'접기 ▲':'더 보기 ▼'">더 보기 ▼</button>
+    <button class="toggle-btn">🎧 오디오로 듣기 (준비 중)</button>
+  </div>
+  <div id="d1" class="article-detail">
+    <div class="detail-inner">
+      <div class="section-label">이 사람은 누구인가</div>
+      <p>마리오 슐로서는 독일 출신 엔지니어이자 연쇄 창업자다. 레이 달리오의 헤지펀드 Bridgewater에서 퀀트 애널리스트로 일한 뒤, 브라질 소셜 게임 회사 GameBoss를 공동 창업했다. 이후 Josh Kushner와 함께 Oscar Health를 공동 창업해 CEO를 역임했다. Oscar Health는 테크 기반 건강보험사로, 현재 시가총액 40억 달러를 넘는다.</div>
+      <div class="section-label">주요 활동과 이력</div>
+      <p>Bridgewater → GameBoss 공동 창업(700명, 매출 5천만 달러) → 2012년 Oscar Health 공동 창업 → CEO에서 CTO로 전환. GameBoss 시절 Zynga의 저작권 소송과 내부 갈등으로 창업자 전원이 해고되는 경험을 했다. 이 실패가 Oscar를 만드는 데 결정적인 반면교사가 됐다.</p>
+      <div class="section-label">성공한 것과 실패한 것</div>
+      <div class="grid">
+        <div class="box">
+          <div class="box-label">성공</div>
+          <p>56,000셀 시간 추적으로 집중력 패턴을 데이터화. 감각이 아닌 숫자로 자신을 관리했다.</p>
+          <p>급진적 분해(Radical Decomposition)로 보험을 구성 요소별로 쪼개고 하나씩 내재화. 경쟁사 30개 중 Oscar만 살아남았다.</p>
+          <p>이사회에 자사 감사를 자청하는 극단적 투명성으로 조직 위기를 돌파했다.</p>
+        </div>
+        <div class="box">
+          <div class="box-label">실패와 한계</div>
+          <p>GameBoss: 700명까지 키웠으나 창업자 간 갈등이 곪아 터지며 이사회에 전원 해고됐다.</p>
+          <p>IPO 직후 주가 폭락으로 처음으로 우울증과 항우울제를 경험했다.</p>
+          <p>CTO 전환 후 외부 조언 요청이 폭증해 정작 창의적 작업에 쓸 에너지를 잃었다.</p>
+        </div>
+      </div>
+      <div class="section-label">거기서 얻은 인사이트</div>
+      <p class="insight-p"><span class="highlight">"불씨가 생기면 도망가지 말고 뛰어들어라."</span> 외부의 적은 팀을 단결시키지만, 내부의 균열은 조용히 죽인다. 말하지 않은 갈등은 반드시 곪는다.</p>
+      <p class="insight-p">새 사업은 처음부터 100%가 아니어도 된다. Oscar도 초기엔 시간의 20%만 쏟으며 검증했다. 아이디어는 억지로 밀어붙이는 게 아니라 스스로 살아남을 때 진짜가 된다.</p>
+      <p class="insight-p"><span class="highlight">"세상은 생각보다 자주 끝나지 않는다. 끝은 딱 한 번뿐이다."</span> — Josh Kushner</p>
+      <div class="source">출처: 유튜브 "일 못하는 사람 특 : 시간 헛씀" (Mario Schlosser 인터뷰)</div>
+    </div>
+  </div>
+</div>
+
+<!-- Article 2 -->
+<div class="article">
+  <div class="article-tag">브랜드 전략 · 곽형석 · 카페24</div>
+  <div class="article-title">폐업 직전 브랜드에서 가장 먼저 고치는 단 한 가지</div>
+  <div class="article-summary">13년간 성공과 실패 브랜드를 모두 지켜본 브랜드 디렉터의 결론은 단순했다. 조직이 커질수록 창업자의 집요함은 희석되고, 메시지는 히트 상품 뒤로 묻힌다. 잘 되는 브랜드는 10% 미만이고, 그 10%의 공통점은 딱 하나다.</div>
+  <div class="btn-wrap">
+    <button class="toggle-btn" onclick="var d=document.getElementById('d2'),b=this;d.classList.toggle('open');b.textContent=d.classList.contains('open')?'접기 ▲':'더 보기 ▼'">더 보기 ▼</button>
+    <button class="toggle-btn">🎧 오디오로 듣기 (준비 중)</button>
+  </div>
+  <div id="d2" class="article-detail">
+    <div class="detail-inner">
+      <div class="section-label">이 사람은 누구인가</div>
+      <p>곽형석은 카페24에서 13년간 온라인 쇼핑 브랜드들의 성장과 실패를 옆에서 지켜본 브랜드 디렉터다. 현재 카페24의 커머스 플랫폼을 총괄하며, 수백 개의 브랜드를 컨설팅한 현장 경험을 바탕으로 브랜드 생존의 법칙을 정리해왔다.</p>
+      <div class="section-label">성공 브랜드의 공통점</div>
+      <p>잘 되는 브랜드의 CEO 사무실 벽에는 언제나 단 하나의 문장이 있다. "우리는 고객이 더 나은 삶을 위해 존재한다." 이 문장이 모든 미팅의 방향을 결정한다. 슬로건에 물들지 않은 회사는 길을 잃었을 때 돌아올 곳이 없다.</p>
+      <div class="section-label">성공한 것과 실패한 것</div>
+      <div class="grid">
+        <div class="box">
+          <div class="box-label">성공 패턴</div>
+          <p>창업 초기 메시지를 조직이 커진 뒤에도 끝까지 유지한다.</p>
+          <p>광고를 껐을 때 남는 것이 진짜 가치라는 걸 안다. 프로모션 매출을 브랜드 가치로 착각하지 않는다.</p>
+          <p>문제를 발견하면 오늘 안에 바꾸려는 속도감이 있다.</p>
+        </div>
+        <div class="box">
+          <div class="box-label">실패 패턴</div>
+          <p>히트 상품에 매몰돼 초기의 약속을 잊는다.</p>
+          <p>현실 문제(비용·품질 타협)와 브랜드 본질을 같은 테이블에 올려놓고 뒤섞는다.</p>
+          <p>질문이 멈추거나, 이미 답을 정해두고 확인만 하기 시작하면 위기 신호다.</p>
+        </div>
+      </div>
+      <div class="section-label">거기서 얻은 인사이트</div>
+      <p class="insight-p"><span class="highlight">레고는 테마파크·영화·보석까지 손을 뻗다가 브릭 하나만 남기고 다 정리했다.</span> 그 후 세계 1위 장난감 기업이 됐다. 본질로 돌아가는 것이 전략이다.</p>
+      <p class="insight-p">다이슨은 5,127번 실패 후 먼지 봉투 없는 청소기를 만들었다. 예상과 조금 다를 때는 집요함을 발휘해도 된다. 하지만 예상과 완전히 다를 때는 방법이 아니라 방향을 돌아봐야 한다.</p>
+      <p class="insight-p"><span class="highlight">"그 하나의 메시지를 오늘이라도 꺼내 보고, 일주일에 한 번씩만 다시 읽어라."</span> 그것만으로도 브랜드가 약속을 지킬 가능성이 달라진다.</p>
+      <div class="source">출처: 유튜브 "13년 브랜드 디렉터가 폐업 직전 브랜드에서 항상 먼저 고치는 1가지" (카페24 곽형석)</div>
+    </div>
+  </div>
+</div>
+
+<!-- Article 3 -->
+<div class="article">
+  <div class="article-tag">AI · 테크 브리핑 · 2026년 3월 셋째 주</div>
+  <div class="article-title">이번 주 AI, 조용히 판이 바뀌고 있다</div>
+  <div class="article-summary">가상 학생 10만 명이 AP 시험을 치르고, 대학생 1명이 10일 만에 깃허브를 장악했다. 엔비디아는 파라미터의 10%만 쓰고도 7배 빠르게 달린다. 이번 주 9개의 신호.</div>
+  <div class="btn-wrap">
+    <button class="toggle-btn" onclick="var d=document.getElementById('d3'),b=this;d.classList.toggle('open');b.textContent=d.classList.contains('open')?'접기 ▲':'더 보기 ▼'">더 보기 ▼</button>
+    <button class="toggle-btn">🎧 오디오로 듣기 (준비 중)</button>
+  </div>
+  <div id="d3" class="article-detail">
+    <div class="detail-inner">
+
+      <div class="news-item">
+        <span class="badge">교육</span><span class="news-title">AI 가상학생 10만 명 실험 — 커리큘럼 검증의 새 방식</span>
+        <p><span class="highlight">무슨 일인가:</span> Qwen 3 8B 기반 메모리 구조로 가상 학생들이 AP 시험을 준비했다. 2주 만에 평균 점수가 45→80 퍼센타일로 올랐다.</p>
+        <p><span class="highlight">왜 중요한가:</span> 실제 학생 없이 커리큘럼의 품질을 미리 검증하는 시대가 시작됐다. 교육 콘텐츠 개발 비용과 속도가 완전히 달라진다.</p>
+        <p><span class="highlight">인사이트:</span> 점수 최적화가 목표가 되면 창의성이 빠질 위험이 있다. AI는 보조가 아닌 촉진제로 써야 한다.</p>
+      </div>
+
+      <div class="news-item">
+        <span class="badge">개발</span><span class="news-title">MiroFish AI 군집 엔진 — 대학생 1명, 10일, 깃허브 장악</span>
+        <p><span class="highlight">무슨 일인가:</span> 중국 대학생 Guo Hangjiang이 GraphRAG·Zep 메모리 기반 멀티에이전트 금융 시뮬레이터를 10일 만에 개발. 깃허브에서 폭발적 반응을 얻었다.</p>
+        <p><span class="highlight">왜 중요한가:</span> 소수 정예 팀이 대기업 수준의 결과물을 만드는 "바이브 코딩" 시대가 현실이 됐다.</p>
+        <p><span class="highlight">인사이트:</span> 금융처럼 규제 위험이 큰 분야는 투명성·윤리 검증이 먼저다.</p>
+      </div>
+
+      <div class="news-item">
+        <span class="badge">공간</span><span class="news-title">Teleport — 사진 한 장이 걸어다닐 수 있는 3D 공간이 된다</span>
+        <p><span class="highlight">무슨 일인가:</span> World Labs API를 활용해 파노라마 사진을 실시간 3D 공간으로 변환. 부동산 투어, 가상 전시에 즉시 적용 가능하다.</p>
+        <p><span class="highlight">왜 중요한가:</span> 물리 공간의 디지털 복제가 AI 에이전트의 핵심 학습 데이터 소스로 부상할 것이다.</p>
+        <p><span class="highlight">인사이트:</span> 개인정보·보안 설계를 사전에 반영하지 않으면 규제 리스크가 크다.</p>
+      </div>
+
+      <div class="news-item">
+        <span class="badge">PM</span><span class="news-title">pm-skills 오픈소스 — PM 업무 자동화 스킬 팩, 7천 스타</span>
+        <p><span class="highlight">무슨 일인가:</span> PRD 작성·경쟁 분석·OKR 설계를 자동화하는 스킬 팩. Teresa Torres·Marty Cagan 등 검증된 프레임워크가 내장됐다.</p>
+        <p><span class="highlight">왜 중요한가:</span> PM 역할이 "전략가+AI 조정자"로 이동하고 있다.</p>
+        <p><span class="highlight">인사이트:</span> 도구가 표준화될수록 인간의 맥락 판단이 오히려 더 중요해진다.</p>
+      </div>
+
+      <div class="news-item">
+        <span class="badge">로봇</span><span class="news-title">LATENT — 유튜브 클립으로 5시간 학습, 테니스공 90% 리턴</span>
+        <p><span class="highlight">무슨 일인가:</span> 칭화·북경대 연구팀이 인터넷 짧은 동작 클립만으로 시속 54km/h 공을 90% 확률로 받아치는 로봇을 만들었다. 물리 시뮬레이터가 오류를 보정한다.</p>
+        <p><span class="highlight">왜 중요한가:</span> 고가 데이터 없이 물리 동작을 학습하는 방식이 로봇 개발 비용 구조를 바꾼다.</p>
+        <p><span class="highlight">인사이트:</span> 시뮬레이션과 현실 사이의 격차를 지속적으로 모니터링해야 한다.</p>
+      </div>
+
+      <div class="news-item">
+        <span class="badge">개발툴</span><span class="news-title">Claude Code 'Code Review' 베타 — 병렬 탐색으로 리뷰 정확성 급상승</span>
+        <p><span class="highlight">무슨 일인가:</span> Anthropic이 병렬 탐색·실제 검증 기반 코드 리뷰 기능을 베타 출시. 팀·기업 요금제 제공, 평균 15~25달러 비용.</p>
+        <p><span class="highlight">왜 중요한가:</span> 코드 리뷰 자동화가 개발 사이클을 압축한다.</p>
+        <p><span class="highlight">인사이트:</span> 비용 구조와 결과 신뢰성을 먼저 검증한 뒤 팀에 도입해야 한다.</p>
+      </div>
+
+      <div class="news-item">
+        <span class="badge">구글</span><span class="news-title">Gemini Embedding 2 — 텍스트·영상·오디오를 하나의 공간에</span>
+        <p><span class="highlight">무슨 일인가:</span> 텍스트·이미지·비디오·오디오·문서를 단일 임베딩 공간에 통합. 복합 질의를 한 번에 처리한다.</p>
+        <p><span class="highlight">왜 중요한가:</span> 멀티모달 검색이 일상화되면 기업의 데이터 활용 방식이 근본적으로 달라진다.</p>
+        <p><span class="highlight">인사이트:</span> 데이터 레이크를 지금 재구성하지 않으면 뒤처진다.</p>
+      </div>
+
+      <div class="news-item">
+        <span class="badge">엔비디아</span><span class="news-title">Nemotron 3 Super — 파라미터 10%만 쓰고 7.5배 빠르게</span>
+        <p><span class="highlight">무슨 일인가:</span> 1,200억 파라미터 중 120억만 활성화해 추론 7.5배 가속. NVFP4 양자화로 연산 효율을 극대화했다.</p>
+        <p><span class="highlight">왜 중요한가:</span> 클라우드와 엣지 양쪽에서 AI 비용이 동시에 낮아진다.</p>
+        <p><span class="highlight">인사이트:</span> 최신 하드웨어 의존도가 높아 인프라 투자 전략을 먼저 정해야 한다.</p>
+      </div>
+
+      <div class="news-item">
+        <span class="badge">로봇</span><span class="news-title">Figure Helix 02 — 집안 정리하는 로봇, 물리 공간 학습의 가능성</span>
+        <p><span class="highlight">무슨 일인가:</span> 가정 내 물건 정리·배치 작업을 시연. 물리 공간 학습 데이터 활용 가능성을 처음으로 보여줬다.</p>
+        <p><span class="highlight">왜 중요한가:</span> 가정 로봇이 실생활에 스며드는 마지막 관문은 "사람과의 자연스러운 협업"이다.</p>
+        <p><span class="highlight">인사이트:</span> 사용자 피드백 루프를 구축해 지속적으로 행동을 개선해야 상용화가 가능하다.</p>
+      </div>
+
+      <div class="source">출처: 카카오톡 AI·테크 채널</div>
+    </div>
+  </div>
+</div>
+
+<!-- Editor Note -->
+<div class="editor">
+  <div class="section-label">에디터 한마디</div>
+  <p>"나는 왜 이걸 시작했는가. 이 질문에 답 못하는 순간, 성장은 길을 잃는다."</p>
+</div>
+
+<div class="footer">오늘의 밑줄 · 매일 발행 · 출처 표기 기반 요약 콘텐츠</div>
+
+</body>
+</html>
