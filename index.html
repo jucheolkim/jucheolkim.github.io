@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>오늘의 밑줄</title>
+</head>
+<body>
+<script>
+async function findLatestVol() {
+  let latest = 0;
+  for (let i = 1; i <= 100; i++) {
+    try {
+      const res = await fetch(`vol${i}.html`, { method: 'HEAD' });
+      if (res.ok) {
+        latest = i;
+      } else {
+        break;
+      }
+    } catch {
+      break;
+    }
+  }
+  if (latest > 0) {
+    window.location.replace(`vol${latest}.html`);
+  }
+}
+findLatestVol();
+</script>
+</body>
+</html>
