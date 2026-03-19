@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>오늘의 밑줄 · 전체 호</title>
+<title>오늘의 밑줄 · 전체 보기</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap');
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -11,18 +11,17 @@ html { background: #f0efeb; }
 body { font-family: Georgia, serif; max-width: 680px; margin: 0 auto; padding: 40px 20px; color: #1a1a1a; background: #fff; word-break: keep-all; box-shadow: 0 0 40px rgba(0,0,0,0.06); }
 .header { text-align: center; border-top: 3px solid #1a1a1a; border-bottom: 3px solid #1a1a1a; padding: 12px 0; margin-bottom: 4px; }
 .header-sub { font-size: 11px; font-family: Arial, sans-serif; color: #888; letter-spacing: 2px; margin-bottom: 6px; }
-.header-title { font-size: 36px; font-weight: 800; font-family: 'Nanum Myeongjo', Georgia, serif; }
+.header-title { font-size: 36px; font-weight: 800; letter-spacing: 0px; font-family: 'Nanum Myeongjo', Georgia, serif; white-space: nowrap; }
 .header-date { font-size: 11px; font-family: Arial, sans-serif; color: #888; margin-top: 6px; }
 .meta { display: flex; justify-content: space-between; border-bottom: 1px solid #e0e0e0; padding: 4px 0; margin-bottom: 28px; font-size: 10px; font-family: Arial, sans-serif; color: #888; }
-.section-label { font-size: 10px; font-family: Arial, sans-serif; color: #888; letter-spacing: 1px; border-top: 2px solid #1a1a1a; padding-top: 8px; margin-bottom: 20px; }
 .archive-item { display: flex; align-items: baseline; justify-content: space-between; padding: 14px 0; border-bottom: 1px solid #e0e0e0; text-decoration: none; color: inherit; }
 .archive-item:hover .archive-title { text-decoration: underline; }
-.archive-left { display: flex; align-items: baseline; gap: 12px; }
-.archive-vol { font-size: 11px; font-family: Arial, sans-serif; color: #aaa; min-width: 36px; }
-.archive-title { font-size: 15px; font-family: 'Nanum Myeongjo', Georgia, serif; font-weight: 700; color: #1a1a1a; line-height: 1.4; }
-.archive-tags { font-size: 11px; font-family: Arial, sans-serif; color: #aaa; margin-top: 3px; }
-.archive-date { font-size: 11px; font-family: Arial, sans-serif; color: #bbb; white-space: nowrap; margin-left: 16px; }
-.footer { border-top: 1px solid #e0e0e0; padding-top: 8px; margin-top: 28px; text-align: center; font-size: 10px; font-family: Arial, sans-serif; color: #aaa; }
+.archive-meta { font-size: 10px; font-family: Arial, sans-serif; color: #aaa; white-space: nowrap; margin-left: 16px; }
+.archive-left { flex: 1; }
+.archive-vol { font-size: 10px; font-family: Arial, sans-serif; color: #888; letter-spacing: 1px; margin-bottom: 4px; }
+.archive-title { font-size: 15px; font-family: 'Nanum Myeongjo', Georgia, serif; font-weight: bold; line-height: 1.4; }
+.archive-tags { font-size: 10px; font-family: Arial, sans-serif; color: #aaa; margin-top: 4px; }
+.footer { border-top: 1px solid #e0e0e0; padding-top: 8px; text-align: center; font-size: 10px; font-family: Arial, sans-serif; color: #aaa; margin-top: 28px; }
 </style>
 </head>
 <body>
@@ -30,35 +29,38 @@ body { font-family: Georgia, serif; max-width: 680px; margin: 0 auto; padding: 4
 <div class="header">
   <div class="header-sub">ONEDAY DIGEST</div>
   <div class="header-title">오늘의 밑줄</div>
-  <div class="header-date">전체 호 아카이브</div>
+  <div class="header-date">전체 호 보기</div>
 </div>
 <div class="meta">
   <span>창업 · 브랜드 · AI·테크</span>
   <span>출처 표기 기반 요약 콘텐츠</span>
 </div>
 
-<div class="section-label">ALL ISSUES</div>
-
-<a class="archive-item" href="index.html">
+<a href="vol3.html" class="archive-item">
   <div class="archive-left">
-    <span class="archive-vol">Vol.2</span>
-    <div>
-      <div class="archive-title">쓰나미가 보이는데 사람들은 빛의 굴절이라 한다</div>
-      <div class="archive-tags">AI 철학 · 창업 · 테크 제품</div>
-    </div>
+    <div class="archive-vol">Vol. 3 · 2026년 3월 19일</div>
+    <div class="archive-title">50년 동안 살아남은 회사는 무엇이 달랐나</div>
+    <div class="archive-tags">팀 쿡 · 제레미 어틀리 · AI 테크 브리핑</div>
   </div>
-  <span class="archive-date">2026.03.18</span>
+  <div class="archive-meta">최신호</div>
 </a>
 
-<a class="archive-item" href="vol1.html">
+<a href="vol2.html" class="archive-item">
   <div class="archive-left">
-    <span class="archive-vol">Vol.1</span>
-    <div>
-      <div class="archive-title">매 분을 기록한 남자가 40억 달러 회사를 만든 법</div>
-      <div class="archive-tags">창업 철학 · 브랜드 전략 · AI·테크</div>
-    </div>
+    <div class="archive-vol">Vol. 2 · 2026년 3월 18일</div>
+    <div class="archive-title">쓰나미가 보이는데 사람들은 빛의 굴절이라 한다</div>
+    <div class="archive-tags">다리오 아모데이 · Max Brodeur-Urbas · AI 테크 브리핑</div>
   </div>
-  <span class="archive-date">2026.03.17</span>
+  <div class="archive-meta">→</div>
+</a>
+
+<a href="vol1.html" class="archive-item">
+  <div class="archive-left">
+    <div class="archive-vol">Vol. 1 · 2026년 3월 18일</div>
+    <div class="archive-title">매 시간을 기록한 남자가 40억 달러 회사를 만든 법</div>
+    <div class="archive-tags">Mario Schlosser · 곽형석 · AI 테크 브리핑</div>
+  </div>
+  <div class="archive-meta">→</div>
 </a>
 
 <div class="footer">오늘의 밑줄 · 매일 발행 · 출처 표기 기반 요약 콘텐츠</div>
