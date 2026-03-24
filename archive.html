@@ -36,52 +36,40 @@ body { font-family: Georgia, serif; max-width: 680px; margin: 0 auto; padding: 4
   <span>출처 표기 기반 요약 콘텐츠</span>
 </div>
 
-<a href="vol5.html" class="archive-item">
-  <div class="archive-left">
-    <div class="archive-vol">Vol. 5 · 2026년 3월 23일</div>
-    <div class="archive-title">AGI를 가장 오래 기다려온 사람이 내린 단 하나의 정의</div>
-    <div class="archive-tags">데미스 허사비스 · 매트 그레이 · AI 논문 브리핑</div>
-  </div>
-  <div class="archive-meta">최신호</div>
-</a>
-
-<a href="vol4.html" class="archive-item">
-  <div class="archive-left">
-    <div class="archive-vol">Vol. 4 · 2026년 3월 20일</div>
-    <div class="archive-title">하루를 3개의 법칙으로 쪼갠 남자</div>
-    <div class="archive-tags">Cal Newport · 정지헌 · AI 테크 브리핑</div>
-  </div>
-  <div class="archive-meta">→</div>
-</a>
-
-<a href="vol3.html" class="archive-item">
-  <div class="archive-left">
-    <div class="archive-vol">Vol. 3 · 2026년 3월 19일</div>
-    <div class="archive-title">50년 동안 살아남은 회사는 무엇이 달랐나</div>
-    <div class="archive-tags">팀 쿡 · 제레미 어틀리 · AI 테크 브리핑</div>
-  </div>
-  <div class="archive-meta">→</div>
-</a>
-
-<a href="vol2.html" class="archive-item">
-  <div class="archive-left">
-    <div class="archive-vol">Vol. 2 · 2026년 3월 18일</div>
-    <div class="archive-title">쓰나미가 보이는데 사람들은 빛의 굴절이라 한다</div>
-    <div class="archive-tags">다리오 아모데이 · Max Brodeur-Urbas · AI 테크 브리핑</div>
-  </div>
-  <div class="archive-meta">→</div>
-</a>
-
-<a href="vol1.html" class="archive-item">
-  <div class="archive-left">
-    <div class="archive-vol">Vol. 1 · 2026년 3월 18일</div>
-    <div class="archive-title">매 시간을 기록한 남자가 40억 달러 회사를 만든 법</div>
-    <div class="archive-tags">Mario Schlosser · 곽형석 · AI 테크 브리핑</div>
-  </div>
-  <div class="archive-meta">→</div>
-</a>
+<div id="archive-list"></div>
 
 <div class="footer">오늘의 밑줄 · 매일 발행 · 출처 표기 기반 요약 콘텐츠</div>
+
+<script>
+// ============================================================
+// 새 호 발행 시 이 배열 맨 앞에 한 줄만 추가하면 됩니다.
+// ============================================================
+var VOLS = [
+  { vol: 6, date: "2026년 3월 24일", title: "탁상공론이 전쟁터에서 무너지는 이유", tags: "알렉스 카프 · 렘 코닝 · AI 테크 브리핑" },
+  { vol: 5, date: "2026년 3월 23일", title: "AGI를 가장 오래 기다려온 사람이 내린 단 하나의 정의", tags: "데미스 허사비스 · 매트 그레이 · AI 논문 브리핑" },
+  { vol: 4, date: "2026년 3월 20일", title: "하루를 3개의 법칙으로 쪼갠 남자", tags: "Cal Newport · 정지헌 · AI 테크 브리핑" },
+  { vol: 3, date: "2026년 3월 19일", title: "50년 동안 살아남은 회사는 무엇이 달랐나", tags: "팀 쿡 · 제레미 어틀리 · AI 테크 브리핑" },
+  { vol: 2, date: "2026년 3월 18일", title: "쓰나미가 보이는데 사람들은 빛의 굴절이라 한다", tags: "다리오 아모데이 · Max Brodeur-Urbas · AI 테크 브리핑" },
+  { vol: 1, date: "2026년 3월 18일", title: "매 시간을 기록한 남자가 40억 달러 회사를 만든 법", tags: "Mario Schlosser · 곽형석 · AI 테크 브리핑" },
+];
+
+var list = document.getElementById('archive-list');
+var latestVol = VOLS[0].vol;
+
+VOLS.forEach(function(v) {
+  var a = document.createElement('a');
+  a.href = 'vol' + v.vol + '.html';
+  a.className = 'archive-item';
+  a.innerHTML =
+    '<div class="archive-left">' +
+      '<div class="archive-vol">Vol. ' + v.vol + ' \u00b7 ' + v.date + '</div>' +
+      '<div class="archive-title">' + v.title + '</div>' +
+      '<div class="archive-tags">' + v.tags + '</div>' +
+    '</div>' +
+    '<div class="archive-meta">' + (v.vol === latestVol ? '\ucd5c\uc2e0\ud638' : '\u2192') + '</div>';
+  list.appendChild(a);
+});
+</script>
 
 </body>
 </html>
