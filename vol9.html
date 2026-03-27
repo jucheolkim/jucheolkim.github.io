@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>오늘의 밑줄 · Vol.9</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap');
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { background: #f0efeb; }
+body { font-family: Georgia, serif; max-width: 680px; margin: 0 auto; padding: 40px 20px; color: #1a1a1a; background: #fff; word-break: keep-all; box-shadow: 0 0 40px rgba(0,0,0,0.06); }
+.header { text-align: center; border-top: 3px solid #1a1a1a; border-bottom: 3px solid #1a1a1a; padding: 12px 0; margin-bottom: 4px; }
+.header-sub { font-size: 11px; font-family: Arial, sans-serif; color: #888; letter-spacing: 2px; margin-bottom: 6px; }
+.header-title { font-size: 36px; font-weight: 800; letter-spacing: 0px; font-family: 'Nanum Myeongjo', Georgia, serif; white-space: nowrap; }
+.header-date { font-size: 11px; font-family: Arial, sans-serif; color: #888; margin-top: 6px; }
+.meta { display: flex; justify-content: space-between; border-bottom: 1px solid #e0e0e0; padding: 4px 0; margin-bottom: 28px; font-size: 10px; font-family: Arial, sans-serif; color: #888; }
+.article { margin-bottom: 28px; padding-bottom: 28px; border-bottom: 1px solid #e0e0e0; }
+.article-tag { font-size: 10px; font-family: Arial, sans-serif; color: #888; letter-spacing: 1px; border-top: 2px solid #1a1a1a; padding-top: 8px; margin-bottom: 8px; }
+.article-title { font-size: 24px; font-weight: bold; line-height: 1.3; margin-bottom: 12px; font-family: 'Nanum Myeongjo', Georgia, serif; letter-spacing: -0.5px; }
+.article-summary { font-size: 13px; color: #555; line-height: 1.75; margin-bottom: 14px; }
+.btn-wrap { display: flex; gap: 6px; margin-bottom: 14px; }
+.toggle-btn { font-size: 11px; font-family: Arial, sans-serif; color: #555; background: none; border: 1px solid #ccc; border-radius: 6px; padding: 4px 10px; cursor: pointer; }
+.toggle-btn:hover { background: #f5f5f5; }
+.article-detail { display: none; }
+.article-detail.open { display: block; }
+.detail-inner { border-left: 2px solid #e0e0e0; padding-left: 16px; }
+.section-label { font-size: 10px; font-family: Arial, sans-serif; color: #888; letter-spacing: 1px; margin-bottom: 6px; margin-top: 16px; }
+.detail-inner p { font-size: 13px; color: #555; line-height: 1.75; margin-bottom: 8px; }
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 8px; }
+.box { background: #f5f5f5; border-radius: 8px; padding: 10px 12px; }
+.box-label { font-size: 11px; font-family: Arial, sans-serif; color: #888; margin-bottom: 6px; }
+.box p { font-size: 12px; color: #555; line-height: 1.65; margin-bottom: 6px; }
+.news-item { margin-bottom: 14px; padding-bottom: 14px; border-bottom: 1px solid #e0e0e0; }
+.news-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+.badge { display: inline-block; font-size: 10px; font-family: Arial, sans-serif; background: #f5f5f5; color: #888; padding: 2px 8px; border-radius: 4px; margin-right: 6px; }
+.news-title { font-size: 13px; font-weight: bold; }
+.news-item p { font-size: 12px; color: #555; line-height: 1.7; margin-top: 6px; }
+.source { font-size: 10px; font-family: Arial, sans-serif; color: #aaa; border-top: 1px solid #e0e0e0; padding-top: 8px; margin-top: 16px; }
+.highlight { font-weight: bold; color: #1a1a1a; }
+.insight-p { font-size: 15px !important; color: #333 !important; line-height: 1.85 !important; margin-bottom: 10px !important; }
+.editor { border-top: 2px solid #1a1a1a; padding-top: 10px; margin-bottom: 16px; }
+.editor p { font-size: 16px; color: #1a1a1a; line-height: 1.85; font-style: italic; font-family: 'Nanum Myeongjo', Georgia, serif; font-weight: 800; }
+.footer { border-top: 1px solid #e0e0e0; padding-top: 8px; text-align: center; font-size: 10px; font-family: Arial, sans-serif; color: #aaa; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-sub">ONEDAY DIGEST</div>
+  <div class="header-title">오늘의 밑줄</div>
+  <div class="header-date">2026년 3월 27일 · Vol. 9</div>
+</div>
+<div class="meta">
+  <span>투자 철학 · 창업 철학 · AI·테크 브리핑</span>
+  <span>출처 표기 기반 요약 콘텐츠</span>
+</div>
+
+<!-- Article 1: Howard Marks -->
+<div class="article">
+  <div class="article-tag">투자 철학 · Howard Marks · Oaktree Capital</div>
+  <div class="article-title">예측할 수 없는 세계에서 현명한 투자자는 무엇을 하는가</div>
+  <div class="article-summary">오크트리 캐피털의 하워드 막스는 말한다. AI 등장 이후 세상은 그 어느 때보다 예측 불가능해졌다고. 그런데도 대부분의 투자자는 여전히 '무슨 일이 일어날 것인가'만 묻는다. 그는 두 번째 질문이 빠져 있다고 지적한다. 내 예측이 맞을 확률은 얼마인가.</div>
+  <div class="btn-wrap">
+    <button class="toggle-btn" onclick="var d=document.getElementById('d1'),b=this;d.classList.toggle('open');b.textContent=d.classList.contains('open')?'접기 ▲':'더 보기 ▼'">더 보기 ▼</button>
+    <button class="toggle-btn">🎧 오디오로 듣기 (준비 중)</button>
+  </div>
+  <div id="d1" class="article-detail">
+    <div class="detail-inner">
+      <div class="section-label">이 사람은 누구인가</div>
+      <p>하워드 막스는 1969년 씨티뱅크 채권 부서에서 커리어를 시작했다. 고수익 채권 펀드를 맡으면서 나쁜 기업의 싼 채권도 좋은 수익을 낼 수 있다는 것을 증명했다. 1995년 오크트리 캐피털을 공동 창업했고, 운용자산은 현재 약 1,900억 달러에 달한다. 투자자들 사이에서는 정기 메모로 유명하다. 워런 버핏이 "가장 먼저 읽는 글"이라 공개적으로 밝힌 바 있다. 저서 『투자에 대한 생각』은 가치투자의 고전으로 꼽힌다.</p>
+      <div class="section-label">주요 활동과 이력</div>
+      <p>씨티뱅크 채권 분석 → 고수익채권 운용 → 오크트리 캐피털 공동 창업(1995) → 운용자산 약 1,900억 달러 → 투자자 메모 48년 발행 중. 시장 사이클에 관한 책 『사이클을 파악하라』(2018)에서 그는 "예측의 방향뿐 아니라 확률도 갖고 있어야 한다"고 썼다. 이것이 그의 투자 철학의 핵심이다.</p>
+      <div class="section-label">성공한 것과 실패한 것</div>
+      <div class="grid">
+        <div class="box">
+          <div class="box-label">성공 / 확신</div>
+          <p>2008년 금융위기 당시 공포가 극에 달했을 때 대규모 매수에 나섰다. 주변 대부분이 손을 놓고 있을 때 가장 공격적으로 움직인 결과였다.</p>
+          <p>48년간 투자 메모를 발행하면서 시장과 투자 심리를 기록했다. 이 기록 자체가 오크트리의 브랜드이자 가장 강력한 마케팅이 됐다.</p>
+          <p>'좋은 시절에 나쁜 대출이 나온다'는 원칙을 지켰다. 17년 호황기 동안 기준을 낮추지 않았고, 그것이 위기 때 빛을 발했다.</p>
+        </div>
+        <div class="box">
+          <div class="box-label">실패 / 한계</div>
+          <p>AI를 직접 활용하기까지 아들의 도움이 필요했다. 세대 간 기술 격차를 솔직하게 드러낸 장면이다.</p>
+          <p>사모대출 시장 과열 당시 공개적으로 경고를 냈지만, 자신이 공개 신용시장 운용사라는 이해 충돌도 함께 인정했다. 발언의 한계를 스스로 짚은 것이다.</p>
+        </div>
+      </div>
+      <div class="section-label">인사이트</div>
+      <p class="insight-p">막스는 AI가 "예측 기계"라고 말한다. 방대한 데이터를 읽고, 패턴을 찾고, 다음 수를 예측한다. 그런데 그는 여기서 멈추지 않는다. <span class="highlight">AI가 못 하는 것이 있다</span>고 했다. 사기꾼을 알아보는 직관, 목 뒤를 서늘하게 만드는 불안감, 바닥이 어디인지 감으로 아는 것. 이건 데이터가 아니라 경험과 감각의 영역이다.</p>
+      <p class="insight-p">Block이라는 회사가 하루 만에 직원 40%를 내보낸 것처럼, 변화는 조용히 오지 않는다. <span class="highlight">준비된 사람과 그렇지 않은 사람의 차이는, 경고를 들었느냐가 아니라 믿었느냐에 있다.</span></p>
+      <p class="insight-p">막스가 결국 가르쳐주는 건 하나다. 예측이 틀릴 수 있다는 것을 알면서도 움직이는 것. 그리고 틀렸을 때 버틸 수 있는 구조를 미리 만들어두는 것.</p>
+      <div class="source">출처: "투자는 근본있게" 하워드 막스 인터뷰 · YouTube</div>
+    </div>
+  </div>
+</div>
+
+<!-- Article 2: 김범섭 / 삼쩜삼 -->
+<div class="article">
+  <div class="article-tag">창업 철학 · 김범섭 · 삼쩜삼</div>
+  <div class="article-title">40개를 말아먹고 나서야 보인 것</div>
+  <div class="article-summary">삼쩜삼을 만든 김범섭은 스타트업 20여 개를 세웠고 대부분 실패했다. 성공한 두 개—리멤버와 삼쩜삼—의 공통점은 하나였다. 그가 아이디어를 낸 게 아니었다. 누군가의 불편에서 출발했고, 이미 돈을 내는 사람이 있었다.</div>
+  <div class="btn-wrap">
+    <button class="toggle-btn" onclick="var d=document.getElementById('d2'),b=this;d.classList.toggle('open');b.textContent=d.classList.contains('open')?'접기 ▲':'더 보기 ▼'">더 보기 ▼</button>
+    <button class="toggle-btn">🎧 오디오로 듣기 (준비 중)</button>
+  </div>
+  <div id="d2" class="article-detail">
+    <div class="detail-inner">
+      <div class="section-label">이 사람은 누구인가</div>
+      <p>김범섭은 자비스앤빌런즈의 창업자이자 최고성장책임자(CGO)다. 자비스앤빌런즈는 프리랜서·근로자의 세금 환급을 자동 처리하는 서비스 '삼쩜삼'을 운영한다. 누적 가입자 2,400만 명, 환급액 약 2조 원에 달하는 서비스로 성장했다. 그 전에는 명함 관리 앱 '리멤버'를 만들었다. 2009년부터 창업을 시작해 수십 개의 서비스를 만들고 대부분 접었다. 스스로를 '훈련 중인 창업자'라 표현한다.</p>
+      <div class="section-label">주요 활동과 이력</div>
+      <p>2009년 창업 시작 → 약 20개 서비스 출시 → 리멤버(명함 관리 앱) 성공 → 자비스앤빌런즈 창업(2015) → 삼쩜삼 출시(2019) → 가입자 2,400만·환급액 약 2조 원 달성. 리멤버는 투자사 대표의 "명함통 좀 정리해줘" 한마디에서 시작됐다. 삼쩜삼은 팀원이 놓친 연말정산 80만 원을 세무사가 찾아주는 장면을 보고 시작됐다. 둘 다 그의 아이디어가 아니었다.</p>
+      <div class="section-label">성공한 것과 실패한 것</div>
+      <div class="grid">
+        <div class="box">
+          <div class="box-label">성공 / 확신</div>
+          <p>서비스를 만들기 전에 팔았다. 랜딩 페이지, 채팅 상담, 계좌이체까지. "이래도 사냐"를 먼저 확인하고 만들었다. 삼쩜삼의 초기 전환율은 수동 채팅 서비스 단계에서 60%였다.</p>
+          <p>MVP가 실패면 미련 없이 버렸다. 100명이 쓰다가 110명이 되는 것은 성공이 아님을 알았다. 내가 원하는 규모의 연장선에 닿지 않으면 빠르게 접었다.</p>
+        </div>
+        <div class="box">
+          <div class="box-label">실패 / 한계</div>
+          <p>초기 5년은 자신의 아이디어로만 달렸다. "기존 서비스보다 더 예쁘게 만들 수 있다"는 확신으로 세금 시장에 뛰어들었다가 5년을 허비했다.</p>
+          <p>서비스를 자동화된 카드 결제로 바꿨더니 전환율이 10% 아래로 떨어졌다. 사람이 직접 처리하는 온기를 제거한 결과였다. 기술보다 감각이 먼저라는 것을 뒤늦게 깨달았다.</p>
+        </div>
+      </div>
+      <div class="section-label">인사이트</div>
+      <p class="insight-p">김범섭이 말하는 '진짜 문제'의 기준은 단순하다. <span class="highlight">돈을 냈는가. 그리고 또 냈는가.</span> 고객이 "좋아요"라고 말하는 것과 지갑을 여는 것은 다르다. 욕하면서도 줄을 서는 식당처럼, 진짜 수요는 말이 아니라 행동으로만 증명된다.</p>
+      <p class="insight-p">그는 창업을 스키에 비유했다. 경사면에서 앞으로 몸을 기울이는 것, 본능에는 반하지만 그래야 잘 탄다. 책으로 이해하는 것과 몸이 받아들이는 것은 다르다. <span class="highlight">훈련이란 본능이 틀렸다는 것을 반복해서 확인하는 과정이다.</span> 40개를 말아먹은 시간이 낭비가 아니라 훈련이었다는 말이 가볍지 않다.</p>
+      <p class="insight-p">아이디어가 멋질수록 의심해야 한다. 진짜 문제는 대부분 누군가의 불편한 일상 속에 이미 조용히 존재하고 있다.</p>
+      <div class="source">출처: "40개 제품을 말아먹고 깨달은 진짜 되는 아이디어 구별법" 김범섭 · YouTube EO</div>
+    </div>
+  </div>
+</div>
+
+<!-- Article 3: AI·테크 브리핑 -->
+<div class="article">
+  <div class="article-tag">AI · 테크 제품 브리핑 · 2026년 3월 27일</div>
+  <div class="article-title">오늘 나온 것들, 내가 쓸 수 있는 것만 골랐다</div>
+  <div class="article-summary">3월 27일 ProductHunt 상위 제품 중 실제 업무에 당장 써볼 수 있는 것들을 추렸다. AI가 내 맥락을 기억하는 어시스턴트부터, Claude를 모바일에서 쓰는 업무 도구까지. 흐름은 하나다. AI가 도구가 아니라 동료처럼 행동하기 시작했다.</div>
+  <div class="btn-wrap">
+    <button class="toggle-btn" onclick="var d=document.getElementById('d3'),b=this;d.classList.toggle('open');b.textContent=d.classList.contains('open')?'접기 ▲':'더 보기 ▼'">더 보기 ▼</button>
+    <button class="toggle-btn">🎧 오디오로 듣기 (준비 중)</button>
+  </div>
+  <div id="d3" class="article-detail">
+    <div class="detail-inner">
+
+      <div class="news-item">
+        <span class="badge">🔺510</span><span class="news-title">Littlebird — 당신의 업무를 이미 아는 AI</span>
+        <p><span class="highlight">무슨 일인가:</span> 화면에 보이는 것을 실시간으로 인식하고, 회의를 전사하며, 프로젝트와 우선순위를 스스로 기억하는 AI 어시스턴트. 별도 연동 설정 없이 작동한다.</p>
+        <p><span class="highlight">왜 중요한가:</span> 기존 AI 도구는 매번 맥락을 설명해야 했다. Littlebird는 그 과정을 없앤다. '나를 아는 AI'가 실현되기 시작했다는 신호다.</p>
+        <p><span class="highlight">인사이트:</span> 도구가 내 업무를 학습하면, 나는 판단에만 집중할 수 있다. 생산성의 다음 단계는 속도가 아니라 맥락의 자동화다.</p>
+      </div>
+
+      <div class="news-item">
+        <span class="badge">🔺389</span><span class="news-title">Claude Mobile: Work Tools — 이동 중에도 Claude로 일한다</span>
+        <p><span class="highlight">무슨 일인가:</span> Anthropic이 Claude 모바일 앱에 Figma 탐색, Canva 슬라이드 제작, Amplitude 대시보드 확인 기능을 통합했다. 데스크 없이도 업무 도구 전반을 Claude와 연결해 쓸 수 있다.</p>
+        <p><span class="highlight">왜 중요한가:</span> AI 어시스턴트가 단순 채팅을 넘어 실제 업무 도구의 허브로 진화하고 있다. 모바일 환경에서의 AI 업무 통합은 이제 시작 단계다.</p>
+        <p><span class="highlight">인사이트:</span> 언제 어디서나 쓸 수 있다는 건 단순한 편의가 아니다. 업무 흐름이 끊기지 않는다는 의미다.</p>
+      </div>
+
+      <div class="news-item">
+        <span class="badge">🔺312</span><span class="news-title">Venn.ai — AI 에이전트에 안전장치를 달다</span>
+        <p><span class="highlight">무슨 일인가:</span> Claude, Cursor, ChatGPT 등 여러 AI 에이전트를 앱에 연결하고, 각 에이전트가 할 수 있는 작업 범위를 코드 없이 설정·제어하는 플랫폼.</p>
+        <p><span class="highlight">왜 중요한가:</span> AI 에이전트의 자율성이 높아질수록 '어디까지 맡길 것인가'의 문제가 커진다. Venn은 그 경계를 설정하는 인프라다.</p>
+        <p><span class="highlight">인사이트:</span> AI에 일을 맡기는 시대는 이미 왔다. 남은 질문은 '어떻게 통제할 것인가'다.</p>
+      </div>
+
+      <div class="news-item">
+        <span class="badge">🔺288</span><span class="news-title">Mokkit — 스크린샷을 영상 자산으로</span>
+        <p><span class="highlight">무슨 일인가:</span> 정적인 스크린샷을 몇 초 만에 애니메이션 기기 목업 영상으로 변환. 디자인 기술 없이 마케팅용 비주얼을 만들 수 있다.</p>
+        <p><span class="highlight">왜 중요한가:</span> 콘텐츠 제작의 진입 장벽이 또 한 번 낮아졌다. 비주얼 품질이 브랜드 신뢰도에 직결되는 시대에 유용하다.</p>
+        <p><span class="highlight">인사이트:</span> 좋은 콘텐츠를 만드는 것과 좋아 보이게 만드는 것은 다른 기술이다. 이제 후자는 AI가 대신한다.</p>
+      </div>
+
+      <div class="source">출처: 카카오톡 AI·테크 채널 (2026년 3월 27일 주요 제품 소식 · ProductHunt)</div>
+    </div>
+  </div>
+</div>
+
+<!-- Editor Note -->
+<div class="editor">
+  <div class="section-label">에디터 한마디</div>
+  <p>"틀릴 수 있다는 걸 알면서도 베팅하는 것. 투자든 창업이든, 결국 같은 게임이다."</p>
+</div>
+
+<div class="footer">오늘의 밑줄 · 매일 발행 · 출처 표기 기반 요약 콘텐츠</div>
+
+<div style="display:flex; justify-content:center; gap:10px; margin-top:20px; padding-bottom:20px;">
+  <a href="vol8.html" style="display:inline-block; padding:10px 20px; border:1px solid #1a1a1a; border-radius:8px; font-size:13px; font-family:Arial,sans-serif; color:#fff; text-decoration:none; background:#1a1a1a;">← 이전 호</a>
+  <a href="archive.html" style="display:inline-block; padding:10px 20px; border:1px solid #ccc; border-radius:8px; font-size:13px; font-family:Arial,sans-serif; color:#555; text-decoration:none; background:#fff;">전체 보기</a>
+  <a id="next-btn" href="vol10.html" style="display:none; padding:10px 20px; border:1px solid #1a1a1a; border-radius:8px; font-size:13px; font-family:Arial,sans-serif; color:#fff; text-decoration:none; background:#1a1a1a;">다음 호 →</a>
+</div>
+<script>
+(function(){
+  fetch('vol10.html', {method:'HEAD'}).then(function(r){ if(r.ok) document.getElementById('next-btn').style.display='inline-block'; }).catch(function(){});
+})();
+</script>
+
+</body>
+</html>
