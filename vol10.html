@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>오늘의 밑줄 · Vol.10</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap');
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { background: #f0efeb; }
+body { font-family: Georgia, serif; max-width: 680px; margin: 0 auto; padding: 40px 20px; color: #1a1a1a; background: #fff; word-break: keep-all; box-shadow: 0 0 40px rgba(0,0,0,0.06); }
+.header { text-align: center; border-top: 3px solid #1a1a1a; border-bottom: 3px solid #1a1a1a; padding: 12px 0; margin-bottom: 4px; }
+.header-sub { font-size: 11px; font-family: Arial, sans-serif; color: #888; letter-spacing: 2px; margin-bottom: 6px; }
+.header-title { font-size: 36px; font-weight: 800; letter-spacing: 0px; font-family: 'Nanum Myeongjo', Georgia, serif; white-space: nowrap; }
+.header-date { font-size: 11px; font-family: Arial, sans-serif; color: #888; margin-top: 6px; }
+.meta { display: flex; justify-content: space-between; border-bottom: 1px solid #e0e0e0; padding: 4px 0; margin-bottom: 28px; font-size: 10px; font-family: Arial, sans-serif; color: #888; }
+.article { margin-bottom: 28px; padding-bottom: 28px; border-bottom: 1px solid #e0e0e0; }
+.article-tag { font-size: 10px; font-family: Arial, sans-serif; color: #888; letter-spacing: 1px; border-top: 2px solid #1a1a1a; padding-top: 8px; margin-bottom: 8px; }
+.article-title { font-size: 24px; font-weight: bold; line-height: 1.3; margin-bottom: 12px; font-family: 'Nanum Myeongjo', Georgia, serif; letter-spacing: -0.5px; }
+.article-summary { font-size: 13px; color: #555; line-height: 1.75; margin-bottom: 14px; }
+.btn-wrap { display: flex; gap: 6px; margin-bottom: 14px; }
+.toggle-btn { font-size: 11px; font-family: Arial, sans-serif; color: #555; background: none; border: 1px solid #ccc; border-radius: 6px; padding: 4px 10px; cursor: pointer; }
+.toggle-btn:hover { background: #f5f5f5; }
+.article-detail { display: none; }
+.article-detail.open { display: block; }
+.detail-inner { border-left: 2px solid #e0e0e0; padding-left: 16px; }
+.section-label { font-size: 10px; font-family: Arial, sans-serif; color: #888; letter-spacing: 1px; margin-bottom: 6px; margin-top: 16px; }
+.detail-inner p { font-size: 13px; color: #555; line-height: 1.75; margin-bottom: 8px; }
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 8px; }
+.box { background: #f5f5f5; border-radius: 8px; padding: 10px 12px; }
+.box-label { font-size: 11px; font-family: Arial, sans-serif; color: #888; margin-bottom: 6px; }
+.box p { font-size: 12px; color: #555; line-height: 1.65; margin-bottom: 6px; }
+.news-item { margin-bottom: 14px; padding-bottom: 14px; border-bottom: 1px solid #e0e0e0; }
+.news-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+.badge { display: inline-block; font-size: 10px; font-family: Arial, sans-serif; background: #f5f5f5; color: #888; padding: 2px 8px; border-radius: 4px; margin-right: 6px; }
+.news-title { font-size: 13px; font-weight: bold; }
+.news-item p { font-size: 12px; color: #555; line-height: 1.7; margin-top: 6px; }
+.source { font-size: 10px; font-family: Arial, sans-serif; color: #aaa; border-top: 1px solid #e0e0e0; padding-top: 8px; margin-top: 16px; }
+.highlight { font-weight: bold; color: #1a1a1a; }
+.insight-p { font-size: 15px !important; color: #333 !important; line-height: 1.85 !important; margin-bottom: 10px !important; }
+.editor { border-top: 2px solid #1a1a1a; padding-top: 10px; margin-bottom: 16px; }
+.editor p { font-size: 16px; color: #1a1a1a; line-height: 1.85; font-style: italic; font-family: 'Nanum Myeongjo', Georgia, serif; font-weight: 800; }
+.footer { border-top: 1px solid #e0e0e0; padding-top: 8px; text-align: center; font-size: 10px; font-family: Arial, sans-serif; color: #aaa; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-sub">ONEDAY DIGEST</div>
+  <div class="header-title">오늘의 밑줄</div>
+  <div class="header-date">2026년 3월 30일 · Vol. 10</div>
+</div>
+<div class="meta">
+  <span>창업 철학 · 테크 · AI·테크 브리핑</span>
+  <span>출처 표기 기반 요약 콘텐츠</span>
+</div>
+
+<!-- Article 1: Palmer Luckey -->
+<div class="article">
+  <div class="article-tag">창업 철학 · Palmer Luckey · Anduril · Andurböre</div>
+  <div class="article-title">실리콘밸리의 아웃사이더가 은행을 만든 이유</div>
+  <div class="article-summary">팔머 럭키는 19살에 오큘러스를 만들고, 안두릴로 국방 스타트업을 세웠다. 그리고 지금은 은행을 차렸다. 어보어(Andurböre)다. 이유는 단순했다. 자신의 사업을 제대로 이해하는 은행이 없었기 때문이다. 실리콘밸리 은행이 무너지던 날, 그는 직접 만들기로 결심했다.</div>
+  <div class="btn-wrap">
+    <button class="toggle-btn" onclick="var d=document.getElementById('d1'),b=this;d.classList.toggle('open');b.textContent=d.classList.contains('open')?'접기 ▲':'더 보기 ▼'">더 보기 ▼</button>
+    <button class="toggle-btn">🎧 오디오로 듣기 (준비 중)</button>
+  </div>
+  <div id="d1" class="article-detail">
+    <div class="detail-inner">
+      <div class="section-label">이 사람은 누구인가</div>
+      <p>팔머 럭키는 15살부터 직접 VR 헤드셋을 만들기 시작했고, 19살에 오큘러스를 창업했다. 페이스북(메타)에 약 2조 원에 인수됐고, 이후 국방 기술 스타트업 안두릴을 세웠다. 안두릴은 드론, AI 기반 방어 시스템으로 현재 기업가치 수십조 원에 달한다. 그는 소프트웨어 엔지니어가 아니었다. 광학과 전자 하드웨어에 집중했고, 코딩은 연결용으로만 배웠다.</p>
+      <div class="section-label">주요 활동과 이력</div>
+      <p>15세 VR 헤드셋 자체 제작 → 오큘러스 창업(2012, 당시 19세) → 메타 인수 → 안두릴 창업(2017) → 모드레트로(복각 게임기) 운영 → 어보어 은행 설립(2026). 어보어는 딥테크·국방·에너지 기업을 위한 은행이다. 달러 기반 스테이블코인을 활용한 365일 24시간 즉시 결제를 지원하며, 정부 정보기관과의 협력을 처음부터 전제로 설계됐다. SVB(실리콘밸리 은행) 붕괴 이후, 하드테크 스타트업을 제대로 이해하는 금융기관이 없다는 공백을 채우려 했다.</p>
+      <div class="section-label">성공한 것과 실패한 것</div>
+      <div class="grid">
+        <div class="box">
+          <div class="box-label">성공 / 확신</div>
+          <p>코딩 대신 광학·하드웨어·제품 통합에 집중했다. 못하는 것을 배우는 데 2년을 쓰지 않았고, 그 선택이 19살의 인수로 이어졌다.</p>
+          <p>남의 인프라에 올라타면 언젠가 쫓겨난다. 직접 인가를 땄다.</p>
+        </div>
+        <div class="box">
+          <div class="box-label">실패 / 한계</div>
+          <p>모드레트로 크로매틱(게임보이 복각 기기)을 일찍 팔았다가 재고가 떨어졌다. 관심이 생긴 사람이 살 수가 없었다. M64(N64 복각 기기)는 재고를 먼저 쌓고 판다.</p>
+          <p>오큘러스를 시작할 때 사람을 잘못 채용했다. 법적 분쟁이 길었다. 지금은 함께할 사람을 채용하는 데 훨씬 더 많은 시간을 쓴다.</p>
+        </div>
+      </div>
+      <div class="section-label">인사이트</div>
+      <p class="insight-p">팔머 럭키가 은행을 만든 건 금융업이 하고 싶어서가 아니었다. 자기 회사들을 위한 은행이 없어서였다. <span class="highlight">불편에서 시작해 직접 만드는 것</span>. 그의 모든 프로젝트가 이 패턴을 따른다.</p>
+      <p class="insight-p">그는 vibe coding(AI로 대충 코딩하기)을 지지한다. 이유가 재밌다. 자신이 소프트웨어를 못 하기 때문이 아니라, 잘하는 것에 집중하기 위해서라고. <span class="highlight">AI가 가장 큰 혜택을 줄 사람은 말을 잘 다루는 사람이 아니라 손으로 무언가를 만드는 사람</span>이라고 했다. 엔지니어, 하드웨어 개발자, 물리적 세계를 다루는 사람들.</p>
+      <p class="insight-p">남의 인프라 위에 올라타면 결정권도 함께 넘어간다. 그는 이미 여러 번 목격했다. 어보어가 직접 인가를 딴 이유다.</p>
+      <div class="source">출처: "피터 틸, 안두릴, 그리고 은행" Palmer Luckey 인터뷰 · YouTube bzcf</div>
+    </div>
+  </div>
+</div>
+
+<!-- Article 2: 류한주 / 스페이스T -->
+<div class="article">
+  <div class="article-tag">창업 철학 · 류한주 · 스페이스T · 베트남</div>
+  <div class="article-title">사업에 집착하지 않을 때 기회가 보였다</div>
+  <div class="article-summary">류한주는 반려동물 앱으로 처음 창업했고, 실패했다. 그다음엔 핀테크로 태국에 갔고, 또 막혔다. 그러다 베트남에서 직접 인테리어를 하다가 시장을 발견했다. 세 번째 사업이었고, 지금은 베트남 인테리어 플랫폼 1위다.</div>
+  <div class="btn-wrap">
+    <button class="toggle-btn" onclick="var d=document.getElementById('d2'),b=this;d.classList.toggle('open');b.textContent=d.classList.contains('open')?'접기 ▲':'더 보기 ▼'">더 보기 ▼</button>
+    <button class="toggle-btn">🎧 오디오로 듣기 (준비 중)</button>
+  </div>
+  <div id="d2" class="article-detail">
+    <div class="detail-inner">
+      <div class="section-label">이 사람은 누구인가</div>
+      <p>류한주는 스페이스T의 대표다. 웹슨 대학교(미국)에서 파이낸스를 전공하고 블랙스톤 합작 펀드에서 M&A 업무를 했다. 3년 반 후 창업을 결심했다. 반려동물 앱(첫 번째), 동남아 핀테크(두 번째)를 거쳐, 베트남에서 인테리어 플랫폼 스페이스T를 세웠다. 2019년 설립 이후 현재 사용자 20만 명 이상, 베트남 인테리어 플랫폼 1위다.</p>
+      <div class="section-label">주요 활동과 이력</div>
+      <p>웹슨 대학교 파이낸스 전공 → 블랙스톤 합작 펀드 M&A → 반려동물 앱 창업(2015) → 2년 운영 후 수익화 실패, 종료 → 동남아 핀테크 피벗, 태국 진출 → 규제 장벽으로 베트남 전환 → 스페이스T 창업(2019) → 코로나 4개월 락다운 중 웹사이트 개발 → 커뮤니티 기반 월 20% 성장 → 현재 베트남 인테리어 플랫폼 1위. 그는 직접 베트남 아파트 인테리어를 하다가 시공업체에게 협박을 당했고, 다시 직접 공간을 설계하면서 이 시장의 문제를 발견했다.</p>
+      <div class="section-label">성공한 것과 실패한 것</div>
+      <div class="grid">
+        <div class="box">
+          <div class="box-label">성공 / 확신</div>
+          <p>코로나 락다운 4개월 동안 운영을 멈추는 대신 웹사이트를 개발했다. 바꿀 수 없는 상황에 에너지를 쓰지 않고, 바꿀 수 있는 것에 집중했다. 락다운이 끝나는 시점에 정확히 사이트가 완성됐다.</p>
+          <p>대학 캠퍼스를 직접 돌며 초기 유저를 모았다. 광고에만 의존하면 플랫폼에 종속된다는 걸 알았기 때문이다. 유저가 올린 이미지가 신규 유저를 불러오는 사이클을 만들었다.</p>
+        </div>
+        <div class="box">
+          <div class="box-label">실패 / 한계</div>
+          <p>첫 번째 사업은 사용자는 늘었지만 수익화에 실패했다. 유통업체와 손잡고 제품 판매를 시도했으나 자금과 규모 모두 한계가 있었다. 좀비 기업으로 버티는 대신 빠르게 접었다.</p>
+          <p>태국 핀테크는 외국인이 금융업을 하는 것 자체가 막혀 있었다. 법률 검토 후 진출 가능성이 없다고 판단했고, 시장을 베트남으로 바꿨다.</p>
+        </div>
+      </div>
+      <div class="section-label">인사이트</div>
+      <p class="insight-p">류한주는 인테리어 사업을 하려고 베트남에 간 게 아니었다. 살 집을 구하다가 문제를 발견한 것이다. <span class="highlight">사업 아이디어를 찾아 헤매던 사람이, 직접 불편을 겪으면서 시장을 발견했다.</span> 의도하지 않았기에 더 날카로웠다.</p>
+      <p class="insight-p">그는 "좀비 기업으로 버티는 것보다 실패를 인정하고 빠르게 넘어가는 게 낫다"고 했다. 노트북에는 아직도 첫 번째 사업의 소스 코드가 남아 있다고 했다. <span class="highlight">미련은 있지만, 버티는 건 다른 문제라는 것</span>을 그는 알았다.</p>
+      <p class="insight-p">베트남 시장은 한국의 70~80년대처럼 부동산이 성장하면 인테리어가 따라온다는 구조적 논리가 있었다. 감이 아니라 분석이었다. 세 번의 창업 경험과 M&A 경력이 합쳐진 판단이었다.</p>
+      <div class="source">출처: "내 사업에 집착하지 않을 때 기회가 찾아옵니다" 류한주 스페이스T 대표 · YouTube EO</div>
+    </div>
+  </div>
+</div>
+
+<!-- Article 3: AI·테크 브리핑 -->
+<div class="article">
+  <div class="article-tag">AI · 테크 제품 브리핑 · 2026년 3월 30일</div>
+  <div class="article-title">오늘 나온 것들, 내가 쓸 수 있는 것만 골랐다</div>
+  <div class="article-summary">3월 30일 ProductHunt 상위 제품 중 실제 쓸 만한 것들을 추렸다. 브라우저 위에서 직접 작동하는 AI, 구글 시트를 API로 바꾸는 도구, 대화형 검색으로 확장되는 구글까지. 이번 주 흐름은 하나다. AI가 도구 밖으로 나와 내 작업 공간 안으로 들어오고 있다.</div>
+  <div class="btn-wrap">
+    <button class="toggle-btn" onclick="var d=document.getElementById('d3'),b=this;d.classList.toggle('open');b.textContent=d.classList.contains('open')?'접기 ▲':'더 보기 ▼'">더 보기 ▼</button>
+    <button class="toggle-btn">🎧 오디오로 듣기 (준비 중)</button>
+  </div>
+  <div id="d3" class="article-detail">
+    <div class="detail-inner">
+
+      <div class="news-item">
+        <span class="badge">AI 브라우저</span><span class="news-title">Clico — 모든 텍스트 박스를 업그레이드하다</span>
+        <p><span class="highlight">무슨 일인가:</span> 브라우저 확장 프로그램으로, 웹페이지의 맥락을 이해한 채로 텍스트 박스 안에서 직접 작동한다. 복사·붙여넣기 없이 AI를 쓴다.</p>
+        <p><span class="highlight">왜 중요한가:</span> 기존 AI 도구는 별도 창을 열어야 했다. Clico는 작업 흐름을 끊지 않는다. 맥락을 유지한 채로 AI가 개입하는 방식의 시작이다.</p>
+        <p><span class="highlight">인사이트:</span> 도구를 찾아가는 게 아니라, 도구가 내 자리로 온다. AI 사용 방식의 패러다임이 바뀌고 있다.</p>
+      </div>
+
+      <div class="news-item">
+        <span class="badge">데이터</span><span class="news-title">Sheet Ninja — 구글 시트를 라이브 API로 변환하다</span>
+        <p><span class="highlight">무슨 일인가:</span> 구글 시트 링크를 붙여넣으면 즉시 API로 변환된다. 별도 데이터베이스를 구축하지 않아도 앱에 데이터를 연결할 수 있다.</p>
+        <p><span class="highlight">왜 중요한가:</span> 소규모 팀이나 1인 개발자가 복잡한 백엔드 없이 데이터 기반 서비스를 만들 수 있는 진입 장벽이 낮아졌다.</p>
+        <p><span class="highlight">인사이트:</span> 이미 갖고 있는 데이터를 활용하는 방법이 다양해질수록, 새로 만드는 것보다 연결하는 것이 더 빠른 길이 된다.</p>
+      </div>
+
+      <div class="news-item">
+        <span class="badge">검색</span><span class="news-title">Google Search Live — AI 모드로의 대화형 검색 확장</span>
+        <p><span class="highlight">무슨 일인가:</span> 구글이 Search Live를 모든 언어·지역으로 확장한다. AI 모드에서 검색 결과를 대화 형식으로 주고받을 수 있다.</p>
+        <p><span class="highlight">왜 중요한가:</span> 구글 검색이 링크 목록에서 대화 인터페이스로 전환되고 있다. 검색의 정의 자체가 바뀌는 중이다.</p>
+        <p><span class="highlight">인사이트:</span> GEO(생성형 엔진 최적화)가 SEO를 대체하는 흐름이 빨라지고 있다. 검색에 노출되는 방식도 함께 바뀐다.</p>
+      </div>
+
+      <div class="news-item">
+        <span class="badge">학습</span><span class="news-title">SUN — 맞춤형 AI 오디오 레슨을 즉시 생성하다</span>
+        <p><span class="highlight">무슨 일인가:</span> 원하는 주제에 대한 팟캐스트, 오디오북, 코스를 즉시 생성해주는 인터랙티브 오디오 콘텐츠 서비스다.</p>
+        <p><span class="highlight">왜 중요한가:</span> 콘텐츠 소비가 텍스트에서 오디오로 옮겨가는 흐름에서, 학습 콘텐츠도 개인화·오디오화되고 있다.</p>
+        <p><span class="highlight">인사이트:</span> 내가 원하는 주제를, 내가 원하는 형식으로, 즉시 만들어 듣는다. 콘텐츠 제작과 소비의 경계가 흐려지고 있다.</p>
+      </div>
+
+      <div class="source">출처: 카카오톡 AI·테크 채널 (2026년 3월 30일 주요 제품 소식 · ProductHunt)</div>
+    </div>
+  </div>
+</div>
+
+<!-- Editor Note -->
+<div class="editor">
+  <div class="section-label">에디터 한마디</div>
+  <p>"기회는 찾는 사람에게 오는 게 아니라, 살다가 부딪힌 사람에게 온다."</p>
+</div>
+
+<div class="footer">오늘의 밑줄 · 매일 발행 · 출처 표기 기반 요약 콘텐츠</div>
+
+<div style="display:flex; justify-content:center; gap:10px; margin-top:20px; padding-bottom:20px;">
+  <a href="vol9.html" style="display:inline-block; padding:10px 20px; border:1px solid #1a1a1a; border-radius:8px; font-size:13px; font-family:Arial,sans-serif; color:#fff; text-decoration:none; background:#1a1a1a;">← 이전 호</a>
+  <a href="archive.html" style="display:inline-block; padding:10px 20px; border:1px solid #ccc; border-radius:8px; font-size:13px; font-family:Arial,sans-serif; color:#555; text-decoration:none; background:#fff;">전체 보기</a>
+  <a id="next-btn" href="vol11.html" style="display:none; padding:10px 20px; border:1px solid #1a1a1a; border-radius:8px; font-size:13px; font-family:Arial,sans-serif; color:#fff; text-decoration:none; background:#1a1a1a;">다음 호 →</a>
+</div>
+<script>
+(function(){
+  fetch('vol11.html', {method:'HEAD'}).then(function(r){ if(r.ok) document.getElementById('next-btn').style.display='inline-block'; }).catch(function(){});
+})();
+</script>
+
+</body>
+</html>
