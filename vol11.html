@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>오늘의 밑줄 · Vol.11</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap');
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { background: #f0efeb; }
+body { font-family: Georgia, serif; max-width: 680px; margin: 0 auto; padding: 40px 20px; color: #1a1a1a; background: #fff; word-break: keep-all; box-shadow: 0 0 40px rgba(0,0,0,0.06); }
+.header { text-align: center; border-top: 3px solid #1a1a1a; border-bottom: 3px solid #1a1a1a; padding: 12px 0; margin-bottom: 4px; }
+.header-sub { font-size: 11px; font-family: Arial, sans-serif; color: #888; letter-spacing: 2px; margin-bottom: 6px; }
+.header-title { font-size: 36px; font-weight: 800; letter-spacing: 0px; font-family: 'Nanum Myeongjo', Georgia, serif; white-space: nowrap; }
+.header-date { font-size: 11px; font-family: Arial, sans-serif; color: #888; margin-top: 6px; }
+.meta { display: flex; justify-content: space-between; border-bottom: 1px solid #e0e0e0; padding: 4px 0; margin-bottom: 28px; font-size: 10px; font-family: Arial, sans-serif; color: #888; }
+.article { margin-bottom: 28px; padding-bottom: 28px; border-bottom: 1px solid #e0e0e0; }
+.article-tag { font-size: 10px; font-family: Arial, sans-serif; color: #888; letter-spacing: 1px; border-top: 2px solid #1a1a1a; padding-top: 8px; margin-bottom: 8px; }
+.article-title { font-size: 24px; font-weight: bold; line-height: 1.3; margin-bottom: 12px; font-family: 'Nanum Myeongjo', Georgia, serif; letter-spacing: -0.5px; }
+.article-summary { font-size: 13px; color: #555; line-height: 1.75; margin-bottom: 14px; }
+.btn-wrap { display: flex; gap: 6px; margin-bottom: 14px; }
+.toggle-btn { font-size: 11px; font-family: Arial, sans-serif; color: #555; background: none; border: 1px solid #ccc; border-radius: 6px; padding: 4px 10px; cursor: pointer; }
+.toggle-btn:hover { background: #f5f5f5; }
+.article-detail { display: none; }
+.article-detail.open { display: block; }
+.detail-inner { border-left: 2px solid #e0e0e0; padding-left: 16px; }
+.section-label { font-size: 10px; font-family: Arial, sans-serif; color: #888; letter-spacing: 1px; margin-bottom: 6px; margin-top: 16px; }
+.detail-inner p { font-size: 13px; color: #555; line-height: 1.75; margin-bottom: 8px; }
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 8px; }
+.box { background: #f5f5f5; border-radius: 8px; padding: 10px 12px; }
+.box-label { font-size: 11px; font-family: Arial, sans-serif; color: #888; margin-bottom: 6px; }
+.box p { font-size: 12px; color: #555; line-height: 1.65; margin-bottom: 6px; }
+.news-item { margin-bottom: 14px; padding-bottom: 14px; border-bottom: 1px solid #e0e0e0; }
+.news-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+.badge { display: inline-block; font-size: 10px; font-family: Arial, sans-serif; background: #f5f5f5; color: #888; padding: 2px 8px; border-radius: 4px; margin-right: 6px; }
+.news-title { font-size: 13px; font-weight: bold; }
+.news-item p { font-size: 12px; color: #555; line-height: 1.7; margin-top: 6px; }
+.source { font-size: 10px; font-family: Arial, sans-serif; color: #aaa; border-top: 1px solid #e0e0e0; padding-top: 8px; margin-top: 16px; }
+.highlight { font-weight: bold; color: #1a1a1a; }
+.insight-p { font-size: 15px !important; color: #333 !important; line-height: 1.85 !important; margin-bottom: 10px !important; }
+.editor { border-top: 2px solid #1a1a1a; padding-top: 10px; margin-bottom: 16px; }
+.editor p { font-size: 16px; color: #1a1a1a; line-height: 1.85; font-style: italic; font-family: 'Nanum Myeongjo', Georgia, serif; font-weight: 800; }
+.footer { border-top: 1px solid #e0e0e0; padding-top: 8px; text-align: center; font-size: 10px; font-family: Arial, sans-serif; color: #aaa; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-sub">ONEDAY DIGEST</div>
+  <div class="header-title">오늘의 밑줄</div>
+  <div class="header-date">2026년 3월 31일 · Vol. 11</div>
+</div>
+<div class="meta">
+  <span>창업 철학 · 테크 · AI·테크 브리핑</span>
+  <span>출처 표기 기반 요약 콘텐츠</span>
+</div>
+
+<!-- Article 1: Jim Keller -->
+<div class="article">
+  <div class="article-tag">테크 철학 · Jim Keller · Tenstorrent</div>
+  <div class="article-title">반도체 전설이 말하는 AI의 진짜 시작점</div>
+  <div class="article-summary">짐 켈러는 AMD와 애플의 칩을 설계한 반도체 엔지니어다. 지금은 AI 칩 스타트업 Tenstorrent(텐스토런트)를 이끌고 있다. 그는 말한다. AI 개발의 11%만 현실에 적용됐다는 통계는 위기 신호가 아니라, 실험이 제대로 돌아가고 있다는 증거라고. 지금 우리는 300마력짜리 차를 막 도로에 꺼내기 시작한 것이다.</div>
+  <div class="btn-wrap">
+    <button class="toggle-btn" onclick="var d=document.getElementById('d1'),b=this;d.classList.toggle('open');b.textContent=d.classList.contains('open')?'접기 ▲':'더 보기 ▼'">더 보기 ▼</button>
+    <button class="toggle-btn">🎧 오디오로 듣기 (준비 중)</button>
+  </div>
+  <div id="d1" class="article-detail">
+    <div class="detail-inner">
+      <div class="section-label">이 사람은 누구인가</div>
+      <p>짐 켈러(Jim Keller)는 반도체 업계에서 50년 가까이 일해온 칩 설계 전문가다. DEC, AMD, Apple, Tesla, Intel을 거쳤고, 지금은 캐나다 AI 칩 스타트업 Tenstorrent의 CEO다. AMD의 Zen 아키텍처와 Apple의 A4·A5 칩 설계에 핵심 기여를 했다. 그는 AI 전용 칩을 저비용·저전력으로 만들어 대기업이 독점하는 AI 컴퓨팅 시장을 분산시키는 것을 목표로 삼고 있다.</p>
+      <div class="section-label">주요 활동과 이력</div>
+      <p>DEC Alpha 칩 설계 → AMD K7·K8 아키텍처 → Apple A4·A5 → AMD Zen 아키텍처(2차 복귀) → Tesla 자율주행 칩 → Intel(2년 재직 후 퇴사) → Tenstorrent CEO(현재). 그는 현재 AI 컴퓨터와 일반 컴퓨터가 근본적으로 다른 구조임을 강조하면서, 앞으로 10년 내 데이터센터의 80~90%가 AI 전용 칩으로 채워질 것이라고 예측한다. Tenstorrent는 이 AI 칩 기술을 직접 개발하는 동시에 외부 라이선스로도 공급해, AI 인프라의 탈중앙화를 꾀하고 있다.</p>
+      <div class="section-label">성공한 것과 실패한 것</div>
+      <div class="grid">
+        <div class="box">
+          <div class="box-label">성공 / 확신</div>
+          <p>GPU 혁명 시절 30개 기업 중 3~4개만 살아남았지만, 그것이 조 단위 산업을 만들었다. 실험이 많아야 승자도 나온다. 10%의 성공률은 실패가 아니라, 결과적으로 1000배 수익을 만드는 구조다.</p>
+          <p>AI는 병렬 연산으로 작동한다. 기존 컴퓨터가 명령을 하나씩 처리하는 것과 달리, AI는 수조 개의 연산을 동시에 실행한다. 이 차이가 새로운 칩 산업 전체를 요구한다.</p>
+        </div>
+        <div class="box">
+          <div class="box-label">한계 / 과제</div>
+          <p>AI 데이터센터의 전력 소비가 폭증하고 있다. 현재 미국 전력망의 약 3% 수준이지만, 10~20%까지 늘어날 수 있다. 발전 인프라 확충이 AI 발전 속도를 따라가지 못하면 병목이 된다.</p>
+          <p>AI 기술이 소수 대형 기업에 집중되고 있다. 접근 비용과 설계 복잡도가 진입 장벽이다. Tenstorrent가 라이선싱 모델을 택한 이유다.</p>
+        </div>
+      </div>
+      <div class="section-label">인사이트</div>
+      <p class="insight-p">짐 켈러는 "AI의 11%만 실제로 쓰이고 있다"는 말에 이렇게 답했다. <span class="highlight">"그게 정상이야."</span> GPU 혁명 때도 30개 회사 중 3~4개만 살아남았고, 그 3~4개가 조 단위 산업을 만들었다. 실험이 많아야 승자가 나온다. 지금 AI의 11%는 위기 신호가 아니라, 나머지 89%가 아직 시작되지 않았다는 뜻이다.</p>
+      <p class="insight-p">그는 현재의 데이터센터를 뇌의 단순 반응 회로에 비유했다. 지금까지는 명확한 명령만 처리했다면, AI 칩은 실제로 '생각하는' 영역을 담당하게 된다고. <span class="highlight">컴퓨터의 역할이 명령 실행에서 판단 보조로 바뀌고 있다.</span> 이 전환이 완성되기까지 10년 걸린다고 봤다.</p>
+      <p class="insight-p">그는 "요즘 학생들이 10년 전보다 못하다"는 말에 동의하지 않는다. 그 말을 하는 사람이 늙은 것이라고. AI가 학습 도구로 쓰일 때 가장 크게 혜택받는 건 <span class="highlight">배우려는 의지가 있는 사람</span>이라고 했다. 기회의 문이 좁아진 게 아니라, 지금처럼 넓었던 적이 없다고.</p>
+      <div class="source">출처: "반도체 이제 10% 왔다 (반도체 전설 짐 켈러)" · YouTube bzcf</div>
+    </div>
+  </div>
+</div>
+
+<!-- Article 2: Zach Yadegari -->
+<div class="article">
+  <div class="article-tag">창업 철학 · Zach Yadegari · Cal AI</div>
+  <div class="article-title">19살에 회사를 팔았다. 그런데 처음엔 아무도 사려 하지 않았다</div>
+  <div class="article-summary">재크 야데가리는 7살부터 프로그래밍을 했고, 고등학생 때 칼로리 추적 앱 Cal AI(캘 에이아이)를 만들었다. 2025년 연 매출 3천만 달러를 찍었고, My Fitness Pal(마이 피트니스 팔)에 회사를 매각했다. 하지만 처음 매각을 시도했을 때 제안은 처참했다. 포기하고 나서야 진짜 제안이 왔다.</div>
+  <div class="btn-wrap">
+    <button class="toggle-btn" onclick="var d=document.getElementById('d2'),b=this;d.classList.toggle('open');b.textContent=d.classList.contains('open')?'접기 ▲':'더 보기 ▼'">더 보기 ▼</button>
+    <button class="toggle-btn">🎧 오디오로 듣기 (준비 중)</button>
+  </div>
+  <div id="d2" class="article-detail">
+    <div class="detail-inner">
+      <div class="section-label">이 사람은 누구인가</div>
+      <p>재크 야데가리(Zach Yadegari)는 미국의 19세 창업가다. 7살부터 프로그래밍을 시작했고, 고등학생 때 학교에서 게임을 할 수 있게 해주는 언블록 웹사이트를 만들어 첫 수익을 냈다. 이후 Cal AI를 창업해 음식 사진 한 장으로 칼로리를 자동 추적해주는 앱을 만들었다. 2025년 매출 3천만 달러, 직원 30명, 그리고 My Fitness Pal에 매각 완료. 현재 마이애미 대학교 1학년에 재학 중이다.</p>
+      <div class="section-label">주요 활동과 이력</div>
+      <p>7세 프로그래밍 시작 → 고교 시절 학교 게임 차단 우회 사이트 제작(사용자 500만 명, 연 수익 6만 달러) → 16세에 10만 달러에 매각 → Cal AI 창업 → 인플루언서 마케팅으로 월 200만 달러 수준 도달 → 성능 광고(Instagram·TikTok·Facebook)로 본격 확장 → 연 매출 3천만 달러 → My Fitness Pal에 매각(2025년 12월 클로징, 2026년 3월 공개) → 현재 마이애미 대학교 재학 중 겸 Cal AI CEO.</p>
+      <div class="section-label">성공한 것과 실패한 것</div>
+      <div class="grid">
+        <div class="box">
+          <div class="box-label">성공 / 확신</div>
+          <p>매각을 포기하고 장기 사업으로 전환하겠다고 마음먹은 직후, My Fitness Pal이 먼저 연락해왔다. 프리미엄 전환 방법을 물으려 했는데 대화가 인수 협상으로 흘렀다.</p>
+          <p>Mr. Beast와 50만 달러 광고 계약. 즉각적 수익은 약 40만 달러로 손실처럼 보였지만, 브랜드 신뢰도 상승으로 이후 파트너십 수익이 광고비를 웃돌았다.</p>
+        </div>
+        <div class="box">
+          <div class="box-label">실패 / 한계</div>
+          <p>1차 매각 시도 때 받은 제안은 연 수익과 비슷한 수준(1배)이었다. 대기업 인수팀이 프로라면 창업자는 처음이다. 협상 경험 차이가 극단적으로 벌어진다.</p>
+          <p>라이프스타일 콘텐츠를 만들면서 앤드류 테이트식 '과시 마케팅'을 시도했다. 트위터 타임라인을 장악했지만 원하지 않는 논쟁과 적을 만들었다. 틀린 플랫폼에 틀린 전략이었다.</p>
+        </div>
+      </div>
+      <div class="section-label">인사이트</div>
+      <p class="insight-p">재크가 매각에 성공한 구조는 단순했다. <span class="highlight">팔려고 할 때는 안 팔리고, 포기하니까 팔렸다.</span> 그는 이걸 연애와 같다고 했다. 관심을 끊는 순간 상대방이 먼저 온다. 이건 전략이 아니라 사실에 가깝다. 진짜로 다음 단계를 준비할 때 기업의 가치는 더 올라가고, 협상 태도도 달라진다.</p>
+      <p class="insight-p">그는 자신이 뛰어난 코더가 아니라고 했다. 그의 강점은 코딩과 마케팅과 실행력의 조합이었다. <span class="highlight">한 가지에서 세계 최고가 아니어도 된다. 두세 가지를 동시에 잘 하면 된다.</span> 그리고 부족한 부분은 자기보다 잘하는 사람을 채용해서 메꿨다.</p>
+      <p class="insight-p">아이디어를 검증하는 그의 방법도 날카로웠다. "이 시장에 이미 연 2억 달러짜리 앱이 있다면, 그건 시장이 있다는 증거다." 경쟁이 있다는 게 진입 불가가 아니라, 수요가 검증됐다는 신호라는 것. <span class="highlight">이미 존재한다는 말에 막히는 사람은 아이디어가 없는 게 아니라, 검증의 방향이 반대인 것이다.</span></p>
+      <div class="source">출처: "Zach is 18 & made $50m from an app" · My First Million Podcast · YouTube</div>
+    </div>
+  </div>
+</div>
+
+<!-- Article 3: AI·테크 브리핑 -->
+<div class="article">
+  <div class="article-tag">AI · 테크 브리핑 · 2026년 3월 31일</div>
+  <div class="article-title">멀티모델 협업, 로컬 AI, 그리고 브라우저 안으로 들어오는 AI</div>
+  <div class="article-summary">이번 주 AI 흐름에는 방향이 하나 있다. AI가 별도 서비스에서 벗어나 내 작업 공간, 내 PC, 내 브라우저 안으로 파고들고 있다. 동시에 두 모델이 협력하고, 서버 없이 브라우저에서 바로 실행되고, 로컬에서 에이전트가 돌아간다. 거대 모델의 시대가 개인 공간으로 내려오는 중이다.</div>
+  <div class="btn-wrap">
+    <button class="toggle-btn" onclick="var d=document.getElementById('d3'),b=this;d.classList.toggle('open');b.textContent=d.classList.contains('open')?'접기 ▲':'더 보기 ▼'">더 보기 ▼</button>
+    <button class="toggle-btn">🎧 오디오로 듣기 (준비 중)</button>
+  </div>
+  <div id="d3" class="article-detail">
+    <div class="detail-inner">
+
+      <div class="news-item">
+        <span class="badge">멀티모델</span><span class="news-title">MS Copilot Researcher — GPT가 만들고, Claude가 다듬는다</span>
+        <p><span class="highlight">무슨 일인가:</span> 마이크로소프트 Copilot Researcher에 Critique(비평)와 Council(협의) 기능이 추가됐다. Critique는 ChatGPT가 초안을 쓰면 Claude가 검토·수정하는 방식이고, Council은 두 모델이 독립적으로 보고서를 작성한 뒤 결과를 합산한다.</p>
+        <p><span class="highlight">왜 중요한가:</span> AI 도구를 하나만 쓰는 시대가 끝나가고 있다. "생성은 GPT, 검수는 Claude"처럼 모델별 역할 분담이 실무에 들어온다.</p>
+        <p><span class="highlight">인사이트:</span> 어떤 모델이 최고인지 묻는 질문보다, 어떤 모델을 언제 쓰는지 아는 게 더 중요해졌다.</p>
+      </div>
+
+      <div class="news-item">
+        <span class="badge">브라우저 AI</span><span class="news-title">Hugging Face Transformers.js v4 — 서버 없이 브라우저에서 AI 실행</span>
+        <p><span class="highlight">무슨 일인가:</span> Hugging Face(허깅 페이스)의 Transformers.js(트랜스포머스 JS)가 v4로 업데이트됐다. WebGPU(웹지피유) 백엔드를 지원해 브라우저와 Node.js, Bun 환경에서 200여 개 AI 모델을 서버 없이 바로 실행할 수 있다.</p>
+        <p><span class="highlight">왜 중요한가:</span> 클라우드 비용이 들지 않고, 데이터가 외부로 나가지 않는다. 프론트엔드 개발자가 AI를 직접 제품에 넣는 진입 장벽이 대폭 낮아졌다.</p>
+        <p><span class="highlight">인사이트:</span> AI 통합의 무게 중심이 서버에서 클라이언트(사용자 기기)로 이동하고 있다.</p>
+      </div>
+
+      <div class="news-item">
+        <span class="badge">로컬 AI</span><span class="news-title">Z.ai AutoClaw — 내 PC에서 AI 에이전트를 직접 돌린다</span>
+        <p><span class="highlight">무슨 일인가:</span> Z.ai의 AutoClaw(오토클로)는 OpenClaw(오픈클로) 기반 AI 에이전트를 로컬 환경에서 실행한다. 데이터가 외부 서버로 전송되지 않아 프라이버시와 보안이 강화된다.</p>
+        <p><span class="highlight">왜 중요한가:</span> 민감한 업무 데이터를 외부 AI 서비스에 보내지 않고도 에이전트를 활용할 수 있다. 기업 환경에서 AI 도입의 가장 큰 장벽인 정보 유출 우려를 낮춘다.</p>
+        <p><span class="highlight">인사이트:</span> 클라우드 AI와 로컬 AI의 선택지가 생겼다. 무엇을 보낼지, 무엇을 남길지 판단하는 능력이 필요해졌다.</p>
+      </div>
+
+      <div class="news-item">
+        <span class="badge">멀티모달</span><span class="news-title">Alibaba Qwen 3.5-Omni — 오디오·영상 동시 이해, 토큰당 $0.1</span>
+        <p><span class="highlight">무슨 일인가:</span> 알리바바의 Qwen 3.5-Omni(첸 3.5 옴니)는 오디오와 영상을 동시에 처리하며 시맨틱 인터럽트(의미 단위로 대화 끊기) 기능을 지원한다. 화면과 음성 명령만으로 코드를 자동 생성하는 Audio-Visual Vibe Coding도 가능하다. 가격은 100만 토큰당 $0.1.</p>
+        <p><span class="highlight">왜 중요한가:</span> 고성능 멀티모달 AI가 저비용으로 공개되면서, 스타트업도 이 수준의 AI를 제품에 쓸 수 있게 됐다.</p>
+        <p><span class="highlight">인사이트:</span> AI 성능의 격차보다 가격 격차가 빠르게 줄고 있다. 이제 문제는 기술이 아니라 어디에 쓸지다.</p>
+      </div>
+
+      <div class="news-item">
+        <span class="badge">자동화</span><span class="news-title">Manus My Computer — 프롬프트 하나로 내 PC를 대신 운영한다</span>
+        <p><span class="highlight">무슨 일인가:</span> Manus(마누스)의 My Computer는 자연어 명령 한 줄로 파일 정리, 앱 제작, 폴더 권한 설정까지 자동화한다. 결과는 표·PDF·슬라이드·이미지 등 실무 포맷으로 바로 제공된다.</p>
+        <p><span class="highlight">왜 중요한가:</span> '코딩 없이 AI가 내 컴퓨터를 운영한다'는 개념이 현실화됐다. 반복 작업에 드는 시간을 줄이는 데 가장 직접적이다.</p>
+        <p><span class="highlight">인사이트:</span> AI 에이전트가 도구에서 조수로 바뀌고 있다. 사용자는 점점 더 무엇을 할지를 결정하는 역할로 이동한다.</p>
+      </div>
+
+      <div class="news-item">
+        <span class="badge">AI 거버넌스</span><span class="news-title">힌튼·벤지오 교수 — AI는 기술 문제가 아니라 사회 문제다</span>
+        <p><span class="highlight">무슨 일인가:</span> 제프리 힌튼(Geoffrey Hinton) 교수는 AGI가 일자리·소득 격차를 심화시킨다며 보편적 기본소득(UBI)과 AI 세금을 제안했다. 요슈아 벤지오(Yoshua Bengio) 교수는 신경망의 불투명성을 경고하며 AI 안전성과 거버넌스 확보를 촉구했다. 두 사람 모두 딥러닝의 아버지로 불리는 AI 연구자다.</p>
+        <p><span class="highlight">왜 중요한가:</span> 기술을 만든 사람들이 기술의 위험을 말하고 있다. 이 경고를 무시하는 건 어렵다.</p>
+        <p><span class="highlight">인사이트:</span> AI 정책은 미래의 일이 아니다. 지금 당장 누군가 설계하고 있고, 그 설계에 목소리를 내지 않으면 그냥 따라가게 된다.</p>
+      </div>
+
+      <div class="source">출처: 카카오톡 AI·테크 채널 (2026년 3월 31일 · choi.openai)</div>
+    </div>
+  </div>
+</div>
+
+<!-- Editor Note -->
+<div class="editor">
+  <div class="section-label">에디터 한마디</div>
+  <p>"10%가 실패의 증거가 아니듯, 지금 막 시작한 것들이 틀린 게 아니다."</p>
+</div>
+
+<div class="footer">오늘의 밑줄 · 매일 발행 · 출처 표기 기반 요약 콘텐츠</div>
+
+<div style="display:flex; justify-content:center; gap:10px; margin-top:20px; padding-bottom:20px;">
+  <a href="vol10.html" style="display:inline-block; padding:10px 20px; border:1px solid #1a1a1a; border-radius:8px; font-size:13px; font-family:Arial,sans-serif; color:#fff; text-decoration:none; background:#1a1a1a;">← 이전 호</a>
+  <a href="archive.html" style="display:inline-block; padding:10px 20px; border:1px solid #ccc; border-radius:8px; font-size:13px; font-family:Arial,sans-serif; color:#555; text-decoration:none; background:#fff;">전체 보기</a>
+  <a id="next-btn" href="vol12.html" style="display:none; padding:10px 20px; border:1px solid #1a1a1a; border-radius:8px; font-size:13px; font-family:Arial,sans-serif; color:#fff; text-decoration:none; background:#1a1a1a;">다음 호 →</a>
+</div>
+<script>
+(function(){
+  fetch('vol12.html', {method:'HEAD'}).then(function(r){ if(r.ok) document.getElementById('next-btn').style.display='inline-block'; }).catch(function(){});
+})();
+</script>
+
+</body>
+</html>
