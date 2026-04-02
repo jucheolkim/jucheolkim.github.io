@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>오늘의 밑줄 · Vol.13</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap');
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { background: #f0efeb; }
+body { font-family: Georgia, serif; max-width: 680px; margin: 0 auto; padding: 40px 20px; color: #1a1a1a; background: #fff; word-break: keep-all; box-shadow: 0 0 40px rgba(0,0,0,0.06); }
+.header { text-align: center; border-top: 3px solid #1a1a1a; border-bottom: 3px solid #1a1a1a; padding: 12px 0; margin-bottom: 4px; }
+.header-sub { font-size: 11px; font-family: Arial, sans-serif; color: #888; letter-spacing: 2px; margin-bottom: 6px; }
+.header-title { font-size: 36px; font-weight: 800; letter-spacing: 0px; font-family: 'Nanum Myeongjo', Georgia, serif; white-space: nowrap; }
+.header-date { font-size: 11px; font-family: Arial, sans-serif; color: #888; margin-top: 6px; }
+.meta { display: flex; justify-content: space-between; border-bottom: 1px solid #e0e0e0; padding: 4px 0; margin-bottom: 28px; font-size: 10px; font-family: Arial, sans-serif; color: #888; }
+.article { margin-bottom: 28px; padding-bottom: 28px; border-bottom: 1px solid #e0e0e0; }
+.article-tag { font-size: 10px; font-family: Arial, sans-serif; color: #888; letter-spacing: 1px; border-top: 2px solid #1a1a1a; padding-top: 8px; margin-bottom: 8px; }
+.article-title { font-size: 24px; font-weight: bold; line-height: 1.3; margin-bottom: 12px; font-family: 'Nanum Myeongjo', Georgia, serif; letter-spacing: -0.5px; }
+.article-summary { font-size: 13px; color: #555; line-height: 1.75; margin-bottom: 14px; }
+.btn-wrap { display: flex; gap: 6px; margin-bottom: 14px; }
+.toggle-btn { font-size: 11px; font-family: Arial, sans-serif; color: #555; background: none; border: 1px solid #ccc; border-radius: 6px; padding: 4px 10px; cursor: pointer; }
+.toggle-btn:hover { background: #f5f5f5; }
+.article-detail { display: none; }
+.article-detail.open { display: block; }
+.detail-inner { border-left: 2px solid #e0e0e0; padding-left: 16px; }
+.section-label { font-size: 10px; font-family: Arial, sans-serif; color: #888; letter-spacing: 1px; margin-bottom: 6px; margin-top: 16px; }
+.detail-inner p { font-size: 13px; color: #555; line-height: 1.75; margin-bottom: 8px; }
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 8px; }
+.box { background: #f5f5f5; border-radius: 8px; padding: 10px 12px; }
+.box-label { font-size: 11px; font-family: Arial, sans-serif; color: #888; margin-bottom: 6px; }
+.box p { font-size: 12px; color: #555; line-height: 1.65; margin-bottom: 6px; }
+.news-item { margin-bottom: 14px; padding-bottom: 14px; border-bottom: 1px solid #e0e0e0; }
+.news-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+.badge { display: inline-block; font-size: 10px; font-family: Arial, sans-serif; background: #f5f5f5; color: #888; padding: 2px 8px; border-radius: 4px; margin-right: 6px; }
+.news-title { font-size: 13px; font-weight: bold; }
+.news-item p { font-size: 12px; color: #555; line-height: 1.7; margin-top: 6px; }
+.source { font-size: 10px; font-family: Arial, sans-serif; color: #aaa; border-top: 1px solid #e0e0e0; padding-top: 8px; margin-top: 16px; }
+.highlight { font-weight: bold; color: #1a1a1a; }
+.insight-p { font-size: 15px !important; color: #333 !important; line-height: 1.85 !important; margin-bottom: 10px !important; }
+.editor { border-top: 2px solid #1a1a1a; padding-top: 10px; margin-bottom: 16px; }
+.editor p { font-size: 16px; color: #1a1a1a; line-height: 1.85; font-style: italic; font-family: 'Nanum Myeongjo', Georgia, serif; font-weight: 800; }
+.footer { border-top: 1px solid #e0e0e0; padding-top: 8px; text-align: center; font-size: 10px; font-family: Arial, sans-serif; color: #aaa; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-sub">ONEDAY DIGEST</div>
+  <div class="header-title">오늘의 밑줄</div>
+  <div class="header-date">2026년 4월 2일 · Vol. 13</div>
+</div>
+<div class="meta">
+  <span>투자 철학 · 창업 · AI·테크 브리핑</span>
+  <span>출처 표기 기반 요약 콘텐츠</span>
+</div>
+
+<!-- Article 1: 론 바론 -->
+<div class="article">
+  <div class="article-tag">투자 철학 · Ron Baron · Baron Capital · Tesla · SpaceX</div>
+  <div class="article-title">숫자가 아니라 사람을 봤다, 그래서 40년을 벌었다</div>
+  <div class="article-summary">론 바론은 회사가 아니라 사람을 보고 투자한다고 했다. 일론 머스크를 처음 만난 건 2010년이었다. 당시 숫자는 말이 안 됐다. 연 수천 대 만드는 회사가 2000만 대를 하겠다는 말이었다. 그래도 떠나지 않았다. 4년을 더 따라다니며 지켜봤고, 수요가 실제로 붙는 걸 확인한 뒤에야 들어갔다. 지금 테슬라 투자금은 12배가 됐고, 아직도 팔 생각이 없다.</div>
+  <div class="btn-wrap">
+    <button class="toggle-btn" onclick="var d=document.getElementById('d1'),b=this;d.classList.toggle('open');b.textContent=d.classList.contains('open')?'접기 ▲':'더 보기 ▼'">더 보기 ▼</button>
+    <button class="toggle-btn">🎧 오디오로 듣기 (준비 중)</button>
+  </div>
+  <div id="d1" class="article-detail">
+    <div class="detail-inner">
+      <div class="section-label">이 사람은 누구인가</div>
+      <p>론 바론은 Baron Capital의 창업자다. 1982년 회사를 세운 뒤 40년간 570억 달러의 누적 수익을 올렸다. 투자 철학은 단순하다. 뛰어난 창업자가 이끄는 성장 기업을 찾아 장기 보유한다. 테슬라·SpaceX·MSCI·FactSet 등이 대표 포트폴리오다. 1960년대엔 미국 특허청에서 화학 담당으로 일했고, 베트남전 징집 대신 특허청 근무를 택했다.</p>
+      <div class="section-label">주요 활동과 이력</div>
+      <p>Baron Capital 창업(1982) → 40년간 570억 달러 누적 수익 → 테슬라 투자(2014~2016, 4억 달러) → 현재 평가액 약 50억 달러 → SpaceX 투자(2017~, 15억 달러) → 현재 평가액 약 100억 달러. SpaceX는 현재 기업가치 8000억 달러로, 조만간 IPO 가능성이 언급된다. 그는 테슬라 주식 매입 단가가 12달러라고 밝혔다. 현재 460~480달러대로, 40배 넘게 올랐다. 그럼에도 10년 안에 다시 5배가 된다고 봤다.</p>
+      <div class="section-label">성공한 것과 실패한 것</div>
+      <div class="grid">
+        <div class="box">
+          <div class="box-label">성공 / 확신</div>
+          <p>일론 머스크를 처음 만난 건 2010년이었다. 숫자는 황당했지만 사람을 봤다. 4년을 따라다니며 지켜봤고, 수요가 붙는 걸 확인하고 나서야 들어갔다. 서두르지 않았고, 사람을 믿었다.</p>
+          <p>MSCI에 10~12달러에 투자해 현재 600달러대. "아직 안 끝났다"고 했다. 직접 주식을 사들이는 창업자와 함께 계속 보유 중이다.</p>
+        </div>
+        <div class="box">
+          <div class="box-label">실패 / 한계</div>
+          <p>SpaceX 가치를 계속 과소평가했다고 스스로 인정했다. "내 숫자는 여기고 일론 숫자는 저기"라고 했다. 본인보다 일론에 베팅하겠다고 했다.</p>
+          <p>FactSet 주식은 올해 반 토막 났다. 하지만 새 CEO가 JPMorgan 승계 후보 출신이라는 점에서 오히려 지금이 기회라고 봤다. 하락을 두려워하지 않는다.</p>
+        </div>
+      </div>
+      <div class="section-label">인사이트</div>
+      <p class="insight-p">론 바론은 테슬라를 처음 만난 날 숫자가 말이 안 됐다고 했다. 연 수천 대 만드는 회사가 2000만 대를 하겠다는 말이었다. 그래도 떠나지 않았다. <span class="highlight">숫자가 아니라 사람을 봤기 때문이다.</span></p>
+      <p class="insight-p">그는 "아직 보이지 않는 것을 볼 수 있는 능력"을 자신의 강점으로 꼽았다. 그런데 그 방법이 예측이 아니다. <span class="highlight">뛰어난 사람을 찾아 오래 따라다니는 것이다.</span> 4년을 지켜보다 수요가 붙는 걸 확인하고 나서야 들어갔다.</p>
+      <p class="insight-p">SpaceX 가치를 계속 과소평가했다고 스스로 인정했다. "내 숫자는 여기고 일론 숫자는 저기"라고 했다. 그러면서 "본인보다 일론에 베팅하겠다"고 했다. <span class="highlight">자기 판단보다 사람을 더 믿는 것. 그게 40년간 그가 써온 방식이다.</span></p>
+      <div class="source">출처: "일론에게 풀베팅 간다" 론 바론 인터뷰 · YouTube CNBC ETF Edge</div>
+    </div>
+  </div>
+</div>
+
+<!-- Article 2: 모 가왓 -->
+<div class="article">
+  <div class="article-tag">창업 철학 · Mo Gawdat · Google X · AI</div>
+  <div class="article-title">AI가 과대평가됐다고? 오히려 과소평가됐다</div>
+  <div class="article-summary">모 가왓은 Google X에서 10년간 최고 비즈니스 책임자로 일하다 2018년 떠났다. 지금은 AI 스타트업을 6주 만에 만들었다. 2022년이었다면 4년이 걸렸을 거라고 했다. 그는 AI가 일자리를 빼앗는다는 말을 부정하지 않는다. 다만 그보다 더 빠르게 오는 것들을 준비하지 않는 게 더 문제라고 한다.</div>
+  <div class="btn-wrap">
+    <button class="toggle-btn" onclick="var d=document.getElementById('d2'),b=this;d.classList.toggle('open');b.textContent=d.classList.contains('open')?'접기 ▲':'더 보기 ▼'">더 보기 ▼</button>
+    <button class="toggle-btn">🎧 오디오로 듣기 (준비 중)</button>
+  </div>
+  <div id="d2" class="article-detail">
+    <div class="detail-inner">
+      <div class="section-label">이 사람은 누구인가</div>
+      <p>모 가왓(Mo Gawdat)은 Google X의 전 최고 비즈니스 책임자(CBO)다. 10년 이상 Google X에서 혁신 프로젝트를 이끌었다. 2016년 Google 내부에서 ChatGPT 유사 시스템을 개발했으나 출시하지 않았다. "검색은 수백만 개의 답을 주고 판단은 사용자에게 맡긴다"는 원칙 때문이었다. 현재는 AI 스타트업 Emma(관계·연애 매칭 플랫폼)를 운영 중이다. AI의 사회적 영향을 주제로 강연하고 집필 활동을 이어가고 있다.</p>
+      <div class="section-label">주요 활동과 이력</div>
+      <p>Google X CBO(10년 이상) → 2016년 ChatGPT형 시스템 내부 개발·미출시 → 2018년 Google 퇴사 → AI 윤리·사회 영향 강연 및 집필 활동 → AI 스타트업 Emma 창업(2025년 8월, 공동창업자 1명 + 엔지니어 2~3명 + AI 8개). 창업 6주 만에 핵심 제품 완성, 2026년 2월 론칭. AI를 활용한 관계 지능(relationship intelligence) 플랫폼으로, 수백만 가지 변수를 분석해 커플 매칭을 시도한다.</p>
+      <div class="section-label">성공한 것과 실패한 것</div>
+      <div class="grid">
+        <div class="box">
+          <div class="box-label">성공 / 확신</div>
+          <p>AI를 "아군"으로 삼았다. 책 집필에 AI 공동 저자(Trixie)를 붙이고 편집권까지 줬다. 영어가 모국어가 아닌 핸디캡을 AI로 메우되, 인간 경험은 자신만 가진 것이라는 분리를 명확히 했다.</p>
+          <p>Emma를 6주 만에 완성했다. 코드를 여섯 번 다시 짰다. "더 나은 방법이 보이면 버린다"는 원칙. 완성이 아니라 최선을 기준으로 삼았다.</p>
+        </div>
+        <div class="box">
+          <div class="box-label">실패 / 한계</div>
+          <p>Google에서 AI 출시를 하지 않은 건 원칙의 결과였지만, 그 사이 OpenAI가 시장을 선점했다. 옳은 판단이 시장 기회를 놓치게 만들기도 한다.</p>
+          <p>그는 AI가 결국 모든 직업을 대체한다고 본다. CEO 자리까지. "생산성 올리려고 AI 쓰는 CEO들이 AGI는 CEO도 대체한다는 걸 모른다"고 했다. 낙관론자이지만 디스토피아의 통과는 피할 수 없다고 했다.</p>
+        </div>
+      </div>
+      <div class="section-label">인사이트</div>
+      <p class="insight-p">모 가왓은 AI를 쓰면 멍청해질 수 있다고 했다. 하지만 바로 이어서 말했다. <span class="highlight">AI가 대신 처리하게 하고, 그 시간에 자신이 판단하면 IQ가 80은 높아진다고.</span> 도구를 어떻게 쓰느냐의 문제다.</p>
+      <p class="insight-p">그는 창업의 패러다임이 체스에서 스쿼시로 바뀌었다고 했다. 체스는 몇 수 앞을 내다보는 게임이다. 스쿼시는 공이 어디로 튈지 모르는 상태에서 매 순간 반응하는 게임이다. <span class="highlight">앞을 내다보는 능력보다 지금 이 순간 민첩하게 반응하는 능력이 더 중요해졌다.</span></p>
+      <p class="insight-p">AI 시대에 그가 제안하는 방향은 하나다. 10억 명의 삶에 영향을 줄 문제를 찾아라. 그리고 하루에 두 번 쓰게 만들어라. <span class="highlight">도구가 민주화된 시대일수록, 어떤 문제를 고르느냐가 유일한 차별점이 된다.</span></p>
+      <div class="source">출처: "Ex-Google Exec: The AI Revolution Is UNDERHYPED" Mo Gawdat 인터뷰 · YouTube Silicon Valley Girl</div>
+    </div>
+  </div>
+</div>
+
+<!-- Article 3: AI·테크 브리핑 -->
+<div class="article">
+  <div class="article-tag">AI · 테크 제품 브리핑 · 2026년 4월 2일</div>
+  <div class="article-title">오늘 나온 것들, 쓸 만한 것만 골랐다</div>
+  <div class="article-summary">4월 2일 AI·테크 제품 소식 중 실제 써볼 만한 것들을 추렸다. Apple Silicon에서 로컬 AI 속도가 빨라졌고, Google은 영상 생성 모델을 더 저렴하게 냈다. iPhone으로 Mac의 코딩 에이전트를 원격 제어하는 앱도 나왔다. 이번 주 흐름은 하나다. AI가 클라우드 밖으로 나와 내 기기 안으로 들어오고 있다.</div>
+  <div class="btn-wrap">
+    <button class="toggle-btn" onclick="var d=document.getElementById('d3'),b=this;d.classList.toggle('open');b.textContent=d.classList.contains('open')?'접기 ▲':'더 보기 ▼'">더 보기 ▼</button>
+    <button class="toggle-btn">🎧 오디오로 듣기 (준비 중)</button>
+  </div>
+  <div id="d3" class="article-detail">
+    <div class="detail-inner">
+
+      <div class="news-item">
+        <span class="badge">로컬 AI</span><span class="news-title">Ollama v0.19 — Apple Silicon 추론 속도 대폭 향상</span>
+        <p><span class="highlight">무슨 일인가:</span> Ollama(로컬에서 AI 모델을 실행하는 오픈소스 툴) v0.19가 Apple Silicon 최적화를 통해 코딩·에이전트 워크플로우에서 추론 속도를 대폭 개선했다.</p>
+        <p><span class="highlight">왜 중요한가:</span> 클라우드 없이 내 맥에서 AI를 돌리는 속도가 실용적인 수준에 가까워지고 있다. 인터넷 없이도, 비용 없이도 AI를 쓸 수 있는 환경이 넓어진다.</p>
+        <p><span class="highlight">인사이트:</span> 로컬 AI의 속도 한계가 좁혀질수록, 클라우드 의존도가 줄고 개인 데이터 통제권이 높아진다.</p>
+      </div>
+
+      <div class="news-item">
+        <span class="badge">영상 생성</span><span class="news-title">Google Veo 3.1 Lite — 저비용 고품질 영상 생성 모델</span>
+        <p><span class="highlight">무슨 일인가:</span> Google이 Veo 3.1 Lite를 출시했다. 기존 Veo 대비 비용을 낮추면서도 고품질 영상 생성이 가능한 경량 모델이다.</p>
+        <p><span class="highlight">왜 중요한가:</span> 영상 생성 AI의 진입 장벽이 낮아진다. 소규모 팀이나 1인 크리에이터도 영상 제작 비용을 크게 줄일 수 있다.</p>
+        <p><span class="highlight">인사이트:</span> 영상 제작의 단가가 내려갈수록, 콘텐츠 경쟁에서 편집 실력보다 기획력과 관점이 더 중요해진다.</p>
+      </div>
+
+      <div class="news-item">
+        <span class="badge">개발 도구</span><span class="news-title">Remodex — iPhone으로 Codex 원격 제어</span>
+        <p><span class="highlight">무슨 일인가:</span> Mac에서 실행 중인 Codex(OpenAI의 코딩 에이전트)를 iPhone 앱으로 원격 제어할 수 있는 iOS 앱이다. E2E 암호화로 보안을 유지한다.</p>
+        <p><span class="highlight">왜 중요한가:</span> 자리를 벗어나도 코딩 에이전트를 감시하고 조작할 수 있다. 에이전트가 혼자 일하는 동안 사람이 이동할 수 있게 된다.</p>
+        <p><span class="highlight">인사이트:</span> AI 에이전트를 관리하는 인터페이스가 다양해질수록, 개발자의 역할은 코딩에서 감독으로 이동한다.</p>
+      </div>
+
+      <div class="news-item">
+        <span class="badge">AI 추적</span><span class="news-title">Claudoscope — Claude Code 세션 비용 추적 앱</span>
+        <p><span class="highlight">무슨 일인가:</span> Claude Code(Anthropic의 코딩 에이전트) 사용 비용과 세션을 세부적으로 분석할 수 있는 오픈소스 macOS 앱이다.</p>
+        <p><span class="highlight">왜 중요한가:</span> AI 에이전트를 실제로 업무에 쓰기 시작하면 비용 추적이 필수가 된다. 도구가 생겼다는 건 그만큼 쓰는 사람이 늘었다는 뜻이다.</p>
+        <p><span class="highlight">인사이트:</span> AI 사용이 일상화될수록, 비용 관리와 사용 최적화가 새로운 업무 역량이 된다.</p>
+      </div>
+
+      <div class="source">출처: 카카오톡 AI·테크 채널 (2026년 4월 2일 주요 제품 소식)</div>
+    </div>
+  </div>
+</div>
+
+<!-- Editor Note -->
+<div class="editor">
+  <div class="section-label">에디터 한마디</div>
+  <p>"빠르게 반응하는 사람이 이기는 시대에, 느리게 확인하고 들어간 사람이 가장 많이 벌었다."</p>
+</div>
+
+<div class="footer">오늘의 밑줄 · 매일 발행 · 출처 표기 기반 요약 콘텐츠</div>
+
+<div style="display:flex; justify-content:center; gap:10px; margin-top:20px; padding-bottom:20px;">
+  <a href="vol12.html" style="display:inline-block; padding:10px 20px; border:1px solid #1a1a1a; border-radius:8px; font-size:13px; font-family:Arial,sans-serif; color:#fff; text-decoration:none; background:#1a1a1a;">← 이전 호</a>
+  <a href="archive.html" style="display:inline-block; padding:10px 20px; border:1px solid #ccc; border-radius:8px; font-size:13px; font-family:Arial,sans-serif; color:#555; text-decoration:none; background:#fff;">전체 보기</a>
+  <a id="next-btn" href="vol14.html" style="display:none; padding:10px 20px; border:1px solid #1a1a1a; border-radius:8px; font-size:13px; font-family:Arial,sans-serif; color:#fff; text-decoration:none; background:#1a1a1a;">다음 호 →</a>
+</div>
+<script>
+(function(){
+  fetch('vol14.html', {method:'HEAD'}).then(function(r){ if(r.ok) document.getElementById('next-btn').style.display='inline-block'; }).catch(function(){});
+})();
+</script>
+
+</body>
+</html>
