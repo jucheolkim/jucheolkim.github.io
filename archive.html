@@ -45,19 +45,20 @@ body { font-family: Georgia, serif; max-width: 680px; margin: 0 auto; padding: 4
 // 새 호 발행 시 이 배열 맨 앞에 한 줄만 추가하면 됩니다.
 // ============================================================
 var VOLS = [
-  { vol: 13, date: "2026년 4월 2일", title: "숫자가 아니라 사람을 봤다, 그래서 40년을 벌었다", tags: "Ron Baron · Mo Gawdat · AI 테크 브리핑" },
-  { vol: 12, date: "2026년 4월 1일", title: "위기는 언제나 조용히 온다", tags: "Lloyd Blankfein · 안서형 · AI 테크 브리핑" },
-  { vol: 11, date: "2026년 3월 31일", title: "칩을 설계하는 사람이 AI의 미래를 결정한다", tags: "Jim Keller · Zach Yadegari · AI 테크 브리핑" },
-  { vol: 10, date: "2026년 3월 30일", title: "실리콘밸리의 아웃사이더가 은행을 만든 이유", tags: "Palmer Luckey · 류한주 · AI 테크 브리핑" },
-  { vol: 9, date: "2026년 3월 27일", title: "변화가 올 거라는 확신과, 내가 맞출 수 있다는 확신은 다르다", tags: "하워드 막스 · 김범섭 · AI 테크 브리핑" },
-  { vol: 8, date: "2026년 3월 25일", title: "AI를 두려워하는 게 아니라 AI가 틀릴 수 있다는 걸 아는 게 중요하다", tags: "버니 샌더스 · Mihal Erik · AI 테크 브리핑" },
-  { vol: 7, date: "2026년 3월 24일", title: "구조가 사람보다 오래 간다", tags: "리콴유 · Olivia Moore · AI 테크 브리핑" },
-  { vol: 6, date: "2026년 3월 24일", title: "탁상공론이 전쟁터에서 무너지는 이유", tags: "알렉스 카프 · 렘 코닝 · AI 테크 브리핑" },
-  { vol: 5, date: "2026년 3월 23일", title: "AGI를 가장 오래 기다려온 사람이 내린 단 하나의 정의", tags: "데미스 허사비스 · 매트 그레이 · AI 논문 브리핑" },
-  { vol: 4, date: "2026년 3월 20일", title: "하루를 3개의 법칙으로 쪼갠 남자", tags: "Cal Newport · 정지헌 · AI 테크 브리핑" },
-  { vol: 3, date: "2026년 3월 19일", title: "50년 동안 살아남은 회사는 무엇이 달랐나", tags: "팀 쿡 · 제레미 어틀리 · AI 테크 브리핑" },
-  { vol: 2, date: "2026년 3월 18일", title: "쓰나미가 보이는데 사람들은 빛의 굴절이라 한다", tags: "다리오 아모데이 · Max Brodeur-Urbas · AI 테크 브리핑" },
-  { vol: 1, date: "2026년 3월 18일", title: "매 시간을 기록한 남자가 40억 달러 회사를 만든 법", tags: "Mario Schlosser · 곽형석 · AI 테크 브리핑" },
+  { vol: 14, date: "2026년 4월 3일",  title: "젠슨 황이 중국을 무시하지 말라고 한 이유",             tags: "젠슨 황 · Yossi Matias · AI 테크 브리핑" },
+  { vol: 13, date: "2026년 3월 말",   title: "돈이 아니라 확신에 베팅하는 사람의 투자법",             tags: "Ron Baron · Mo Gawdat · AI 테크 브리핑" },
+  { vol: 12, date: "2026년 3월 말",   title: "골드만삭스 CEO가 말하는 위기에서 살아남는 법",          tags: "Lloyd Blankfein · 안서형 · AI 테크 브리핑" },
+  { vol: 11, date: "2026년 3월 말",   title: "칩을 설계하는 사람이 AI를 바라보는 방식",               tags: "Jim Keller · Zach Yadegari · AI 테크 브리핑" },
+  { vol: 10, date: "2026년 3월 30일", title: "사업에 집착하지 않을 때 기회가 보였다",                  tags: "Palmer Luckey · 류한주 · AI 테크 브리핑" },
+  { vol: 9,  date: "2026년 3월 27일", title: "팔로워 0명에서 시작해 콘텐츠로 회사를 키운 법",          tags: "Matt Gray · Demis Hassabis · AI 논문 브리핑" },
+  { vol: 8,  date: "2026년 3월 26일", title: "나만의 언어로 말하는 사람이 브랜드가 된다",              tags: "Cal Newport · 정지헌 · AI 테크 브리핑" },
+  { vol: 7,  date: "2026년 3월 25일", title: "애플 50년, 팀 쿡이 말하지 않은 것들",                    tags: "팀 쿡 · 제레미 어틀리 · AI 테크 브리핑" },
+  { vol: 6,  date: "2026년 3월 24일", title: "탁상공론이 전쟁터에서 무너지는 이유",                    tags: "알렉스 카프 · 렘 코닝 · AI 테크 브리핑" },
+  { vol: 5,  date: "2026년 3월 23일", title: "AGI를 가장 오래 기다려온 사람이 내린 단 하나의 정의",    tags: "데미스 허사비스 · 매트 그레이 · AI 논문 브리핑" },
+  { vol: 4,  date: "2026년 3월 20일", title: "하루를 3개의 법칙으로 쪼갠 남자",                        tags: "Cal Newport · 정지헌 · AI 테크 브리핑" },
+  { vol: 3,  date: "2026년 3월 19일", title: "50년 동안 살아남은 회사는 무엇이 달랐나",                tags: "팀 쿡 · 제레미 어틀리 · AI 테크 브리핑" },
+  { vol: 2,  date: "2026년 3월 18일", title: "쓰나미가 보이는데 사람들은 빛의 굴절이라 한다",           tags: "다리오 아모데이 · Max Brodeur-Urbas · AI 테크 브리핑" },
+  { vol: 1,  date: "2026년 3월 18일", title: "매 시간을 기록한 남자가 40억 달러 회사를 만든 법",       tags: "Mario Schlosser · 곽형석 · AI 테크 브리핑" },
 ];
 
 var list = document.getElementById('archive-list');
