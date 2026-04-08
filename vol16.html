@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>오늘의 밑줄 · Vol.16</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap');
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { background: #f0efeb; }
+body { font-family: Georgia, serif; max-width: 680px; margin: 0 auto; padding: 40px 20px; color: #1a1a1a; background: #fff; word-break: keep-all; box-shadow: 0 0 40px rgba(0,0,0,0.06); }
+.header { text-align: center; border-top: 3px solid #1a1a1a; border-bottom: 3px solid #1a1a1a; padding: 12px 0; margin-bottom: 4px; }
+.header-sub { font-size: 11px; font-family: Arial, sans-serif; color: #888; letter-spacing: 2px; margin-bottom: 6px; }
+.header-title { font-size: 36px; font-weight: 800; letter-spacing: 0px; font-family: 'Nanum Myeongjo', Georgia, serif; white-space: nowrap; }
+.header-date { font-size: 11px; font-family: Arial, sans-serif; color: #888; margin-top: 6px; }
+.meta { display: flex; justify-content: space-between; border-bottom: 1px solid #e0e0e0; padding: 4px 0; margin-bottom: 28px; font-size: 10px; font-family: Arial, sans-serif; color: #888; }
+.article { margin-bottom: 28px; padding-bottom: 28px; border-bottom: 1px solid #e0e0e0; }
+.article-tag { font-size: 10px; font-family: Arial, sans-serif; color: #888; letter-spacing: 1px; border-top: 2px solid #1a1a1a; padding-top: 8px; margin-bottom: 8px; }
+.article-title { font-size: 24px; font-weight: bold; line-height: 1.3; margin-bottom: 12px; font-family: 'Nanum Myeongjo', Georgia, serif; letter-spacing: -0.5px; }
+.article-summary { font-size: 13px; color: #555; line-height: 1.75; margin-bottom: 14px; }
+.btn-wrap { display: flex; gap: 6px; margin-bottom: 14px; }
+.toggle-btn { font-size: 11px; font-family: Arial, sans-serif; color: #555; background: none; border: 1px solid #ccc; border-radius: 6px; padding: 4px 10px; cursor: pointer; }
+.toggle-btn:hover { background: #f5f5f5; }
+.article-detail { display: none; }
+.article-detail.open { display: block; }
+.detail-inner { border-left: 2px solid #e0e0e0; padding-left: 16px; }
+.section-label { font-size: 10px; font-family: Arial, sans-serif; color: #888; letter-spacing: 1px; margin-bottom: 6px; margin-top: 16px; }
+.detail-inner p { font-size: 13px; color: #555; line-height: 1.75; margin-bottom: 8px; }
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 8px; }
+.box { background: #f5f5f5; border-radius: 8px; padding: 10px 12px; }
+.box-label { font-size: 11px; font-family: Arial, sans-serif; color: #888; margin-bottom: 6px; }
+.box p { font-size: 12px; color: #555; line-height: 1.65; margin-bottom: 6px; }
+.news-item { margin-bottom: 14px; padding-bottom: 14px; border-bottom: 1px solid #e0e0e0; }
+.news-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+.badge { display: inline-block; font-size: 10px; font-family: Arial, sans-serif; background: #f5f5f5; color: #888; padding: 2px 8px; border-radius: 4px; margin-right: 6px; }
+.news-title { font-size: 13px; font-weight: bold; }
+.news-item p { font-size: 12px; color: #555; line-height: 1.7; margin-top: 6px; }
+.source { font-size: 10px; font-family: Arial, sans-serif; color: #aaa; border-top: 1px solid #e0e0e0; padding-top: 8px; margin-top: 16px; }
+.highlight { font-weight: bold; color: #1a1a1a; }
+.insight-p { font-size: 15px !important; color: #333 !important; line-height: 1.85 !important; margin-bottom: 10px !important; }
+.editor { border-top: 2px solid #1a1a1a; padding-top: 10px; margin-bottom: 16px; }
+.editor p { font-size: 16px; color: #1a1a1a; line-height: 1.85; font-style: italic; font-family: 'Nanum Myeongjo', Georgia, serif; font-weight: 800; }
+.footer { border-top: 1px solid #e0e0e0; padding-top: 8px; text-align: center; font-size: 10px; font-family: Arial, sans-serif; color: #aaa; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-sub">ONEDAY DIGEST</div>
+  <div class="header-title">오늘의 밑줄</div>
+  <div class="header-date">2026년 4월 8일 · Vol. 16</div>
+</div>
+<div class="meta">
+  <span>투자 철학 · 창업 · AI·테크 브리핑</span>
+  <span>출처 표기 기반 요약 콘텐츠</span>
+</div>
+
+<!-- Article 1: Warren Buffett -->
+<div class="article">
+  <div class="article-tag">투자 철학 · Warren Buffett · Berkshire Hathaway</div>
+  <div class="article-title">94세 버핏이 아직도 매일 출근하는 이유</div>
+  <div class="article-summary">워렌 버핏이 버크셔 해서웨이 CEO 자리에서 물러났다. 그레그 에이블이 바통을 이어받았다. 그런데 버핏은 여전히 매일 사무실에 간다. 3,500억 달러가 넘는 현금을 쥐고도 쓰지 않는다. 지금 시장이 5~6% 싸진 것은, 그에게 아무 의미가 없기 때문이다.</div>
+  <div class="btn-wrap">
+    <button class="toggle-btn" onclick="var d=document.getElementById('d1'),b=this;d.classList.toggle('open');b.textContent=d.classList.contains('open')?'접기 ▲':'더 보기 ▼'">더 보기 ▼</button>
+    <button class="toggle-btn">🎧 오디오로 듣기 (준비 중)</button>
+  </div>
+  <div id="d1" class="article-detail">
+    <div class="detail-inner">
+      <div class="section-label">이 사람은 누구인가</div>
+      <p>워렌 버핏은 버크셔 해서웨이의 창업자이자 전 최고경영자다. 11살에 첫 주식을 샀고, 그 이후 70년 넘게 투자 하나에만 집중했다. 세계에서 가장 오래, 가장 꾸준히 복리를 쌓아온 사람으로 불린다. 최근 CEO 자리를 그레그 에이블에게 넘겼지만 회장직은 유지하며 여전히 매일 사무실에 출근한다.</p>
+      <div class="section-label">주요 활동과 이력</div>
+      <p>11세 첫 주식 매수 → 버크셔 해서웨이 인수·경영 수십 년 → 2006년 빌 게이츠 재단에 기부 시작(현재까지 약 600억 달러 기부) → 찰리 멍거와 함께 가치투자 철학 정립 → 2026년 CEO직 그레그 에이블에게 이양, 회장직 유지. 현재 버크셔의 현금성 자산은 3,500억 달러(국채 포함)를 웃돌며, 매주 170억 달러 규모의 단기 국채를 매수하고 있다. 올해 1월에는 약 9.7조 원 규모로 옥시덴탈 페트롤리엄(석유화학)을 추가 인수했다.</p>
+      <div class="section-label">성공한 것과 실패한 것</div>
+      <div class="grid">
+        <div class="box">
+          <div class="box-label">성공 / 확신</div>
+          <p>애플을 소비재 기업으로 봤다. 기술주가 아니라 사람들이 손에서 놓지 못하는 물건을 파는 회사로 분류했고, 세전 100억 달러 이상의 수익을 거뒀다. 지금도 최대 단일 보유 종목이다.</p>
+          <p>현금을 쥐고 기다리는 것 자체가 전략이다. 시장이 패닉에 빠질 때 살 준비를 항상 갖추고 있다.</p>
+        </div>
+        <div class="box">
+          <div class="box-label">실패 / 한계</div>
+          <p>애플을 너무 일찍 팔았다고 인정했다. 다만 "샀을 때보다 더 나중에 팔았다"며 세전 100억 달러 이상의 수익이 났기 때문에 크게 후회하지는 않는다고 했다.</p>
+          <p>AI와 최신 기술 트렌드에는 관여하지 않는다. 자신이 이해할 수 없는 게임에 늦게 뛰어드는 건 의미가 없다고 했다.</p>
+        </div>
+      </div>
+      <div class="section-label">인사이트</div>
+      <p class="insight-p">버핏은 시장이 5~6% 빠진 걸 "아무것도 아니다"라고 했다. 그가 버크셔를 경영하는 동안 주가가 50% 이상 빠진 적이 세 번 있었다. <span class="highlight">그에게 조정은 공포가 아니라 비교 기준선일 뿐이다.</span> 숫자보다 오래 버텨온 사람에게 숫자는 다르게 보인다.</p>
+      <p class="insight-p">그는 주식 시장을 성당에 붙어있는 카지노에 비유했다. 성당(미국 자본주의)은 제대로 작동하지만, 옆에 붙은 카지노(주식 투기)는 사람들이 알면서도 계속 들어간다고 했다. <span class="highlight">시스템은 작동한다. 문제는 그 안에서 어떻게 행동하느냐다.</span></p>
+      <p class="insight-p">3,500억 달러가 넘는 현금을 쌓아두고도 쓰지 않는 이유는 명확하다. 싸게 살 수 있는 것이 없어서다. 좋아 보이는 매물은 모두 "거래를 원하는 것"일 뿐이라고 했다. <span class="highlight">투자는 매력적인 것이 나타날 때 하는 것이지, 현금이 많을 때 하는 것이 아니다.</span></p>
+      <div class="source">출처: "Warren Buffett 은퇴 이후 공식 인터뷰" · YouTube bzcf</div>
+    </div>
+  </div>
+</div>
+
+<!-- Article 2: 안무역 / 모두닥 -->
+<div class="article">
+  <div class="article-tag">창업 철학 · 안무역 · 모두닥</div>
+  <div class="article-title">서울대 의대 출신이 6년을 삽질하고 나서야 깨달은 것</div>
+  <div class="article-summary">안무역은 의대에 갔지만 의사가 되지 않았다. 창업을 했고, 두 번 실패했고, 세 번째에서 병원 리뷰 플랫폼 모두닥을 만들었다. 월간 활성 사용자 200만 명을 넘기고도 매출은 수천만 원 수준이었다. 그때서야 진짜 질문이 시작됐다.</div>
+  <div class="btn-wrap">
+    <button class="toggle-btn" onclick="var d=document.getElementById('d2'),b=this;d.classList.toggle('open');b.textContent=d.classList.contains('open')?'접기 ▲':'더 보기 ▼'">더 보기 ▼</button>
+    <button class="toggle-btn">🎧 오디오로 듣기 (준비 중)</button>
+  </div>
+  <div id="d2" class="article-detail">
+    <div class="detail-inner">
+      <div class="section-label">이 사람은 누구인가</div>
+      <p>안무역은 모두닥의 대표다. 서울대학교 의과대학을 나왔지만 수련의 과정을 밟지 않고 창업의 길을 택했다. 만성질환 커뮤니티 사이트(1차), 반려동물 앱(2차)을 거쳐 2016년 병원 리뷰 플랫폼 모두닥을 창업했다. 현재 모두닥은 병원 가격 정보와 영수증 인증 기반의 신뢰 리뷰를 제공하며, 2023년 연매출 10억 원을 시작으로 2024년 27억, 2025년 70억 원을 넘기며 매년 세 배씩 성장 중이다.</p>
+      <div class="section-label">주요 활동과 이력</div>
+      <p>서울대 의대 입학 → 동아리에서 창업 관심 시작 → 만성질환 커뮤니티 사이트 창업(1차, 폐업) → 군 복무 → 반려동물 앱 창업 시도 → 2016년 모두닥 창업 → 프라이머 액셀러레이터 선발 → 영수증 인증 리뷰 시스템 구축 → MAU 200만 돌파 → 매출 정체 직면 → 안과·시력교정 특화 피벗 → 시니어 백내장 팀 신설(2인 팀, 월 5,000만 원 매출) → 외국인 환자 대상 대만 시장 진출 준비 중.</p>
+      <div class="section-label">성공한 것과 실패한 것</div>
+      <div class="grid">
+        <div class="box">
+          <div class="box-label">성공 / 확신</div>
+          <p>영수증 인증 리뷰라는 구조를 만들었다. 아무나 쓸 수 있는 리뷰가 아니라, 실제 방문을 증빙한 리뷰만 모았다. 신뢰가 쌓이자 사용자가 따라왔다.</p>
+          <p>안과·시력교정 시장이 먼저 반응했다. 의도한 게 아니라 데이터에서 먼저 보였다. 그 신호를 빠르게 잡아 올인했다.</p>
+        </div>
+        <div class="box">
+          <div class="box-label">실패 / 한계</div>
+          <p>MAU 200만 명을 쌓고 과금을 붙였더니 매출은 수천만 원 수준에 그쳤다. "대한민국 국민 전부"가 고객이라는 건 고객이 없다는 뜻이었다.</p>
+          <p>조직을 빠르게 바꾸는 과정에서 핵심 팀원들이 대거 이탈했다. 혼자 남겨지는 최악의 상황을 상상하고, 그래도 계속할 수 있다는 답이 나온 뒤에야 변화를 밀고 나갔다.</p>
+        </div>
+      </div>
+      <div class="section-label">인사이트</div>
+      <p class="insight-p">안무역이 깨달은 건 하나다. <span class="highlight">"좋아요라고 말하는 건 쉽다. 진짜 좋으면 산다."</span> 사용자가 많아도 돈을 내지 않으면 그건 팬이 아니라 구경꾼이다. 제품을 만들면서 이 질문을 얼마나 일찍 하느냐가 방향을 결정한다.</p>
+      <p class="insight-p">확장은 쉽다. 밀도 있게 만드는 건 어렵다고 했다. 넓게 펼치는 것보다 <span class="highlight">하나를 뒤덮을 만큼 깊이 파고드는 것</span>이 먼저다. 모두닥이 안과에서 시작해 시니어 백내장으로 확장한 방식이 그랬다. 특화가 선행했고 확장이 뒤따랐다.</p>
+      <p class="insight-p">시니어 팀은 두 명이다. 출범 4개월도 안 돼 월 5,000만 원 매출을 목전에 뒀다. 많은 인원이 아니라 <span class="highlight">오너십을 가진 사람이 얼마나 있느냐</span>가 속도를 결정했다. 팀 규모와 실행력은 비례하지 않는다.</p>
+      <div class="source">출처: "서울대 의대 출신 창업가가 6년 삽질하고 깨달은 사업의 원리 | 모두닥 다큐멘터리" · YouTube EO</div>
+    </div>
+  </div>
+</div>
+
+<!-- Article 3: AI·테크 브리핑 -->
+<div class="article">
+  <div class="article-tag">AI · 테크 제품 브리핑 · 2026년 4월 7일</div>
+  <div class="article-title">이번 주 나온 것들, 쓸 만한 것만 골랐다</div>
+  <div class="article-summary">4월 7일 ProductHunt 주요 제품 중 실제 활용 가능한 것들을 추렸다. AI가 광고·운영·QA까지 자동화하는 흐름이 빨라지고 있다. 에이전트가 특정 업무를 대신 맡는 시대가 빠르게 현실이 되고 있다.</div>
+  <div class="btn-wrap">
+    <button class="toggle-btn" onclick="var d=document.getElementById('d3'),b=this;d.classList.toggle('open');b.textContent=d.classList.contains('open')?'접기 ▲':'더 보기 ▼'">더 보기 ▼</button>
+    <button class="toggle-btn">🎧 오디오로 듣기 (준비 중)</button>
+  </div>
+  <div id="d3" class="article-detail">
+    <div class="detail-inner">
+
+      <div class="news-item">
+        <span class="badge">AI 비디오</span><span class="news-title">PixVerse V6 — 현실감 넘치는 AI 영상의 새 기준</span>
+        <p><span class="highlight">무슨 일인가:</span> 사람 피부 질감과 자연스러운 물리 효과를 구현한 AI 비디오 모델이 출시됐다. 복잡한 장면도 높은 완성도로 처리하며, 팀 플랜에서 크레딧 공유가 가능하다.</p>
+        <p><span class="highlight">왜 중요한가:</span> 영상 제작 비용과 시간의 장벽이 낮아진다. 소규모 팀도 스튜디오 수준의 결과물을 낼 수 있는 환경이 만들어지고 있다.</p>
+        <p><span class="highlight">인사이트:</span> AI 영상 품질이 한계선을 계속 올리고 있다. 콘텐츠 제작의 진입 장벽이 낮아질수록, 차별화는 기술이 아닌 기획에서 나온다.</p>
+      </div>
+
+      <div class="news-item">
+        <span class="badge">마케팅 AI</span><span class="news-title">KREV — 제품 이미지 하나로 광고 크리에이티브 자동 생성</span>
+        <p><span class="highlight">무슨 일인가:</span> 단일 제품 이미지를 넣으면 제품 사진, 영상 광고 등 브랜드 맞춤 크리에이티브를 자동으로 만들어준다. 검증된 데이터 패턴 기반의 AI 기능이 적용됐다.</p>
+        <p><span class="highlight">왜 중요한가:</span> 광고 소재 제작에 들어가는 시간과 비용을 줄인다. 전자상거래 브랜드가 빠르게 A/B 테스트를 돌릴 수 있는 환경이 된다.</p>
+        <p><span class="highlight">인사이트:</span> 크리에이티브 제작이 자동화될수록, 마케터의 역할은 소재 제작이 아닌 전략적 판단으로 이동한다.</p>
+      </div>
+
+      <div class="news-item">
+        <span class="badge">광고 최적화</span><span class="news-title">Predflow AI — 광고 성과를 실시간으로 감시하는 AI 에이전트</span>
+        <p><span class="highlight">무슨 일인가:</span> 광고 성과를 실시간으로 모니터링하고 분석해 예산 배분과 소재에 대한 실행 가능한 권장사항을 제공한다.</p>
+        <p><span class="highlight">왜 중요한가:</span> 사람이 24시간 대시보드를 보지 않아도, AI가 이상 징후를 잡아내고 대응을 제안한다. 광고 운영의 자동화가 한 단계 더 나아갔다.</p>
+        <p><span class="highlight">인사이트:</span> 에이전트가 특정 업무를 완전히 위임받는 구조가 빠르게 현실화되고 있다. 사람의 역할은 판단과 승인으로 좁아진다.</p>
+      </div>
+
+      <div class="news-item">
+        <span class="badge">음성 도구</span><span class="news-title">Walkie — 빠른 로컬 음성-텍스트 변환 도구</span>
+        <p><span class="highlight">무슨 일인가:</span> 클라우드 전사와 온디바이스 완전 로컬 전사 두 가지 모드를 제공하는 데스크톱 음성-텍스트 도구다. macOS·Windows 모두 지원하며 무료다.</p>
+        <p><span class="highlight">왜 중요한가:</span> 개인정보가 외부 서버로 나가지 않는 완전 로컬 처리가 가능하다. 보안이 중요한 환경에서도 쓸 수 있다.</p>
+        <p><span class="highlight">인사이트:</span> AI 도구의 경쟁이 성능에서 프라이버시로 확장되고 있다. 로컬 처리 가능 여부가 새로운 선택 기준이 된다.</p>
+      </div>
+
+      <div class="source">출처: 카카오톡 AI·테크 채널 (2026년 4월 7일 주요 제품 소식 · ProductHunt)</div>
+    </div>
+  </div>
+</div>
+
+<!-- Editor Note -->
+<div class="editor">
+  <div class="section-label">에디터 한마디</div>
+  <p>"쓸 만한 것을 만들었는지 확인하는 가장 빠른 방법은, 누군가가 돈을 내는지 보는 것이다."</p>
+</div>
+
+<div class="footer">오늘의 밑줄 · 매일 발행 · 출처 표기 기반 요약 콘텐츠</div>
+
+<div style="display:flex; justify-content:center; gap:10px; margin-top:20px; padding-bottom:20px;">
+  <a href="vol15.html" style="display:inline-block; padding:10px 20px; border:1px solid #1a1a1a; border-radius:8px; font-size:13px; font-family:Arial,sans-serif; color:#fff; text-decoration:none; background:#1a1a1a;">← 이전 호</a>
+  <a href="archive.html" style="display:inline-block; padding:10px 20px; border:1px solid #ccc; border-radius:8px; font-size:13px; font-family:Arial,sans-serif; color:#555; text-decoration:none; background:#fff;">전체 보기</a>
+  <a id="next-btn" href="vol17.html" style="display:none; padding:10px 20px; border:1px solid #1a1a1a; border-radius:8px; font-size:13px; font-family:Arial,sans-serif; color:#fff; text-decoration:none; background:#1a1a1a;">다음 호 →</a>
+</div>
+<script>
+(function(){
+  fetch('vol17.html', {method:'HEAD'}).then(function(r){ if(r.ok) document.getElementById('next-btn').style.display='inline-block'; }).catch(function(){});
+})();
+</script>
+
+</body>
+</html>
