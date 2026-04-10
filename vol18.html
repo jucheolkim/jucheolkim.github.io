@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>오늘의 밑줄 · Vol.18</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap');
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { background: #f0efeb; }
+body { font-family: Georgia, serif; max-width: 680px; margin: 0 auto; padding: 40px 20px; color: #1a1a1a; background: #fff; word-break: keep-all; box-shadow: 0 0 40px rgba(0,0,0,0.06); }
+.header { text-align: center; border-top: 3px solid #1a1a1a; border-bottom: 3px solid #1a1a1a; padding: 12px 0; margin-bottom: 4px; }
+.header-sub { font-size: 11px; font-family: Arial, sans-serif; color: #888; letter-spacing: 2px; margin-bottom: 6px; }
+.header-title { font-size: 36px; font-weight: 800; font-family: 'Nanum Myeongjo', Georgia, serif; white-space: nowrap; }
+.header-date { font-size: 11px; font-family: Arial, sans-serif; color: #888; margin-top: 6px; }
+.meta { display: flex; justify-content: space-between; border-bottom: 1px solid #e0e0e0; padding: 4px 0; margin-bottom: 28px; font-size: 10px; font-family: Arial, sans-serif; color: #888; }
+.article { margin-bottom: 28px; padding-bottom: 28px; border-bottom: 1px solid #e0e0e0; }
+.article-tag { font-size: 10px; font-family: Arial, sans-serif; color: #888; letter-spacing: 1px; border-top: 2px solid #1a1a1a; padding-top: 8px; margin-bottom: 8px; }
+.article-title { font-size: 24px; font-weight: bold; line-height: 1.3; margin-bottom: 12px; font-family: 'Nanum Myeongjo', Georgia, serif; letter-spacing: -0.5px; }
+.article-summary { font-size: 13px; color: #555; line-height: 1.75; margin-bottom: 14px; }
+.btn-wrap { display: flex; gap: 6px; margin-bottom: 14px; }
+.toggle-btn { font-size: 11px; font-family: Arial, sans-serif; color: #555; background: none; border: 1px solid #ccc; border-radius: 6px; padding: 4px 10px; cursor: pointer; }
+.toggle-btn:hover { background: #f5f5f5; }
+.article-detail { display: none; }
+.article-detail.open { display: block; }
+.detail-inner { border-left: 2px solid #e0e0e0; padding-left: 16px; }
+.section-label { font-size: 10px; font-family: Arial, sans-serif; color: #888; letter-spacing: 1px; margin-bottom: 6px; margin-top: 16px; }
+.detail-inner p { font-size: 13px; color: #555; line-height: 1.75; margin-bottom: 8px; }
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 8px; }
+.box { background: #f5f5f5; border-radius: 8px; padding: 10px 12px; }
+.box-label { font-size: 11px; font-family: Arial, sans-serif; color: #888; margin-bottom: 6px; }
+.box p { font-size: 12px; color: #555; line-height: 1.65; margin-bottom: 6px; }
+.news-item { margin-bottom: 14px; padding-bottom: 14px; border-bottom: 1px solid #e0e0e0; }
+.news-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+.badge { display: inline-block; font-size: 10px; font-family: Arial, sans-serif; background: #f5f5f5; color: #888; padding: 2px 8px; border-radius: 4px; margin-right: 6px; }
+.news-title { font-size: 13px; font-weight: bold; }
+.news-item p { font-size: 12px; color: #555; line-height: 1.7; margin-top: 6px; }
+.source { font-size: 10px; font-family: Arial, sans-serif; color: #aaa; border-top: 1px solid #e0e0e0; padding-top: 8px; margin-top: 16px; }
+.highlight { font-weight: bold; color: #1a1a1a; }
+.insight-p { font-size: 15px !important; color: #333 !important; line-height: 1.85 !important; margin-bottom: 10px !important; }
+.editor { border-top: 2px solid #1a1a1a; padding-top: 10px; margin-bottom: 16px; }
+.editor p { font-size: 16px; color: #1a1a1a; line-height: 1.85; font-style: italic; font-family: 'Nanum Myeongjo', Georgia, serif; font-weight: 800; }
+.footer { border-top: 1px solid #e0e0e0; padding-top: 8px; text-align: center; font-size: 10px; font-family: Arial, sans-serif; color: #aaa; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-sub">ONEDAY DIGEST</div>
+  <div class="header-title">오늘의 밑줄</div>
+  <div class="header-date">2026년 4월 10일 · Vol. 18</div>
+</div>
+<div class="meta">
+  <span>창업 생존론 · AI 패러다임 · 테크 브리핑</span>
+  <span>출처 표기 기반 요약 콘텐츠</span>
+</div>
+
+<!-- Article 1 -->
+<div class="article">
+  <div class="article-tag">창업 생존론 · Anjuna Security · Silicon Valley</div>
+  <div class="article-title">75명까지 키웠다가 절반을 잘랐다. 그 창업자가 배운 것</div>
+  <div class="article-summary">2021년 공격적으로 채용해 75명까지 키운 사이버보안 스타트업 Anjuna Security. 과성장의 대가는 혹독했다. 대규모 감원을 겪고 살아남은 창업자가 말한다 — 성장 속도보다 먼저 만들어야 할 것이 있다고.</div>
+  <div class="btn-wrap">
+    <button class="toggle-btn" onclick="var d=document.getElementById('d1'),b=this;d.classList.toggle('open');b.textContent=d.classList.contains('open')?'접기 ▲':'더 보기 ▼'">더 보기 ▼</button>
+    <button class="toggle-btn">🎧 오디오로 듣기 (준비 중)</button>
+  </div>
+  <div id="d1" class="article-detail">
+    <div class="detail-inner">
+      <div class="section-label">이 회사는 무엇인가</div>
+      <p>Anjuna Security는 기업의 클라우드 워크로드를 하드웨어 수준에서 보호하는 사이버보안 스타트업이다. 클라우드 환경에서 데이터가 처리되는 순간에도 암호화를 유지하는 기술로 주목받았다. 벤처캐피털의 투자를 받아 2021년 빠르게 성장했지만, 과잉 채용과 시장 확장의 속도 차이로 구조조정을 겪었다.</p>
+      <div class="section-label">무슨 일이 있었나</div>
+      <p>2021년 시장이 무한히 커질 것처럼 보였다. 투자자들도 그랬고 창업자도 그랬다. 영업·고객 성공·지원 팀을 빠르게 확장하며 75명 규모가 됐다. 그러나 기대했던 하이퍼그로스는 오지 않았다. 비용은 고정됐고 매출은 따라오지 않았다. 결국 대규모 감원이 불가피해졌다.</p>
+      <div class="section-label">성공한 것과 실패한 것</div>
+      <div class="grid">
+        <div class="box">
+          <div class="box-label">배운 것</div>
+          <p>채용은 수요가 검증된 뒤에 해야 한다. 기대 수요가 아닌 실제 계약이 먼저다. 영업팀을 먼저 뽑고 고객을 기다리는 구조는 위험하다.</p>
+          <p>살아남는 팀은 작게 버티는 능력이 있다. 구조조정 후 남은 핵심 인원으로 회사를 다시 설계한 경험이 오히려 더 단단한 조직을 만들었다.</p>
+        </div>
+        <div class="box">
+          <div class="box-label">착각한 것</div>
+          <p>투자 유치가 곧 시장 검증이라는 착각. VC가 투자했다는 사실이 고객이 살 것이라는 근거가 되지 않는다.</p>
+          <p>성장 속도와 생존 가능성을 동일시했다. 빠른 성장은 좋은 신호지만 지속 가능한 구조 없이는 더 빠른 붕괴의 전주곡이 된다.</p>
+        </div>
+      </div>
+      <div class="section-label">거기서 얻은 인사이트</div>
+      <p class="insight-p"><span class="highlight">채용은 예측이 아니라 검증에 기반해야 한다.</span> 시장이 커질 것 같다는 느낌은 팀을 늘릴 이유가 되지 않는다. 실제 계약, 실제 고객, 실제 반복 구매 — 이 세 가지가 먼저다. 채용은 그 다음이다.</p>
+      <p class="insight-p">대규모 해고 이후에도 회사를 이어간 창업자들이 공통적으로 말하는 것이 있다. 감원은 실패가 아니라 재설계라는 것. 작아진 팀으로 더 빠르게 결정하고 더 정확하게 움직였다. 위기가 조직을 단순하게 만들었다.</p>
+      <p class="insight-p"><span class="highlight">살아남는 스타트업은 다운사이클을 버티는 구조를 가진 팀이다.</span> 투자금이 풍부한 시기에 만들어진 팀은 그 환경이 사라지면 무너진다. 돈이 없어도 실행할 수 있는 최소 구조 — 그것이 진짜 경쟁력이다.</p>
+      <div class="source">출처: TechCrunch — "What founders can learn from Anjuna's layoffs and recovery"</div>
+    </div>
+  </div>
+</div>
+
+<!-- Article 2 -->
+<div class="article">
+  <div class="article-tag">AI 패러다임 · Bret Taylor · Sierra</div>
+  <div class="article-title">버튼 클릭의 시대는 끝났다 — Salesforce 전 공동대표의 선언</div>
+  <div class="article-summary">Sierra를 이끄는 브렛 테일러가 말한다. 앞으로 사람은 버튼을 누르지 않는다고. AI가 목표만 받고 나머지를 알아서 처리하는 시대로 넘어간다고. Salesforce 공동대표 출신이 왜 지금 이 시점에 이 말을 하는지, 그 맥락을 들여다봤다.</div>
+  <div class="btn-wrap">
+    <button class="toggle-btn" onclick="var d=document.getElementById('d2'),b=this;d.classList.toggle('open');b.textContent=d.classList.contains('open')?'접기 ▲':'더 보기 ▼'">더 보기 ▼</button>
+    <button class="toggle-btn">🎧 오디오로 듣기 (준비 중)</button>
+  </div>
+  <div id="d2" class="article-detail">
+    <div class="detail-inner">
+      <div class="section-label">이 사람은 누구인가</div>
+      <p>브렛 테일러(Bret Taylor)는 Google Maps 공동 개발자 출신으로, FriendFeed를 창업해 Facebook에 매각했다. 이후 Salesforce 공동 CEO를 역임했고, OpenAI 이사회 의장으로도 활동했다. 현재는 AI 에이전트 스타트업 Sierra를 이끌고 있다. 실리콘밸리에서 가장 신뢰받는 제품 빌더 중 한 명으로 꼽힌다.</p>
+      <div class="section-label">핵심 주장</div>
+      <p><span class="highlight">UI 패러다임의 전환</span> — 지금까지 소프트웨어는 사람이 버튼을 누르고 폼을 채우는 구조였다. 브렛은 이 구조가 끝났다고 말한다. AI 에이전트 시대에는 사람이 목표를 말하면 AI가 나머지를 처리한다. 클릭은 사라지고 대화만 남는다.</p>
+      <p><span class="highlight">Sierra가 만드는 것</span> — 기업 고객을 위한 AI 에이전트 플랫폼이다. 콜센터 직원을 대체하는 것이 아니라 고객 경험 전체를 AI가 처리하도록 설계한다. 단순 챗봇이 아니라 실제 업무를 완료하는 에이전트다.</p>
+      <div class="section-label">성공한 것과 실패한 것</div>
+      <div class="grid">
+        <div class="box">
+          <div class="box-label">테일러의 통찰</div>
+          <p>좋은 제품은 사용자가 배워야 하는 것을 최소화한다. AI 에이전트가 목표를 받아 처리하면 사용자는 UI를 익힐 필요가 없다. 소프트웨어의 학습 비용이 0에 가까워진다.</p>
+          <p>기업 AI의 핵심은 신뢰다. 에이전트가 고객을 응대할 때 잘못된 정보를 주면 브랜드가 손상된다. 정확성과 제어 가능성이 속도보다 먼저다.</p>
+        </div>
+        <div class="box">
+          <div class="box-label">아직 해결 안 된 것</div>
+          <p>에이전트의 실수를 누가 책임지는가. 사람이 버튼을 누른 게 아니라 AI가 자동으로 처리했을 때 오류의 책임 소재가 불명확하다.</p>
+          <p>모든 업무가 에이전트화될 수 있는 건 아니다. 판단이 필요한 고위험 결정은 여전히 사람의 승인이 필요하다.</p>
+        </div>
+      </div>
+      <div class="section-label">거기서 얻은 인사이트</div>
+      <p class="insight-p"><span class="highlight">"버튼 클릭의 시대가 끝났다"는 선언은 UI 이야기가 아니다.</span> 일하는 방식 전체의 이야기다. 사람이 단계를 밟는 게 아니라 목표를 말하고 결과를 받는 구조 — 이것이 실현되면 소프트웨어를 배우는 데 드는 시간이 사라진다.</p>
+      <p class="insight-p">Salesforce를 키운 사람이 지금 AI 에이전트를 만드는 이유가 있다. CRM의 본질은 고객과의 모든 접점을 관리하는 것이다. 그 접점이 이제 AI 에이전트로 이동하고 있다. 브렛은 그 이동의 방향을 누구보다 먼저 봤다.</p>
+      <p class="insight-p"><span class="highlight">에이전트가 실행하고 사람이 승인하는 구조</span>가 기업 AI의 표준이 될 것이다. 완전 자동화가 아니라 자동화 + 인간 검토의 조합. 이 균형을 먼저 설계한 팀이 기업 시장을 가져간다.</p>
+      <div class="source">출처: TechCrunch Startups — "Sierra's Bret Taylor says the era of clicking buttons is over"</div>
+    </div>
+  </div>
+</div>
+
+<!-- Article 3 -->
+<div class="article">
+  <div class="article-tag">AI · 테크 브리핑 · 2026년 4월 10일</div>
+  <div class="article-title">오늘 나온 것들 — 뉴스 3개, 쓸 만한 제품 5개</div>
+  <div class="article-summary">ChatGPT가 $100 요금제를 꺼냈고, AI는 가짜 질병을 실제라고 말했다. 세금 신고를 5분으로 줄이는 툴, URL 하나로 Meta 광고를 완성하는 AI도 나왔다. 오늘 알아야 할 것들만 골랐다.</div>
+  <div class="btn-wrap">
+    <button class="toggle-btn" onclick="var d=document.getElementById('d3'),b=this;d.classList.toggle('open');b.textContent=d.classList.contains('open')?'접기 ▲':'더 보기 ▼'">더 보기 ▼</button>
+    <button class="toggle-btn">🎧 오디오로 듣기 (준비 중)</button>
+  </div>
+  <div id="d3" class="article-detail">
+    <div class="detail-inner">
+
+      <div class="news-item">
+        <span class="badge">OpenAI</span><span class="news-title">ChatGPT, 드디어 월 $100 요금제 출시</span>
+        <p><span class="highlight">무슨 일인가:</span> OpenAI가 $20(Plus)과 $200(Pro) 사이에 $100 중간 요금제를 신설했다. Codex 사용량을 Plus 대비 5배 제공한다.</p>
+        <p><span class="highlight">왜 중요한가:</span> 헤비 유저를 위한 옵션이 생겼다. $200은 부담스럽고 $20은 부족한 사용자가 타깃이다. AI 구독 시장의 세분화가 본격화되고 있다.</p>
+        <p><span class="highlight">인사이트:</span> 요금제가 다양해질수록 '어떤 유저인가'가 곧 '얼마나 AI를 쓰는가'로 읽힌다. AI 리터러시가 경제적 선택으로 이어지는 구조가 됐다.</p>
+      </div>
+
+      <div class="news-item">
+        <span class="badge">양자컴퓨터</span><span class="news-title">ETH 취리히, 1만 7천 큐비트 배열 구현 — 정확도 99.91%</span>
+        <p><span class="highlight">무슨 일인가:</span> 스위스 ETH 취리히 연구팀이 17,000개 큐비트 배열을 99.91% 정확도로 구현했다. 양자컴퓨터 분야 역대 최고 규모다.</p>
+        <p><span class="highlight">왜 중요한가:</span> 양자컴퓨터의 상용화 가능성이 한 걸음 더 가까워졌다. 현재 암호화 체계가 위협받을 수 있는 수준에 접근하고 있다.</p>
+        <p><span class="highlight">인사이트:</span> 양자컴퓨터가 실용화되면 가장 먼저 바뀌는 것은 보안이다. 지금 쓰는 암호화 방식 대부분이 재설계될 수 있다.</p>
+      </div>
+
+      <div class="news-item">
+        <span class="badge">AI 신뢰성</span><span class="news-title">과학자들이 가짜 질병을 만들었다 — AI는 실제라고 말했다</span>
+        <p><span class="highlight">무슨 일인가:</span> 연구팀이 존재하지 않는 질병을 만들어 AI에 질문했다. AI는 마치 실제 질환인 것처럼 증상, 치료법, 연구 논문까지 상세하게 답했다.</p>
+        <p><span class="highlight">왜 중요한가:</span> AI 환각(hallucination)이 의료 영역에서 얼마나 위험한지를 보여주는 실험이다. 자신감 있게 틀리는 AI가 가장 위험하다.</p>
+        <p><span class="highlight">인사이트:</span> AI가 모른다고 말하는 것이 안다고 말하는 것보다 더 가치 있을 때가 있다. 불확실성을 인정하는 AI가 신뢰할 수 있는 AI다.</p>
+      </div>
+
+      <div class="news-item">
+        <span class="badge">보안</span><span class="news-title">Mythos — 27년간 사람이 못 찾은 취약점을 AI가 발견했다</span>
+        <p><span class="highlight">무슨 일인가:</span> AI 보안 도구 Mythos가 27년간 인간 보안 전문가들이 발견하지 못한 취약점을 자동으로 탐지하고 실제 공격까지 수행했다.</p>
+        <p><span class="highlight">왜 중요한가:</span> AI가 공격자 역할을 스스로 할 수 있게 됐다. 기존 보안 점검 방식이 근본적으로 바뀌어야 한다는 신호다.</p>
+        <p><span class="highlight">인사이트:</span> 방어도 AI로 해야 하는 시대가 왔다. 사람이 사람 속도로 방어하면 AI 속도의 공격을 막을 수 없다.</p>
+      </div>
+
+      <div class="news-item">
+        <span class="badge">제품</span><span class="news-title">Avatar V by HeyGen — AI 아바타 영상 생성의 새 기준</span>
+        <p><span class="highlight">무슨 일인가:</span> HeyGen이 다섯 번째 버전의 AI 아바타 영상 생성 도구를 출시했다. 실제 사람과 구분하기 어려운 수준의 자연스러운 움직임과 표정을 구현한다.</p>
+        <p><span class="highlight">왜 중요한가:</span> 영상 콘텐츠 제작 비용이 사실상 0에 수렴하고 있다. 1인 크리에이터가 다국어 영상을 대량으로 만드는 것이 가능해진다.</p>
+        <p><span class="highlight">인사이트:</span> 영상의 진짜 가치는 이제 제작 퀄리티가 아니라 콘텐츠의 진정성에서 나온다. 누구나 만들 수 있게 되면, 무엇을 말하는가만 남는다.</p>
+      </div>
+
+      <div class="news-item">
+        <span class="badge">세금</span><span class="news-title">Jupid — AI가 세금 신고를 5분 만에 끝낸다</span>
+        <p><span class="highlight">무슨 일인가:</span> 은행 계좌와 연결해 비즈니스 거래를 자동 분류하고 IRS Schedule C 양식을 자동 작성한다. 평균 연간 절세 혜택 $1,249, 첫 3개월 50% 할인.</p>
+        <p><span class="highlight">왜 중요한가:</span> 1인 창업자와 프리랜서가 세금 신고에 쓰는 시간이 사라진다. 세무사 비용 없이 정확한 신고가 가능해지는 구조다.</p>
+        <p><span class="highlight">인사이트:</span> AI가 전문가 영역을 대체하는 속도가 빨라지고 있다. 세무·법무·재무 — 초기 창업팀이 외주를 줬던 영역이 하나씩 자동화되고 있다.</p>
+      </div>
+
+      <div class="news-item">
+        <span class="badge">에이전트</span><span class="news-title">Computer Use in Claude Code — CLI에서 Claude가 내 컴퓨터를 직접 조작한다</span>
+        <p><span class="highlight">무슨 일인가:</span> Claude Code CLI에서 macOS 앱을 열고 클릭하고 입력까지 할 수 있다. GUI 전용 도구 자동화, 네이티브 앱 테스트, 비주얼 디버깅이 가능해졌다.</p>
+        <p><span class="highlight">왜 중요한가:</span> 코드로 제어할 수 없었던 GUI 영역까지 AI 에이전트가 진입했다. 자동화의 범위가 API 없는 도구까지 확장된다.</p>
+        <p><span class="highlight">인사이트:</span> 사람이 화면을 보며 하던 작업을 AI가 대신한다. 반복 작업의 마지막 남은 영역이 무너지고 있다.</p>
+      </div>
+
+      <div class="news-item">
+        <span class="badge">광고</span><span class="news-title">Pixero AI — URL 하나로 Meta 광고 캠페인을 9분 만에 완성</span>
+        <p><span class="highlight">무슨 일인가:</span> URL을 입력하면 브랜드 분석부터 광고 소재 생성, 캠페인 관리까지 전 과정을 AI가 자동으로 처리한다.</p>
+        <p><span class="highlight">왜 중요한가:</span> 광고 대행사 없이 혼자 Meta 광고를 운영할 수 있는 구조가 됐다. 소규모 팀의 마케팅 실행 속도가 달라진다.</p>
+        <p><span class="highlight">인사이트:</span> 마케팅 자동화의 진짜 가치는 속도가 아니라 진입 장벽 제거다. 광고를 몰라도 광고를 돌릴 수 있게 되면 경쟁 구도 자체가 바뀐다.</p>
+      </div>
+
+      <div class="news-item">
+        <span class="badge">광고 관리</span><span class="news-title">Viktor — Slack에서 Meta·Google Ads를 메시지 한 줄로 관리</span>
+        <p><span class="highlight">무슨 일인가:</span> Slack 채널에서 3,000개 이상의 도구와 연결해 Meta 및 Google Ads 계정을 단일 메시지로 직접 조정한다.</p>
+        <p><span class="highlight">왜 중요한가:</span> 광고 대시보드를 열지 않고 대화창에서 캠페인을 제어한다. 업무 도구와 광고 운영이 하나로 합쳐지는 흐름이다.</p>
+        <p><span class="highlight">인사이트:</span> 도구가 사람에게 맞춰지는 시대다. 사람이 플랫폼에 접속하는 게 아니라 플랫폼이 내 업무 공간 안으로 들어온다.</p>
+      </div>
+
+      <div class="news-item">
+        <span class="badge">검색 API</span><span class="news-title">Perplexity API Platform — 200B개 URL 실시간 검색을 API 하나로</span>
+        <p><span class="highlight">무슨 일인가:</span> 다수의 공급자를 연결해 200B 이상의 URL에 대한 실시간 검색을 제공하는 API 플랫폼. 하나의 키와 청구서로 통합 관리된다.</p>
+        <p><span class="highlight">왜 중요한가:</span> AI 서비스에 실시간 웹 검색을 붙이는 비용과 복잡도가 대폭 낮아졌다. 검색 연동이 필요한 스타트업의 개발 속도가 빨라진다.</p>
+        <p><span class="highlight">인사이트:</span> 검색이 API가 되면 모든 AI 서비스가 실시간 정보를 가질 수 있다. 학습 데이터의 한계를 넘는 AI 제품이 더 쉽게 만들어진다.</p>
+      </div>
+
+      <div class="source">출처: TechCrunch, VentureBeat, Hacker News (2026년 4월 9일) · 카카오톡 AI·테크 채널 (4월 1일 주요 제품 소식)</div>
+    </div>
+  </div>
+</div>
+
+<!-- Editor Note -->
+<div class="editor">
+  <div class="section-label">에디터 한마디</div>
+  <p>"빠르게 성장하는 것보다 살아남을 구조를 먼저 만드는 것이 더 어렵고, 더 중요하다."</p>
+</div>
+
+<div class="footer">오늘의 밑줄 · 매일 발행 · 출처 표기 기반 요약 콘텐츠</div>
+
+<div style="display:flex; justify-content:center; gap:10px; margin-top:20px; padding-bottom:20px;">
+  <a href="vol16.html" style="display:inline-block; padding:10px 20px; border:1px solid #1a1a1a; border-radius:8px; font-size:13px; font-family:Arial,sans-serif; color:#fff; text-decoration:none; background:#1a1a1a;">← 이전 호</a>
+  <a href="archive.html" style="display:inline-block; padding:10px 20px; border:1px solid #ccc; border-radius:8px; font-size:13px; font-family:Arial,sans-serif; color:#555; text-decoration:none; background:#fff;">전체 보기</a>
+  <a id="next-btn" href="vol18.html" style="display:none; padding:10px 20px; border:1px solid #1a1a1a; border-radius:8px; font-size:13px; font-family:Arial,sans-serif; color:#fff; text-decoration:none; background:#1a1a1a;">다음 호 →</a>
+</div>
+<script>
+(function(){
+  fetch('vol18.html', {method:'HEAD'}).then(function(r){ if(r.ok) document.getElementById('next-btn').style.display='inline-block'; }).catch(function(){});
+})();
+</script>
+
+</body>
+</html>
