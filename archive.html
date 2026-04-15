@@ -41,21 +41,25 @@ body { font-family: Georgia, serif; max-width: 680px; margin: 0 auto; padding: 4
 <div class="footer">오늘의 밑줄 · 매일 발행 · 출처 표기 기반 요약 콘텐츠</div>
 
 <script>
+// ============================================================
+// 새 호 발행 시 이 배열 맨 앞에 한 줄만 추가하면 됩니다.
+// ============================================================
 var VOLS = [
-  { vol: 20, date: "2026년 4월 14일", title: "만드는 능력보다 무엇을 만들지 아는 눈이 더 희귀하다", tags: "Colin Angle · Vishal Virani · AI 테크 브리핑" },
-  { vol: 19, date: "2026년 4월 13일", title: "가장 강력한 경쟁자는 '작년과 똑같이 하는 것'이다", tags: "Craig Piggott · Afsheen Afshar · AI 테크 브리핑" },
-  { vol: 18, date: "2026년 4월 10일", title: "보안을 팔지 않고 없애버린 사람들", tags: "Anjuna Security 창업자 · 브렛 테일러 · AI 테크 브리핑" },
-  { vol: 17, date: "2026년 4월 9일", title: "회의를 없애고 글로 대신한 회사의 25년", tags: "Jason Fried · Peter Yang · AI 테크 브리핑" },
-  { vol: 16, date: "2026년 4월 8일", title: "94살에도 매일 회사에 나오는 사람의 투자 철학", tags: "Warren Buffett · 안무역 · AI 테크 브리핑" },
-  { vol: 15, date: "2026년 4월 7일", title: "실리콘밸리의 문화 전쟁은 왜 그들이 시작했나", tags: "Ben Horowitz · Marc Andreessen · AI 테크 브리핑" },
-  { vol: 14, date: "2026년 4월 6일", title: "젠슨 황이 30년 동안 버틴 이유", tags: "Jensen Huang · Yossi Matias · AI 테크 브리핑" },
-  { vol: 13, date: "2026년 4월 3일", title: "행복을 알고리즘으로 풀려는 전 구글 과학자", tags: "Ron Baron · Mo Gawdat · AI 테크 브리핑" },
-  { vol: 12, date: "2026년 4월 2일", title: "골드만삭스 CEO가 말하는 위기의 본질", tags: "Lloyd Blankfein · 안서형 · AI 테크 브리핑" },
-  { vol: 11, date: "2026년 4월 1일", title: "칩 설계의 전설이 17살 창업자에게 배운 것", tags: "Jim Keller · Zach Yadegari · AI 테크 브리핑" },
-  { vol: 10, date: "2026년 3월 31일", title: "방산 스타트업을 만든 억만장자의 철학", tags: "Palmer Luckey · 류한주 · AI 테크 브리핑" },
-  { vol: 9, date: "2026년 3월 30일", title: "50년 투자 인생이 말하는 불확실성의 본질", tags: "Howard Marks · 김범섭 · AI 테크 브리핑" },
+  { vol: 21, date: "2026년 4월 15일", title: "코딩을 배울 필요가 없다고 말한 코딩 플랫폼 창업자", tags: "Amjad Masad · Campbell Brown · AI 테크 브리핑" },
+  { vol: 20, date: "2026년 4월 14일", title: "35년 생존한 회사가 규제에 무너진 날", tags: "Colin Angle · Vishal Virani · AI 테크 브리핑" },
+  { vol: 19, date: "2026년 4월 13일", title: "기술로 시작하면 실패한다", tags: "Craig Piggott · Afsheen Afshar · AI 테크 브리핑" },
+  { vol: 18, date: "2026년 4월 10일", title: "보이지 않는 곳에서 가장 중요한 일을 한다", tags: "Anjuna Security · 브렛 테일러 · AI 테크 브리핑" },
+  { vol: 17, date: "2026년 4월 9일", title: "작게 유지하는 것도 전략이다", tags: "Jason Fried · Peter Yang · AI 테크 브리핑" },
+  { vol: 16, date: "2026년 4월 8일", title: "94살의 투자자가 지금도 매일 읽는 이유", tags: "Warren Buffett · 안무역 · AI 테크 브리핑" },
+  { vol: 15, date: "2026년 4월 6일", title: "좋은 아이디어는 피벗이 아니라 원칙에서 나온다", tags: "Ben Horowitz · Marc Andreessen · AI 테크 브리핑" },
+  { vol: 14, date: "2026년 4월 2일", title: "AI 시대에 살아남는 사람의 공통점은 판단력이다", tags: "Jensen Huang · Yossi Matias · AI 테크 브리핑" },
+  { vol: 13, date: "2026년 4월 2일", title: "사람에 투자하면 회사가 따라온다", tags: "Ron Baron · Mo Gawdat · AI 테크 브리핑" },
+  { vol: 12, date: "2026년 4월 1일", title: "파트너십이 문화가 될 때 회사는 달라진다", tags: "Lloyd Blankfein · 안서형 · AI 테크 브리핑" },
+  { vol: 11, date: "2026년 3월 31일", title: "칩을 설계하는 사람이 세상을 설계한다", tags: "Jim Keller · Zach Yadegari · AI 테크 브리핑" },
+  { vol: 10, date: "2026년 3월 30일", title: "실리콘밸리의 아웃사이더가 은행을 만든 이유", tags: "Palmer Luckey · 류한주 · AI 테크 브리핑" },
+  { vol: 9, date: "2026년 3월 27일", title: "예측할 수 없는 세계에서 현명한 투자자는 무엇을 하는가", tags: "Howard Marks · 김범섭 · AI 테크 브리핑" },
   { vol: 8, date: "2026년 3월 26일", title: "당신의 모든 클릭이 지금 팔리고 있다", tags: "Bernie Sanders · Mihal Erik · AI 테크 브리핑" },
-  { vol: 7, date: "2026년 3월 25일", title: "싱가포르를 기적으로 만든 남자의 단 하나의 원칙", tags: "Lee Kuan Yew · Olivia Moore · AI 테크 브리핑" },
+  { vol: 7, date: "2026년 3월 25일", title: "나라를 만든 사람에게 리더십을 배울 수 없는 이유", tags: "Lee Kuan Yew · Olivia Moore · AI 테크 브리핑" },
   { vol: 6, date: "2026년 3월 24일", title: "탁상공론이 전쟁터에서 무너지는 이유", tags: "알렉스 카프 · 렘 코닝 · AI 테크 브리핑" },
   { vol: 5, date: "2026년 3월 23일", title: "AGI를 가장 오래 기다려온 사람이 내린 단 하나의 정의", tags: "데미스 허사비스 · 매트 그레이 · AI 논문 브리핑" },
   { vol: 4, date: "2026년 3월 20일", title: "하루를 3개의 법칙으로 쪼갠 남자", tags: "Cal Newport · 정지헌 · AI 테크 브리핑" },
