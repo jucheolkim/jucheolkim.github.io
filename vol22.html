@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>오늘의 밑줄 · Vol.22</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap');
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { background: #f0efeb; }
+body { font-family: Georgia, serif; max-width: 680px; margin: 0 auto; padding: 40px 20px; color: #1a1a1a; background: #fff; word-break: keep-all; box-shadow: 0 0 40px rgba(0,0,0,0.06); }
+.header { text-align: center; border-top: 3px solid #1a1a1a; border-bottom: 3px solid #1a1a1a; padding: 12px 0; margin-bottom: 4px; }
+.header-sub { font-size: 11px; font-family: Arial, sans-serif; color: #888; letter-spacing: 2px; margin-bottom: 6px; }
+.header-title { font-size: 36px; font-weight: 800; letter-spacing: 0px; font-family: 'Nanum Myeongjo', Georgia, serif; white-space: nowrap; }
+.header-date { font-size: 11px; font-family: Arial, sans-serif; color: #888; margin-top: 6px; }
+.meta { display: flex; justify-content: space-between; border-bottom: 1px solid #e0e0e0; padding: 4px 0; margin-bottom: 28px; font-size: 10px; font-family: Arial, sans-serif; color: #888; }
+.article { margin-bottom: 28px; padding-bottom: 28px; border-bottom: 1px solid #e0e0e0; }
+.article-tag { font-size: 10px; font-family: Arial, sans-serif; color: #888; letter-spacing: 1px; border-top: 2px solid #1a1a1a; padding-top: 8px; margin-bottom: 8px; }
+.article-title { font-size: 24px; font-weight: bold; line-height: 1.3; margin-bottom: 12px; font-family: 'Nanum Myeongjo', Georgia, serif; letter-spacing: -0.5px; }
+.article-summary { font-size: 13px; color: #555; line-height: 1.75; margin-bottom: 14px; }
+.btn-wrap { display: flex; gap: 6px; margin-bottom: 14px; }
+.toggle-btn { font-size: 11px; font-family: Arial, sans-serif; color: #555; background: none; border: 1px solid #ccc; border-radius: 6px; padding: 4px 10px; cursor: pointer; }
+.toggle-btn:hover { background: #f5f5f5; }
+.article-detail { display: none; }
+.article-detail.open { display: block; }
+.detail-inner { border-left: 2px solid #e0e0e0; padding-left: 16px; }
+.section-label { font-size: 10px; font-family: Arial, sans-serif; color: #888; letter-spacing: 1px; margin-bottom: 6px; margin-top: 16px; }
+.detail-inner p { font-size: 13px; color: #555; line-height: 1.75; margin-bottom: 8px; }
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 8px; }
+.box { background: #f5f5f5; border-radius: 8px; padding: 10px 12px; }
+.box-label { font-size: 11px; font-family: Arial, sans-serif; color: #888; margin-bottom: 6px; }
+.box p { font-size: 12px; color: #555; line-height: 1.65; margin-bottom: 6px; }
+.news-item { margin-bottom: 14px; padding-bottom: 14px; border-bottom: 1px solid #e0e0e0; }
+.news-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+.badge { display: inline-block; font-size: 10px; font-family: Arial, sans-serif; background: #f5f5f5; color: #888; padding: 2px 8px; border-radius: 4px; margin-right: 6px; }
+.news-title { font-size: 13px; font-weight: bold; }
+.news-item p { font-size: 12px; color: #555; line-height: 1.7; margin-top: 6px; }
+.source { font-size: 10px; font-family: Arial, sans-serif; color: #aaa; border-top: 1px solid #e0e0e0; padding-top: 8px; margin-top: 16px; }
+.highlight { font-weight: bold; color: #1a1a1a; }
+.insight-p { font-size: 15px !important; color: #333 !important; line-height: 1.85 !important; margin-bottom: 10px !important; }
+.editor { border-top: 2px solid #1a1a1a; padding-top: 10px; margin-bottom: 16px; }
+.editor p { font-size: 16px; color: #1a1a1a; line-height: 1.85; font-style: italic; font-family: 'Nanum Myeongjo', Georgia, serif; font-weight: 800; }
+.footer { border-top: 1px solid #e0e0e0; padding-top: 8px; text-align: center; font-size: 10px; font-family: Arial, sans-serif; color: #aaa; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-sub">ONEDAY DIGEST</div>
+  <div class="header-title">오늘의 밑줄</div>
+  <div class="header-date">2026년 4월 16일 · Vol. 22</div>
+</div>
+<div class="meta">
+  <span>AI 철학 · 창업 · 테크 제품</span>
+  <span>출처 표기 기반 요약 콘텐츠</span>
+</div>
+
+<!-- Article 1 -->
+<div class="article">
+  <div class="article-tag">AI 철학 · Mustafa Suleyman · Microsoft AI · DeepMind</div>
+  <div class="article-title">철학과 자퇴생이 AI 시대의 가장 강력한 자리에 앉았다</div>
+  <div class="article-summary">옥스퍼드 철학과를 19세에 그만뒀다. 그다음은 무슬림 청년 상담 서비스, 런던 시장실, 국제 분쟁 조정가였다. DeepMind를 만든 것은 그 이후였다. Mustafa Suleyman은 기술로 세상을 바꾸겠다고 결심한 게 아니라, 세상을 바꾸고 싶었는데 기술이 가장 강력한 수단이었다고 말한다. 지금 그는 Microsoft AI를 이끌며 "18개월 안에 화이트칼라 업무 대부분이 자동화된다"고 단언한다.</div>
+  <div class="btn-wrap">
+    <button class="toggle-btn" onclick="var d=document.getElementById('d1'),b=this;d.classList.toggle('open');b.textContent=d.classList.contains('open')?'접기 ▲':'더 보기 ▼'">더 보기 ▼</button>
+    <button class="toggle-btn">🎧 오디오로 듣기 (준비 중)</button>
+  </div>
+  <div id="d1" class="article-detail">
+    <div class="detail-inner">
+      <div class="section-label">이 사람은 누구인가</div>
+      <p>무스타파 술레이만은 런던 북부 빈민가에서 자랐다. 아버지는 시리아 출신 택시 기사, 어머니는 NHS 간호사였다. 옥스퍼드 대학교 철학·신학과에 입학했지만 19세에 자퇴했다. 그 직후 무슬림 청소년 상담 서비스를 공동 창립했고, 런던 시장실에서 인권 정책관으로 일했으며, 유엔·네덜란드 정부·WWF를 위한 국제 분쟁 조정가로 활동했다.</p>
+      <p>2010년, 어린 시절 친구의 형 Demis Hassabis와 함께 DeepMind를 공동창업했다. 2014년 Google에 약 4,400억 원에 인수됐다. 이후 DeepMind에서 AI 윤리 연구팀을 설립하고 Partnership on AI를 공동 창립했다. 2022년 구글을 떠나 Reid Hoffman과 함께 Inflection AI를 창업했고, 2024년 Microsoft AI CEO로 합류했다. 저서 『The Coming Wave』(2023)는 FT 올해의 경영서 후보에 올랐다.</p>
+      <div class="section-label">주요 논지</div>
+      <p><span class="highlight">AI는 이미 초인간적이다</span> — 그는 Bloomberg 인터뷰에서 단언했다. "모든 전문 업무에서 인간 수준의 퍼포먼스를 낼 것이다. 변호사, 회계사, 마케터, 프로젝트 매니저의 업무 대부분이 18개월 안에 AI로 자동화된다." 소프트웨어 엔지니어링에서는 이미 진행 중이라고 덧붙였다.</p>
+      <p><span class="highlight">Microsoft의 AI 자급 자족 선언</span> — OpenAI에 의존하는 구조를 바꾸겠다는 것이 그의 핵심 과제다. 2026년 4월, MAI-Transcribe-1·MAI-Voice-1·MAI-Image-2 세 모델을 직접 공개했다. OpenAI의 Whisper, ElevenLabs, Google Gemini에 정면으로 맞서는 제품들이다. 그는 이를 "AI 자급 자족"이라 불렀다.</p>
+      <p><span class="highlight">'인문주의 AI'라는 철학</span> — 술레이만은 자신의 AI 비전에 "humanist AI"라는 이름을 붙였다. 기술이 아니라 인간의 필요에서 출발해야 한다는 것이다. "AI는 당신의 불안을 줄이고, 더 자신감 있게 하루를 시작하게 해줘야 한다." 기술을 목적이 아닌 수단으로 보는 관점은 옥스퍼드 시절의 철학 공부, 상담 서비스 운영, 분쟁 조정 경험에서 비롯됐다고 그는 말한다.</p>
+      <div class="section-label">성공한 것과 실패한 것</div>
+      <div class="grid">
+        <div class="box">
+          <div class="box-label">성공</div>
+          <p>DeepMind에서 AI 윤리 연구팀을 처음 만들었다. 기술 회사가 윤리를 내부 과제로 삼아야 한다는 문화를 심은 초기 인물이다.</p>
+          <p>Microsoft에서 소형 팀으로 세 개의 frontier 모델을 출시했다. 수십 명 규모의 팀이 대기업 벤치마크를 앞섰다.</p>
+        </div>
+        <div class="box">
+          <div class="box-label">실패와 논란</div>
+          <p>2019년 직원 수십 명이 그의 관리 방식에 대해 공식 문제를 제기했다. WSJ 보도에 따르면 직원 공개 망신, 언어적 압박 등이 반복됐고, 두 건의 건 이상에서 각각 $150,000 이상의 비밀 합의가 이뤄진 것으로 알려졌다. Google·DeepMind는 외부 로펌을 통해 조사를 진행했고, 그는 관리 직책 대부분을 박탈당한 채 행정 휴직에 들어갔다. 이후 Google에서 AI 정책 부문 부사장으로 자리를 옮겼지만, 이 사건은 그의 이력에서 가장 많이 생략되는 부분이다.</p>
+          <p>오픈 웹 데이터를 AI 학습에 쓰는 것이 "사회적 계약상 허용된다"고 발언해 논란을 불렀다. 저작권 업계의 강한 반발을 샀다.</p>
+        </div>
+      </div>
+      <div class="section-label">거기서 얻은 인사이트</div>
+      <p class="insight-p"><span class="highlight">기술을 만든 사람이 철학자 출신이라는 것은 우연이 아니다.</span> 그는 처음부터 "무엇을 왜 만드느냐"로 시작했다. 기술을 먼저 배운 뒤 용도를 찾는 방식이 아니었다. 세상에 필요한 것을 먼저 정하고, 그걸 가장 강력하게 실현할 수단으로 AI를 택한 것이다.</p>
+      <p class="insight-p">그가 예측하는 18개월은 숫자가 중요한 게 아니다. 변호사, 회계사, 마케터처럼 특정 전문 지식에 기댔던 일들이 AI로 대체된다는 방향성이 핵심이다. <span class="highlight">자동화되지 않는 것은 "무엇을 판단할 것인가"이다.</span> 도구가 아무리 좋아져도, 무엇이 중요한지 묻는 것은 사람의 몫으로 남는다.</p>
+      <p class="insight-p">그는 Demis Hassabis와 지금도 문자를 주고받는다고 했다. 한때 가장 가까웠던 공동창업자, 지금은 경쟁자다. "그에게서 많이 배웠고 존경한다." 이 말이 가능한 것은 그가 기술이 아닌 사람을 먼저 봤기 때문일지 모른다.</p>
+      <div class="source">출처: Bloomberg Weekend Interview (Mustafa Suleyman · CEO, Microsoft AI) / Financial Times 인터뷰 / VentureBeat 보도</div>
+    </div>
+  </div>
+</div>
+
+<!-- Article 2 -->
+<div class="article">
+  <div class="article-tag">창업 철학 · Victor Erukhimov · CraftStory · OpenCV</div>
+  <div class="article-title">아이디어만 팔지 말고, 작동하는 것을 먼저 만들어라</div>
+  <div class="article-summary">컴퓨터 비전 오픈소스 생태계의 핵심 도구 OpenCV를 공동 창업한 Victor Erukhimov가 AI 영상 스타트업 CraftStory를 다시 시작했다. AI 붐 속에서 일부 스타트업들은 실제 작동하는 제품 없이, 아이디어만 담긴 투자 제안서(피치덱)로 수억 달러를 유치하기도 한다. 그는 말한다. "그렇게 억 달러를 받아도, 결국 창업자도 투자자도 아무도 행복하지 않다." 대형 AI 랩들이 범용 모델 전쟁을 벌이는 사이, 그는 한 가지에만 집중했다. 장편 인물 중심 영상, 그 하나.</div>
+  <div class="btn-wrap">
+    <button class="toggle-btn" onclick="var d=document.getElementById('d2'),b=this;d.classList.toggle('open');b.textContent=d.classList.contains('open')?'접기 ▲':'더 보기 ▼'">더 보기 ▼</button>
+    <button class="toggle-btn">🎧 오디오로 듣기 (준비 중)</button>
+  </div>
+  <div id="d2" class="article-detail">
+    <div class="detail-inner">
+      <div class="section-label">이 사람은 누구인가</div>
+      <p>Victor Erukhimov는 오픈소스 컴퓨터 비전 라이브러리 OpenCV의 공동 창업자다. OpenCV는 로보틱스·자율주행·의료 영상 분석 등에서 수십 년간 핵심 인프라로 쓰여온 라이브러리로, 전 세계 개발자 수백만 명이 사용한다. 이후 그는 AI 영상 생성 스타트업 CraftStory를 창업해 CEO를 맡고 있다. 공동창업자 Andrey Filev는 오랜 시간 함께 해온 기술 파트너다.</p>
+      <div class="section-label">핵심 논지</div>
+      <p><span class="highlight">대형 AI 랩의 한계를 공략하다</span> — 현재 대부분의 AI 영상 생성 도구는 긴 영상을 만들 수 없다. "원하는 대로 만들라고 해도 지시의 일부를 무시한다. 창의적 의도를 끝까지 따라가지 못한다." Erukhimov는 이것이 구조적 한계라고 봤다. 기존 모델은 시간 축을 확장할수록 연산이 기하급수적으로 늘어난다.</p>
+      <p><span class="highlight">병렬 확산 아키텍처</span> — CraftStory는 이 문제를 풀기 위해 다른 방식을 택했다. 시간을 순차적으로 처리하지 않고 병렬로 다룬다. 덕분에 길이가 늘어나도 연산이 선형적으로만 증가한다. 이론상 원하는 만큼 긴 영상을 만들 수 있다.</p>
+      <p><span class="highlight">"거대 자본이 전부가 아니다"</span> — Filev는 말한다. "스타트업에 투자할 때 당신은 사람에 베팅하는 것이다. 마거릿 미드의 말처럼, 소수의 헌신적인 엔지니어가 무엇을 만들 수 있는지를 과소평가하지 말라." 두 사람은 대형 랩의 범용 경쟁에 뛰어드는 대신, 장편·인물 중심 영상이라는 특화된 시장만 깊게 판다.</p>
+      <div class="section-label">성공한 것과 실패한 것</div>
+      <div class="grid">
+        <div class="box">
+          <div class="box-label">강점</div>
+          <p>OpenCV라는 검증된 오픈소스 유산. 수십 년간 컴퓨터 비전 커뮤니티에서 신뢰를 쌓아온 기반이 있다.</p>
+          <p>병렬 확산 구조라는 차별화된 기술 접근. 대형 랩이 택하지 않은 방식으로 길이 문제를 해결했다.</p>
+        </div>
+        <div class="box">
+          <div class="box-label">현실적 과제</div>
+          <p>OpenAI, Google, Sora 등 막대한 자본과 인프라를 가진 경쟁자들이 같은 시장을 노리고 있다.</p>
+          <p>아직 신생 스타트업이다. 기술 증명을 넘어 시장 침투와 수익화를 실현해야 한다는 과제가 남아 있다.</p>
+        </div>
+      </div>
+      <div class="section-label">거기서 얻은 인사이트</div>
+      <p class="insight-p"><span class="highlight">AI 붐에서 가장 쉬운 것은 피치덱이다.</span> 좋은 스토리, 그럴듯한 시장 규모, 투자자가 듣고 싶은 말. 이것만으로 수억 달러를 유치하는 스타트업이 실제로 존재한다. 하지만 그 돈을 받은 뒤 실제로 만들어야 할 때, 피치덱은 아무것도 대신해주지 않는다. Erukhimov가 말하는 "억 달러 파워포인트"는 그 함정을 가리키는 말이다. 그래서 그는 먼저 작동하는 것을 만들라고 한다.</p>
+      <p class="insight-p">대형 랩이 모든 것을 다 잘하려는 순간, 그 틈에 특화된 것을 아주 잘하는 팀이 들어온다. <span class="highlight">범용이 강해질수록 특화가 살아남는다.</span> OpenCV가 그랬다. CraftStory가 그 방식을 다시 시도하고 있다.</p>
+      <p class="insight-p">Erukhimov는 오픈소스 개발자였다. 돈이 아니라 문제를 해결하려는 사람들이 모여 만든 것이 수백만 명의 인프라가 됐다. 좋은 제품은 그렇게 시작된다. 시장을 먼저 정한 것이 아니라, 진짜 불편함에서 출발한 것이다.</p>
+      <div class="source">출처: VentureBeat 단독 인터뷰 "OpenCV founders launch AI video startup to take on OpenAI and Google" (Victor Erukhimov · CEO, CraftStory)</div>
+    </div>
+  </div>
+</div>
+
+<!-- Article 3: AI·Tech Briefing -->
+<div class="article">
+  <div class="article-tag">AI · 테크 브리핑 · 2026년 4월 16일</div>
+  <div class="article-title">AI 표준이 굳어지고, 경쟁은 격화된다</div>
+  <div class="article-summary">Claude Mythos가 공개 전 수천 건의 보안 취약점을 찾아냈고, OpenAI는 Anthropic의 매출 수치를 공개 비판했다. MCP는 9,700만 설치로 에이전트 AI의 표준이 됐다. Stanford AI Index는 AI 성능 1위를 Anthropic으로 꼽았다. 조용한 주가 없다.</div>
+  <div class="btn-wrap">
+    <button class="toggle-btn" onclick="var d=document.getElementById('d3'),b=this;d.classList.toggle('open');b.textContent=d.classList.contains('open')?'접기 ▲':'더 보기 ▼'">더 보기 ▼</button>
+    <button class="toggle-btn">🎧 오디오로 듣기 (준비 중)</button>
+  </div>
+  <div id="d3" class="article-detail">
+    <div class="detail-inner">
+
+      <div class="news-item">
+        <span class="badge">Anthropic</span><span class="news-title">Claude Mythos Preview — 출시 전 수천 건의 취약점을 스스로 발견했다</span>
+        <p><span class="highlight">무슨 일인가:</span> Anthropic의 미공개 모델 Claude Mythos Preview가 SWE-bench Verified 93.9%, GPQA Diamond 94.6%를 기록했다. 동시에 주요 OS와 브라우저에서 수천 건의 제로데이 보안 취약점을 스스로 탐지했다. Anthropic은 이를 이유로 출시를 보류했다.</p>
+        <p><span class="highlight">왜 중요한가:</span> AI가 스스로 "이건 너무 강력하다"는 결과를 만들어낸 첫 사례에 가깝다. 출시를 막은 것이 외부 규제가 아니라 내부 판단이었다는 점이 주목된다.</p>
+        <p><span class="highlight">인사이트:</span> 안전을 이유로 자사 제품 출시를 스스로 늦춘다. 이것이 가능한 조직과 불가능한 조직은 어떻게 다른가.</p>
+      </div>
+
+      <div class="news-item">
+        <span class="badge">OpenAI vs Anthropic</span><span class="news-title">OpenAI 내부 메모 — Anthropic 매출 $30B은 $8B 과장이다</span>
+        <p><span class="highlight">무슨 일인가:</span> OpenAI 내부 메모가 유출됐다. Anthropic이 발표한 $30B 연간 런레이트가 Amazon·Google 수익 배분 방식을 부풀려 계산한 것으로 실제는 $22B 수준이라는 주장이다. Anthropic은 반박하지 않았다.</p>
+        <p><span class="highlight">왜 중요한가:</span> AI 업계의 매출 공방이 공개 전쟁으로 번졌다. 투자자·파트너·고객이 수치를 어떻게 읽느냐가 달라진다.</p>
+        <p><span class="highlight">인사이트:</span> 숫자를 어떻게 정의하느냐가 곧 서사다. 같은 수익도 어떻게 집계하느냐에 따라 리더가 달라진다.</p>
+      </div>
+
+      <div class="news-item">
+        <span class="badge">Anthropic MCP</span><span class="news-title">MCP 9,700만 설치 — 에이전트 AI의 표준이 굳었다</span>
+        <p><span class="highlight">무슨 일인가:</span> Anthropic의 Model Context Protocol(MCP)이 2026년 3월 기준 9,700만 설치를 돌파했다. OpenAI·Block도 Linux Foundation 산하 Agentic AI Foundation에 MCP 기반으로 참여를 선언했다.</p>
+        <p><span class="highlight">왜 중요한가:</span> 경쟁사가 자사 표준을 채택하는 것은 드문 일이다. MCP가 에이전트 AI의 공통 언어로 자리잡고 있다는 신호다.</p>
+        <p><span class="highlight">인사이트:</span> 표준을 먼저 만든 쪽이 생태계를 이끈다. 지금 MCP가 그 위치에 있다.</p>
+      </div>
+
+      <div class="news-item">
+        <span class="badge">Stanford AI Index 2026</span><span class="news-title">AI 성능 1위 Anthropic, 데이터센터는 뉴욕주 전력을 넘어섰다</span>
+        <p><span class="highlight">무슨 일인가:</span> Stanford AI Index 2026에 따르면 AI 모델 성능 순위에서 Anthropic이 1위, xAI·Google·OpenAI가 근소한 차이로 뒤를 잇는다. 동시에 전 세계 AI 데이터센터 전력 소비가 29.6기가와트에 달해 뉴욕주 최대 수요를 초과했다.</p>
+        <p><span class="highlight">왜 중요한가:</span> AI 경쟁은 모델 성능만이 아니라 에너지·인프라 싸움이기도 하다. 성능이 수렴할수록 비용·전력 효율이 다음 전쟁터가 된다.</p>
+        <p><span class="highlight">인사이트:</span> AI가 강력해질수록 전기가 많이 든다. 지속 가능한 AI는 기술 문제이기 전에 물리 문제다.</p>
+      </div>
+
+      <div class="source">출처: Anthropic 공식 발표 / Yahoo Finance / MIT Technology Review / AI News 종합</div>
+    </div>
+  </div>
+</div>
+
+<!-- Article 4: Product Briefing -->
+<div class="article">
+  <div class="article-tag">제품 소식 · 2026년 4월 14일</div>
+  <div class="article-title">AI가 영상을 기획하고, 에이전트가 기억을 가지며, 규제는 자동화된다</div>
+  <div class="article-summary">이번 주 눈에 띄는 제품들은 하나같이 반복 노동을 지운다. 비주얼 기획부터 코딩 에이전트 메모리, 글로벌 규정 준수까지. 사람이 판단하는 시간을 늘리려는 도구들이다.</div>
+  <div class="btn-wrap">
+    <button class="toggle-btn" onclick="var d=document.getElementById('d4'),b=this;d.classList.toggle('open');b.textContent=d.classList.contains('open')?'접기 ▲':'더 보기 ▼'">더 보기 ▼</button>
+    <button class="toggle-btn">🎧 오디오로 듣기 (준비 중)</button>
+  </div>
+  <div id="d4" class="article-detail">
+    <div class="detail-inner">
+
+      <div class="news-item">
+        <span class="badge">비주얼 AI</span><span class="news-title">Luma Agents — AI가 브랜드 캠페인 전체를 계획하고 만든다</span>
+        <p><span class="highlight">무슨 일인가:</span> 브랜드 캠페인, 제품 비주얼, 소셜 광고를 AI가 처음부터 끝까지 기획하고 생성한다. 창의적 팀과 에이전시를 위한 멀티 포맷 비주얼 파이프라인이다.</p>
+        <p><span class="highlight">왜 중요한가:</span> 영상·이미지 제작의 병목이 기획과 에셋 생성이다. 이 두 단계를 자동화하면 소규모 팀도 대형 캠페인을 돌릴 수 있다.</p>
+        <p><span class="highlight">인사이트:</span> 제작 비용이 사라지면 남는 것은 무엇을 만들지 결정하는 능력이다.</p>
+      </div>
+
+      <div class="news-item">
+        <span class="badge">크롬 확장</span><span class="news-title">Krisp Accent Converter for YouTube — 억양을 실시간으로 바꾼다</span>
+        <p><span class="highlight">무슨 일인가:</span> YouTube 영상 속 발화자의 억양을 원하는 억양으로 실시간 변환하는 무료 Chrome 확장 프로그램이다.</p>
+        <p><span class="highlight">왜 중요한가:</span> 영어권 학습 콘텐츠를 소비하는 비영어권 사용자에게 의미 있는 접근성 개선이다. 억양 장벽을 낮추면 정보 격차도 좁혀진다.</p>
+        <p><span class="highlight">인사이트:</span> 작은 마찰 하나를 없애는 것이 사용자 경험의 전부를 바꾼다.</p>
+      </div>
+
+      <div class="news-item">
+        <span class="badge">AI 코딩</span><span class="news-title">ContextPool — 에이전트가 이전 세션을 기억한다</span>
+        <p><span class="highlight">무슨 일인가:</span> AI 코딩 에이전트에 세션 간 지속 메모리를 제공한다. 이전 작업의 맥락을 이어받아 같은 오류를 반복하지 않는다.</p>
+        <p><span class="highlight">왜 중요한가:</span> 지금의 AI 에이전트는 매 세션마다 처음부터 시작한다. 이것이 해결되면 에이전트가 진짜 팀원처럼 작동한다.</p>
+        <p><span class="highlight">인사이트:</span> 기억이 없는 팀원은 매번 같은 실수를 한다. 에이전트도 마찬가지다.</p>
+      </div>
+
+      <div class="news-item">
+        <span class="badge">글로벌 규정</span><span class="news-title">Cleo Labs — 19,000개 기관의 규정 지도를 자동으로</span>
+        <p><span class="highlight">무슨 일인가:</span> 글로벌 물리 제품 판매를 위한 규정 준수를 자동화한다. 19,000개 기관의 규정을 탐색해 지도를 제공하고, 법적 전문가 검증을 거친다.</p>
+        <p><span class="highlight">왜 중요한가:</span> 글로벌 시장 진출의 가장 큰 병목 중 하나가 규정 준수다. 이것이 자동화되면 중소 기업도 글로벌 판매에 나설 수 있다.</p>
+        <p><span class="highlight">인사이트:</span> 법무팀 없이도 글로벌하게 팔 수 있는 시대가 오고 있다.</p>
+      </div>
+
+      <div class="news-item">
+        <span class="badge">회의 AI</span><span class="news-title">GhostDesk — 화면 캡처에 보이지 않는 AI 비서</span>
+        <p><span class="highlight">무슨 일인가:</span> 회의와 면접 중 실시간 음성 전사와 AI 지원을 제공하되, 화면 캡처 도구에 보이지 않는다.</p>
+        <p><span class="highlight">왜 중요한가:</span> 고부담 상황에서 AI 지원을 받고 싶지만 드러내고 싶지 않은 수요가 있다. 윤리적 논의가 필요한 제품이기도 하다.</p>
+        <p><span class="highlight">인사이트:</span> 보이지 않는 AI가 공정성 기준을 다시 쓰게 될 수도 있다.</p>
+      </div>
+
+      <div class="source">출처: Threads @choi.openai (2026년 4월 14일 제품 소식)</div>
+    </div>
+  </div>
+</div>
+
+<!-- Editor Note -->
+<div class="editor">
+  <div class="section-label">에디터 한마디</div>
+  <p>"기술을 먼저 배운 뒤 쓸 곳을 찾는 사람과, 바꾸고 싶은 것이 먼저 있어서 기술을 택한 사람은 결국 다른 것을 만든다."</p>
+</div>
+
+<div class="footer">오늘의 밑줄 · 매일 발행 · 출처 표기 기반 요약 콘텐츠</div>
+
+<div style="display:flex; justify-content:center; gap:10px; margin-top:20px; padding-bottom:20px;">
+  <a href="vol21.html" style="display:inline-block; padding:10px 20px; border:1px solid #1a1a1a; border-radius:8px; font-size:13px; font-family:Arial,sans-serif; color:#fff; text-decoration:none; background:#1a1a1a;">← 이전 호</a>
+  <a href="archive.html" style="display:inline-block; padding:10px 20px; border:1px solid #ccc; border-radius:8px; font-size:13px; font-family:Arial,sans-serif; color:#555; text-decoration:none; background:#fff;">전체 보기</a>
+  <a id="next-btn" href="vol23.html" style="display:none; padding:10px 20px; border:1px solid #1a1a1a; border-radius:8px; font-size:13px; font-family:Arial,sans-serif; color:#fff; text-decoration:none; background:#1a1a1a;">다음 호 →</a>
+</div>
+<script>
+(function(){
+  fetch('vol23.html', {method:'HEAD'}).then(function(r){ if(r.ok) document.getElementById('next-btn').style.display='inline-block'; }).catch(function(){});
+})();
+</script>
+
+</body>
+</html>
