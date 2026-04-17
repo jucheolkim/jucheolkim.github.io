@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>오늘의 밑줄 · Vol.23</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap');
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { background: #f0efeb; }
+body { font-family: Georgia, serif; max-width: 680px; margin: 0 auto; padding: 40px 20px; color: #1a1a1a; background: #fff; word-break: keep-all; box-shadow: 0 0 40px rgba(0,0,0,0.06); }
+.header { text-align: center; border-top: 3px solid #1a1a1a; border-bottom: 3px solid #1a1a1a; padding: 12px 0; margin-bottom: 4px; }
+.header-sub { font-size: 11px; font-family: Arial, sans-serif; color: #888; letter-spacing: 2px; margin-bottom: 6px; }
+.header-title { font-size: 36px; font-weight: 800; letter-spacing: 0px; font-family: 'Nanum Myeongjo', Georgia, serif; white-space: nowrap; }
+.header-date { font-size: 11px; font-family: Arial, sans-serif; color: #888; margin-top: 6px; }
+.meta { display: flex; justify-content: space-between; border-bottom: 1px solid #e0e0e0; padding: 4px 0; margin-bottom: 28px; font-size: 10px; font-family: Arial, sans-serif; color: #888; }
+.article { margin-bottom: 28px; padding-bottom: 28px; border-bottom: 1px solid #e0e0e0; }
+.article-tag { font-size: 10px; font-family: Arial, sans-serif; color: #888; letter-spacing: 1px; border-top: 2px solid #1a1a1a; padding-top: 8px; margin-bottom: 8px; }
+.article-title { font-size: 24px; font-weight: bold; line-height: 1.3; margin-bottom: 12px; font-family: 'Nanum Myeongjo', Georgia, serif; letter-spacing: -0.5px; }
+.article-summary { font-size: 13px; color: #555; line-height: 1.75; margin-bottom: 14px; }
+.btn-wrap { display: flex; gap: 6px; margin-bottom: 14px; }
+.toggle-btn { font-size: 11px; font-family: Arial, sans-serif; color: #555; background: none; border: 1px solid #ccc; border-radius: 6px; padding: 4px 10px; cursor: pointer; }
+.toggle-btn:hover { background: #f5f5f5; }
+.article-detail { display: none; }
+.article-detail.open { display: block; }
+.detail-inner { border-left: 2px solid #e0e0e0; padding-left: 16px; }
+.section-label { font-size: 10px; font-family: Arial, sans-serif; color: #888; letter-spacing: 1px; margin-bottom: 6px; margin-top: 16px; }
+.detail-inner p { font-size: 13px; color: #555; line-height: 1.75; margin-bottom: 8px; }
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 8px; }
+.box { background: #f5f5f5; border-radius: 8px; padding: 10px 12px; }
+.box-label { font-size: 11px; font-family: Arial, sans-serif; color: #888; margin-bottom: 6px; }
+.box p { font-size: 12px; color: #555; line-height: 1.65; margin-bottom: 6px; }
+.news-item { margin-bottom: 14px; padding-bottom: 14px; border-bottom: 1px solid #e0e0e0; }
+.news-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+.badge { display: inline-block; font-size: 10px; font-family: Arial, sans-serif; background: #f5f5f5; color: #888; padding: 2px 8px; border-radius: 4px; margin-right: 6px; }
+.news-title { font-size: 13px; font-weight: bold; }
+.news-item p { font-size: 12px; color: #555; line-height: 1.7; margin-top: 6px; }
+.source { font-size: 10px; font-family: Arial, sans-serif; color: #aaa; border-top: 1px solid #e0e0e0; padding-top: 8px; margin-top: 16px; }
+.highlight { font-weight: bold; color: #1a1a1a; }
+.insight-p { font-size: 15px !important; color: #333 !important; line-height: 1.85 !important; margin-bottom: 10px !important; }
+.editor { border-top: 2px solid #1a1a1a; padding-top: 10px; margin-bottom: 16px; }
+.editor p { font-size: 16px; color: #1a1a1a; line-height: 1.85; font-style: italic; font-family: 'Nanum Myeongjo', Georgia, serif; font-weight: 800; }
+.footer { border-top: 1px solid #e0e0e0; padding-top: 8px; text-align: center; font-size: 10px; font-family: Arial, sans-serif; color: #aaa; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-sub">ONEDAY DIGEST</div>
+  <div class="header-title">오늘의 밑줄</div>
+  <div class="header-date">2026년 4월 17일 · Vol. 23</div>
+</div>
+<div class="meta">
+  <span>창업 철학 · 테크 · AI·테크 브리핑</span>
+  <span>출처 표기 기반 요약 콘텐츠</span>
+</div>
+
+<!-- Article 1: Will Ahmed -->
+<div class="article">
+  <div class="article-tag">창업 철학 · Will Ahmed · WHOOP</div>
+  <div class="article-title">회사가 나일 때, 나는 가장 흔들렸다</div>
+  <div class="article-summary">윌 아메드는 하버드에서 스쿼시 선수로 뛰던 20살에 WHOOP을 시작했다. 14년 뒤 회사는 10.1조 원 밸류에 IPO를 앞두고 있다. 그런데 그가 돌아보는 가장 큰 변화는 매출도, 투자도 아니다. "회사가 잘되면 내가 잘된 것 같고, 회사가 안 되면 내가 안 된 것 같았다"는 상태에서 빠져나온 것이다.</div>
+  <div class="btn-wrap">
+    <button class="toggle-btn" onclick="var d=document.getElementById('d1'),b=this;d.classList.toggle('open');b.textContent=d.classList.contains('open')?'접기 ▲':'더 보기 ▼'">더 보기 ▼</button>
+    <button class="toggle-btn">🎧 오디오로 듣기 (준비 중)</button>
+  </div>
+  <div id="d1" class="article-detail">
+    <div class="detail-inner">
+      <div class="section-label">이 사람은 누구인가</div>
+      <p>윌 아메드는 WHOOP의 창업자이자 CEO다. 하버드 남자 스쿼시 팀 주장이었고, 정부학을 전공했다. 2012년 학생 시절, 자신이 훈련할 때 몸에 무슨 일이 일어나는지 모른다는 단순한 불편에서 출발해 웨어러블을 만들기 시작했다. 2015년 첫 제품을 출시했고, 엘리트 선수에게 먼저 팔아 "후광 효과"를 만든 뒤 일반 소비자로 확장했다. 2026년 3월 Series G로 $575M(약 7,800억 원)을 조달했고, 기업가치는 $10.1B(약 13.8조 원)에 이른다. 애보트, 메이요 클리닉, 호날두, 르브론이 투자자다. 다음 단계는 IPO다.</p>
+      <div class="section-label">주요 활동과 이력</div>
+      <p>하버드 재학 중 WHOOP 구상(2012) → 첫 제품 출시(2015) → 엘리트 선수 중심 유통 전략 → 소프트뱅크 $200M 투자, $3.6B 밸류(2021) → 아마존 Halo와의 경쟁에서 생존 → 2023년 보스턴 켄모어 스퀘어로 본사 이전 → FDA 승인 ECG 출시, Healthspan·혈압·혈액 바이오마커 기능 확장 → 2026년 Series G $575M, $10.1B 밸류 → 2026년 한 해 600명 이상 신규 채용 발표. 수면·회복·심박변이도를 측정하는 화면 없는 밴드가 핵심 제품이다. 56개국에서 판매 중이다.</p>
+      <div class="section-label">성공한 것과 실패한 것</div>
+      <div class="grid">
+        <div class="box">
+          <div class="box-label">성공 / 확신</div>
+          <p>엘리트 선수에게 먼저 팔았다. 르브론·호날두·패트릭 마홈스가 차면서 브랜드가 퍼졌다. 광고보다 손목이 먼저였다.</p>
+          <p>화면을 일부러 없앴다. "24시간 착용"이 원칙이었기에, 데이터는 앱으로 미루고 하드웨어는 존재감을 지웠다.</p>
+        </div>
+        <div class="box">
+          <div class="box-label">실패 / 한계</div>
+          <p>20명 팀에 $20M을 조달했을 때 CEO로서 "실패하고 있다"고 느꼈다. 회사의 오르내림이 곧 자신의 오르내림이었다.</p>
+          <p>정체성과 회사를 분리하는 데 몇 년이 걸렸다. 그 전까지는 스스로 과도한 스트레스에 시달렸다.</p>
+        </div>
+      </div>
+      <div class="section-label">인사이트</div>
+      <p class="insight-p">아메드는 "회사가 잘되는 날은 내가 잘된 날이고, 회사가 안 되는 날은 내가 실패한 날"이었다고 말했다. 그리고 그걸 <span class="highlight">정확하지도 않고 건강하지도 않다</span>고 정리했다. 내 정체성이 내 일과 한 몸이 되면, 내 일의 등락에 내 자존감이 흔들린다. 일은 그걸 감당할 만큼 안정적이지 않다.</p>
+      <p class="insight-p">해법은 거창하지 않았다. 매일 20분 명상, 꾸준한 훈련, 정해진 식사. 회사의 성적표와 무관하게 <span class="highlight">"매일 1% 나아지는 일"을 독립적으로 쌓는 것</span>이 전부였다. 그의 표현으로는 "회사 성과의 요요 현상"에서 내리는 법.</p>
+      <p class="insight-p">한 가지 더. 오늘 600명 기업, $400M 조달한 상태에서 20명·$20M 조달 시절보다 편하다고 했다. 규모가 커져서가 아니라, 자신을 회사와 분리했기 때문이다. <span class="highlight">힘든 건 일의 크기가 아니라, 내가 얼마만큼 일에 묶여 있는가</span>였다.</p>
+      <div class="source">출처: "Will Ahmed: WHOOP Founder on Human Performance" Thought Economics · "WHOOP Raises $575M at $10.1B Valuation" BusinessWire (2026.04)</div>
+    </div>
+  </div>
+</div>
+
+<!-- Article 2: Winston Weinberg -->
+<div class="article">
+  <div class="article-tag">창업 철학 · Winston Weinberg · Harvey AI</div>
+  <div class="article-title">6개월마다 내 자리를 다시 따내야 한다</div>
+  <div class="article-summary">윈스턴 와인버그는 로펌에 입사한 첫해 주니어 변호사였다. 룸메이트가 보여준 GPT-3로 친구들과 D&amp;D 게임을 돌리다가, 이걸로 법률 문서를 다룰 수 있겠다는 걸 알아챘다. 그 길로 샘 알트먼에게 콜드 이메일을 보냈다. 3년 뒤 Harvey는 $11B 기업이 됐다. 그가 사내에 세운 규칙은 단 하나다. "CEO를 포함해 모두가 6개월마다 자기 역할을 다시 증명해야 한다."</div>
+  <div class="btn-wrap">
+    <button class="toggle-btn" onclick="var d=document.getElementById('d2'),b=this;d.classList.toggle('open');b.textContent=d.classList.contains('open')?'접기 ▲':'더 보기 ▼'">더 보기 ▼</button>
+    <button class="toggle-btn">🎧 오디오로 듣기 (준비 중)</button>
+  </div>
+  <div id="d2" class="article-detail">
+    <div class="detail-inner">
+      <div class="section-label">이 사람은 누구인가</div>
+      <p>윈스턴 와인버그는 Harvey AI의 공동창업자이자 CEO다. 30세. 원래는 로펌 O'Melveny &amp; Myers의 1년차 주니어 변호사였다. 증권·독점금지 소송을 담당했다. 공동창업자 게이브 페레이라는 당시 그의 룸메이트였고 메타·구글 딥마인드의 AI 연구원이었다. 2022년 여름, 페레이라가 GPT-3를 보여주자 와인버그는 처음엔 친구들과 D&amp;D 게임을 돌리는 데 썼다고 한다. 그러다가 이 기술이 법률 연구·초안 작성의 비효율을 바꿀 수 있다는 걸 깨달았다. Harvey는 2022년 창업, 2026년 현재 기업가치 $11B, ARR $200M, 63개국 1,000여 개 고객사(미국 상위 10대 로펌 대부분 포함)를 보유한다.</p>
+      <div class="section-label">주요 활동과 이력</div>
+      <p>O'Melveny &amp; Myers 1년차 변호사로 임대차 사건 담당 → 룸메이트 페레이라와 GPT-3 실험 → 2022년 7월 4일, 샘 알트먼과 OpenAI 법무실장 제이슨 권에게 콜드 이메일 → 같은 날 오전 10시 통화, C-suite 앞에서 피치 → OpenAI 스타트업 펀드가 첫 기관 투자자가 됨 → Sarah Guo·Elad Gil 엔젤 투자 → Sequoia, Kleiner Perkins, Andreessen Horowitz, Coatue 등 투자 유치 → 2025년 2월 $3B → 6월 $5B → 10월 $8B → 2026년 3월 $11B 밸류 → 2024년 초, 10배 큰 전통 법률회사와 합병 직전까지 갔다가 무산(와인버그는 이를 "다행히 막힌 실수"라고 회고).</p>
+      <div class="section-label">성공한 것과 실패한 것</div>
+      <div class="grid">
+        <div class="box">
+          <div class="box-label">성공 / 확신</div>
+          <p>테크 업계에 아는 사람이 없었다. 대신 콜드 이메일을 보냈다. "법률 결과물이 맞는지 확인하려면 변호사에게 보내야 한다"는 메시지가 먹혔다.</p>
+          <p>법률이라는 보수적인 시장에서 "의사결정 속도"를 문화의 핵심에 박았다. 실수해도 괜찮지만, 의사결정을 미루는 것은 벌한다.</p>
+        </div>
+        <div class="box">
+          <div class="box-label">실패 / 한계</div>
+          <p>2024년 초 $700M 밸류 시절, 10배 큰 전통 법률회사와 합병 직전까지 갔다. 채용·고객·규모 문제를 한 번에 해결할 "빠른 길"로 보였다.</p>
+          <p>이사회가 반대했고 결국 무산됐다. 와인버그는 "다행"이라고 했다. "창업자는 종종 쉬운 지름길이 있다고 착각하지만, 그런 건 없다"는 게 남은 교훈이었다.</p>
+        </div>
+      </div>
+      <div class="section-label">인사이트</div>
+      <p class="insight-p">와인버그의 6개월 규칙은 이렇게 읽힌다. 하이퍼성장 회사에서 <span class="highlight">채용된 당시의 역할은 6개월 뒤면 이미 다른 일이 되어 있다</span>. 그 사이에 스스로 진화하지 못한 사람은 자리를 내준다. 그는 여기에 자신도 포함된다고 했다. CEO도 6개월마다 자리를 다시 따내야 한다.</p>
+      <p class="insight-p">채용할 때 그가 보는 건 "결정을 내리고, 그 결정에 책임지고, 틀리면 방향을 바꿀 수 있는가"다. <span class="highlight">실수를 벌하지 않는다. 결정하지 않거나, 실수에서 배우지 않는 것을 벌한다.</span> 둘은 다르다.</p>
+      <p class="insight-p">한 가지 더. 그는 합병 직전까지 갔던 경험을 "창업자는 종종 쉬운 길이 있다고 착각한다. 그런 건 없다"로 요약했다. <span class="highlight">빠른 해결책이 보일 때가 가장 위험한 때</span>라는 뜻이다. 고통스러운 길을 고통스럽게 가는 것이 유일한 정답인 경우가 많다.</p>
+      <div class="source">출처: "Inside Harvey: How a first-year legal associate built one of Silicon Valley's hottest startups" TechCrunch · "30-year-old CEO of $11B Harvey" Fortune (2026.03) · "Harvey's Winston Weinberg On Anthropic, Cold Emailing Sam Altman" Upstarts Podcast</div>
+    </div>
+  </div>
+</div>
+
+<!-- Article 3: AI·테크 브리핑 -->
+<div class="article">
+  <div class="article-tag">AI · 테크 제품 브리핑 · 2026년 4월 17일</div>
+  <div class="article-title">인식 격차, 트래픽 역전, 그리고 13.8조 원</div>
+  <div class="article-summary">오늘의 흐름은 세 가지다. AI를 만드는 쪽과 쓰는 쪽의 인식 차이가 수치로 드러났고, 웹 트래픽의 주인이 인간에서 에이전트로 바뀌고 있으며, 헬스 웨어러블은 인프라 지위를 주장할 만큼 자본을 끌어모으고 있다. 그리고 choi님 채널에서 오늘 하루에만 20개의 AI 제품이 쏟아졌다.</div>
+  <div class="btn-wrap">
+    <button class="toggle-btn" onclick="var d=document.getElementById('d3'),b=this;d.classList.toggle('open');b.textContent=d.classList.contains('open')?'접기 ▲':'더 보기 ▼'">더 보기 ▼</button>
+    <button class="toggle-btn">🎧 오디오로 듣기 (준비 중)</button>
+  </div>
+  <div id="d3" class="article-detail">
+    <div class="detail-inner">
+
+      <div class="news-item">
+        <span class="badge">리포트</span><span class="news-title">Stanford 2026 AI Index — 만드는 쪽과 쓰는 쪽의 간극</span>
+        <p><span class="highlight">무슨 일인가:</span> 스탠퍼드 HAI가 발표한 2026 AI Index에 따르면 AI 전문가 56%가 AI에 기대를 걸지만, 일반 미국인 중 같은 답은 10%에 불과하다. 의료 AI에 대해서는 전문가 84% vs 일반인 44%, 고용 영향은 73% vs 23%로 벌어진다.</p>
+        <p><span class="highlight">왜 중요한가:</span> AI를 만드는 쪽이 상상하는 세계와 실제 살아가는 쪽이 체감하는 세계가 다르게 움직이고 있다. 제품이 좋아질수록 격차가 좁혀진다는 가정이 더 이상 작동하지 않는다.</p>
+        <p><span class="highlight">인사이트:</span> 만드는 사람은 "왜 다들 안 쓰지"라고 묻고, 쓰는 사람은 "왜 이게 나한테 좋은 거지"라고 묻는다. 두 질문은 같은 자리에서 마주치지 않는다.</p>
+      </div>
+
+      <div class="news-item">
+        <span class="badge">트래픽</span><span class="news-title">Vercel 문서 트래픽의 70%가 이제 AI 에이전트</span>
+        <p><span class="highlight">무슨 일인가:</span> Vercel CEO 기예르모 라우크는 자사 개발자 문서에 들어오는 트래픽의 70%가 코딩 에이전트에서 오고, 인간 방문은 30%뿐이라고 밝혔다. 1년 전에는 10 대 90 정도로 정반대였다.</p>
+        <p><span class="highlight">왜 중요한가:</span> 웹페이지의 "독자"가 인간에서 AI로 빠르게 교체되고 있다. 문서·랜딩·콘텐츠를 누굴 위해 쓰는가가 근본적으로 바뀐다.</p>
+        <p><span class="highlight">인사이트:</span> SEO가 GEO(생성형 엔진 최적화)로 넘어간다고 말할 때, 이미 엔진은 사람이 아니라 에이전트다. 내 콘텐츠가 에이전트에게 얼마나 잘 파싱되는가가 노출을 결정한다.</p>
+      </div>
+
+      <div class="news-item">
+        <span class="badge">투자</span><span class="news-title">WHOOP Series G $575M · $10.1B 밸류 · IPO 예고</span>
+        <p><span class="highlight">무슨 일인가:</span> WHOOP이 3월 31일 Collaborative Fund 주도로 $575M Series G를 마감했다. 밸류는 $10.1B. 투자자 명단에 애보트, 메이요 클리닉, 무바달라, 카타르 투자청, 호날두, 르브론, 맥길로이가 올라 있다. 윌 아메드는 "이번이 마지막 비상장 라운드가 될 것"이라고 못 박았다.</p>
+        <p><span class="highlight">왜 중요한가:</span> 애보트와 메이요 클리닉이 들어왔다는 건, WHOOP이 "피트니스 가젯"에서 "개인 헬스 인프라"로 카테고리를 이동시키고 있다는 신호다.</p>
+        <p><span class="highlight">인사이트:</span> 2026년 대형 라운드는 "AI 도구"가 아니라 "인프라 레이어"를 주장하는 회사로 몰린다. WHOOP은 10년치 데이터·임상 파트너·구독 모델을 그 근거로 들었다.</p>
+      </div>
+
+      <div class="source">출처: MIT Technology Review "State of AI" (2026.04) · The Neuron Daily AI Digest (2026.04.13) · BusinessWire WHOOP 공식 발표 (2026.04)</div>
+    </div>
+  </div>
+</div>
+
+<!-- Article 4: choi님 제품 소식 -->
+<div class="article">
+  <div class="article-tag">오늘의 신제품 · 2026년 4월 17일</div>
+  <div class="article-title">에이전트가 에이전트를 부리는 시대가 오고 있다</div>
+  <div class="article-summary">오늘 choi님 채널에 올라온 20개 제품 중 4개를 골랐다. 공통점이 있다. AI가 도구에서 주체로 넘어가는 과정이다. 개발자가 에이전트를 관리하고, 에이전트가 결제하고, 프롬프트가 자산이 된다.</div>
+  <div class="btn-wrap">
+    <button class="toggle-btn" onclick="var d=document.getElementById('d4'),b=this;d.classList.toggle('open');b.textContent=d.classList.contains('open')?'접기 ▲':'더 보기 ▼'">더 보기 ▼</button>
+    <button class="toggle-btn">🎧 오디오로 듣기 (준비 중)</button>
+  </div>
+  <div id="d4" class="article-detail">
+    <div class="detail-inner">
+
+      <div class="news-item">
+        <span class="badge">개발</span><span class="news-title">Claude Code Desktop App 재설계</span>
+        <p><span class="highlight">무슨 일인가:</span> 다수의 코딩 세션을 동시에 운영할 수 있게 데스크탑 앱이 다시 설계됐다. 여러 리포지토리를 한 앱 안에서 관리하고, 파일을 편집하고, 프로젝트를 마무리할 수 있다.</p>
+        <p><span class="highlight">왜 중요한가:</span> 그동안 개발자의 집중을 가장 많이 깎아먹던 건 "창 사이를 왔다 갔다 하는 컨텍스트 스위칭"이었다. 하나의 앱 안에서 다중 세션이 돌아가는 구조는 이걸 정면으로 겨냥한다.</p>
+        <p><span class="highlight">인사이트:</span> 도구가 작업 공간 전체를 감싸기 시작하면, 작업의 단위가 "파일"이나 "세션"이 아니라 "프로젝트"로 올라간다.</p>
+      </div>
+
+      <div class="news-item">
+        <span class="badge">IDE</span><span class="news-title">Windsurf 2.0 — AI 에이전트 커맨드 센터</span>
+        <p><span class="highlight">무슨 일인가:</span> Windsurf 2.0은 다수의 AI 에이전트를 동시에 지휘할 수 있는 IDE를 지향한다. 코드를 치는 IDE가 아니라, 에이전트들을 배치하는 지휘대다.</p>
+        <p><span class="highlight">왜 중요한가:</span> "1인 개발자"가 "1인 오케스트레이터"로 바뀌고 있다. 내가 쓰는 IDE가 아니라, 나 대신 일하는 에이전트들에게 작업을 나눠주는 곳이 새 작업 환경이다.</p>
+        <p><span class="highlight">인사이트:</span> 내가 코드를 얼마나 잘 치느냐보다, 에이전트들에게 일을 얼마나 잘 나눠주느냐가 생산성의 정의가 된다.</p>
+      </div>
+
+      <div class="news-item">
+        <span class="badge">브라우저</span><span class="news-title">Google Chrome Skills — 프롬프트를 자산으로</span>
+        <p><span class="highlight">무슨 일인가:</span> 자주 쓰는 AI 프롬프트를 저장해 클릭 한 번으로 여러 탭에서 재사용하는 Chrome 확장 도구다. 매번 똑같은 지시를 다시 타이핑할 필요가 없다.</p>
+        <p><span class="highlight">왜 중요한가:</span> 프롬프트가 한 번 쓰고 버리는 것이 아니라 반복해서 쓰는 자산이 된다. 잘 쓴 프롬프트는 잘 쓴 함수와 같다.</p>
+        <p><span class="highlight">인사이트:</span> 내가 어떤 프롬프트를 갖고 있느냐가, 앞으로는 내가 어떤 툴을 갖고 있느냐만큼 중요해진다.</p>
+      </div>
+
+      <div class="news-item">
+        <span class="badge">결제</span><span class="news-title">Agent Card — AI 에이전트를 위한 일회용 Visa</span>
+        <p><span class="highlight">무슨 일인가:</span> AI 에이전트가 구매를 할 때 쓰는 일회용 가상 Visa 카드 서비스다. 한 번 쓰면 자동으로 취소된다.</p>
+        <p><span class="highlight">왜 중요한가:</span> AI가 사람을 대신해 결제하는 시점이 가까워지고 있다. 결제 주체가 바뀌면 보안·한도·추적 방식이 전부 새로 설계돼야 한다.</p>
+        <p><span class="highlight">인사이트:</span> 에이전트 시대의 인프라는 "에이전트가 결제할 수 있는가"에서 시작된다. 은행·카드사·인증 회사가 여기서 다시 경쟁한다.</p>
+      </div>
+
+      <div class="source">출처: choi님 카카오톡 AI·테크 채널 (2026년 4월 17일 주요 제품 소식)</div>
+    </div>
+  </div>
+</div>
+
+<!-- Editor Note -->
+<div class="editor">
+  <div class="section-label">에디터 한마디</div>
+  <p>"나를 일에서 떼어낼수록, 일은 더 오래 간다."</p>
+</div>
+
+<div class="footer">오늘의 밑줄 · 매일 발행 · 출처 표기 기반 요약 콘텐츠</div>
+
+<div style="display:flex; justify-content:center; gap:10px; margin-top:20px; padding-bottom:20px;">
+  <a href="vol22.html" style="display:inline-block; padding:10px 20px; border:1px solid #1a1a1a; border-radius:8px; font-size:13px; font-family:Arial,sans-serif; color:#fff; text-decoration:none; background:#1a1a1a;">← 이전 호</a>
+  <a href="archive.html" style="display:inline-block; padding:10px 20px; border:1px solid #ccc; border-radius:8px; font-size:13px; font-family:Arial,sans-serif; color:#555; text-decoration:none; background:#fff;">전체 보기</a>
+  <a id="next-btn" href="vol24.html" style="display:none; padding:10px 20px; border:1px solid #1a1a1a; border-radius:8px; font-size:13px; font-family:Arial,sans-serif; color:#fff; text-decoration:none; background:#1a1a1a;">다음 호 →</a>
+</div>
+<script>
+(function(){
+  fetch('vol24.html', {method:'HEAD'}).then(function(r){ if(r.ok) document.getElementById('next-btn').style.display='inline-block'; }).catch(function(){});
+})();
+</script>
+
+</body>
+</html>
