@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>오늘의 밑줄 · Vol.24</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap');
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { background: #f0efeb; }
+body { font-family: Georgia, serif; max-width: 680px; margin: 0 auto; padding: 40px 20px; color: #1a1a1a; background: #fff; word-break: keep-all; box-shadow: 0 0 40px rgba(0,0,0,0.06); }
+.header { text-align: center; border-top: 3px solid #1a1a1a; border-bottom: 3px solid #1a1a1a; padding: 12px 0; margin-bottom: 4px; }
+.header-sub { font-size: 11px; font-family: Arial, sans-serif; color: #888; letter-spacing: 2px; margin-bottom: 6px; }
+.header-title { font-size: 36px; font-weight: 800; letter-spacing: 0px; font-family: 'Nanum Myeongjo', Georgia, serif; white-space: nowrap; }
+.header-date { font-size: 11px; font-family: Arial, sans-serif; color: #888; margin-top: 6px; }
+.meta { display: flex; justify-content: space-between; border-bottom: 1px solid #e0e0e0; padding: 4px 0; margin-bottom: 28px; font-size: 10px; font-family: Arial, sans-serif; color: #888; }
+.article { margin-bottom: 28px; padding-bottom: 28px; border-bottom: 1px solid #e0e0e0; }
+.article-tag { font-size: 10px; font-family: Arial, sans-serif; color: #888; letter-spacing: 1px; border-top: 2px solid #1a1a1a; padding-top: 8px; margin-bottom: 8px; }
+.article-title { font-size: 24px; font-weight: bold; line-height: 1.3; margin-bottom: 12px; font-family: 'Nanum Myeongjo', Georgia, serif; letter-spacing: -0.5px; }
+.article-summary { font-size: 13px; color: #555; line-height: 1.75; margin-bottom: 14px; }
+.btn-wrap { display: flex; gap: 6px; margin-bottom: 14px; }
+.toggle-btn { font-size: 11px; font-family: Arial, sans-serif; color: #555; background: none; border: 1px solid #ccc; border-radius: 6px; padding: 4px 10px; cursor: pointer; }
+.toggle-btn:hover { background: #f5f5f5; }
+.article-detail { display: none; }
+.article-detail.open { display: block; }
+.detail-inner { border-left: 2px solid #e0e0e0; padding-left: 16px; }
+.section-label { font-size: 10px; font-family: Arial, sans-serif; color: #888; letter-spacing: 1px; margin-bottom: 6px; margin-top: 16px; }
+.detail-inner p { font-size: 13px; color: #555; line-height: 1.75; margin-bottom: 8px; }
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 8px; }
+.box { background: #f5f5f5; border-radius: 8px; padding: 10px 12px; }
+.box-label { font-size: 11px; font-family: Arial, sans-serif; color: #888; margin-bottom: 6px; }
+.box p { font-size: 12px; color: #555; line-height: 1.65; margin-bottom: 6px; }
+.news-item { margin-bottom: 14px; padding-bottom: 14px; border-bottom: 1px solid #e0e0e0; }
+.news-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+.badge { display: inline-block; font-size: 10px; font-family: Arial, sans-serif; background: #f5f5f5; color: #888; padding: 2px 8px; border-radius: 4px; margin-right: 6px; }
+.news-title { font-size: 13px; font-weight: bold; }
+.news-item p { font-size: 12px; color: #555; line-height: 1.7; margin-top: 6px; }
+.source { font-size: 10px; font-family: Arial, sans-serif; color: #aaa; border-top: 1px solid #e0e0e0; padding-top: 8px; margin-top: 16px; }
+.highlight { font-weight: bold; color: #1a1a1a; }
+.insight-p { font-size: 15px !important; color: #333 !important; line-height: 1.85 !important; margin-bottom: 10px !important; }
+.editor { border-top: 2px solid #1a1a1a; padding-top: 10px; margin-bottom: 16px; }
+.editor p { font-size: 16px; color: #1a1a1a; line-height: 1.85; font-style: italic; font-family: 'Nanum Myeongjo', Georgia, serif; font-weight: 800; }
+.footer { border-top: 1px solid #e0e0e0; padding-top: 8px; text-align: center; font-size: 10px; font-family: Arial, sans-serif; color: #aaa; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-sub">ONEDAY DIGEST</div>
+  <div class="header-title">오늘의 밑줄</div>
+  <div class="header-date">2026년 4월 20일 · Vol. 24</div>
+</div>
+<div class="meta">
+  <span>창업 철학 · 테크 · AI·테크 브리핑</span>
+  <span>출처 표기 기반 요약 콘텐츠</span>
+</div>
+
+<!-- Article 1: Howie Liu -->
+<div class="article">
+  <div class="article-tag">창업 철학 · Howie Liu · Airtable / Superagent</div>
+  <div class="article-title">자기 회사를 잡아먹을 수 있는 걸, 자기가 먼저 만들었다</div>
+  <div class="article-summary">13년 된 노코드 플랫폼 Airtable의 밸류가 $11.7B에서 $4B로 3분의 1 이하로 떨어졌다. 대부분의 CEO는 이런 상황에서 방어에 들어간다. 하위 리우는 반대로 갔다. 13년 역사상 처음으로 주력 제품 밖의 독립 제품을 내놨다. 이름은 Superagent. 그 자신도 인정한다. "이게 Airtable을 집어삼킬 수도 있다."</div>
+  <div class="btn-wrap">
+    <button class="toggle-btn" onclick="var d=document.getElementById('d1'),b=this;d.classList.toggle('open');b.textContent=d.classList.contains('open')?'접기 ▲':'더 보기 ▼'">더 보기 ▼</button>
+    <button class="toggle-btn">🎧 오디오로 듣기 (준비 중)</button>
+  </div>
+  <div id="d1" class="article-detail">
+    <div class="detail-inner">
+      <div class="section-label">이 사람은 누구인가</div>
+      <p>하위 리우(Howie Liu)는 Airtable의 창업자이자 CEO다. 2013년 창업한 Airtable은 스프레드시트와 데이터베이스의 중간 지점을 잡은 노코드 플랫폼으로, 포춘 100대 기업의 80%가 사용하고, 전 세계 50만 개 이상 조직이 고객이다. 제로금리 시대였던 2021년에 $11.7B 밸류를 찍었지만, 지금 세컨더리 마켓에서는 약 $4B 수준으로 거래된다. 총 $1.4B를 조달해서 절반이 통장에 남아 있고, 현금은 여전히 흑자로 나오고 있다. 그리고 2026년 1월, 13년 만에 첫 독립 제품 Superagent를 내놨다.</p>
+      <div class="section-label">주요 활동과 이력</div>
+      <p>대학 시절부터 Salesforce 생태계에서 일하며 HubSpot에 인수된 첫 스타트업 Etacts를 공동창업 → 2013년 Airtable 창업 → 2021년 $11.7B 밸류에 도달 → 2024~2025년 밸류 3분의 1 이하로 하락, 구조조정 병행 → 2025년 가을 AI 에이전트 스타트업 DeepSky 인수(역대 최대 규모), OpenAI 출신 David Azose를 CTO로 영입 → 2026년 1월 Superagent 출시. Superagent는 하나의 AI가 순차적으로 일하는 방식이 아니라, 조정 에이전트가 여러 전문 에이전트를 병렬로 배치해 결과를 종합하는 "멀티 에이전트 시스템"이다. FactSet, Crunchbase, SEC 서류 등 유료 데이터 소스에서 정보를 끌어온다.</p>
+      <div class="section-label">성공한 것과 실패한 것</div>
+      <div class="grid">
+        <div class="box">
+          <div class="box-label">성공 / 확신</div>
+          <p>노코드를 "데이터베이스+앱 빌더"로 재정의하며 포춘 100의 80%를 고객으로 만들었다. 13년을 한 제품으로 버텼다.</p>
+          <p>밸류가 3분의 1로 떨어진 와중에도 $700M 현금을 쥔 채 신제품에 베팅했다. 수비 대신 재창업을 골랐다.</p>
+        </div>
+        <div class="box">
+          <div class="box-label">실패 / 한계</div>
+          <p>2021년 $11.7B 밸류는 제로금리의 착시였다. 실적은 그대로인데 평가가 3분의 1로 깎이는 굴욕을 겪었다.</p>
+          <p>AI 플랫폼 전환이 늦었다는 평이 있었다. "기존 제품 위에 AI를 얹는 방식"으로는 뒤처진다고 본인도 인정했다.</p>
+        </div>
+      </div>
+      <div class="section-label">인사이트</div>
+      <p class="insight-p">리우가 Superagent를 독립 제품으로 만든 이유는 분명하다. 기존 Airtable 안에 AI 기능을 추가하는 식으로는, 지금의 에이전트 시대에 맞는 물건이 안 나온다고 봤다. <span class="highlight">"기존 제품을 보호하려다 다음 제품을 놓치는 것"</span>이 가장 큰 함정이었다. 그래서 자기 회사를 잡아먹을 수도 있는 제품을, 자기가 먼저 내놨다.</p>
+      <p class="insight-p">또 하나. 리우는 "에이전트를 만들 때 가장 중요한 건 프롬프트 엔지니어링이 아니라 <span class="highlight">데이터의 구조</span>"라고 말했다. 좋은 데이터 구조 위에서는 평범한 모델도 잘 작동하고, 나쁜 데이터 위에서는 최고 모델도 헤맨다. 13년간 데이터베이스 회사를 운영한 사람의 결론이다.</p>
+      <p class="insight-p">마지막으로, 그가 쓰는 "오케스트레이트"라는 단어. 그의 말대로, 이제 사용자는 AI에게 프롬프트를 주는 사람이 아니라, <span class="highlight">팀을 지휘하는 사람</span>이 된다. 혼자 돌리는 1인 에이전트가 아니라, 여러 에이전트가 병렬로 일하고 조정자가 종합한다. 1인 기업의 정의가 다시 쓰이고 있다.</p>
+      <div class="source">출처: TechCrunch "Airtable's valuation fell by $7 billion. Its founder thinks that was just the warm-up" (2026.01.27) · Airtable Newsroom "Introducing Superagent" · StrictlyVC Download 팟캐스트 Howie Liu 편 (2026.01.27)</div>
+    </div>
+  </div>
+</div>
+
+<!-- Article 2: Thomas Dohmke -->
+<div class="article">
+  <div class="article-tag">창업 철학 · Thomas Dohmke · Entire</div>
+  <div class="article-title">잘 나가는 자리를 떠났다, 다음 세대의 바닥부터 다시 짜려고</div>
+  <div class="article-summary">토마스 도엠케는 GitHub CEO로 4년간 Copilot을 $100M ARR까지 키웠다. 한창 잘 풀리는 자리였다. 2025년 8월 그는 떠났다. 6개월 뒤 Entire라는 새 회사를 들고 나왔고, 시드 라운드만 $600M(한화 약 8,200억 원) — 개발자 도구 역사상 최대 규모다. 그가 만든 건 "AI가 코드를 쓰는 시대의 GitHub"다.</div>
+  <div class="btn-wrap">
+    <button class="toggle-btn" onclick="var d=document.getElementById('d2'),b=this;d.classList.toggle('open');b.textContent=d.classList.contains('open')?'접기 ▲':'더 보기 ▼'">더 보기 ▼</button>
+    <button class="toggle-btn">🎧 오디오로 듣기 (준비 중)</button>
+  </div>
+  <div id="d2" class="article-detail">
+    <div class="detail-inner">
+      <div class="section-label">이 사람은 누구인가</div>
+      <p>토마스 도엠케(Thomas Dohmke)는 독일 출신 개발자 겸 창업자다. 2015년 자신이 만든 스타트업 HockeyApp을 마이크로소프트에 매각하며 미국으로 옮겨왔고, 이후 10년을 MS에 있었다. 그중 7년이 GitHub, 마지막 4년은 CEO였다. GitHub Copilot을 $100M ARR로 키워 생성형 AI 제품 중 OpenAI 다음으로 빠른 성장을 만든 사람이다. 2025년 8월, "다시 창업자로 돌아가고 싶다"며 떠났다. 2026년 2월 Entire를 공개했고, 시드 $60M(한화 약 820억 원)을 $300M 밸류에 조달했다. Felicis가 리드했고, Madrona, M12, 제리 양(야후 창업자), 개리 탄(YC) 등이 참여했다.</p>
+      <div class="section-label">주요 활동과 이력</div>
+      <p>HockeyApp 창업 후 MS에 매각(2015) → MS에서 Visual Studio, GitHub 쪽 근무 → 2021년 GitHub CEO 취임 → Copilot을 $100M ARR까지 성장시킴(생성형 AI 최고 속도 중 하나) → 2025년 6월 사티아 나델라에게 떠나겠다고 알림 → 8월 퇴사 → 15명 원격 분산 팀으로 Entire 시작 → 2026년 2월 10일 공개, 첫 오픈소스 제품 Checkpoints 출시(Git commit마다 AI 에이전트의 reasoning·프롬프트·의사결정 기록) → 향후 몇 달 내 30명+ 엔지니어 팀으로 확장 예정.</p>
+      <div class="section-label">성공한 것과 실패한 것</div>
+      <div class="grid">
+        <div class="box">
+          <div class="box-label">성공 / 확신</div>
+          <p>정점에서 떠났다. 커리어 최고치에서 제로로 돌아가는 선택이 지금의 $60M 시드를 끌어냈다. 명성이 아니라 타이밍을 샀다.</p>
+          <p>기존 Git 인프라 위에 얹지 않고 나란히 가는 구조로 설계했다. GitHub와 싸우지 않고 "에이전트 시대의 층"을 새로 짠다.</p>
+        </div>
+        <div class="box">
+          <div class="box-label">실패 / 한계</div>
+          <p>AI 코딩 도구 시장은 이미 레드오션. Cursor, Codex, Claude Code, Windsurf가 이미 자리 잡고 있다. 후발주자다.</p>
+          <p>오픈소스 비즈니스 모델은 수익화가 어렵다. 호스팅 서비스로 돈 번다는 계획인데, 그 사이에 경쟁자들이 추격할 시간이 있다.</p>
+        </div>
+      </div>
+      <div class="section-label">인사이트</div>
+      <p class="insight-p">도엠케는 자동차 조립 라인을 비유로 썼다. 과거 자동차는 장인들이 한 대씩 손으로 만들었다. 그걸 조립 라인이 바꿨다. 지금 소프트웨어가 똑같은 전환점에 있다고 본다. <span class="highlight">인간이 한 줄 한 줄 쓰던 시대는 끝났다. 다음은 에이전트들이 병렬로 코드를 쏟아내는 시대</span>다. 그런데 지금의 GitHub·Git·PR 시스템은 인간이 한 줄씩 쓰던 시대를 위해 설계된 도구다. 맞지 않는다.</p>
+      <p class="insight-p">그가 짚은 병목은 작성(authoring)이 아니라 리뷰(review)다. 에이전트가 하루에 수천 줄씩 써내면 사람이 다 못 본다. 그래서 Entire의 첫 제품은 <span class="highlight">"에이전트가 왜 이렇게 짰는지"</span>를 Git commit마다 기록하는 도구다. 코드가 아니라 맥락을 저장한다.</p>
+      <p class="insight-p">한 가지 더. 도엠케는 "2026년의 리더는 headcount를 사람 수가 아니라 <span class="highlight">토큰 수</span>로 생각해야 한다"고 했다. 직원 급여·복지·출장 비용에 더해, AI 토큰 소비가 운영 비용의 한 축이 된다는 뜻이다. 일을 사람에게 나눠주느냐, 에이전트에게 나눠주느냐의 결정이 CFO의 숙제가 된다.</p>
+      <div class="source">출처: The New Stack "GitHub's former CEO launches a developer platform for the age of agentic coding" (2026.02.10) · TechCrunch "Former GitHub CEO raises record $60M dev tool seed round at $300M valuation" · Axios "Former GitHub CEO launches AI coding startup" (2026.02.10)</div>
+    </div>
+  </div>
+</div>
+
+<!-- Article 3: AI·테크 브리핑 -->
+<div class="article">
+  <div class="article-tag">AI · 테크 제품 브리핑 · 2026년 4월 20일</div>
+  <div class="article-title">웹이 에이전트를 위해 다시 설계되기 시작했다</div>
+  <div class="article-summary">오늘의 흐름은 하나로 모인다. 웹이 사람을 위한 공간에서 에이전트를 위한 공간으로 옮겨가고 있다. Cloudflare는 "내 사이트가 에이전트에 준비됐는지"를 스캔해주기 시작했고, ChatGPT는 7억 명의 쇼핑 경로를 에이전트 위에 다시 깔았다. 그리고 에이전트끼리 연결하는 공통 언어(MCP)는 1억 설치에 가까워졌다.</div>
+  <div class="btn-wrap">
+    <button class="toggle-btn" onclick="var d=document.getElementById('d3'),b=this;d.classList.toggle('open');b.textContent=d.classList.contains('open')?'접기 ▲':'더 보기 ▼'">더 보기 ▼</button>
+    <button class="toggle-btn">🎧 오디오로 듣기 (준비 중)</button>
+  </div>
+  <div id="d3" class="article-detail">
+    <div class="detail-inner">
+
+      <div class="news-item">
+        <span class="badge">인프라</span><span class="news-title">Cloudflare, "Agent-Ready Scanner" 공개 — 내 사이트의 에이전트 친화도 측정</span>
+        <p><span class="highlight">무슨 일인가:</span> Cloudflare가 웹사이트의 AI 에이전트 준비도를 자동 분석해주는 도구를 내놨다. robots.txt, MCP 지원, OAuth, 에이전트 프로토콜을 기준으로 "에이전트가 이 사이트를 얼마나 쉽게 이해하고 다룰 수 있는지"를 점수화한다.</p>
+        <p><span class="highlight">왜 중요한가:</span> 검색엔진 최적화(SEO)는 크롤러가 사람 대신 읽는 시대의 도구였다. 이제는 에이전트가 사람 대신 결정을 내린다. 내 사이트가 에이전트에 보이지 않으면 방문자 자체가 줄어드는 시대로 넘어가고 있다.</p>
+        <p><span class="highlight">인사이트:</span> SEO에서 GEO(생성형 엔진 최적화)로의 전환은 더 이상 개념이 아니다. 측정 도구가 나왔다는 건, 비교와 경쟁이 시작됐다는 뜻이다.</p>
+      </div>
+
+      <div class="news-item">
+        <span class="badge">커머스</span><span class="news-title">ChatGPT Shopping — 에이전트가 결제까지 대신하는 커머스 레이어</span>
+        <p><span class="highlight">무슨 일인가:</span> OpenAI가 ChatGPT 안에서 바로 쇼핑할 수 있는 기능을 열었다. 7억 명의 ChatGPT 사용자를 Target, Walmart, Sephora, Shopify로 연결하는 "Agentic Commerce Protocol" 위에 올려 놨다. 비주얼 비교, 이미지 검색, 개인화 가이드가 기본 탑재된다.</p>
+        <p><span class="highlight">왜 중요한가:</span> 검색창에 입력하는 사람이 아니라, 에이전트에게 "필요한 걸 찾아줘"라고 시키는 사람이 새 고객이 된다. 상품 진열대가 바뀌는 것이다. 브랜드는 에이전트가 선택하는 기준에 맞춰야 노출된다.</p>
+        <p><span class="highlight">인사이트:</span> 에이전트가 내 이름으로 결제하기 시작하면, 신뢰는 브랜드에서 에이전트로 옮겨간다. 누구의 에이전트가 내 돈을 쓰느냐가, 누구의 쇼핑몰을 쓰느냐보다 중요해진다.</p>
+      </div>
+
+      <div class="news-item">
+        <span class="badge">표준</span><span class="news-title">MCP, 9,700만 설치 돌파 — 에이전트 세계의 공통 언어가 굳어진다</span>
+        <p><span class="highlight">무슨 일인가:</span> 앤트로픽이 공개한 Model Context Protocol(MCP)이 2026년 3월 기준 9,700만 설치를 넘었다. 작년 말 리눅스 재단 산하 "Agentic AI Foundation"이 출범했고, OpenAI의 AGENTS.md, Block의 goose와 함께 MCP가 기본 기여물이 됐다.</p>
+        <p><span class="highlight">왜 중요한가:</span> 경쟁 관계의 AI 기업들이 같은 재단에 인프라를 기부한다는 건, 그 표준이 "공용 도로"가 됐다는 뜻이다. MCP는 이제 실험적 기술이 아니라 기본 인프라다. 앞으로 에이전트가 외부 도구·API·데이터와 연결되는 표준 통로가 된다.</p>
+        <p><span class="highlight">인사이트:</span> 전기에 콘센트 규격이 통일되면서 모든 가전이 폭발했다. 에이전트 세계에서 MCP가 그 콘센트다. 내 서비스가 MCP 호환인가 아닌가가 곧 "연결되는 회사"와 "고립된 회사"를 가른다.</p>
+      </div>
+
+      <div class="source">출처: Cloudflare Blog "Is Your Site Agent-Ready?" (2026.04) · OpenAI ChatGPT Shopping 발표 (2026.04) · Crescendo.ai "Latest AI News and Updates" · Mean.ceo "New AI Model Releases News April 2026"</div>
+    </div>
+  </div>
+</div>
+
+<!-- Article 4: choi님 제품 소식 -->
+<div class="article">
+  <div class="article-tag">오늘의 신제품 · 2026년 4월 19일</div>
+  <div class="article-title">말로 디자인하고, 사이트를 스캔하고, 프로젝트 단위로 생각한다</div>
+  <div class="article-summary">오늘 choi님 채널에 올라온 제품들을 관통하는 건 "인터페이스가 점점 대화가 된다"는 흐름이다. 디자인도, 노트 정리도, 사이트 진단도 말로 한다. 그리고 그 말이 에이전트에게 넘어간다.</div>
+  <div class="btn-wrap">
+    <button class="toggle-btn" onclick="var d=document.getElementById('d4'),b=this;d.classList.toggle('open');b.textContent=d.classList.contains('open')?'접기 ▲':'더 보기 ▼'">더 보기 ▼</button>
+    <button class="toggle-btn">🎧 오디오로 듣기 (준비 중)</button>
+  </div>
+  <div id="d4" class="article-detail">
+    <div class="detail-inner">
+
+      <div class="news-item">
+        <span class="badge">디자인</span><span class="news-title">Claude Design — 말로 프로토타입·슬라이드·원페이저를 만든다</span>
+        <p><span class="highlight">무슨 일인가:</span> Anthropic Labs가 공개한 AI 디자인 도구. 프롬프트를 주면 프로토타입, 프레젠테이션, 마케팅 자산이 나온다. 대화를 주고받으며 다듬고, 어디로든 내보낼 수 있다.</p>
+        <p><span class="highlight">왜 중요한가:</span> 디자이너의 일이 "픽셀을 찍는 일"에서 "디자인을 말로 지시하는 일"로 넘어가고 있다. 창업자·마케터도 디자인 부서를 거치지 않고 빠르게 결과물을 뽑는다.</p>
+        <p><span class="highlight">인사이트:</span> 도구가 언어가 될수록, 좋은 언어를 쓰는 사람이 좋은 결과물을 만든다. "잘 말하는 사람"이 "잘 디자인하는 사람"과 같은 뜻이 된다.</p>
+      </div>
+
+      <div class="news-item">
+        <span class="badge">GEO</span><span class="news-title">Is Your Site Agent-Ready? (Cloudflare) — 내 사이트의 에이전트 준비도 스캔</span>
+        <p><span class="highlight">무슨 일인가:</span> 위 브리핑에서 다룬 Cloudflare의 스캐너가 Product Hunt에 정식 상품으로 올라왔다. URL을 넣으면 내 사이트가 AI 에이전트에 얼마나 열려 있는지를 수치로 알려준다.</p>
+        <p><span class="highlight">왜 중요한가:</span> SEO 점검 도구가 10년간 웹 마케팅을 바꿨다. 이 도구는 GEO 세대의 첫 공개 진단기다. "내 사이트는 괜찮은데 왜 에이전트 트래픽이 안 오지"라는 질문이 여기서 시작된다.</p>
+        <p><span class="highlight">인사이트:</span> 에이전트가 못 읽는 사이트는 앞으로 안 보인다. "인간이 보기에 예쁜 사이트"와 "에이전트가 읽기 쉬운 사이트"는 다르다. 둘 다 만들어야 한다.</p>
+      </div>
+
+      <div class="news-item">
+        <span class="badge">쇼핑</span><span class="news-title">ChatGPT Shopping — 대화창이 진열대가 된다</span>
+        <p><span class="highlight">무슨 일인가:</span> 위 브리핑에서 다룬 ChatGPT 쇼핑 기능. Product Hunt에서도 별도로 공개됐다. 대화하면서 상품을 비교하고, 이미지로 검색하고, 개인화된 추천을 받는다.</p>
+        <p><span class="highlight">왜 중요한가:</span> 구글 검색창이 아니라 ChatGPT 대화창에서 쇼핑이 시작된다. 상품 페이지의 1위를 다투던 SEO가, 이제 "에이전트가 먼저 고르는 상품"이 되는 경쟁으로 바뀐다.</p>
+        <p><span class="highlight">인사이트:</span> D2C 브랜드는 상품 페이지뿐 아니라 "에이전트에게 잘 읽히는 상품 데이터"를 준비해야 한다. 태그와 설명이 단순한 SEO용이 아니라 에이전트용 스펙 시트가 된다.</p>
+      </div>
+
+      <div class="news-item">
+        <span class="badge">워크스페이스</span><span class="news-title">Notebooks in Gemini — 프로젝트 단위로 작업 공간을 나눈다</span>
+        <p><span class="highlight">무슨 일인가:</span> Gemini에 "노트북" 기능이 추가됐다. 프로젝트별로 채팅·파일·PDF를 한 공간에 모은다. 프로젝트 전용 지시를 따로 줄 수 있고, NotebookLM과 동기화된다. Ultra·Pro·Plus 사용자부터 배포 중.</p>
+        <p><span class="highlight">왜 중요한가:</span> 작년까지 AI 사용 단위는 "대화 하나"였다. 이제 "프로젝트 하나"로 올라간다. 업무의 컨텍스트가 대화창 안이 아니라 프로젝트 폴더에 담긴다.</p>
+        <p><span class="highlight">인사이트:</span> AI의 핵심이 모델에서 컨텍스트로 넘어가고 있다. 프로젝트마다 독립된 지식 공간을 운영하는 사람이, 같은 모델을 쓰는 사람보다 훨씬 빠른 결과물을 뽑는다.</p>
+      </div>
+
+      <div class="source">출처: choi님 카카오톡 AI·테크 채널 (2026년 4월 19일 주요 제품 소식)</div>
+    </div>
+  </div>
+</div>
+
+<!-- Editor Note -->
+<div class="editor">
+  <div class="section-label">에디터 한마디</div>
+  <p>"지킬 것을 놓을 때 비로소 다음 것이 보인다."</p>
+</div>
+
+<div class="footer">오늘의 밑줄 · 매일 발행 · 출처 표기 기반 요약 콘텐츠</div>
+
+<div style="display:flex; justify-content:center; gap:10px; margin-top:20px; padding-bottom:20px;">
+  <a href="vol23.html" style="display:inline-block; padding:10px 20px; border:1px solid #1a1a1a; border-radius:8px; font-size:13px; font-family:Arial,sans-serif; color:#fff; text-decoration:none; background:#1a1a1a;">← 이전 호</a>
+  <a href="archive.html" style="display:inline-block; padding:10px 20px; border:1px solid #ccc; border-radius:8px; font-size:13px; font-family:Arial,sans-serif; color:#555; text-decoration:none; background:#fff;">전체 보기</a>
+  <a id="next-btn" href="vol25.html" style="display:none; padding:10px 20px; border:1px solid #1a1a1a; border-radius:8px; font-size:13px; font-family:Arial,sans-serif; color:#fff; text-decoration:none; background:#1a1a1a;">다음 호 →</a>
+</div>
+<script>
+(function(){
+  fetch('vol25.html', {method:'HEAD'}).then(function(r){ if(r.ok) document.getElementById('next-btn').style.display='inline-block'; }).catch(function(){});
+})();
+</script>
+
+</body>
+</html>
