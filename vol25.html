@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>오늘의 밑줄 · Vol.25</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap');
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { background: #f0efeb; }
+body { font-family: Georgia, serif; max-width: 680px; margin: 0 auto; padding: 40px 20px; color: #1a1a1a; background: #fff; word-break: keep-all; box-shadow: 0 0 40px rgba(0,0,0,0.06); }
+.header { text-align: center; border-top: 3px solid #1a1a1a; border-bottom: 3px solid #1a1a1a; padding: 12px 0; margin-bottom: 4px; }
+.header-sub { font-size: 11px; font-family: Arial, sans-serif; color: #888; letter-spacing: 2px; margin-bottom: 6px; }
+.header-title { font-size: 36px; font-weight: 800; letter-spacing: 0px; font-family: 'Nanum Myeongjo', Georgia, serif; white-space: nowrap; }
+.header-date { font-size: 11px; font-family: Arial, sans-serif; color: #888; margin-top: 6px; }
+.meta { display: flex; justify-content: space-between; border-bottom: 1px solid #e0e0e0; padding: 4px 0; margin-bottom: 28px; font-size: 10px; font-family: Arial, sans-serif; color: #888; }
+.article { margin-bottom: 28px; padding-bottom: 28px; border-bottom: 1px solid #e0e0e0; }
+.article-tag { font-size: 10px; font-family: Arial, sans-serif; color: #888; letter-spacing: 1px; border-top: 2px solid #1a1a1a; padding-top: 8px; margin-bottom: 8px; }
+.article-title { font-size: 24px; font-weight: bold; line-height: 1.3; margin-bottom: 12px; font-family: 'Nanum Myeongjo', Georgia, serif; letter-spacing: -0.5px; }
+.article-summary { font-size: 13px; color: #555; line-height: 1.75; margin-bottom: 14px; }
+.btn-wrap { display: flex; gap: 6px; margin-bottom: 14px; }
+.toggle-btn { font-size: 11px; font-family: Arial, sans-serif; color: #555; background: none; border: 1px solid #ccc; border-radius: 6px; padding: 4px 10px; cursor: pointer; }
+.toggle-btn:hover { background: #f5f5f5; }
+.article-detail { display: none; }
+.article-detail.open { display: block; }
+.detail-inner { border-left: 2px solid #e0e0e0; padding-left: 16px; }
+.section-label { font-size: 10px; font-family: Arial, sans-serif; color: #888; letter-spacing: 1px; margin-bottom: 6px; margin-top: 16px; }
+.detail-inner p { font-size: 13px; color: #555; line-height: 1.75; margin-bottom: 8px; }
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 8px; }
+.box { background: #f5f5f5; border-radius: 8px; padding: 10px 12px; }
+.box-label { font-size: 11px; font-family: Arial, sans-serif; color: #888; margin-bottom: 6px; }
+.box p { font-size: 12px; color: #555; line-height: 1.65; margin-bottom: 6px; }
+.news-item { margin-bottom: 14px; padding-bottom: 14px; border-bottom: 1px solid #e0e0e0; }
+.news-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+.badge { display: inline-block; font-size: 10px; font-family: Arial, sans-serif; background: #f5f5f5; color: #888; padding: 2px 8px; border-radius: 4px; margin-right: 6px; }
+.news-title { font-size: 13px; font-weight: bold; }
+.news-item p { font-size: 12px; color: #555; line-height: 1.7; margin-top: 6px; }
+.source { font-size: 10px; font-family: Arial, sans-serif; color: #aaa; border-top: 1px solid #e0e0e0; padding-top: 8px; margin-top: 16px; }
+.highlight { font-weight: bold; color: #1a1a1a; }
+.insight-p { font-size: 15px !important; color: #333 !important; line-height: 1.85 !important; margin-bottom: 10px !important; }
+.editor { border-top: 2px solid #1a1a1a; padding-top: 10px; margin-bottom: 16px; }
+.editor p { font-size: 16px; color: #1a1a1a; line-height: 1.85; font-style: italic; font-family: 'Nanum Myeongjo', Georgia, serif; font-weight: 800; }
+.footer { border-top: 1px solid #e0e0e0; padding-top: 8px; text-align: center; font-size: 10px; font-family: Arial, sans-serif; color: #aaa; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-sub">ONEDAY DIGEST</div>
+  <div class="header-title">오늘의 밑줄</div>
+  <div class="header-date">2026년 4월 21일 · Vol. 25</div>
+</div>
+<div class="meta">
+  <span>창업 철학 · AI · 오늘의 신제품</span>
+  <span>출처 표기 기반 요약 콘텐츠</span>
+</div>
+
+<!-- Article 1: Jack Clark -->
+<div class="article">
+  <div class="article-tag">창업 철학 · Jack Clark · Anthropic</div>
+  <div class="article-title">문학 전공자가 AI 프론티어의 가장 중요한 자리에 앉았다</div>
+  <div class="article-summary">잭 클락은 영문학을 전공한 기자였다. 그가 지금은 Anthropic의 공동창업자이자 공공이익 책임자다. 코드를 짜지 않는 그가, AI 시대에 가장 필요한 능력은 코딩이 아니라고 말한다. 올바른 질문을 던지는 능력. 인문학 전공자가 다시 부상하는 이유다.</div>
+  <div class="btn-wrap">
+    <button class="toggle-btn" onclick="var d=document.getElementById('d1'),b=this;d.classList.toggle('open');b.textContent=d.classList.contains('open')?'접기 ▲':'더 보기 ▼'">더 보기 ▼</button>
+    <button class="toggle-btn">🎧 오디오로 듣기 (준비 중)</button>
+  </div>
+  <div id="d1" class="article-detail">
+    <div class="detail-inner">
+      <div class="section-label">이 사람은 누구인가</div>
+      <p>잭 클락은 Anthropic의 공동창업자이자 공공이익 책임자(Head of Public Benefit)다. 영국 브라이튼 출신으로 영문학·창작 글쓰기를 전공했다. 블룸버그에서 기자로 일했고, OpenAI에서 정책 책임자를 거쳐 Anthropic을 세웠다. 사내 경제팀을 이끌며 Anthropic Economic Index를 만들었다. 코드 한 줄 못 쓰지만, AI 회사의 의사결정 핵심에 있다.</p>
+      <div class="section-label">주요 활동과 이력</div>
+      <p>영문학 전공 → 블룸버그 기자 → OpenAI 정책 책임자 → Anthropic 공동창업(2021) → Public Benefit 책임자 → Anthropic Institute 신설 주도 → Anthropic Economic Index 운영. 4월 14일 Semafor World Economy 서밋에서 Mythos 모델, 정부 협력, 고용 영향, 인문학의 미래를 모두 다뤘다. Anthropic은 같은 시기 연환산 매출이 90억 달러에서 200억 달러를 넘기며 사상 최단기 성장세를 기록 중이다.</p>
+      <div class="section-label">성공한 것과 실패한 것</div>
+      <div class="grid">
+        <div class="box">
+          <div class="box-label">성공 / 확신</div>
+          <p>코드를 못 한다는 사실을 약점이 아니라 시야로 바꿨다. 역사와 이야기 구조를 읽는 훈련이 AI의 사회적 영향을 가장 먼저 보게 만들었다고 했다.</p>
+          <p>회사가 정부와 소송 중에도 Mythos 모델을 정부에 직접 브리핑했다. 갈등을 갈등으로 끌고 가지 않았다.</p>
+        </div>
+        <div class="box">
+          <div class="box-label">실패 / 한계</div>
+          <p>국방부와 소송 중인데, 펜타곤의 대형 AI 계약은 OpenAI에 빼앗겼다. 정부와 협력하면서 동시에 싸우는 구조가 회사에 실질적 비용을 만들고 있다.</p>
+          <p>Mythos를 "너무 위험해서 공개하지 않는다"고 하면서도, 같은 시기 정부는 JPMorgan·골드만삭스·시티 같은 대형 은행에 테스트를 권하고 있다. 위험 메시지와 실제 배포 사이가 어긋난다.</p>
+        </div>
+      </div>
+      <div class="section-label">인사이트</div>
+      <p class="insight-p">잭 클락은 AI가 모든 분야의 전문가를 무한히 부를 수 있게 해준다고 했다. 그렇다면 인간의 일은 무엇인가. <span class="highlight">올바른 질문을 던지는 것, 그리고 다른 분야의 통찰을 부딪치게 했을 때 무엇이 흥미로울지 직관하는 것</span>이라고 했다. 답을 만드는 능력은 AI에 넘기고, 문제를 만드는 능력만 남는다는 뜻이다.</p>
+      <p class="insight-p">그는 자신이 문학을 공부했기 때문에 "우리가 미래에 대해 우리 자신에게 들려주는 이야기"를 읽을 수 있었다고 했다. 기술이 발전할수록 그 기술이 어떤 서사 위에서 작동하는지를 보는 사람이 더 중요해진다. <span class="highlight">엔지니어가 AI를 만들 수 있어도, 그 AI가 사회에 어떤 의미인지를 묻는 사람은 따로 필요하다.</span></p>
+      <p class="insight-p">철학 전공자가 구글 딥마인드에 채용됐다는 소식에 그는 이렇게 말했다. "철학 학위가 좋은 직업 전망이라는 말, 마지막으로 들은 게 언제였습니까?" 이제는 그렇다는 답이다. AI가 잘하는 일이 늘어날수록, AI가 못하는 일의 가치는 거꾸로 올라간다.</p>
+      <div class="source">출처: TechCrunch "Anthropic co-founder confirms the company briefed the Trump administration on Mythos" (2026.4.14) · Fortune (2026.4.14) · Semafor World Economy Summit · Plain English with Derek Thompson</div>
+    </div>
+  </div>
+</div>
+
+<!-- Article 2: Dan Lewis -->
+<div class="article">
+  <div class="article-tag">창업 철학 · Dan Lewis · Convoy</div>
+  <div class="article-title">유니콘이 망하고, 그 창업자가 무대 위에서 풀어놓은 것</div>
+  <div class="article-summary">Convoy는 한때 트럭 운송업의 우버라 불린 유니콘이었다. 2023년 문을 닫았다. 공동창업자 댄 루이스가 시애틀 AI 스타트업 서밋 무대에 다시 섰다. 회사가 망한 이유를 변명하는 대신, 후배 창업자들에게 자신이 배운 것을 넘겼다.</div>
+  <div class="btn-wrap">
+    <button class="toggle-btn" onclick="var d=document.getElementById('d2'),b=this;d.classList.toggle('open');b.textContent=d.classList.contains('open')?'접기 ▲':'더 보기 ▼'">더 보기 ▼</button>
+    <button class="toggle-btn">🎧 오디오로 듣기 (준비 중)</button>
+  </div>
+  <div id="d2" class="article-detail">
+    <div class="detail-inner">
+      <div class="section-label">이 사람은 누구인가</div>
+      <p>댄 루이스는 Convoy의 공동창업자다. 마이크로소프트 PM에서 시작해, 시애틀 AI 스타트업 Wavii 초기 멤버로 합류했고, 구글이 인수했다. 이후 아마존을 거쳐 Convoy를 세웠다. Convoy는 트럭 운송 디지털 매칭 플랫폼으로 한때 유니콘에 올랐고, 2023년에 문을 닫았다. 지금은 마이크로소프트 부사장으로 돌아갔다.</p>
+      <div class="section-label">주요 활동과 이력</div>
+      <p>마이크로소프트 PM → Wavii(시애틀 AI 스타트업, 구글 인수) → 아마존 → Convoy 공동창업 → 유니콘 등극 → 2023년 폐업 → 마이크로소프트 복귀(VP) → 2026년 4월 시애틀 AI 스타트업 서밋 키노트. 그는 무대에서 폐업의 원인을 따지는 대신, 창업 초기로 돌아가서 가르칠 수 있는 것들을 골랐다.</p>
+      <div class="section-label">성공한 것과 실패한 것</div>
+      <div class="grid">
+        <div class="box">
+          <div class="box-label">성공 / 확신</div>
+          <p>고객의 단어를 그대로 가져왔다. 데이터를 보되, 그 데이터가 어떤 문제를 풀고 있는지는 고객의 입을 통해 확인했다.</p>
+          <p>스타트업의 강점은 한 가지 문화, 한 가지 보상 구조라고 봤다. 큰 회사는 두 가지를 동시에 운영하다 무너지지만, 스타트업은 벽을 부수는 사람만 모을 수 있다.</p>
+        </div>
+        <div class="box">
+          <div class="box-label">실패 / 한계</div>
+          <p>Convoy는 결국 닫혔다. 그가 말한 교훈 중 많은 것이 회사가 망하기 전에는 보이지 않았다. 8년이 걸려 알았다.</p>
+          <p>회사 스토리를 일찍 단단하게 짜지 못했다는 점을 인정했다. 고객이 왜 검증되지 않은 기술 회사에 트럭 운송을 맡겨야 하는지에 대한 답을 만드는 데 오래 걸렸다.</p>
+        </div>
+      </div>
+      <div class="section-label">인사이트</div>
+      <p class="insight-p">루이스는 회사 문화는 창업자가 만들든 안 만들든 어차피 만들어진다고 했다. <span class="highlight">의도하지 않은 문화는 통제할 수 없는 문화다.</span> 그래서 그는 "기업가가 의도적으로 짜야만 하는 것"이라고 못 박았다. 자연스럽게 생긴 문화는 자연스럽게 무너진다.</p>
+      <p class="insight-p">그는 채용에 대해서도 단호했다. 80%는 벽을 부수는 사람이어야 한다고 했다. 큰 회사는 시스템을 운영하는 사람도 필요하지만, 스타트업은 그 두 종류를 같은 보상 체계 안에 넣을 수 없다. <span class="highlight">한 회사가 두 개의 문화를 동시에 가질 수는 없다.</span></p>
+      <p class="insight-p">그는 마지막에 데이터 이야기를 했다. 데이터를 보되, 고객이 쓴 단어를 그대로 인용하라고. 통계는 문제를 가리키지만, 고객의 표현은 문제의 결을 보여준다. <span class="highlight">숫자가 무엇을 말하는지 모를 때 답은 늘 고객의 언어 안에 있었다.</span> 회사가 망한 뒤에 가장 후회한 부분이라고 했다.</p>
+      <div class="source">출처: GeekWire "Stop trying to make people read instructions: 10 startup lessons from Convoy co-founder Dan Lewis" (2026.4.3) · Seattle AI Startup Summit 2026 키노트</div>
+    </div>
+  </div>
+</div>
+
+<!-- Article 3: AI · 테크 브리핑 -->
+<div class="article">
+  <div class="article-tag">AI · 테크 제품 브리핑 · 2026년 4월 21일</div>
+  <div class="article-title">AI 산업이 데모를 끝내고, 결과를 묻기 시작했다</div>
+  <div class="article-summary">이번 주 AI 산업의 흐름은 단단해졌다. 모델 자랑이 아니라 매출과 고용, 정책 이야기로 옮겨갔다. Anthropic의 매출 폭증, Stanford 보고서가 짚은 산업과 대중의 격차, 통신사 CEO의 솔직한 발언까지. 모두 같은 방향을 가리킨다. 이제 AI는 가능성이 아니라 결과로 평가받기 시작했다.</div>
+  <div class="btn-wrap">
+    <button class="toggle-btn" onclick="var d=document.getElementById('d3'),b=this;d.classList.toggle('open');b.textContent=d.classList.contains('open')?'접기 ▲':'더 보기 ▼'">더 보기 ▼</button>
+    <button class="toggle-btn">🎧 오디오로 듣기 (준비 중)</button>
+  </div>
+  <div id="d3" class="article-detail">
+    <div class="detail-inner">
+
+      <div class="news-item">
+        <span class="badge">매출</span><span class="news-title">Anthropic, 4개월 만에 매출 두 배 — 200억 달러 돌파</span>
+        <p><span class="highlight">무슨 일인가:</span> Anthropic의 연환산 매출이 2025년 12월 90억 달러에서 2026년 3월 200억 달러를 넘겼다. 이 규모에서 이 속도로 성장한 회사는 기록상 없다.</p>
+        <p><span class="highlight">왜 중요한가:</span> AI 산업이 거품이라는 주장과, 사상 최단기 성장 기업이 AI 회사라는 사실이 동시에 존재한다. 시장은 이미 둘 중 하나를 고르는 단계를 지났다.</p>
+        <p><span class="highlight">인사이트:</span> 모델 성능은 비슷해졌고, 이제 누가 더 많이 쓰이느냐가 답이다. 기술 차이가 아니라 분포의 차이가 회사를 가른다.</p>
+      </div>
+
+      <div class="news-item">
+        <span class="badge">보고서</span><span class="news-title">Stanford AI Index 2026 — AI 내부와 바깥의 인식 격차가 벌어지고 있다</span>
+        <p><span class="highlight">무슨 일인가:</span> 스탠포드의 연례 보고서가 발표됐다. 모델은 계속 좋아지고 있고, 사용자도 PC·인터넷보다 빠르게 늘고 있다. 그런데 일자리·정책·평가 기준이 따라오지 못한다.</p>
+        <p><span class="highlight">왜 중요한가:</span> 보고서는 AI가 고객 서비스에서 14%, 소프트웨어 개발에서 26% 생산성을 올렸다고 했다. 하지만 판단이 필요한 일에서는 그 효과가 보이지 않는다. 일률적으로 좋다는 말이 통하지 않는 시점이다.</p>
+        <p><span class="highlight">인사이트:</span> 실제 성과가 일정하지 않은데, 산업은 이미 다음 모델로 달려간다. 따라잡지 못하는 쪽은 기술이 아니라 제도와 사람이다.</p>
+      </div>
+
+      <div class="news-item">
+        <span class="badge">노동</span><span class="news-title">Verizon CEO, "AI가 일자리에 어떤 영향을 줄지 솔직히 말하자"</span>
+        <p><span class="highlight">무슨 일인가:</span> Verizon CEO 댄 슐만이 다른 경영진들에게 AI가 노동에 미치는 영향을 더 솔직하게 이야기하자고 공개적으로 말했다. 대부분의 기업 메시지는 아직 "생산성 향상"에 머물러 있다.</p>
+        <p><span class="highlight">왜 중요한가:</span> 투자자, 직원, 정책 입안자 모두 이제는 데모가 아니라 결과를 묻는다. 비용 절감, 인력 변화, 누가 이득을 보는지에 대한 답이 필요해졌다.</p>
+        <p><span class="highlight">인사이트:</span> AI 담론이 가능성에서 결과로 이동하고 있다. 회사가 어떤 단어를 쓰느냐가 곧 신뢰의 기준이 된다.</p>
+      </div>
+
+      <div class="news-item">
+        <span class="badge">기업</span><span class="news-title">Meta, Muse Spark 출시 — 작고 빠른 AI로 다시 출발</span>
+        <p><span class="highlight">무슨 일인가:</span> Meta가 새 AI 모델 Muse Spark를 발표했다. 이전 Llama 4 중간 모델 수준의 성능을 1/10 연산량으로 낸다고 했다. 지난해 오픈소스 모델이 실패한 뒤 다시 짠 첫 작품이다.</p>
+        <p><span class="highlight">왜 중요한가:</span> 오픈소스를 고수하던 Meta가 이번엔 비공개로 출시했다. AI 자본 지출도 1,150억~1,350억 달러로 거의 두 배로 늘렸다. 전략이 바뀌었다는 신호다.</p>
+        <p><span class="highlight">인사이트:</span> 같은 회사라도 한 번의 실패가 노선을 바꾼다. 큰 회사는 빠르지 않지만, 한번 방향을 트는 순간 자본의 무게로 밀고 들어온다.</p>
+      </div>
+
+      <div class="news-item">
+        <span class="badge">조직</span><span class="news-title">PwC 보고서 — AI 수익의 74%를 상위 20% 기업이 가져간다</span>
+        <p><span class="highlight">무슨 일인가:</span> PwC가 25개 산업 1,217명의 임원을 조사했다. AI로 만든 경제적 가치의 74%가 상위 20% 기업에 집중됐다. 차이는 도구를 더 쓰느냐가 아니라, AI를 성장의 촉매로 쓰느냐였다.</p>
+        <p><span class="highlight">왜 중요한가:</span> 도구를 도입한 회사와 도구로 사업을 다시 짠 회사 사이의 격차가 본격적으로 벌어지고 있다. 평균이 아니라 분포가 의미를 갖는 시점이다.</p>
+        <p><span class="highlight">인사이트:</span> AI는 평준화가 아니라 양극화를 만든다. 같은 도구를 들고도, 그것으로 무엇을 다시 짤지 묻는 회사만 앞으로 간다.</p>
+      </div>
+
+      <div class="source">출처: Plain English with Derek Thompson · MIT Technology Review (Stanford AI Index 2026) · Tech Startups (2026.4.20) · CNBC (Meta Muse Spark) · PwC Press Release (2026.4.13)</div>
+    </div>
+  </div>
+</div>
+
+<!-- Article 4: 오늘의 신제품 -->
+<div class="article">
+  <div class="article-tag">오늘의 신제품 · 2026년 4월 19일</div>
+  <div class="article-title">에이전트가 터미널·로컬·모바일까지 내려오는 중</div>
+  <div class="article-summary">이번 주 ProductHunt 상위 제품을 보면 흐름이 한쪽으로 모인다. 에이전트는 클라우드 위 서비스에서, 내 컴퓨터·내 터미널·내 휴대폰 안으로 내려오고 있다. 누가 더 가까이 붙어 있느냐가 다음 경쟁 축이다.</div>
+  <div class="btn-wrap">
+    <button class="toggle-btn" onclick="var d=document.getElementById('d4'),b=this;d.classList.toggle('open');b.textContent=d.classList.contains('open')?'접기 ▲':'더 보기 ▼'">더 보기 ▼</button>
+    <button class="toggle-btn">🎧 오디오로 듣기 (준비 중)</button>
+  </div>
+  <div id="d4" class="article-detail">
+    <div class="detail-inner">
+
+      <div class="news-item">
+        <span class="badge">로컬 에이전트</span><span class="news-title">CraftBot — 내 컴퓨터 안에서 자율적으로 일하는 AI 비서</span>
+        <p><span class="highlight">무슨 일인가:</span> 사용자의 컴퓨터에서 직접 작동하는 자가 호스팅 AI 에이전트. 작업을 해석하고 계획해서 실행하며, 다양한 앱·MCP·자체 기술을 연결할 수 있다.</p>
+        <p><span class="highlight">왜 중요한가:</span> 클라우드에 데이터를 보내지 않고 로컬에서 도는 에이전트가 본격적으로 등장하기 시작했다. 보안·개인정보 이슈가 큰 사용자가 먼저 움직일 가능성이 크다.</p>
+        <p><span class="highlight">인사이트:</span> AI 인프라가 데이터 센터에서 데스크톱으로 내려오는 흐름의 시작점. 위치가 바뀌면 비즈니스 모델도 바뀐다.</p>
+      </div>
+
+      <div class="news-item">
+        <span class="badge">개발</span><span class="news-title">Claude Code Rendering — 마우스 지원과 플리커 없는 터미널 UI</span>
+        <p><span class="highlight">무슨 일인가:</span> Claude Code의 새 렌더러가 출시됐다. 뷰포트 가상화, 깜빡임 제거, 마우스 이벤트 지원. VS Code·tmux·iTerm2에서 쓰는 개발자가 대상이다.</p>
+        <p><span class="highlight">왜 중요한가:</span> 터미널에서 도는 코딩 에이전트의 사용성이 GUI 수준으로 올라왔다. 도구로서의 완성도가 본격적으로 정착하는 단계.</p>
+        <p><span class="highlight">인사이트:</span> 기능이 충분히 강해진 다음 단계는 늘 사용성이다. 누가 더 매끄럽게 쓰이느냐로 점유율이 갈린다.</p>
+      </div>
+
+      <div class="news-item">
+        <span class="badge">모바일</span><span class="news-title">Android CLI — 터미널에서 어떤 에이전트로든 안드로이드 앱을 짠다</span>
+        <p><span class="highlight">무슨 일인가:</span> 안드로이드 앱을 터미널에서 직접 만들 수 있게 해주는 새 도구. CLI 명령어, 모듈형 기술, 라이브 지식베이스가 결합돼 설정·생성·테스트·배포를 빠르게 한다.</p>
+        <p><span class="highlight">왜 중요한가:</span> 모바일 앱 개발도 코딩 에이전트 워크플로우 안으로 들어왔다. 그동안 IDE에 묶여 있던 작업이 터미널로 풀리고 있다.</p>
+        <p><span class="highlight">인사이트:</span> 에이전트가 다룰 수 있는 영역이 한 칸씩 넓어진다. 다음에 풀리는 영역은 늘 가장 닫혀 있던 곳이다.</p>
+      </div>
+
+      <div class="news-item">
+        <span class="badge">음성</span><span class="news-title">Grok Voice API — 음성 인식·합성을 가장 싼 가격으로</span>
+        <p><span class="highlight">무슨 일인가:</span> xAI가 개발자용 음성 API를 별도로 공개했다. 실시간·배치 전사, 다중 화자 구분, 표현력 있는 TTS, 다국어 지원을 가격 경쟁력과 함께 묶었다.</p>
+        <p><span class="highlight">왜 중요한가:</span> 음성 인터페이스가 텍스트 다음의 격전지로 굳어지고 있다. xAI는 가격으로 들어와 시장 진입 비용을 한 번 더 낮췄다.</p>
+        <p><span class="highlight">인사이트:</span> 모델이 평준화될수록, 가격이 다음 무기가 된다. 누가 먼저 써보느냐가 누가 먼저 자리 잡느냐를 결정한다.</p>
+      </div>
+
+      <div class="news-item">
+        <span class="badge">개발</span><span class="news-title">Vercel Flags — 기능 배포·실험을 인프라 안으로 흡수한다</span>
+        <p><span class="highlight">무슨 일인가:</span> Vercel이 자체 기능 플래그 시스템을 출시했다. 플래그 생성, 타깃팅 규칙, 점진적 배포, A/B 테스트를 Vercel 대시보드에서 직접 한다.</p>
+        <p><span class="highlight">왜 중요한가:</span> 그동안 별도 SaaS로 사야 했던 기능이 인프라 안에 흡수됐다. 작은 팀이 도구 비용 없이 같은 일을 할 수 있게 됐다.</p>
+        <p><span class="highlight">인사이트:</span> 인프라 회사가 위로 올라오면서, 별개로 팔리던 도구들이 흡수된다. 단일 기능 SaaS의 자리는 점점 좁아진다.</p>
+      </div>
+
+      <div class="source">출처: ProductHunt (2026년 4월 19일 주요 제품 소식) · CraftBot · Anthropic · Android CLI · xAI · Vercel</div>
+    </div>
+  </div>
+</div>
+
+<!-- Editor Note -->
+<div class="editor">
+  <div class="section-label">에디터 한마디</div>
+  <p>"AI가 답을 잘할수록, 좋은 질문을 던지는 사람이 더 비싸진다."</p>
+</div>
+
+<div class="footer">오늘의 밑줄 · 매일 발행 · 출처 표기 기반 요약 콘텐츠</div>
+
+<div style="display:flex; justify-content:center; gap:10px; margin-top:20px; padding-bottom:20px;">
+  <a href="vol24.html" style="display:inline-block; padding:10px 20px; border:1px solid #1a1a1a; border-radius:8px; font-size:13px; font-family:Arial,sans-serif; color:#fff; text-decoration:none; background:#1a1a1a;">← 이전 호</a>
+  <a href="archive.html" style="display:inline-block; padding:10px 20px; border:1px solid #ccc; border-radius:8px; font-size:13px; font-family:Arial,sans-serif; color:#555; text-decoration:none; background:#fff;">전체 보기</a>
+  <a id="next-btn" href="vol26.html" style="display:none; padding:10px 20px; border:1px solid #1a1a1a; border-radius:8px; font-size:13px; font-family:Arial,sans-serif; color:#fff; text-decoration:none; background:#1a1a1a;">다음 호 →</a>
+</div>
+<script>
+(function(){
+  fetch('vol26.html', {method:'HEAD'}).then(function(r){ if(r.ok) document.getElementById('next-btn').style.display='inline-block'; }).catch(function(){});
+})();
+</script>
+
+</body>
+</html>
