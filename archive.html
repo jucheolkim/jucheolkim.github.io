@@ -9,38 +9,43 @@
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { background: #f0efeb; }
 body { font-family: Georgia, serif; max-width: 680px; margin: 0 auto; padding: 40px 20px; color: #1a1a1a; background: #fff; word-break: keep-all; box-shadow: 0 0 40px rgba(0,0,0,0.06); }
-.header { text-align: center; border-top: 3px solid #1a1a1a; border-bottom: 3px solid #1a1a1a; padding: 12px 0; margin-bottom: 28px; }
+.header { text-align: center; border-top: 3px solid #1a1a1a; border-bottom: 3px solid #1a1a1a; padding: 12px 0; margin-bottom: 4px; }
 .header-sub { font-size: 11px; font-family: Arial, sans-serif; color: #888; letter-spacing: 2px; margin-bottom: 6px; }
-.header-title { font-size: 36px; font-weight: 800; font-family: 'Nanum Myeongjo', Georgia, serif; }
+.header-title { font-size: 36px; font-weight: 800; letter-spacing: 0px; font-family: 'Nanum Myeongjo', Georgia, serif; white-space: nowrap; }
 .header-date { font-size: 11px; font-family: Arial, sans-serif; color: #888; margin-top: 6px; }
-.intro { font-size: 13px; color: #555; line-height: 1.75; margin-bottom: 28px; text-align: center; }
-.archive-list { display: flex; flex-direction: column; gap: 0; }
-.archive-item { display: flex; justify-content: space-between; align-items: center; padding: 16px 4px; border-bottom: 1px solid #e0e0e0; text-decoration: none; color: inherit; transition: background 0.15s; }
-.archive-item:hover { background: #f9f9f9; }
-.archive-left { flex: 1; padding-right: 16px; }
+.meta { display: flex; justify-content: space-between; border-bottom: 1px solid #e0e0e0; padding: 4px 0; margin-bottom: 28px; font-size: 10px; font-family: Arial, sans-serif; color: #888; }
+.archive-item { display: flex; align-items: baseline; justify-content: space-between; padding: 14px 0; border-bottom: 1px solid #e0e0e0; text-decoration: none; color: inherit; }
+.archive-item:hover .archive-title { text-decoration: underline; }
+.archive-meta { font-size: 10px; font-family: Arial, sans-serif; color: #aaa; white-space: nowrap; margin-left: 16px; }
+.archive-left { flex: 1; }
 .archive-vol { font-size: 10px; font-family: Arial, sans-serif; color: #888; letter-spacing: 1px; margin-bottom: 4px; }
-.archive-title { font-size: 16px; font-weight: bold; font-family: 'Nanum Myeongjo', Georgia, serif; line-height: 1.4; margin-bottom: 4px; }
-.archive-tags { font-size: 11px; color: #888; font-family: Arial, sans-serif; }
-.archive-meta { font-size: 11px; color: #aaa; font-family: Arial, sans-serif; white-space: nowrap; }
-.footer { border-top: 1px solid #e0e0e0; padding-top: 16px; margin-top: 28px; text-align: center; font-size: 10px; font-family: Arial, sans-serif; color: #aaa; }
+.archive-title { font-size: 15px; font-family: 'Nanum Myeongjo', Georgia, serif; font-weight: bold; line-height: 1.4; }
+.archive-tags { font-size: 10px; font-family: Arial, sans-serif; color: #aaa; margin-top: 4px; }
+.footer { border-top: 1px solid #e0e0e0; padding-top: 8px; text-align: center; font-size: 10px; font-family: Arial, sans-serif; color: #aaa; margin-top: 28px; }
 </style>
 </head>
 <body>
 
 <div class="header">
-  <div class="header-sub">ONEDAY DIGEST · ARCHIVE</div>
+  <div class="header-sub">ONEDAY DIGEST</div>
   <div class="header-title">오늘의 밑줄</div>
   <div class="header-date">전체 호 보기</div>
 </div>
+<div class="meta">
+  <span>창업 · 브랜드 · AI·테크</span>
+  <span>출처 표기 기반 요약 콘텐츠</span>
+</div>
 
-<div class="intro">매일 한 호씩 쌓이는 큐레이션 뉴스레터.<br>창업·철학·AI 카테고리에서 한 줄로 남길 만한 인물과 흐름을 골라냅니다.</div>
-
-<div id="archive-list" class="archive-list"></div>
+<div id="archive-list"></div>
 
 <div class="footer">오늘의 밑줄 · 매일 발행 · 출처 표기 기반 요약 콘텐츠</div>
 
 <script>
+// ============================================================
+// 새 호 발행 시 이 배열 맨 앞에 한 줄만 추가하면 됩니다.
+// ============================================================
 var VOLS = [
+  { vol: 26, date: "2026년 4월 22일", title: "자기 병에 founder mode를 켠 창업자", tags: "Sid Sijbrandij · Matthew Gallagher · AI 테크 브리핑" },
   { vol: 25, date: "2026년 4월 21일", title: "문학 전공자가 AI 프론티어의 가장 중요한 자리에 앉았다", tags: "Jack Clark · Dan Lewis · AI 테크 브리핑" },
   { vol: 24, date: "2026년 4월 20일", title: "자기 회사를 잡아먹을 수 있는 걸, 자기가 먼저 만들었다", tags: "Howie Liu · Thomas Dohmke · AI 테크 브리핑" },
   { vol: 23, date: "2026년 4월 17일", title: "회사가 나일 때, 나는 가장 흔들렸다", tags: "Will Ahmed · Winston Weinberg · AI 테크 브리핑" },

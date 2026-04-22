@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>오늘의 밑줄 · Vol.26</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap');
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { background: #f0efeb; }
+body { font-family: Georgia, serif; max-width: 680px; margin: 0 auto; padding: 40px 20px; color: #1a1a1a; background: #fff; word-break: keep-all; box-shadow: 0 0 40px rgba(0,0,0,0.06); }
+.header { text-align: center; border-top: 3px solid #1a1a1a; border-bottom: 3px solid #1a1a1a; padding: 12px 0; margin-bottom: 4px; }
+.header-sub { font-size: 11px; font-family: Arial, sans-serif; color: #888; letter-spacing: 2px; margin-bottom: 6px; }
+.header-title { font-size: 36px; font-weight: 800; letter-spacing: 0px; font-family: 'Nanum Myeongjo', Georgia, serif; white-space: nowrap; }
+.header-date { font-size: 11px; font-family: Arial, sans-serif; color: #888; margin-top: 6px; }
+.meta { display: flex; justify-content: space-between; border-bottom: 1px solid #e0e0e0; padding: 4px 0; margin-bottom: 28px; font-size: 10px; font-family: Arial, sans-serif; color: #888; }
+.article { margin-bottom: 28px; padding-bottom: 28px; border-bottom: 1px solid #e0e0e0; }
+.article-tag { font-size: 10px; font-family: Arial, sans-serif; color: #888; letter-spacing: 1px; border-top: 2px solid #1a1a1a; padding-top: 8px; margin-bottom: 8px; }
+.article-title { font-size: 24px; font-weight: bold; line-height: 1.3; margin-bottom: 12px; font-family: 'Nanum Myeongjo', Georgia, serif; letter-spacing: -0.5px; }
+.article-summary { font-size: 13px; color: #555; line-height: 1.75; margin-bottom: 14px; }
+.btn-wrap { display: flex; gap: 6px; margin-bottom: 14px; }
+.toggle-btn { font-size: 11px; font-family: Arial, sans-serif; color: #555; background: none; border: 1px solid #ccc; border-radius: 6px; padding: 4px 10px; cursor: pointer; }
+.toggle-btn:hover { background: #f5f5f5; }
+.article-detail { display: none; }
+.article-detail.open { display: block; }
+.detail-inner { border-left: 2px solid #e0e0e0; padding-left: 16px; }
+.section-label { font-size: 10px; font-family: Arial, sans-serif; color: #888; letter-spacing: 1px; margin-bottom: 6px; margin-top: 16px; }
+.detail-inner p { font-size: 13px; color: #555; line-height: 1.75; margin-bottom: 8px; }
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 8px; }
+.box { background: #f5f5f5; border-radius: 8px; padding: 10px 12px; }
+.box-label { font-size: 11px; font-family: Arial, sans-serif; color: #888; margin-bottom: 6px; }
+.box p { font-size: 12px; color: #555; line-height: 1.65; margin-bottom: 6px; }
+.news-item { margin-bottom: 14px; padding-bottom: 14px; border-bottom: 1px solid #e0e0e0; }
+.news-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+.badge { display: inline-block; font-size: 10px; font-family: Arial, sans-serif; background: #f5f5f5; color: #888; padding: 2px 8px; border-radius: 4px; margin-right: 6px; }
+.news-title { font-size: 13px; font-weight: bold; }
+.news-item p { font-size: 12px; color: #555; line-height: 1.7; margin-top: 6px; }
+.source { font-size: 10px; font-family: Arial, sans-serif; color: #aaa; border-top: 1px solid #e0e0e0; padding-top: 8px; margin-top: 16px; }
+.highlight { font-weight: bold; color: #1a1a1a; }
+.insight-p { font-size: 15px !important; color: #333 !important; line-height: 1.85 !important; margin-bottom: 10px !important; }
+.editor { border-top: 2px solid #1a1a1a; padding-top: 10px; margin-bottom: 16px; }
+.editor p { font-size: 16px; color: #1a1a1a; line-height: 1.85; font-style: italic; font-family: 'Nanum Myeongjo', Georgia, serif; font-weight: 800; }
+.footer { border-top: 1px solid #e0e0e0; padding-top: 8px; text-align: center; font-size: 10px; font-family: Arial, sans-serif; color: #aaa; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-sub">ONEDAY DIGEST</div>
+  <div class="header-title">오늘의 밑줄</div>
+  <div class="header-date">2026년 4월 22일 · Vol. 26</div>
+</div>
+<div class="meta">
+  <span>창업 철학 · 테크 · AI·테크 브리핑</span>
+  <span>출처 표기 기반 요약 콘텐츠</span>
+</div>
+
+<!-- Article 1: Sid Sijbrandij -->
+<div class="article">
+  <div class="article-tag">창업 철학 · Sid Sijbrandij · GitLab · Kilo Code</div>
+  <div class="article-title">자기 병에 founder mode를 켠 창업자</div>
+  <div class="article-summary">GitLab 공동창업자 시드 시브란데이는 2022년 희귀 골육종을 진단받았다. 의사들이 더 이상 해줄 게 없다고 한 뒤, 그는 자신이 회사에 썼던 방법을 몸에 그대로 적용했다. 철저한 문서화, 공개된 데이터, 끝까지 파고드는 진단. 그렇게 그는 관해(remission, 종양이 거의 사라진 상태)에 도달했고, 다시 회사를 만들고 있다.</div>
+  <div class="btn-wrap">
+    <button class="toggle-btn" onclick="var d=document.getElementById('d1'),b=this;d.classList.toggle('open');b.textContent=d.classList.contains('open')?'접기 ▲':'더 보기 ▼'">더 보기 ▼</button>
+    <button class="toggle-btn">🎧 오디오로 듣기 (준비 중)</button>
+  </div>
+  <div id="d1" class="article-detail">
+    <div class="detail-inner">
+      <div class="section-label">이 사람은 누구인가</div>
+      <p>시드 시브란데이는 네덜란드 출신의 창업자다. 2012년 우크라이나 개발자의 오픈소스 프로젝트 GitLab을 발견하고 회사로 만들었다. 10년 뒤 GitLab을 상장시켰고, 초기 멤버 전원 원격 근무라는 지금의 개발 문화를 업계에 퍼뜨린 장본인이다. 3,000페이지가 넘는 회사 핸드북을 웹에 공개한 것으로도 유명하다. 2024년 CEO에서 이사회 의장으로 물러났고, 그 이유는 그가 오래 숨겨온 희귀 골육종 치료 때문이었다.</p>
+      <div class="section-label">주요 활동과 이력</div>
+      <p>네덜란드 Twente 대학교 경영과학 석사 → 잠수정 제작 4년 → 법무부 Legis 프로젝트 → 2012년 GitLab 창업 → 2021년 상장 → 2022년 척추 5번에 6cm 골육종 진단 → 표준 치료 소진 후 자체 연구팀 구성 → ChatGPT로 종양 데이터 분석, 1,000페이지 "Sid Health Notes" 작성 → 25TB 의료 데이터 공개 → 독일에서 실험적 방사선 치료 → 2026년 관해(remission, 종양이 거의 사라진 상태) 진입 → 동시에 AI 코딩 회사 Kilo Code 공동창업, 개인 맞춤 치료 확산 회사 evenone.ventures 구축. 2026년 3월 OpenAI 포럼에서 자신의 케이스를 공개 발표했다.</p>
+      <div class="section-label">성공한 것과 실패한 것</div>
+      <div class="grid">
+        <div class="box">
+          <div class="box-label">성공 / 확신</div>
+          <p>GitLab 핸드북을 만든 방식으로 자기 몸을 다뤘다. 모든 검사 결과, 스캔, 유전체 시퀀싱 데이터를 하나의 문서로 정리하고, 원본까지 공개했다. "진단은 최대한, 자주"가 원칙이었다.</p>
+          <p>의료 전문가가 아니었기 때문에 오히려 AI를 전면에 썼다. ChatGPT에 스캔·혈액검사·조직 샘플을 넣어 자신만의 R&D 루프를 돌렸다.</p>
+        </div>
+        <div class="box">
+          <div class="box-label">실패 / 한계</div>
+          <p>자기 치료에 들어간 비용은 환자 한 사람당 약 100만 달러 수준이었다. 이 방식이 부자만을 위한 의료냐는 비판이 따라붙었고, 그는 이 질문을 회피하지 않는다.</p>
+          <p>표준 치료 체계 안에서 그는 답을 찾지 못했다. 결국 독일까지 날아가 아직 승인되지 않은 실험적 치료를 받아야 했다. 개인의 자원이 있었기에 가능했던 경로였다.</p>
+        </div>
+      </div>
+      <div class="section-label">인사이트</div>
+      <p class="insight-p">창업자가 회사에 하는 일은 결국 세 가지다. 문제를 정의하고, 데이터로 바꾸고, 시스템으로 만든다. <span class="highlight">시드는 같은 방법을 자기 세포 단위의 문제에 그대로 적용했다.</span> "투명성"과 "문서화"는 경영 스킬이 아니라 세상을 다루는 방식이었다.</p>
+      <p class="insight-p">그가 공개한 25TB 데이터는 단순한 기록이 아니다. 뒤이어 같은 병을 겪을 사람이 참고할 수 있는 로드맵이다. <span class="highlight">자신의 사례를 누군가의 출발점으로 만드는 것</span>. 이게 오픈소스 창업자가 자기 생사에 접근하는 방식이다.</p>
+      <p class="insight-p">종양이 잡히지 않게 된 뒤 그는 쉬지 않고 새 회사 두 개를 세웠다. 하나는 AI 코딩, 하나는 자신의 치료 방식을 다른 환자에게 확장하는 회사다. 고마움을 말로 하지 않고 시스템으로 돌려주는 쪽을 택했다.</p>
+      <div class="source">출처: Century of Bio "Going Founder Mode On Cancer" · OpenAI Forum · sytse.com/cancer</div>
+    </div>
+  </div>
+</div>
+
+<!-- Article 2: Matthew Gallagher -->
+<div class="article">
+  <div class="article-tag">창업 철학 · Matthew Gallagher · Medvi</div>
+  <div class="article-title">1인 유니콘이 왔다, 그런데 영웅의 얼굴이 아니다</div>
+  <div class="article-summary">매슈 갤러거는 $20,000과 AI 도구 10여 개로 LA 자택에서 원격 의료 회사 Medvi를 세웠다. 1년 만에 매출 $401M, 올해 $1.8B를 바라본다. 직원은 동생 한 명. 샘 올트먼이 예고했던 "AI 기반 1인 유니콘"의 첫 실증이다. 그런데 그 이면에는 AI가 만든 가짜 의사 광고와 조작된 사진이 있었다.</div>
+  <div class="btn-wrap">
+    <button class="toggle-btn" onclick="var d=document.getElementById('d2'),b=this;d.classList.toggle('open');b.textContent=d.classList.contains('open')?'접기 ▲':'더 보기 ▼'">더 보기 ▼</button>
+    <button class="toggle-btn">🎧 오디오로 듣기 (준비 중)</button>
+  </div>
+  <div id="d2" class="article-detail">
+    <div class="detail-inner">
+      <div class="section-label">이 사람은 누구인가</div>
+      <p>매슈 갤러거는 41살의 LA 거주 창업자다. 트레일러 파크에서 자랐고, 팀도 공동창업자도 없었다. 2024년 9월, $20,000과 ChatGPT·Claude·Grok 같은 AI 툴로 Medvi를 시작했다. GLP-1 비만 치료제를 온라인으로 판매하는 원격 의료 회사다. 첫 달 300명, 두 번째 달 1,000명 신규 가입. 1년 만에 매출 $401M, 순이익률 16.2%. 비교 대상 Hims의 세 배에 가까운 마진이다.</p>
+      <div class="section-label">주요 활동과 이력</div>
+      <p>2024년 9월 Medvi 창업 → 웹사이트는 Replit, 코드는 ChatGPT·Claude·Grok이 대신 작성 → 광고 크리에이티브는 Midjourney·Runway → 고객 응대는 ElevenLabs 음성 에이전트와 커스텀 봇 → 의사·처방·약국·배송은 CareValidate와 OpenLoop에 외주 → 2025년 매출 $401M·고객 25만 명 → 2026년 동생 엘리엇 영입 → 남성 건강 제품 추가, 첫 달 5만 명 → 2026년 매출 전망 $1.8B → NYT 보도로 세간의 주목. 그는 자신을 "AI 회사는 아니지만 AI로 만든 회사"라고 소개한다.</p>
+      <div class="section-label">성공한 것과 실패한 것</div>
+      <div class="grid">
+        <div class="box">
+          <div class="box-label">성공 / 확신</div>
+          <p>직접 만들지 않고 연결했다. 의료 전문성·법적 인프라가 필요한 부분은 모두 외주, 자신은 마케팅·운영 레이어만 쥐었다. 두 달에 출시, 하루 매출 $3M.</p>
+          <p>AI 툴은 부가 기능이 아니라 풀타임 직원처럼 썼다. 코드 작성, 카피, 이미지, 상담, 재무 분석까지 체인으로 연결한 시스템이 진짜 자산이었다.</p>
+        </div>
+        <div class="box">
+          <div class="box-label">실패 / 한계</div>
+          <p>챗봇이 존재하지 않는 약품을 고객에게 팔고, 실제보다 싼 가격을 환각으로 제시했다. 그가 직접 그 가격을 약속대로 처리해야 했다. 모든 AI 실패의 유일한 백스톱이 창업자 본인이다.</p>
+          <p>초기 광고에는 AI가 만든 가짜 의사 SNS 계정, 얼굴만 바꾼 전후 사진, 출연한 적 없는 매체 로고가 들어갔다. FDA 컴플라이언스 문제도 제기됐다. 일부는 비판 뒤 수정·삭제됐다.</p>
+        </div>
+      </div>
+      <div class="section-label">인사이트</div>
+      <p class="insight-p">"1인 유니콘"은 신화가 아니라 지금의 현실이다. 하지만 이 현실은 영웅 서사가 아니다. <span class="highlight">AI 레버리지는 성공만이 아니라 실수·규정 위반·품질 문제도 똑같이 빠르게 확대한다.</span> 속도가 무기일 때는 실수도 같은 속도로 복제된다.</p>
+      <p class="insight-p">매슈는 제품을 만들지 않았다. 의사, 처방, 약국, 배송, 결제, 광고를 전부 외부에서 빌려와 하나로 엮었다. <span class="highlight">이제 창업자의 핵심 역량은 조립 능력이다.</span> 0에서 1을 만드는 게 아니라, 이미 있는 1,000개를 얼마나 빠르게 이어 붙일 수 있느냐다.</p>
+      <p class="insight-p">과거 창업자에 대한 평가가 팀·제품·자본 기준이었다면, 이제 그 기준이 흔들린다. 2인 회사가 연 $1.8B을 찍는 세상에서 전통적 VC 지표는 의미가 좁아진다. <span class="highlight">창업자 자신이 지켜야 할 것도 달라진다</span>. 이제는 결과가 아니라 그 결과에 이르는 과정이 책임 자체가 된다.</p>
+      <div class="source">출처: The New York Times · Inc. "The 1-Employee Billion-Dollar Startup" · Futurism · NewsNation</div>
+    </div>
+  </div>
+</div>
+
+<!-- Article 3: AI·테크 브리핑 -->
+<div class="article">
+  <div class="article-tag">AI · 테크 제품 브리핑 · 2026년 4월 22일</div>
+  <div class="article-title">AI가 내 화면을 보기 시작했고, 매출을 찍기 시작했다</div>
+  <div class="article-summary">OpenAI는 Codex가 당신의 맥 화면을 계속 보게 만들었다. 구글은 엔비디아에 추론 칩으로 맞붙는다. 아마존은 Anthropic에 $200억을 더 태운다. PwC는 AI 수익의 74%가 상위 20% 기업에 몰린다고 했다. 스탠포드 AI 지수는 최고 모델 정확도가 1년 새 9%에서 50%를 넘겼다고 기록했다. 데모가 끝나고 매출이 시작된다.</div>
+  <div class="btn-wrap">
+    <button class="toggle-btn" onclick="var d=document.getElementById('d3'),b=this;d.classList.toggle('open');b.textContent=d.classList.contains('open')?'접기 ▲':'더 보기 ▼'">더 보기 ▼</button>
+    <button class="toggle-btn">🎧 오디오로 듣기 (준비 중)</button>
+  </div>
+  <div id="d3" class="article-detail">
+    <div class="detail-inner">
+
+      <div class="news-item">
+        <span class="badge">AI 에이전트</span><span class="news-title">OpenAI Chronicle — Codex가 내 화면을 보고 작업 맥락을 기억한다</span>
+        <p><span class="highlight">무슨 일인가:</span> OpenAI가 4월 20일 Codex에 Chronicle 기능을 공개했다. 맥 화면을 주기적으로 캡처해 작업 맥락을 메모리로 저장하고, "이거", "그거" 같은 대명사도 알아듣는다. Pro 구독자 대상 macOS 한정, EU·UK·스위스 제외.</p>
+        <p><span class="highlight">왜 중요한가:</span> 프롬프트를 매번 다시 쓰는 시대가 끝나고 있다. Windows Recall, Rewind AI에 이어 OpenAI도 "주변 지능(ambient intelligence)" 전장에 뛰어들었다. 동시에 캡처 데이터가 서버로 전송되고 로컬에는 비암호화 상태로 저장된다는 점은 논란이다.</p>
+        <p><span class="highlight">인사이트:</span> AI가 내 주변을 계속 보고 있을수록 편해지는데, 그 편리함의 대가가 내 화면 내용이다. 생산성과 프라이버시가 같은 저울에 올라간다.</p>
+      </div>
+
+      <div class="news-item">
+        <span class="badge">반도체</span><span class="news-title">구글, 엔비디아에 추론 칩으로 정면 대응</span>
+        <p><span class="highlight">무슨 일인가:</span> 4월 21일 Google Cloud Next에서 차세대 TPU, 그중 특히 추론용 전용 칩이 공개된다. Marvell과 메모리 처리 장치도 공동 개발 중. 이미 Meta·Anthropic이 고객이다.</p>
+        <p><span class="highlight">왜 중요한가:</span> AI 칩 전쟁이 "엔비디아 vs 나머지"에서 "클라우드 각사 내부 커스텀 스택 전쟁"으로 축이 옮겨가고 있다. 훈련은 GPU, 추론은 전용 칩이라는 분업이 굳어진다.</p>
+        <p><span class="highlight">인사이트:</span> 단일 공급사에 묶여 있던 AI 인프라가 분산된다. 스타트업에게는 칩 선택지가 늘어나는 것이고, 엔비디아에게는 독점이 깨지는 신호다.</p>
+      </div>
+
+      <div class="news-item">
+        <span class="badge">투자</span><span class="news-title">아마존, Anthropic에 최대 $200억 추가 투자</span>
+        <p><span class="highlight">무슨 일인가:</span> 4월 20일 아마존이 Anthropic에 $50억을 즉시 투자하고, 성과에 따라 최대 $200억을 추가한다고 발표했다. 누적 약정액 $330억. Anthropic은 향후 10년간 AWS에 $1,000억 이상을 쓴다.</p>
+        <p><span class="highlight">왜 중요한가:</span> 클라우드 회사와 모델 회사의 수직 통합이 깊어진다. Anthropic은 안정적인 컴퓨팅을, 아마존은 독점에 가까운 모델 확보를 얻는다. AI 산업이 몇몇 축으로 빠르게 재편되는 중이다.</p>
+        <p><span class="highlight">인사이트:</span> AI를 만드는 회사 자체가 AI 인프라에 종속되는 구조가 드러났다. 독립성과 자본, 두 개 중 하나는 포기해야 하는 시대.</p>
+      </div>
+
+      <div class="news-item">
+        <span class="badge">리포트</span><span class="news-title">스탠포드 AI 지수 2026 — 모델 성능은 1년 새 5배, 정착은 아직</span>
+        <p><span class="highlight">무슨 일인가:</span> 스탠포드 HAI가 400쪽짜리 AI 인덱스 2026을 발표했다. "Humanity's Last Exam" 벤치마크 정확도가 o1의 8.8%에서 Claude Opus 4.6·Gemini 3.1 Pro의 50% 이상으로 뛰었다. 미국이 모델 50개 발표로 선두, 중국이 바짝 추격.</p>
+        <p><span class="highlight">왜 중요한가:</span> 모델 수준은 급상승했지만, "법률 벤치마크 75% 정확도가 실제 법률 업무에 얼마나 도움이 되는지는 별개"라는 저자 경고도 붙었다. 벤치마크와 실제 도입 사이의 간격이 오히려 벌어지고 있다.</p>
+        <p><span class="highlight">인사이트:</span> 성능 그래프는 거의 수직이지만, 그 성능이 월급으로 돌아오는 회사는 소수다. "AI가 좋다"와 "내 일에 쓰인다"는 다른 문제다.</p>
+      </div>
+
+      <div class="news-item">
+        <span class="badge">수익화</span><span class="news-title">PwC — AI 수익의 74%를 상위 20% 기업이 가져간다</span>
+        <p><span class="highlight">무슨 일인가:</span> 4월 13일 PwC가 25개 업종, 1,217명의 임원 조사 결과를 공개했다. AI가 창출한 경제 가치의 74%가 상위 20% 기업에 집중됐다. 선두 기업은 효율화가 아니라 사업 재설계·신규 매출에 AI를 투입했다.</p>
+        <p><span class="highlight">왜 중요한가:</span> AI 도입 격차가 실질적인 수익 격차로 빠르게 이어진다. 선두 기업은 경쟁사 대비 AI 예산 60%를 인력 재교육에 투자. 하위 그룹의 27%와 큰 차이.</p>
+        <p><span class="highlight">인사이트:</span> "AI를 써봤다"는 흔한 말이 됐다. 이제 질문은 <span class="highlight">AI로 매출을 새로 만들었느냐</span>로 바뀌고 있다. 쓰는 것과 버는 것은 다른 층위다.</p>
+      </div>
+
+      <div class="source">출처: 9to5Mac · TechStartups · Reuters · Stanford HAI · PwC 2026 AI Performance Study</div>
+    </div>
+  </div>
+</div>
+
+<!-- Article 4: 오늘의 신제품 -->
+<div class="article">
+  <div class="article-tag">오늘의 신제품 · 2026년 4월 21일</div>
+  <div class="article-title">에이전트가 키패드·하드웨어·비디오·보조금까지 내려앉는다</div>
+  <div class="article-summary">4월 21일 ProductHunt에는 "AI가 도구에서 벗어나 환경과 문맥으로 파고드는" 제품들이 나란히 올라왔다. 열려 있는 앱에 따라 키가 바뀌는 Mac 키패드, Claude를 물리 세계로 옮기는 BLE API, 에이전트가 짠 코드를 추적하는 도구까지.</div>
+  <div class="btn-wrap">
+    <button class="toggle-btn" onclick="var d=document.getElementById('d4'),b=this;d.classList.toggle('open');b.textContent=d.classList.contains('open')?'접기 ▲':'더 보기 ▼'">더 보기 ▼</button>
+    <button class="toggle-btn">🎧 오디오로 듣기 (준비 중)</button>
+  </div>
+  <div id="d4" class="article-detail">
+    <div class="detail-inner">
+
+      <div class="news-item">
+        <span class="badge">하드웨어</span><span class="news-title">Dune — 열려 있는 앱에 따라 키가 바뀌는 Mac 키패드</span>
+        <p><span class="highlight">무슨 일인가:</span> 세 개의 키가 현재 실행 중인 앱에 맞춰 실시간으로 기능을 바꾼다. GitHub·VS Code에서는 개발 단축키, Zoom·Teams에서는 회의 제어.</p>
+        <p><span class="highlight">왜 중요한가:</span> 소프트웨어에 갇혀 있던 컨텍스트 인식이 피지컬 디바이스로 내려왔다. 하루 종일 같은 자리에서 앱만 바뀌는 지식 노동자가 실제 타깃이다.</p>
+        <p><span class="highlight">인사이트:</span> AI의 다음 체감 포인트는 모델 성능이 아니라 "손 움직임 하나"의 변화다. 작은 물건의 변화가 생각보다 크다.</p>
+      </div>
+
+      <div class="news-item">
+        <span class="badge">개발자</span><span class="news-title">Claude Desktop Buddy — Claude를 하드웨어와 연결하는 BLE API</span>
+        <p><span class="highlight">무슨 일인가:</span> Claude 데스크톱 앱이 블루투스 저에너지(BLE)로 하드웨어와 직접 통신한다. 외부 기기가 실시간으로 상태를 표시하고 권한 요청을 처리할 수 있다.</p>
+        <p><span class="highlight">왜 중요한가:</span> LLM을 물리 세계와 결합하려는 실험이 앱 밖으로 나온다. 로봇·IoT·전용 디바이스에 Claude를 "두뇌"처럼 얹는 경로가 열린다.</p>
+        <p><span class="highlight">인사이트:</span> AI 유저 경험의 다음 프론티어는 화면이 아니다. 책상 위의 물건이 똑똑해지는 방향이 시작됐다.</p>
+      </div>
+
+      <div class="news-item">
+        <span class="badge">엔터프라이즈</span><span class="news-title">The New Waydev — AI가 짠 코드를 프로덕션까지 추적한다</span>
+        <p><span class="highlight">무슨 일인가:</span> AI 에이전트가 생성한 코드를 IDE부터 배포·비용까지 전 구간에서 추적하는 엔터프라이즈 도구. AI의 실제 운영 기여도를 숫자로 잡아낸다.</p>
+        <p><span class="highlight">왜 중요한가:</span> "AI가 코드를 짜준다"는 마케팅은 끝났다. 이제 CFO가 "AI가 만든 코드가 실제로 얼마를 벌고 얼마를 깎았느냐"를 묻는다.</p>
+        <p><span class="highlight">인사이트:</span> AI 도구의 성패는 쓰는 순간이 아니라 결산하는 순간에 갈린다. 측정할 수 없으면 예산이 깎인다.</p>
+      </div>
+
+      <div class="news-item">
+        <span class="badge">미디어 AI</span><span class="news-title">Pegasus 1.5 (TwelveLabs) — 원시 비디오를 시간 기반 구조 데이터로 변환</span>
+        <p><span class="highlight">무슨 일인가:</span> 원시 비디오에서 "언제 무엇이 일어났는가"를 추출해 검색·활용 가능한 메타데이터로 변환하는 AI 모델.</p>
+        <p><span class="highlight">왜 중요한가:</span> 영상은 지금까지 검색되지 않는 거대한 암흑 데이터였다. 이제 특정 시점·인물·사건 단위로 쿼리가 가능해지면 교육·스포츠·광고에서 활용 방식 자체가 바뀐다.</p>
+        <p><span class="highlight">인사이트:</span> 텍스트 다음은 영상이다. 유튜브 한 편이 24개의 검색 가능한 조각으로 나뉘는 시대, 콘텐츠 생산자에게 새 레버가 생긴다.</p>
+      </div>
+
+      <div class="news-item">
+        <span class="badge">수직 AI</span><span class="news-title">Granter — 기업 보조금을 AI가 컨설턴트처럼 맡는다</span>
+        <p><span class="highlight">무슨 일인가:</span> 시설·기업이 받을 수 있는 보조금을 찾고, 신청서를 작성하고, 승인 후 준수 관리까지 자율적으로 처리한다.</p>
+        <p><span class="highlight">왜 중요한가:</span> 전문 컨설턴트가 독점하던 영역에 AI가 들어온다. 큰 회사가 쓰던 서비스를 작은 회사도 쓸 수 있게 된다.</p>
+        <p><span class="highlight">인사이트:</span> AI가 건드리는 진짜 시장은 소프트웨어가 아니라 <span class="highlight">과거에 "사람만 할 수 있다"고 여겨지던 전문 서비스</span>다. 수임료가 구독료로 바뀐다.</p>
+      </div>
+
+      <div class="source">출처: ProductHunt 2026년 4월 21일 · 카카오톡 AI·테크 채널</div>
+    </div>
+  </div>
+</div>
+
+<!-- Editor Note -->
+<div class="editor">
+  <div class="section-label">에디터 한마디</div>
+  <p>"창업자의 방법론이 결국 자기 한계에 되돌아온다. 그 순간 무엇을 기록하느냐가 다음 시대에 남는다."</p>
+</div>
+
+<div class="footer">오늘의 밑줄 · 매일 발행 · 출처 표기 기반 요약 콘텐츠</div>
+
+<div style="display:flex; justify-content:center; gap:10px; margin-top:20px; padding-bottom:20px;">
+  <a href="vol25.html" style="display:inline-block; padding:10px 20px; border:1px solid #1a1a1a; border-radius:8px; font-size:13px; font-family:Arial,sans-serif; color:#fff; text-decoration:none; background:#1a1a1a;">← 이전 호</a>
+  <a href="archive.html" style="display:inline-block; padding:10px 20px; border:1px solid #ccc; border-radius:8px; font-size:13px; font-family:Arial,sans-serif; color:#555; text-decoration:none; background:#fff;">전체 보기</a>
+  <a id="next-btn" href="vol27.html" style="display:none; padding:10px 20px; border:1px solid #1a1a1a; border-radius:8px; font-size:13px; font-family:Arial,sans-serif; color:#fff; text-decoration:none; background:#1a1a1a;">다음 호 →</a>
+</div>
+<script>
+(function(){
+  fetch('vol27.html', {method:'HEAD'}).then(function(r){ if(r.ok) document.getElementById('next-btn').style.display='inline-block'; }).catch(function(){});
+})();
+</script>
+
+</body>
+</html>
