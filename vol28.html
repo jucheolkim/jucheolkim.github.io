@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>오늘의 밑줄 · Vol.28</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap');
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { background: #f0efeb; }
+body { font-family: Georgia, serif; max-width: 680px; margin: 0 auto; padding: 40px 20px; color: #1a1a1a; background: #fff; word-break: keep-all; box-shadow: 0 0 40px rgba(0,0,0,0.06); }
+.header { text-align: center; border-top: 3px solid #1a1a1a; border-bottom: 3px solid #1a1a1a; padding: 12px 0; margin-bottom: 4px; }
+.header-sub { font-size: 11px; font-family: Arial, sans-serif; color: #888; letter-spacing: 2px; margin-bottom: 6px; }
+.header-title { font-size: 36px; font-weight: 800; letter-spacing: 0px; font-family: 'Nanum Myeongjo', Georgia, serif; white-space: nowrap; }
+.header-date { font-size: 11px; font-family: Arial, sans-serif; color: #888; margin-top: 6px; }
+.meta { display: flex; justify-content: space-between; border-bottom: 1px solid #e0e0e0; padding: 4px 0; margin-bottom: 28px; font-size: 10px; font-family: Arial, sans-serif; color: #888; }
+.article { margin-bottom: 28px; padding-bottom: 28px; border-bottom: 1px solid #e0e0e0; }
+.article-tag { font-size: 10px; font-family: Arial, sans-serif; color: #888; letter-spacing: 1px; border-top: 2px solid #1a1a1a; padding-top: 8px; margin-bottom: 8px; }
+.article-title { font-size: 24px; font-weight: bold; line-height: 1.3; margin-bottom: 12px; font-family: 'Nanum Myeongjo', Georgia, serif; letter-spacing: -0.5px; }
+.article-summary { font-size: 13px; color: #555; line-height: 1.75; margin-bottom: 14px; }
+.btn-wrap { display: flex; gap: 6px; margin-bottom: 14px; }
+.toggle-btn { font-size: 11px; font-family: Arial, sans-serif; color: #555; background: none; border: 1px solid #ccc; border-radius: 6px; padding: 4px 10px; cursor: pointer; }
+.toggle-btn:hover { background: #f5f5f5; }
+.article-detail { display: none; }
+.article-detail.open { display: block; }
+.detail-inner { border-left: 2px solid #e0e0e0; padding-left: 16px; }
+.section-label { font-size: 10px; font-family: Arial, sans-serif; color: #888; letter-spacing: 1px; margin-bottom: 6px; margin-top: 16px; }
+.detail-inner p { font-size: 13px; color: #555; line-height: 1.75; margin-bottom: 8px; }
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 8px; }
+.box { background: #f5f5f5; border-radius: 8px; padding: 10px 12px; }
+.box-label { font-size: 11px; font-family: Arial, sans-serif; color: #888; margin-bottom: 6px; }
+.box p { font-size: 12px; color: #555; line-height: 1.65; margin-bottom: 6px; }
+.news-item { margin-bottom: 14px; padding-bottom: 14px; border-bottom: 1px solid #e0e0e0; }
+.news-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+.badge { display: inline-block; font-size: 10px; font-family: Arial, sans-serif; background: #f5f5f5; color: #888; padding: 2px 8px; border-radius: 4px; margin-right: 6px; }
+.news-title { font-size: 13px; font-weight: bold; }
+.news-item p { font-size: 12px; color: #555; line-height: 1.7; margin-top: 6px; }
+.source { font-size: 10px; font-family: Arial, sans-serif; color: #aaa; border-top: 1px solid #e0e0e0; padding-top: 8px; margin-top: 16px; }
+.highlight { font-weight: bold; color: #1a1a1a; }
+.insight-p { font-size: 15px !important; color: #333 !important; line-height: 1.85 !important; margin-bottom: 10px !important; }
+.editor { border-top: 2px solid #1a1a1a; padding-top: 10px; margin-bottom: 16px; }
+.editor p { font-size: 16px; color: #1a1a1a; line-height: 1.85; font-style: italic; font-family: 'Nanum Myeongjo', Georgia, serif; font-weight: 800; }
+.footer { border-top: 1px solid #e0e0e0; padding-top: 8px; text-align: center; font-size: 10px; font-family: Arial, sans-serif; color: #aaa; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-sub">ONEDAY DIGEST</div>
+  <div class="header-title">오늘의 밑줄</div>
+  <div class="header-date">2026년 4월 24일 · Vol. 28</div>
+</div>
+<div class="meta">
+  <span>창업 철학 · 브랜드 · AI·테크 브리핑</span>
+  <span>출처 표기 기반 요약 콘텐츠</span>
+</div>
+
+<!-- Article 1: Jaspar Carmichael-Jack -->
+<div class="article">
+  <div class="article-tag">창업 철학 · Jaspar Carmichael-Jack · Artisan</div>
+  <div class="article-title">사람을 대체하는 회사를 만들면서, 사람 뽑는 법을 배웠다</div>
+  <div class="article-summary">자스퍼 카마이클-잭은 "채용을 멈추세요"라는 광고로 유명해진 AI 회사 Artisan의 CEO다. AI 영업 직원을 만들어 파는 회사. 그런 그가 말했다. 40명의 팀을 만들려고 100명 넘게 뽑았다고. 역설이 아니다. 진짜 회사를 세우려면 사람 뽑는 법부터 배워야 한다는 얘기다.</div>
+  <div class="btn-wrap">
+    <button class="toggle-btn" onclick="var d=document.getElementById('d1'),b=this;d.classList.toggle('open');b.textContent=d.classList.contains('open')?'접기 ▲':'더 보기 ▼'">더 보기 ▼</button>
+    <button class="toggle-btn">🎧 오디오로 듣기 (준비 중)</button>
+  </div>
+  <div id="d1" class="article-detail">
+    <div class="detail-inner">
+      <div class="section-label">이 사람은 누구인가</div>
+      <p>자스퍼 카마이클-잭은 Artisan의 공동창업자이자 CEO다. Artisan은 영업 아웃바운드와 고객 응대를 AI로 자동화하는 스타트업이다. 2024년 샌프란시스코 거리에 "Stop Hiring Humans(사람 뽑지 마세요)"라는 옥외광고를 걸어 화제가 됐다. 2025년 4월 2500만 달러 시리즈 A를 유치했고, 현재 팀 규모는 40명이다.</p>
+      <div class="section-label">주요 활동과 이력</div>
+      <p>AI 영업 에이전트 'Ava' 출시 → "Stop Hiring Humans" 옥외광고로 논란과 화제를 동시에 만듦 → Y Combinator 출신, HubSpot 전 CEO 브라이언 할리건 등으로부터 투자 → 시리즈 A 2500만 달러 유치 → 현재까지 누적 100명 이상 채용, 팀 40명 유지. 창업 초기에 팀 규모를 먼저 키우면 속도가 날 거라고 판단해 공격적으로 채용했지만, 오히려 조직이 느려지는 걸 경험했다. 그 후 채용 기준을 완전히 다시 짰다.</p>
+      <div class="section-label">성공한 것과 실패한 것</div>
+      <div class="grid">
+        <div class="box">
+          <div class="box-label">성공 / 확신</div>
+          <p>"Stop Hiring Humans" 광고로 논쟁을 만들어 브랜드를 각인시켰다. 욕도 많이 먹었지만, AI 영업 도구 카테고리의 상징이 됐다.</p>
+          <p>사람이 안 맞는다는 신호가 보이면 빠르게 정리한다. 당사자도 대부분 알고 있다고 했다. 어정쩡하게 끌면 팀 전체가 무너진다.</p>
+        </div>
+        <div class="box">
+          <div class="box-label">실패 / 한계</div>
+          <p>팀을 먼저 크게 만들면 빨리 성장할 거라 믿었다. 실제로는 50명이 10명보다 훨씬 다루기 어려웠다. 오히려 스케일이 늦어졌다.</p>
+          <p>대기업 로고가 박힌 이력서를 과대평가했다. 자원이 잘 갖춰진 곳에서 일한 사람과 스타트업에서 달릴 사람은 다른 종류의 역량이 필요했다.</p>
+        </div>
+      </div>
+      <div class="section-label">인사이트</div>
+      <p class="insight-p">팀의 누구도 할 일이 남지 않을 때 채용한다. 그게 아니면 뽑지 않는다. 카마이클-잭은 이걸 뒤늦게 배웠다. <span class="highlight">손이 부족해서 뽑는 것과, 앞으로 부족할까봐 뽑는 것은 전혀 다른 결정이다.</span></p>
+      <p class="insight-p">느리게 뽑고, 빠르게 내보낸다. 그는 반대로 해왔다. 빨리 뽑고 오래 들고 있었다. 그래서 대부분 실패했다. <span class="highlight">채용은 운영이 아니라 전략이다.</span> 잘못된 사람 한 명이 문화를 바꾸고, 다음 채용 기준까지 흐려놓는다.</p>
+      <p class="insight-p">AI로 사람을 대체하겠다는 회사가 결국 배운 건, 사람 없이는 회사를 키울 수 없다는 사실이었다. <span class="highlight">다만 아무 사람이 아니라, 맞는 사람이어야 한다는 것.</span></p>
+      <div class="source">출처: "Don't stop hiring humans — stop hiring the wrong humans, Artisan's founder says" · TechCrunch Build Mode (2026-04-23)</div>
+    </div>
+  </div>
+</div>
+
+<!-- Article 2: James Beshara -->
+<div class="article">
+  <div class="article-tag">창업 철학 · James Beshara · Magic Mind</div>
+  <div class="article-title">좋은 소식 말고, 나쁜 소식부터 찾으러 다녔다</div>
+  <div class="article-summary">제임스 베샤라는 첫 회사 Tilt로 1억 달러를 모았고, 결국 에어비앤비에 헐값 매각했다. 두 번째 회사 Magic Mind는 다르게 만들었다. 2년 동안 나쁜 피드백만 찾으러 다녔고, 구독자 200명이 모일 때까지 이름도 안 붙였다. 실패를 통해 성공 공식이 아니라, 반대 방향을 배운 사람의 이야기다.</div>
+  <div class="btn-wrap">
+    <button class="toggle-btn" onclick="var d=document.getElementById('d2'),b=this;d.classList.toggle('open');b.textContent=d.classList.contains('open')?'접기 ▲':'더 보기 ▼'">더 보기 ▼</button>
+    <button class="toggle-btn">🎧 오디오로 듣기 (준비 중)</button>
+  </div>
+  <div id="d2" class="article-detail">
+    <div class="detail-inner">
+      <div class="section-label">이 사람은 누구인가</div>
+      <p>제임스 베샤라는 Magic Mind의 창업자다. 14살에 컴퓨터 수리로 첫 직장을 잡았고, 남아공에서 빈곤 퇴치 NGO를 운영하다가 다시 실리콘밸리로 돌아왔다. 2012년 Y Combinator를 거쳐 소셜 페이먼트 앱 Tilt를 창업, 앤드리슨 호로위츠·파운더스 펀드 등에서 1억 달러 이상을 모았다. 이후 Airbnb에 매각됐고, 그는 제품 디렉터로 일하다 2019년 Magic Mind를 시작했다. 지금은 Advaita Vedanta 철학 팟캐스트도 운영하며 매주 베니스에서 강연한다.</p>
+      <div class="section-label">주요 활동과 이력</div>
+      <p>남아공 빈곤 퇴치 NGO 운영 → YC Winter 2012 → Tilt 창업, 1억 달러 이상 모금 → Airbnb에 '화재 세일'로 매각(사실상 실패 매각) → Airbnb 제품 디렉터 → 2019년 Magic Mind 출시(멘탈 퍼포먼스 음료) → 현재 150개 이상 스타트업에 투자, 포트폴리오 가치 500억 달러 이상. Magic Mind는 처음 2년 동안 이름도 없이 친구들에게만 시제품을 돌렸다. 피드백이 확실해진 뒤에야 브랜드를 붙였다.</p>
+      <div class="section-label">성공한 것과 실패한 것</div>
+      <div class="grid">
+        <div class="box">
+          <div class="box-label">성공 / 확신</div>
+          <p>Magic Mind는 "productivity beverage"라는 새 카테고리를 만들었다. 에너지 음료와는 다른 축이다. 구독 모델로 연 매출을 쌓아가며 느리게 단단해졌다.</p>
+          <p>매일 나쁜 소식을 먼저 찾는 습관을 만들었다. 작은 독을 미리 삼켜두면, 사업이 무너지는 치명적 독은 오지 않는다고 했다.</p>
+        </div>
+        <div class="box">
+          <div class="box-label">실패 / 한계</div>
+          <p>Tilt는 빠른 검증과 확장에만 집착했다. 안 되는 부분을 들여다볼 시간이 없었다. 결국 '헐값 매각'으로 끝났다.</p>
+          <p>1억 달러를 모은 게 자랑이 아니라 짐이었다고 했다. 투자 규모가 커질수록 "증명해야 한다"는 압박이 판단을 흐렸다.</p>
+        </div>
+      </div>
+      <div class="section-label">인사이트</div>
+      <p class="insight-p">베샤라는 말했다. "매일 작은 독을 삼켜라. 그래야 사업이 망한다는 큰 독을 안 삼키게 된다." <span class="highlight">나쁜 소식을 피하는 대신 먼저 찾으러 가는 것</span>. 그것이 그가 두 번째 회사에서 바꾼 가장 큰 방식이었다.</p>
+      <p class="insight-p">Magic Mind는 이름도 없이 2년을 버텼다. 200명이 구독하겠다고 할 때까지 기다렸다. <span class="highlight">빨리 이름을 붙이면, 검증 전에 정체성이 고정된다.</span> 그는 Tilt에서 그렇게 묶였다.</p>
+      <p class="insight-p">Tilt에서 그는 분 단위로 성과를 쟀다. 몇 주 안에 유저 수, 몇 달 안에 시리즈. Magic Mind에서는 연 단위로 쟀다. <span class="highlight">빠르게 반응하는 회사가 아니라, 오래 버티는 회사를 설계한 것이다.</span></p>
+      <div class="source">출처: "James Beshara on what it takes to build a successful and long-standing company" · hashtagpaid.com / Entrepreneurs on Fire (2026-04-21)</div>
+    </div>
+  </div>
+</div>
+
+<!-- Article 3: AI·테크 브리핑 -->
+<div class="article">
+  <div class="article-tag">AI · 테크 브리핑 · 2026년 4월 24일</div>
+  <div class="article-title">이번 주 AI, 규칙이 바뀌는 소식 세 개</div>
+  <div class="article-summary">코드 리뷰를 사람이 아닌 에이전트 무리가 하고, 27B짜리 오픈모델이 397B를 이기고, 디자인 툴은 말로 그리기 시작했다. 프런티어가 사용자 쪽으로 빠르게 이동 중이다. 이번 주 주목할 세 가지.</div>
+  <div class="btn-wrap">
+    <button class="toggle-btn" onclick="var d=document.getElementById('d3'),b=this;d.classList.toggle('open');b.textContent=d.classList.contains('open')?'접기 ▲':'더 보기 ▼'">더 보기 ▼</button>
+    <button class="toggle-btn">🎧 오디오로 듣기 (준비 중)</button>
+  </div>
+  <div id="d3" class="article-detail">
+    <div class="detail-inner">
+
+      <div class="news-item">
+        <span class="badge">코드 리뷰</span><span class="news-title">Claude Code /ultrareview — 클라우드에서 버그 헌터 부대를 돌린다</span>
+        <p><span class="highlight">무슨 일인가:</span> Anthropic이 Claude Code에 /ultrareview 명령을 추가했다. 인증 로직, 데이터 마이그레이션 같은 위험한 코드를 병합하기 전에, 클라우드에서 리뷰 에이전트들을 병렬로 돌려 버그를 검증된 것만 보고한다. Pro·Max 구독자는 5월 5일까지 3회 무료.</p>
+        <p><span class="highlight">왜 중요한가:</span> 기존 로컬 /review는 터미널 세션 1개에서 한 번 돌았다. /ultrareview는 저장소를 통째로 업로드해 여러 에이전트가 각자 다른 각도(로직, 엣지 케이스, 보안, 성능)로 탐색한다. 각 발견은 독립적으로 재현되지 않으면 보고되지 않는다.</p>
+        <p><span class="highlight">인사이트:</span> 한 명의 시니어가 검토하던 일을, 검증 사이클이 붙은 에이전트 팀이 대체한다. <span class="highlight">코드 리뷰는 빠르게 "인간의 일"에서 "에이전트 워크플로우"로 넘어가고 있다.</span></p>
+      </div>
+
+      <div class="news-item">
+        <span class="badge">오픈모델</span><span class="news-title">Qwen3.6-27B — 27B 밀집 모델이 397B MoE를 코딩에서 제쳤다</span>
+        <p><span class="highlight">무슨 일인가:</span> 알리바바 Qwen 팀이 4월 22일 Qwen3.6-27B를 Apache 2.0으로 공개했다. SWE-bench Verified에서 77.2점으로 자사의 397B MoE 모델(76.2점)을 앞섰다. Terminal-Bench 2.0에서는 Claude 4.5 Opus와 같은 59.3점. 컨슈머 GPU(RTX 4090, 24GB)에서 구동된다.</p>
+        <p><span class="highlight">왜 중요한가:</span> 상용 API 없이 로컬에서 플래그십급 코딩 성능을 낸다. 금융·의료·정부 등 코드를 외부로 내보낼 수 없는 영역에서 바로 쓸 수 있다. 아파치 라이선스라 상업적 활용에도 제약이 없다.</p>
+        <p><span class="highlight">인사이트:</span> 2026년의 흐름 하나가 여기서 확정됐다. <span class="highlight">"프론티어 모델 = 거대 MoE"라는 공식이 무너지고 있다.</span> 작고 밀집된 오픈 모델이 프리미엄 API 가격을 정당화하기 점점 어렵게 만든다.</p>
+      </div>
+
+      <div class="news-item">
+        <span class="badge">디자인</span><span class="news-title">Claude Design — 말로 프로토타입을 그리는 제품이 출시됐다</span>
+        <p><span class="highlight">무슨 일인가:</span> Anthropic이 4월 17일 Claude Design을 공개했다. Opus 4.7 기반으로, 문장으로 묘사하면 프로토타입·슬라이드·원페이저를 만들어준다. 팀 코드베이스와 디자인 파일을 읽혀 놓으면 자사 디자인 시스템에 맞춘 결과를 자동으로 생성한다. Pro·Max·Team·Enterprise 플랜에 포함.</p>
+        <p><span class="highlight">왜 중요한가:</span> Figma 주가가 발표 당일 7% 빠졌다. Anthropic의 CPO 마이크 크리거(전 인스타그램 공동창업자)는 발표 3일 전 Figma 이사회에서 사임했다. Canva와는 제휴 — Claude Design에서 내보낸 결과를 Canva에서 바로 편집할 수 있게 했다.</p>
+        <p><span class="highlight">인사이트:</span> 디자인 툴의 진입 장벽이 무너지고 있다. <span class="highlight">디자이너가 아닌 창업자·PM·마케터가 "생각을 보여줄 수 있는 방법"이 새로 열렸다는 뜻</span>이다. 아이디어를 눈에 보이는 형태로 만드는 비용이 급격히 낮아진다.</p>
+      </div>
+
+      <div class="source">출처: TechCrunch, Anthropic News, MarkTechPost, Hugging Face (2026년 4월 3주차)</div>
+    </div>
+  </div>
+</div>
+
+<!-- Editor Note -->
+<div class="editor">
+  <div class="section-label">에디터 한마디</div>
+  <p>"나를 대체할 것을 먼저 만든 사람이, 가장 오래 남는다."</p>
+</div>
+
+<div class="footer">오늘의 밑줄 · 매일 발행 · 출처 표기 기반 요약 콘텐츠</div>
+
+<div style="display:flex; justify-content:center; gap:10px; margin-top:20px; padding-bottom:20px;">
+  <a href="vol27.html" style="display:inline-block; padding:10px 20px; border:1px solid #1a1a1a; border-radius:8px; font-size:13px; font-family:Arial,sans-serif; color:#fff; text-decoration:none; background:#1a1a1a;">← 이전 호</a>
+  <a href="archive.html" style="display:inline-block; padding:10px 20px; border:1px solid #ccc; border-radius:8px; font-size:13px; font-family:Arial,sans-serif; color:#555; text-decoration:none; background:#fff;">전체 보기</a>
+  <a id="next-btn" href="vol29.html" style="display:none; padding:10px 20px; border:1px solid #1a1a1a; border-radius:8px; font-size:13px; font-family:Arial,sans-serif; color:#fff; text-decoration:none; background:#1a1a1a;">다음 호 →</a>
+</div>
+<script>
+(function(){
+  fetch('vol29.html', {method:'HEAD'}).then(function(r){ if(r.ok) document.getElementById('next-btn').style.display='inline-block'; }).catch(function(){});
+})();
+</script>
+
+</body>
+</html>
