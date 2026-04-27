@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>오늘의 밑줄 · Vol.29</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap');
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { background: #f0efeb; }
+body { font-family: Georgia, serif; max-width: 680px; margin: 0 auto; padding: 40px 20px; color: #1a1a1a; background: #fff; word-break: keep-all; box-shadow: 0 0 40px rgba(0,0,0,0.06); }
+.header { text-align: center; border-top: 3px solid #1a1a1a; border-bottom: 3px solid #1a1a1a; padding: 12px 0; margin-bottom: 4px; }
+.header-sub { font-size: 11px; font-family: Arial, sans-serif; color: #888; letter-spacing: 2px; margin-bottom: 6px; }
+.header-title { font-size: 36px; font-weight: 800; letter-spacing: 0px; font-family: 'Nanum Myeongjo', Georgia, serif; white-space: nowrap; }
+.header-date { font-size: 11px; font-family: Arial, sans-serif; color: #888; margin-top: 6px; }
+.meta { display: flex; justify-content: space-between; border-bottom: 1px solid #e0e0e0; padding: 4px 0; margin-bottom: 28px; font-size: 10px; font-family: Arial, sans-serif; color: #888; }
+.article { margin-bottom: 28px; padding-bottom: 28px; border-bottom: 1px solid #e0e0e0; }
+.article-tag { font-size: 10px; font-family: Arial, sans-serif; color: #888; letter-spacing: 1px; border-top: 2px solid #1a1a1a; padding-top: 8px; margin-bottom: 8px; }
+.article-title { font-size: 24px; font-weight: bold; line-height: 1.3; margin-bottom: 12px; font-family: 'Nanum Myeongjo', Georgia, serif; letter-spacing: -0.5px; }
+.article-summary { font-size: 13px; color: #555; line-height: 1.75; margin-bottom: 14px; }
+.btn-wrap { display: flex; gap: 6px; margin-bottom: 14px; }
+.toggle-btn { font-size: 11px; font-family: Arial, sans-serif; color: #555; background: none; border: 1px solid #ccc; border-radius: 6px; padding: 4px 10px; cursor: pointer; }
+.toggle-btn:hover { background: #f5f5f5; }
+.article-detail { display: none; }
+.article-detail.open { display: block; }
+.detail-inner { border-left: 2px solid #e0e0e0; padding-left: 16px; }
+.section-label { font-size: 10px; font-family: Arial, sans-serif; color: #888; letter-spacing: 1px; margin-bottom: 6px; margin-top: 16px; }
+.detail-inner p { font-size: 13px; color: #555; line-height: 1.75; margin-bottom: 8px; }
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 8px; }
+.box { background: #f5f5f5; border-radius: 8px; padding: 10px 12px; }
+.box-label { font-size: 11px; font-family: Arial, sans-serif; color: #888; margin-bottom: 6px; }
+.box p { font-size: 12px; color: #555; line-height: 1.65; margin-bottom: 6px; }
+.news-item { margin-bottom: 14px; padding-bottom: 14px; border-bottom: 1px solid #e0e0e0; }
+.news-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+.badge { display: inline-block; font-size: 10px; font-family: Arial, sans-serif; background: #f5f5f5; color: #888; padding: 2px 8px; border-radius: 4px; margin-right: 6px; }
+.news-title { font-size: 13px; font-weight: bold; }
+.news-item p { font-size: 12px; color: #555; line-height: 1.7; margin-top: 6px; }
+.source { font-size: 10px; font-family: Arial, sans-serif; color: #aaa; border-top: 1px solid #e0e0e0; padding-top: 8px; margin-top: 16px; }
+.highlight { font-weight: bold; color: #1a1a1a; }
+.insight-p { font-size: 15px !important; color: #333 !important; line-height: 1.85 !important; margin-bottom: 10px !important; }
+.editor { border-top: 2px solid #1a1a1a; padding-top: 10px; margin-bottom: 16px; }
+.editor p { font-size: 16px; color: #1a1a1a; line-height: 1.85; font-style: italic; font-family: 'Nanum Myeongjo', Georgia, serif; font-weight: 800; }
+.footer { border-top: 1px solid #e0e0e0; padding-top: 8px; text-align: center; font-size: 10px; font-family: Arial, sans-serif; color: #aaa; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-sub">ONEDAY DIGEST</div>
+  <div class="header-title">오늘의 밑줄</div>
+  <div class="header-date">2026년 4월 27일 · Vol. 29</div>
+</div>
+<div class="meta">
+  <span>창업 철학 · 투자 · AI·테크 브리핑</span>
+  <span>출처 표기 기반 요약 콘텐츠</span>
+</div>
+
+<!-- Article 1: Jack Zhang -->
+<div class="article">
+  <div class="article-tag">창업 철학 · Jack Zhang · Airwallex</div>
+  <div class="article-title">가장 어려운 길을 일부러 골랐더니, 따라올 수 없는 회사가 됐다</div>
+  <div class="article-summary">잭 장은 2018년 스트라이프의 1.2조 원 인수 제안을 거절했다. 당시 Airwallex 매출은 200만 달러. 600배 멀티플이었다. 그는 한 번은 Yes 했다가, 멜버른으로 가는 비행기에서 마음을 바꿨다. 7년이 지난 지금, Airwallex의 ARR은 13억 달러. 그가 말한 한 문장이 모든 걸 설명한다. "최대 저항의 길(path of max resistance)을 골랐다."</div>
+  <div class="btn-wrap">
+    <button class="toggle-btn" onclick="var d=document.getElementById('d1'),b=this;d.classList.toggle('open');b.textContent=d.classList.contains('open')?'접기 ▲':'더 보기 ▼'">더 보기 ▼</button>
+    <button class="toggle-btn">🎧 오디오로 듣기 (준비 중)</button>
+  </div>
+  <div id="d1" class="article-detail">
+    <div class="detail-inner">
+      <div class="section-label">이 사람은 누구인가</div>
+      <p>잭 장은 Airwallex의 공동창업자이자 CEO다. 중국 칭다오에서 태어나 15살에 호주로 건너갔다. 멜버른의 카페를 운영하며 커피 원두를 수입하다가 국경 간 결제의 복잡함을 직접 경험했고, 그 문제를 풀기 위해 2015년 Airwallex를 창업했다. 현재 50개국에서 90개에 가까운 금융 라이선스를 보유한 글로벌 결제·은행 인프라 회사로 성장시켰다. ARR 13억 달러, 밸류 80억 달러, 연간 거래액 3000억 달러 규모다.</p>
+      <div class="section-label">주요 활동과 이력</div>
+      <p>호주 멜버른에서 카페 운영 → 국경 간 결제 문제를 풀기 위해 2015년 Airwallex 창업 → 첫 두 제품(P2P 송금, 호주 셀러용 인보이스)은 모두 실패 → 환전·법인계좌·결제 인프라로 피벗 → 2018년 스트라이프의 12억 달러 인수 제안 거절 → 일본 진출에 7년 소요, 이머징 마켓에서는 라이선스가 만료된 회사를 인수해 기술을 다시 짜는 방식으로 진입 → 2026년 ARR 13억 달러, 전년 대비 85% 성장. 2026년 말 IPO를 준비 중.</p>
+      <div class="section-label">성공한 것과 실패한 것</div>
+      <div class="grid">
+        <div class="box">
+          <div class="box-label">성공 / 확신</div>
+          <p>스트라이프 인수 제안을 거절했다. 공동창업자 3명 중 2명이 반대 투표, WhatsApp 통화로 결론 냈다. 그 결정 후 회사 가치는 6배 이상 됐다.</p>
+          <p>일본 라이선스를 7년에 걸쳐 직접 땄다. 그 덕에 결제만 처리하는 스트라이프와 달리 자금을 자사 시스템 안에 보유할 수 있게 됐다.</p>
+        </div>
+        <div class="box">
+          <div class="box-label">실패 / 한계</div>
+          <p>첫 두 제품은 모두 실패했다. P2P 송금은 볼륨이 안 나왔고, 셀러 인보이스 솔루션도 시장이 너무 작았다.</p>
+          <p>크립토·스테이블코인에는 신중하다. 스트라이프가 Bridge를 11억 달러에 인수한 것과 정반대 방향이다. "지난 15년간 크립토의 단 하나의 유스케이스도 보지 못했다"고 X에서 말했다.</p>
+        </div>
+      </div>
+      <div class="section-label">인사이트</div>
+      <p class="insight-p">스트라이프 제안을 받았을 때, 잭 장은 샌프란시스코를 2주간 걸어 다녔다고 했다. 한 번은 Yes 했다. 그러다 멜버른으로 8000마일 비행기를 타고 돌아오는 동안 생각이 뒤집혔다. 사무실 화이트보드에는 아직 끝나지 않은 회사 비전이 적혀 있었다. <span class="highlight">결정을 흔드는 건 새 정보가 아니라, 원래 자리로 돌아오는 일이었다.</span></p>
+      <p class="insight-p">그는 자기 전략을 "최대 저항의 길"이라고 부른다. 라이선스 하나, 은행 통합 하나, 현지 결제망 하나가 모두 다음 회사가 따라오기 어렵게 만드는 벽이 된다. <span class="highlight">빨리 가는 길과 깊이 가는 길은 처음엔 같아 보이지만, 5년이 지나면 결과가 갈린다.</span></p>
+      <p class="insight-p">"멕시코 중앙은행 통합은 vibe-coding으로 안 된다." 그는 말했다. 생체 인식을 통과해야 들어갈 수 있는 보안실에서 작업해야 한다. <span class="highlight">AI가 모든 걸 빨리 만들어내는 시대일수록, 빠르게 만들 수 없는 것이 가장 비싼 자산이 된다.</span></p>
+      <div class="source">출처: "Once close enough for an acquisition, Stripe and Airwallex are now going after each other" · TechCrunch (2026-04-17), Bloomberg, ChainCatcher</div>
+    </div>
+  </div>
+</div>
+
+<!-- Article 2: Stacy Brown-Philpot -->
+<div class="article">
+  <div class="article-tag">투자 철학 · Stacy Brown-Philpot · Cherryrock Capital</div>
+  <div class="article-title">머리·가슴·직감, 셋 중 가장 무시당한 게 직감이었다</div>
+  <div class="article-summary">스테이시 브라운-필포트는 TaskRabbit을 키워 IKEA에 매각한 CEO였다. 가장 잘나갈 때 사임했고, 모두가 메가펀드에 뛰어들 때 거꾸로 작은 펀드를 만들었다. 1억 7200만 달러 1호 펀드, 12~15개만 집중 투자. 그가 창업자들에게 한 말이 흥미롭다. "테크 창업자들은 머리만 쓰고 직감을 무시한다. 그게 5년 차에 회사를 망친다."</div>
+  <div class="btn-wrap">
+    <button class="toggle-btn" onclick="var d=document.getElementById('d2'),b=this;d.classList.toggle('open');b.textContent=d.classList.contains('open')?'접기 ▲':'더 보기 ▼'">더 보기 ▼</button>
+    <button class="toggle-btn">🎧 오디오로 듣기 (준비 중)</button>
+  </div>
+  <div id="d2" class="article-detail">
+    <div class="detail-inner">
+      <div class="section-label">이 사람은 누구인가</div>
+      <p>스테이시 브라운-필포트는 Cherryrock Capital의 창업자이자 매니징 파트너다. 디트로이트에서 4세대가 함께 사는 집에서 자랐고, 와튼에서 경제학, 스탠퍼드 GSB에서 MBA를 받았다. 구글에서 10년간 인도 사업 책임자 등을 거쳤고, TaskRabbit COO로 합류해 2016년 CEO가 됐다. 2017년 IKEA 매각을 이끌었다. 2020년 BLM 시점에 사임 후 SoftBank Opportunity Fund(1억 달러)를 운영했고, 2025년 Cherryrock을 창업했다.</p>
+      <div class="section-label">주요 활동과 이력</div>
+      <p>구글 글로벌 운영 → 구글 인도 책임자 → Google Ventures EIR → TaskRabbit COO → 2016년 CEO → 2017년 IKEA에 매각 → 2020년 사임, SoftBank Opportunity Fund 운영 → 2023년 SoftBank가 펀드를 매각하자, 본인이 직접 펀드를 새로 세우기로 결심 → 2025년 2월 Cherryrock Capital 1호 펀드 1억 7200만 달러 클로즈(Goldman, JPMorgan, Reid Hoffman, Sheryl Sandberg 등 LP) → 12~15개만 집중 투자, Series A·B 단계의 소외된 창업자에 베팅. HP·Nordstrom·StockX 이사회 경험.</p>
+      <div class="section-label">성공한 것과 실패한 것</div>
+      <div class="grid">
+        <div class="box">
+          <div class="box-label">성공 / 확신</div>
+          <p>모두가 메가펀드와 AI 메가딜을 쫓을 때, 1억 7200만 달러로 12~15개만 한다는 결정을 했다. 첫해 파이프라인에 2000개 회사가 들어왔다.</p>
+          <p>DEI 정치 환경이 뒤집혔는데도 펀드 전략을 바꾸지 않았다. "JPMorgan과 BoA가 우리에게 돈을 맡긴 건 수익을 바라기 때문이다. 정권은 오고 가지만, 나는 장기를 본다."</p>
+        </div>
+        <div class="box">
+          <div class="box-label">실패 / 한계</div>
+          <p>TaskRabbit에서 입찰 구조를 바꿨을 때 태스커들의 거센 반발을 받았다. 가장 어려운 결정 중 하나였다고 회고했다.</p>
+          <p>2020년 CEO 사임은 가장 잘나갈 때의 결정이었다. 본인도 한동안 다음을 정하지 못했다. 답을 찾는 데 몇 년이 걸렸다.</p>
+        </div>
+      </div>
+      <div class="section-label">인사이트</div>
+      <p class="insight-p">그는 창업자에게 신호가 셋이라고 말한다. 머리(이성), 가슴(감정), 직감(본능). 테크 창업자들은 이성만 쓴다. <span class="highlight">"팀이 어떻게 느끼는지가 중요하다. 고객이 제품을 어떻게 느끼는지가 중요하다. 그리고 직감이 가장 중요해지는 순간은 5년, 10년 차에 대기업 출신 임원을 영입할 때다."</span></p>
+      <p class="insight-p">그가 보는 좋은 창업자의 세 단어는 audacious(대담한), accountable(책임지는), authentic(자기다운). <span class="highlight">대담함만으로는 안 된다. 책임이 빠지면 무너지고, 자기다움이 빠지면 들킨다.</span> 셋이 동시에 있는 사람을 찾는 게 그의 일이다.</p>
+      <p class="insight-p">모두가 같은 방향으로 달릴 때, 거꾸로 가는 사람만 보이는 시장이 있다. SoftBank가 다양성 펀드를 매각하던 해에 그는 본인 돈을 걸고 펀드를 만들었다. <span class="highlight">시장이 외면하는 곳에 줄을 서는 사람은, 결국 줄이 짧다.</span></p>
+      <div class="source">출처: "In a changed VC landscape, this exec is doubling down on overlooked founders" · TechCrunch (2026-02-14), Stanford GSB View From The Top, Bloomberg</div>
+    </div>
+  </div>
+</div>
+
+<!-- Article 3: AI·테크 브리핑 -->
+<div class="article">
+  <div class="article-tag">AI · 테크 브리핑 · 2026년 4월 27일</div>
+  <div class="article-title">이번 주 AI, 돈과 인프라가 다시 쏠리는 소식 세 개</div>
+  <div class="article-summary">구글이 Anthropic에 400억 달러를 약속했고, 클라우드는 에이전트용 도구를 한꺼번에 내놨고, OpenAI는 ARR 250억 달러를 넘겨 IPO를 준비한다. 모델 경쟁에서 인프라·자본 게임으로 넘어가는 한 주.</div>
+  <div class="btn-wrap">
+    <button class="toggle-btn" onclick="var d=document.getElementById('d3'),b=this;d.classList.toggle('open');b.textContent=d.classList.contains('open')?'접기 ▲':'더 보기 ▼'">더 보기 ▼</button>
+    <button class="toggle-btn">🎧 오디오로 듣기 (준비 중)</button>
+  </div>
+  <div id="d3" class="article-detail">
+    <div class="detail-inner">
+
+      <div class="news-item">
+        <span class="badge">투자</span><span class="news-title">Google, Anthropic에 400억 달러 — 100억 즉시, 300억 마일스톤 연동</span>
+        <p><span class="highlight">무슨 일인가:</span> 구글이 Anthropic에 최대 400억 달러를 투자한다고 4월 24일 공식 발표했다. 100억 달러는 $380B 밸류에 즉시 집행, 나머지 300억은 성과 마일스톤 조건이다. 같은 달 발표된 Amazon의 5GW·최대 250억 달러 추가 투자와 합치면 한 달 사이 빅테크가 Anthropic에 약속한 돈이 600억 달러를 넘는다.</p>
+        <p><span class="highlight">왜 중요한가:</span> 구글은 자사 Gemini로 Anthropic과 직접 경쟁하면서, 동시에 Anthropic의 14% 주주이자 핵심 컴퓨트 공급자다. 경쟁사에 베팅하는 게 아니라, AI 인프라 사이클 자체에 베팅하는 구조다. Anthropic ARR은 300억 달러를 넘었다.</p>
+        <p><span class="highlight">인사이트:</span> 모델 경쟁의 시대가 끝나가고, 컴퓨트 확보 게임이 시작됐다. <span class="highlight">"누가 더 좋은 모델을 만드냐"가 아니라, "누가 더 많은 GPU·전기를 잡았느냐"가 다음 라운드의 승부수다.</span></p>
+      </div>
+
+      <div class="news-item">
+        <span class="badge">에이전트</span><span class="news-title">Google Cloud Next — 에이전트 빌드 도구를 한 번에 풀었다</span>
+        <p><span class="highlight">무슨 일인가:</span> 구글 클라우드가 4월 22일 라스베이거스 연례 컨퍼런스에서 AI 에이전트를 만들고 추적하는 도구 세트를 대거 공개했다. 에이전트 전용 받은편지함(에이전트들이 진행 상황을 보고하는 공간), Workspace 통합 업데이트, 기업 워크플로우용 에이전트 프레임워크가 포함됐다.</p>
+        <p><span class="highlight">왜 중요한가:</span> OpenAI·Anthropic·Microsoft가 이미 에이전트 시장에 자리를 잡은 상태에서, 구글이 "기업이 에이전트를 직접 만들 수 있게 하는 인프라"로 차별화를 시도한다. 단일 모델이 아니라 운영 환경 전체를 잡으려는 움직임이다.</p>
+        <p><span class="highlight">인사이트:</span> 에이전트 자체보다 에이전트가 일하는 환경이 더 큰 시장이 된다. <span class="highlight">메일함, 캘린더, 문서 — 사람의 일터가 에이전트의 일터로 그대로 옮겨간다.</span> 거기에 먼저 자리 잡은 회사가 다음 10년의 OS를 차지한다.</p>
+      </div>
+
+      <div class="news-item">
+        <span class="badge">상장</span><span class="news-title">OpenAI ARR 250억 달러 돌파 — 2026년 말 IPO 준비 중</span>
+        <p><span class="highlight">무슨 일인가:</span> OpenAI가 연간 반복 매출 250억 달러를 넘겼고, 2026년 말 상장을 목표로 초기 작업에 들어갔다고 보도됐다. 지난 4월 초 주주 서한에서는 "2030년까지 30GW의 컴퓨트 용량을 확보할 것"이라며 Anthropic을 직접 겨냥한 표현을 썼다.</p>
+        <p><span class="highlight">왜 중요한가:</span> ARR 250억 달러는 Anthropic(190억 달러)을 앞서는 수치다. 동시에 OpenAI는 "Anthropic이 컴퓨트 확보에 실패하고 있다"고 공개적으로 비판해왔다. 상장은 자본 확보뿐 아니라, 컴퓨트 경쟁의 심리전이기도 하다.</p>
+        <p><span class="highlight">인사이트:</span> AI 회사가 이제 매출이 아니라 "전기 약속"으로 평가받기 시작했다. <span class="highlight">상장의 진짜 메시지는 매출이 아니라, "우리가 수십 년치 인프라 자본을 끌어올 수 있다"는 신호다.</span></p>
+      </div>
+
+      <div class="source">출처: CNBC, Axios, Bloomberg, Anthropic News, Fortune (2026년 4월 4주차)</div>
+    </div>
+  </div>
+</div>
+
+<!-- Article 4: 신제품 소식 -->
+<div class="article">
+  <div class="article-tag">신제품 소식 · 2026년 4월 26일</div>
+  <div class="article-title">오늘의 신제품 — 자동화·DM·엑셀·메신저</div>
+  <div class="article-summary">AI가 비즈니스를 통째로 운영하겠다는 도구가 나왔다. 인스타 DM은 이제 사람이 안 답한다. 엑셀에 비서가 들어왔고, X는 자체 메신저를 분리했다. 4월 26일자 ProductHunt 픽 4개.</div>
+  <div class="btn-wrap">
+    <button class="toggle-btn" onclick="var d=document.getElementById('d4'),b=this;d.classList.toggle('open');b.textContent=d.classList.contains('open')?'접기 ▲':'더 보기 ▼'">더 보기 ▼</button>
+    <button class="toggle-btn">🎧 오디오로 듣기 (준비 중)</button>
+  </div>
+  <div id="d4" class="article-detail">
+    <div class="detail-inner">
+
+      <div class="news-item">
+        <span class="badge">자동화</span><span class="news-title">ZeroHuman — AI가 비즈니스를 자동으로 운영해준다</span>
+        <p>아이디어 검증, 제품 구축, 운영까지 AI가 대행하는 자동화 솔루션. "자는 동안에도 비즈니스가 돌아간다"는 메시지로 출시. 1인 창업자·사이드프로젝트 운영자가 주 타깃이다.</p>
+      </div>
+
+      <div class="news-item">
+        <span class="badge">SNS</span><span class="news-title">Inrō AI — 인스타그램 마케팅용 AI 에이전트</span>
+        <p>인스타그램 DM을 처리하는 AI 에이전트. 목표를 설정하면 AI가 자체 학습으로 청중과 소통하고 리드를 검증한다. 8000개 이상의 툴과 연결 가능. 콘텐츠·SNS 비즈니스 운영자가 핵심 사용자.</p>
+      </div>
+
+      <div class="news-item">
+        <span class="badge">생산성</span><span class="news-title">Genspark for Excel — 엑셀 안에 들어온 AI 비서</span>
+        <p>Microsoft Excel에 통합된 AI 비서. 데이터 분석, 웹 검색, 차트 생성까지 텍스트로 지시 가능. 엑셀에 깊이 의존하는 업무를 자동화하려는 사용자를 겨냥했다.</p>
+      </div>
+
+      <div class="news-item">
+        <span class="badge">메신저</span><span class="news-title">XChat — X에서 분리된 종단간 암호화 메신저</span>
+        <p>광고 없는 종단간 암호화 메시징, 영상 통화, 사라지는 메시지. X 본체에서 채팅 기능을 별도 앱으로 분리해 출시. 메타·텔레그램·시그널과 정면 경쟁한다.</p>
+      </div>
+
+      <div class="source">출처: choi.openai · Threads (2026-04-26)</div>
+    </div>
+  </div>
+</div>
+
+<!-- Editor Note -->
+<div class="editor">
+  <div class="section-label">에디터 한마디</div>
+  <p>"빠른 길은 모두가 갈 수 있어서, 결국 아무도 남지 않는다."</p>
+</div>
+
+<div class="footer">오늘의 밑줄 · 매일 발행 · 출처 표기 기반 요약 콘텐츠</div>
+
+<div style="display:flex; justify-content:center; gap:10px; margin-top:20px; padding-bottom:20px;">
+  <a href="vol28.html" style="display:inline-block; padding:10px 20px; border:1px solid #1a1a1a; border-radius:8px; font-size:13px; font-family:Arial,sans-serif; color:#fff; text-decoration:none; background:#1a1a1a;">← 이전 호</a>
+  <a href="archive.html" style="display:inline-block; padding:10px 20px; border:1px solid #ccc; border-radius:8px; font-size:13px; font-family:Arial,sans-serif; color:#555; text-decoration:none; background:#fff;">전체 보기</a>
+  <a id="next-btn" href="vol30.html" style="display:none; padding:10px 20px; border:1px solid #1a1a1a; border-radius:8px; font-size:13px; font-family:Arial,sans-serif; color:#fff; text-decoration:none; background:#1a1a1a;">다음 호 →</a>
+</div>
+<script>
+(function(){
+  fetch('vol30.html', {method:'HEAD'}).then(function(r){ if(r.ok) document.getElementById('next-btn').style.display='inline-block'; }).catch(function(){});
+})();
+</script>
+
+</body>
+</html>
