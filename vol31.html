@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>오늘의 밑줄 · Vol.31</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap');
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { background: #f0efeb; }
+body { font-family: Georgia, serif; max-width: 680px; margin: 0 auto; padding: 40px 20px; color: #1a1a1a; background: #fff; word-break: keep-all; box-shadow: 0 0 40px rgba(0,0,0,0.06); }
+.header { text-align: center; border-top: 3px solid #1a1a1a; border-bottom: 3px solid #1a1a1a; padding: 12px 0; margin-bottom: 4px; }
+.header-sub { font-size: 11px; font-family: Arial, sans-serif; color: #888; letter-spacing: 2px; margin-bottom: 6px; }
+.header-title { font-size: 36px; font-weight: 800; letter-spacing: 0px; font-family: 'Nanum Myeongjo', Georgia, serif; white-space: nowrap; }
+.header-date { font-size: 11px; font-family: Arial, sans-serif; color: #888; margin-top: 6px; }
+.meta { display: flex; justify-content: space-between; border-bottom: 1px solid #e0e0e0; padding: 4px 0; margin-bottom: 28px; font-size: 10px; font-family: Arial, sans-serif; color: #888; }
+.article { margin-bottom: 28px; padding-bottom: 28px; border-bottom: 1px solid #e0e0e0; }
+.article-tag { font-size: 10px; font-family: Arial, sans-serif; color: #888; letter-spacing: 1px; border-top: 2px solid #1a1a1a; padding-top: 8px; margin-bottom: 8px; }
+.article-title { font-size: 24px; font-weight: bold; line-height: 1.3; margin-bottom: 12px; font-family: 'Nanum Myeongjo', Georgia, serif; letter-spacing: -0.5px; }
+.article-summary { font-size: 13px; color: #555; line-height: 1.75; margin-bottom: 14px; }
+.btn-wrap { display: flex; gap: 6px; margin-bottom: 14px; }
+.toggle-btn { font-size: 11px; font-family: Arial, sans-serif; color: #555; background: none; border: 1px solid #ccc; border-radius: 6px; padding: 4px 10px; cursor: pointer; }
+.toggle-btn:hover { background: #f5f5f5; }
+.article-detail { display: none; }
+.article-detail.open { display: block; }
+.detail-inner { border-left: 2px solid #e0e0e0; padding-left: 16px; }
+.section-label { font-size: 10px; font-family: Arial, sans-serif; color: #888; letter-spacing: 1px; margin-bottom: 6px; margin-top: 16px; }
+.detail-inner p { font-size: 13px; color: #555; line-height: 1.75; margin-bottom: 8px; }
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 8px; }
+.box { background: #f5f5f5; border-radius: 8px; padding: 10px 12px; }
+.box-label { font-size: 11px; font-family: Arial, sans-serif; color: #888; margin-bottom: 6px; }
+.box p { font-size: 12px; color: #555; line-height: 1.65; margin-bottom: 6px; }
+.news-item { margin-bottom: 14px; padding-bottom: 14px; border-bottom: 1px solid #e0e0e0; }
+.news-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+.badge { display: inline-block; font-size: 10px; font-family: Arial, sans-serif; background: #f5f5f5; color: #888; padding: 2px 8px; border-radius: 4px; margin-right: 6px; }
+.news-title { font-size: 13px; font-weight: bold; }
+.news-item p { font-size: 12px; color: #555; line-height: 1.7; margin-top: 6px; }
+.source { font-size: 10px; font-family: Arial, sans-serif; color: #aaa; border-top: 1px solid #e0e0e0; padding-top: 8px; margin-top: 16px; }
+.highlight { font-weight: bold; color: #1a1a1a; }
+.insight-p { font-size: 15px !important; color: #333 !important; line-height: 1.85 !important; margin-bottom: 10px !important; }
+.editor { border-top: 2px solid #1a1a1a; padding-top: 10px; margin-bottom: 16px; }
+.editor p { font-size: 16px; color: #1a1a1a; line-height: 1.85; font-style: italic; font-family: 'Nanum Myeongjo', Georgia, serif; font-weight: 800; }
+.footer { border-top: 1px solid #e0e0e0; padding-top: 8px; text-align: center; font-size: 10px; font-family: Arial, sans-serif; color: #aaa; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-sub">ONEDAY DIGEST</div>
+  <div class="header-title">오늘의 밑줄</div>
+  <div class="header-date">2026년 4월 29일 · Vol. 31</div>
+</div>
+<div class="meta">
+  <span>창업 철학 · 테크 · AI·테크 브리핑</span>
+  <span>출처 표기 기반 요약 콘텐츠</span>
+</div>
+
+<!-- Article 1: Colin Kaepernick -->
+<div class="article">
+  <div class="article-tag">창업 철학 · Colin Kaepernick · Lumi</div>
+  <div class="article-title">자기 이야기를 빼앗긴 사람이 만든 회사</div>
+  <div class="article-summary">콜린 캐퍼닉은 NFL 슈퍼볼 쿼터백이었다. 2016년 무릎을 꿇은 뒤 직장을 잃었고, 그 뒤 10년간 자기 이야기를 자기가 통제할 수 없었다. 이 경험이 그를 창업으로 이끌었다. Lumi는 크리에이터가 자기 스토리를 직접 만들고, 출판하고, 소유하게 만드는 AI 플랫폼이다.</div>
+  <div class="btn-wrap">
+    <button class="toggle-btn" onclick="var d=document.getElementById('d1'),b=this;d.classList.toggle('open');b.textContent=d.classList.contains('open')?'접기 ▲':'더 보기 ▼'">더 보기 ▼</button>
+    <button class="toggle-btn">🎧 오디오로 듣기 (준비 중)</button>
+  </div>
+  <div id="d1" class="article-detail">
+    <div class="detail-inner">
+      <div class="section-label">이 사람은 누구인가</div>
+      <p>콜린 캐퍼닉은 전 샌프란시스코 49ers 쿼터백이다. 슈퍼볼 47회 출전, NFL 한 경기 쿼터백 러싱 야드 최다 기록 보유자. 2016년 경기 전 국가 연주 때 무릎을 꿇어 인종 불평등에 항의한 뒤 NFL에서 사실상 퇴출됐다. 이후 인권 운동가, 미디어 회사 운영자, 엔젤 투자자(50건 이상)로 활동했고, 2020년부터 Medium 이사회 멤버다. 2024년 AI 스토리텔링 플랫폼 Lumi를 창업해 CEO를 맡고 있다.</p>
+      <div class="section-label">주요 활동과 이력</div>
+      <p>NFL 슈퍼볼 쿼터백(2012) → 무릎 꿇기 시위(2016) → NFL 퇴출 → Kaepernick Media 설립 → 출판사 Kaepernick Publishing 운영 → 그래픽 노블 「Change the Game」 출간(2023) → 엔젤 투자 50건 → Medium 이사회 합류(2020) → Lumi 창업·시드 $4M 모금(2024, Seven Seven Six 주도) → TechCrunch Disrupt 2026 발표. Lumi는 만화·그래픽 노블·만가 크리에이터를 위한 도구로 시작해, 캐릭터 설계부터 스크립트, 이미지 생성, 출판, 머천다이징까지 한 플랫폼에서 처리한다.</p>
+      <div class="section-label">성공한 것과 실패한 것</div>
+      <div class="grid">
+        <div class="box">
+          <div class="box-label">성공 / 확신</div>
+          <p>자신의 미디어 회사를 운영하면서 본 문제(긴 제작 기간, 높은 비용, 크리에이터가 자기 작품을 소유하지 못하는 구조)를 해결하기 위해 Lumi를 만들었다. 실제로 겪은 사람만 보이는 문제였다.</p>
+          <p>Medium 이사회에서 a16z 공동창업자 Ben Horowitz, Reddit 공동창업자 Alexis Ohanian과 4년을 일하며 테크 창업 감각을 익혔다. 그 인맥이 Lumi 시드 라운드로 이어졌다.</p>
+        </div>
+        <div class="box">
+          <div class="box-label">실패 / 한계</div>
+          <p>NFL을 떠난 뒤 자기 이야기를 자기가 통제하지 못했다. 미디어가 그를 정의했다. 그 분노가 창업의 동력이지만, 동시에 그가 정치적 인물로 분류되는 한계이기도 하다.</p>
+          <p>"AI는 도구일 뿐 스토리텔러를 위한 솔루션이다"라고 강조하지만, 일부 영화감독·예술가의 AI 거부 정서는 여전히 부담이다. Spike Lee 같은 협업자도 AI에 회의적이다.</p>
+        </div>
+      </div>
+      <div class="section-label">인사이트</div>
+      <p class="insight-p">캐퍼닉은 어느 날 갑자기 "테크 회사를 만들겠다"고 결심한 게 아니라고 했다. 크리에이터들의 문제를 풀려고 하다 보니 그 답이 마침 테크 회사였다고 했다. <span class="highlight">기술이 먼저가 아니라 문제가 먼저다.</span> 도구를 찾아간 게 아니라, 풀어야 할 게 보이니 도구가 따라왔다.</p>
+      <p class="insight-p">그는 AI를 아이폰에 비유했다. 아이폰이 사진의 세계를 열었지만 전문 사진가를 없애지는 않았다고. <span class="highlight">기술은 진입 장벽을 낮출 뿐, 만드는 사람의 자리를 빼앗지는 않는다</span>는 시각이다. 콘텐츠 생산 도구를 다루는 사람이라면 이 말은 위안이 아니라 전제로 받아들일 일이다.</p>
+      <p class="insight-p">"모든 돈이 좋은 돈은 아니다." 그가 후배 창업자들에게 한 말이다. 비전과 안 맞는 투자자에게 돈을 받느니 안 받는 게 낫다고 했다. <span class="highlight">조급함 때문에 잘못된 동행을 선택하면, 결국 또 다른 사람이 내 이야기를 쓰게 된다.</span></p>
+      <div class="source">출처: TechCrunch · TIME · TechCrunch Disrupt 2024 인터뷰 · Lumi 공식 발표</div>
+    </div>
+  </div>
+</div>
+
+<!-- Article 2: Jan Oberhauser / n8n -->
+<div class="article">
+  <div class="article-tag">창업 철학 · Jan Oberhauser · n8n</div>
+  <div class="article-title">잘 되던 사업을 8개월 만에 4배 키운 결정</div>
+  <div class="article-summary">얀 오버하우저는 영화 시각효과 일을 하던 솔로 개발자였다. 반복 코딩이 지겨워 베를린에서 부업으로 워크플로우 도구를 만들었다. 6년간 천천히 성장하던 그 회사가, 한 번의 결단 이후 8개월 만에 매출 4배가 됐다. n8n은 지금 25억 달러짜리 회사다.</div>
+  <div class="btn-wrap">
+    <button class="toggle-btn" onclick="var d=document.getElementById('d2'),b=this;d.classList.toggle('open');b.textContent=d.classList.contains('open')?'접기 ▲':'더 보기 ▼'">더 보기 ▼</button>
+    <button class="toggle-btn">🎧 오디오로 듣기 (준비 중)</button>
+  </div>
+  <div id="d2" class="article-detail">
+    <div class="detail-inner">
+      <div class="section-label">이 사람은 누구인가</div>
+      <p>얀 오버하우저는 베를린 기반 워크플로우 자동화 플랫폼 n8n의 창업자이자 CEO다. 영화 「말레피센트」 등의 시각효과 합성 작업으로 커리어를 시작했고, 반복적 코딩에 지쳐 부업으로 n8n을 만들기 시작했다. 2019년 솔로 창업 → Sequoia 시드 → Felicis 시리즈 A → 2025년 시리즈 C 1.8억 달러, 25억 달러 밸류에이션. 200,000명 이상의 활성 사용자, 3,000개 이상의 기업 고객. fair-code 라이선스 모델을 공동 창안한 인물이기도 하다.</p>
+      <div class="section-label">주요 활동과 이력</div>
+      <p>VFX 합성가 → 베를린 부업으로 워크플로우 도구 자체 제작 → n8n 솔로 창업(2019) → Sequoia 시드 $1.5M(2020) → Felicis 시리즈 A $12M(2021) → 시리즈 B $60M(2025) → 시리즈 C $180M, 25억 달러 밸류(2025) → ARR $40M+ 돌파. 결정적 전환점은 ChatGPT 등장 직후. AI 기능을 살짝 얹는 길과, 플랫폼 전체를 AI 오케스트레이션 인프라로 다시 정의하는 길 사이에서 후자를 택했다. 그 결정 이후 6년간 쌓은 매출보다 8개월간 만든 매출이 더 컸다.</p>
+      <div class="section-label">성공한 것과 실패한 것</div>
+      <div class="grid">
+        <div class="box">
+          <div class="box-label">성공 / 확신</div>
+          <p>fair-code 라이선스로 코드를 공개하되 상업적 이용은 파트너십이 필요하게 했다. 커뮤니티는 충분히 열려 있고, 비즈니스는 망가지지 않게 만든 균형. GitHub 70,000+ 스타.</p>
+          <p>리드 타깃을 버리고 커뮤니티 채택과 콘텐츠에 집중했다. 게이트로 막은 깔때기 대신, 바닥부터 올라오는 사용 자체가 영업이 되게 만들었다.</p>
+        </div>
+        <div class="box">
+          <div class="box-label">실패 / 한계</div>
+          <p>한때 "직원 500명 미만으로 매출 1조"를 목표로 잡았다가 사업 성장에 맞춰 그 목표를 조정했다. 신념이라도 현실에 맞춰 갱신해야 한다는 걸 인정했다.</p>
+          <p>AI 등장 직전까지는 "꽤 괜찮지만 폭발적이지는 않은" 성장이었다. AI 파도를 못 봤다면 6년이 6년 더 이어질 수도 있었다.</p>
+        </div>
+      </div>
+      <div class="section-label">인사이트</div>
+      <p class="insight-p">얀은 ChatGPT가 나왔을 때 두 가지 선택지를 봤다. AI 기능을 살짝 얹어 10~30% 개선하거나, 플랫폼을 AI 자체를 만드는 도구로 다시 정의하거나. 그는 후자를 택했다. <span class="highlight">"기능 추가"는 안전한 선택이지만 시장이 바뀔 때는 가장 위험한 선택</span>이라는 걸 그는 알았다.</p>
+      <p class="insight-p">그는 데이터 소유권을 첫날부터 핵심 가치로 두었다. 셀프호스팅, 모델·공급사·생태계 종속 거부. 자동화 도구가 데이터를 가져가는 게 아니라, <span class="highlight">데이터는 내 자리에 두고 일만 시키는 구조</span>를 만들었다. 유럽 기업들이 n8n에 몰린 이유다.</p>
+      <p class="insight-p">"수직 AI 앱은 많이 나올 것이다. 하지만 복잡성이 늘면 결국 오케스트레이션이 필요해진다." 얀의 말이다. <span class="highlight">도구가 늘어날수록 도구를 연결하는 곳에 가치가 쌓인다.</span> 이 흐름은 SaaS 때도 똑같았다.</p>
+      <div class="source">출처: Sequoia Training Data 팟캐스트 · Felicis 인터뷰 · EU-Startups Podcast · solofounders.com</div>
+    </div>
+  </div>
+</div>
+
+<!-- Article 3: AI·테크 브리핑 -->
+<div class="article">
+  <div class="article-tag">AI · 테크 브리핑 · 2026년 4월 29일</div>
+  <div class="article-title">앤트로픽이 거절한 자리, 구글이 채우다</div>
+  <div class="article-summary">미국 정부와 AI 회사들의 관계가 일주일 사이에 재편됐다. 앤트로픽은 거절했고, 구글·OpenAI·xAI는 받아들였다. 동시에 알파벳은 앤트로픽에 400억 달러를 더 넣었다. 거절한 회사가 가장 빨리 성장 중이라는 점이 이 일주일의 핵심이다.</div>
+  <div class="btn-wrap">
+    <button class="toggle-btn" onclick="var d=document.getElementById('d3'),b=this;d.classList.toggle('open');b.textContent=d.classList.contains('open')?'접기 ▲':'더 보기 ▼'">더 보기 ▼</button>
+    <button class="toggle-btn">🎧 오디오로 듣기 (준비 중)</button>
+  </div>
+  <div id="d3" class="article-detail">
+    <div class="detail-inner">
+
+      <div class="news-item">
+        <span class="badge">정책</span><span class="news-title">구글, 앤트로픽이 거절한 국방부 계약 체결</span>
+        <p><span class="highlight">무슨 일인가:</span> 구글이 미 국방부와 기밀 네트워크용 AI 사용 계약을 체결했다. 앤트로픽은 같은 조건(가드레일 없는 무제한 사용)을 거절해 "공급망 위험" 낙인이 찍혔고, 현재 국방부와 소송 중이다. OpenAI, xAI는 이미 계약을 맺었다.</p>
+        <p><span class="highlight">왜 중요한가:</span> AI 회사가 정부에 어떤 조건을 걸 수 있는지 산업 표준이 만들어지는 중이다. 거절의 대가가 "공급망 위험" 낙인이라는 건 다른 회사들에게 강한 신호다.</p>
+        <p><span class="highlight">인사이트:</span> 가장 큰 고객을 거절할 수 있는 회사만이 가드레일을 만든다. 거절할 수 있는 위치가 곧 협상력이다.</p>
+      </div>
+
+      <div class="news-item">
+        <span class="badge">투자</span><span class="news-title">알파벳, 앤트로픽에 추가 400억 달러 투자</span>
+        <p><span class="highlight">무슨 일인가:</span> 알파벳이 앤트로픽에 최대 400억 달러를 추가 투자한다. 시작 투자는 100억 달러, 밸류에이션 3,500억 달러. 앤트로픽 ARR은 2024년 말 10억 달러에서 2026년 4월 300억 달러로 1년 4개월 만에 30배 성장했다.</p>
+        <p><span class="highlight">왜 중요한가:</span> 국방부 계약을 거절한 회사에 미국 빅테크가 가장 큰 베팅을 했다. 비즈니스 가치와 정치적 입장이 분리되는 구간이다.</p>
+        <p><span class="highlight">인사이트:</span> 시장은 누가 옳은지를 가리는 게 아니라, 누가 빨리 성장하는지를 가린다. 그 둘이 같을 때 폭발한다.</p>
+      </div>
+
+      <div class="news-item">
+        <span class="badge">보안</span><span class="news-title">앤트로픽, 자체 모델 공개 보류</span>
+        <p><span class="highlight">무슨 일인가:</span> 앤트로픽은 자사 Mythos Preview 모델이 보안 취약점을 너무 빠르게 찾아내고 악용할 수 있어 일반 공개를 보류하고 있다. 미 의회 국토안보위에 OpenAI와 함께 비공개 브리핑을 진행했다.</p>
+        <p><span class="highlight">왜 중요한가:</span> AI가 사이버 공격 도구로도 쓰일 수 있다는 사실을 회사 스스로 인정하고, 출시를 미룬 사례다. AI 회사가 처음으로 자기 모델을 출시하지 않는 결정을 내렸다.</p>
+        <p><span class="highlight">인사이트:</span> 만들 수 있다고 다 내놓지는 않는다. 신뢰는 만든 것보다 안 내놓은 것에서 쌓인다.</p>
+      </div>
+
+      <div class="source">출처: TechCrunch · Axios · The Motley Fool (2026년 4월 27~28일)</div>
+    </div>
+  </div>
+</div>
+
+<!-- Article 4: 오늘의 신제품 -->
+<div class="article">
+  <div class="article-tag">오늘의 신제품 · 2026년 4월 29일 · ProductHunt</div>
+  <div class="article-title">지금 일하는 방식을 바꾸는 도구들</div>
+  <div class="article-summary">자연어로 앱을 만들고, CLI 안에서 코딩이 알아서 굴러가고, AI 에이전트가 일하면서 스스로 기술을 쌓아간다. 4월 29일 ProductHunt 상위에서 추린 4개. 도구가 사람의 손을 빌리는 시대에서, 사람이 도구의 손을 빌리는 시대로 빠르게 넘어가고 있다.</div>
+  <div class="btn-wrap">
+    <button class="toggle-btn" onclick="var d=document.getElementById('d4'),b=this;d.classList.toggle('open');b.textContent=d.classList.contains('open')?'접기 ▲':'더 보기 ▼'">더 보기 ▼</button>
+    <button class="toggle-btn">🎧 오디오로 듣기 (준비 중)</button>
+  </div>
+  <div id="d4" class="article-detail">
+    <div class="detail-inner">
+
+      <div class="news-item">
+        <span class="badge">노코드</span><span class="news-title">Lovable 모바일 앱 — 자연어로 웹앱을 즉시 만든다</span>
+        <p><span class="highlight">무슨 일인가:</span> 코딩 없이 자연어 입력만으로 웹사이트와 웹앱을 만드는 AI 빌더. 이제 모바일에서도 작동한다. 아이디어를 떠올린 자리에서 바로 도구를 만들 수 있다.</p>
+        <p><span class="highlight">왜 중요한가:</span> "만들고 싶다"와 "만들 수 있다" 사이의 시간이 사라지고 있다. 1인 창업자, 비개발 PM에게는 새 무기다.</p>
+        <p><span class="highlight">인사이트:</span> 진입장벽이 낮아질수록 차별화는 결국 아이디어와 안목으로 옮겨간다.</p>
+      </div>
+
+      <div class="news-item">
+        <span class="badge">코딩</span><span class="news-title">Devin for Terminal — 노트북 닫고도 일하는 CLI 에이전트</span>
+        <p><span class="highlight">무슨 일인가:</span> CLI 환경에서 작동하는 자율 코딩 에이전트. 코드베이스와 도구에 접근해 사용자가 자리를 비워도 작업을 계속한다.</p>
+        <p><span class="highlight">왜 중요한가:</span> 개발자의 시간 단위가 바뀐다. "내가 일하는 시간"에서 "내 에이전트가 일하는 시간"으로.</p>
+        <p><span class="highlight">인사이트:</span> 일을 시작해놓고 자리를 뜨는 게 가능해지면, 일을 정의하는 능력이 일을 처리하는 능력보다 비싸진다.</p>
+      </div>
+
+      <div class="news-item">
+        <span class="badge">AI 에이전트</span><span class="news-title">MaxHermes by Minimax — 일하면서 기술을 쌓는 에이전트</span>
+        <p><span class="highlight">무슨 일인가:</span> 작업이 끝날 때마다 재사용 가능한 기술을 추출해 자기 자신을 개선해 나가는 AI 에이전트. 같은 일을 두 번째 할 때 더 잘한다.</p>
+        <p><span class="highlight">왜 중요한가:</span> 정적인 모델에서 학습형 도구로 가는 흐름이 본격화된다. AI 에이전트의 차별화 요소가 "어떤 모델이냐"에서 "얼마나 오래 썼느냐"로 옮겨간다.</p>
+        <p><span class="highlight">인사이트:</span> 도구도 시간이 쌓이면 자산이 된다. 누구의 에이전트가 더 똑똑한지가 곧 누구의 데이터가 더 깊은지의 문제다.</p>
+      </div>
+
+      <div class="news-item">
+        <span class="badge">코딩 보조</span><span class="news-title">Blueprint — AI에게 실행 가능한 계획을 만들어주는 도구</span>
+        <p><span class="highlight">무슨 일인가:</span> 큰 코딩 작업을 AI 에이전트에게 맡길 때, 코드를 먼저 읽고 적절한 질문으로 실행 가능한 계획서를 만들어준다. 막연한 지시 대신 구조화된 작업 명령으로 변환한다.</p>
+        <p><span class="highlight">왜 중요한가:</span> AI 에이전트의 한계는 모델 성능이 아니라 지시의 질이라는 게 점점 명확해진다.</p>
+        <p><span class="highlight">인사이트:</span> 답을 잘 받는 사람은 결국 질문을 잘 만드는 사람이다. AI 시대에도 변하지 않은 것.</p>
+      </div>
+
+      <div class="source">출처: ProductHunt 2026년 4월 29일 · choi.openai 큐레이션</div>
+    </div>
+  </div>
+</div>
+
+<!-- Editor Note -->
+<div class="editor">
+  <div class="section-label">에디터 한마디</div>
+  <p>"내 자리를 지키는 사람만이, 결국 새로운 자리를 만든다."</p>
+</div>
+
+<div class="footer">오늘의 밑줄 · 매일 발행 · 출처 표기 기반 요약 콘텐츠</div>
+
+<div style="display:flex; justify-content:center; gap:10px; margin-top:20px; padding-bottom:20px;">
+  <a href="vol30.html" style="display:inline-block; padding:10px 20px; border:1px solid #1a1a1a; border-radius:8px; font-size:13px; font-family:Arial,sans-serif; color:#fff; text-decoration:none; background:#1a1a1a;">← 이전 호</a>
+  <a href="archive.html" style="display:inline-block; padding:10px 20px; border:1px solid #ccc; border-radius:8px; font-size:13px; font-family:Arial,sans-serif; color:#555; text-decoration:none; background:#fff;">전체 보기</a>
+  <a id="next-btn" href="vol32.html" style="display:none; padding:10px 20px; border:1px solid #1a1a1a; border-radius:8px; font-size:13px; font-family:Arial,sans-serif; color:#fff; text-decoration:none; background:#1a1a1a;">다음 호 →</a>
+</div>
+<script>
+(function(){
+  fetch('vol32.html', {method:'HEAD'}).then(function(r){ if(r.ok) document.getElementById('next-btn').style.display='inline-block'; }).catch(function(){});
+})();
+</script>
+
+</body>
+</html>
