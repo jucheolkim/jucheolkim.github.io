@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>오늘의 밑줄 · Vol.34</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap');
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { background: #f0efeb; }
+body { font-family: Georgia, serif; max-width: 680px; margin: 0 auto; padding: 40px 20px; color: #1a1a1a; background: #fff; word-break: keep-all; box-shadow: 0 0 40px rgba(0,0,0,0.06); }
+.header { text-align: center; border-top: 3px solid #1a1a1a; border-bottom: 3px solid #1a1a1a; padding: 12px 0; margin-bottom: 4px; }
+.header-sub { font-size: 11px; font-family: Arial, sans-serif; color: #888; letter-spacing: 2px; margin-bottom: 6px; }
+.header-title { font-size: 36px; font-weight: 800; letter-spacing: 0px; font-family: 'Nanum Myeongjo', Georgia, serif; white-space: nowrap; }
+.header-date { font-size: 11px; font-family: Arial, sans-serif; color: #888; margin-top: 6px; }
+.meta { display: flex; justify-content: space-between; border-bottom: 1px solid #e0e0e0; padding: 4px 0; margin-bottom: 28px; font-size: 10px; font-family: Arial, sans-serif; color: #888; }
+.article { margin-bottom: 28px; padding-bottom: 28px; border-bottom: 1px solid #e0e0e0; }
+.article-tag { font-size: 10px; font-family: Arial, sans-serif; color: #888; letter-spacing: 1px; border-top: 2px solid #1a1a1a; padding-top: 8px; margin-bottom: 8px; }
+.article-title { font-size: 24px; font-weight: bold; line-height: 1.3; margin-bottom: 12px; font-family: 'Nanum Myeongjo', Georgia, serif; letter-spacing: -0.5px; }
+.article-summary { font-size: 13px; color: #555; line-height: 1.75; margin-bottom: 14px; }
+.btn-wrap { display: flex; gap: 6px; margin-bottom: 14px; }
+.toggle-btn { font-size: 11px; font-family: Arial, sans-serif; color: #555; background: none; border: 1px solid #ccc; border-radius: 6px; padding: 4px 10px; cursor: pointer; }
+.toggle-btn:hover { background: #f5f5f5; }
+.article-detail { display: none; }
+.article-detail.open { display: block; }
+.detail-inner { border-left: 2px solid #e0e0e0; padding-left: 16px; }
+.section-label { font-size: 10px; font-family: Arial, sans-serif; color: #888; letter-spacing: 1px; margin-bottom: 6px; margin-top: 16px; }
+.detail-inner p { font-size: 13px; color: #555; line-height: 1.75; margin-bottom: 8px; }
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 8px; }
+.box { background: #f5f5f5; border-radius: 8px; padding: 10px 12px; }
+.box-label { font-size: 11px; font-family: Arial, sans-serif; color: #888; margin-bottom: 6px; }
+.box p { font-size: 12px; color: #555; line-height: 1.65; margin-bottom: 6px; }
+.news-item { margin-bottom: 14px; padding-bottom: 14px; border-bottom: 1px solid #e0e0e0; }
+.news-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+.badge { display: inline-block; font-size: 10px; font-family: Arial, sans-serif; background: #f5f5f5; color: #888; padding: 2px 8px; border-radius: 4px; margin-right: 6px; }
+.news-title { font-size: 13px; font-weight: bold; }
+.news-item p { font-size: 12px; color: #555; line-height: 1.7; margin-top: 6px; }
+.source { font-size: 10px; font-family: Arial, sans-serif; color: #aaa; border-top: 1px solid #e0e0e0; padding-top: 8px; margin-top: 16px; }
+.highlight { font-weight: bold; color: #1a1a1a; }
+.insight-p { font-size: 15px !important; color: #333 !important; line-height: 1.85 !important; margin-bottom: 10px !important; }
+.editor { border-top: 2px solid #1a1a1a; padding-top: 10px; margin-bottom: 16px; }
+.editor p { font-size: 16px; color: #1a1a1a; line-height: 1.85; font-style: italic; font-family: 'Nanum Myeongjo', Georgia, serif; font-weight: 800; }
+.footer { border-top: 1px solid #e0e0e0; padding-top: 8px; text-align: center; font-size: 10px; font-family: Arial, sans-serif; color: #aaa; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-sub">ONEDAY DIGEST</div>
+  <div class="header-title">오늘의 밑줄</div>
+  <div class="header-date">2026년 5월 4일 · Vol. 34</div>
+</div>
+<div class="meta">
+  <span>창업 철학 · 테크 · AI·테크 브리핑</span>
+  <span>출처 표기 기반 요약 콘텐츠</span>
+</div>
+
+<!-- Article 1: Christian Weedbrook -->
+<div class="article">
+  <div class="article-tag">창업 철학 · Christian Weedbrook · Xanadu Quantum</div>
+  <div class="article-title">영화학교에서 두 번 쫓겨난 사람이, 양자컴퓨팅의 첫 번째 빌리어네어가 됐다</div>
+  <div class="article-summary">크리스천 위드브룩은 23살까지 비디오 가게에서 일하고 영화학교에서 두 번 낙제했다. 갈 데가 없어 다시 잡은 게 수학이었다. 양자정보 박사를 받고 토론토에서 광자 양자컴퓨팅 회사를 차렸다. 첫 칩이 실패했고, 첫 회사도 접었다. 그래도 같은 자리에서 10년을 더 버텼다. 2026년 4월, 그의 지분 가치는 1.5조 원이 됐다.</div>
+  <div class="btn-wrap">
+    <button class="toggle-btn" onclick="var d=document.getElementById('d1'),b=this;d.classList.toggle('open');b.textContent=d.classList.contains('open')?'접기 ▲':'더 보기 ▼'">더 보기 ▼</button>
+    <button class="toggle-btn">🎧 오디오로 듣기 (준비 중)</button>
+  </div>
+  <div id="d1" class="article-detail">
+    <div class="detail-inner">
+      <div class="section-label">이 사람은 누구인가</div>
+      <p>크리스천 위드브룩은 캐나다 토론토의 양자컴퓨팅 회사 Xanadu Quantum Technologies의 창업자이자 CEO다. 호주 출신으로, 어릴 적 영화감독을 꿈꿨다. 영화학교 1학년을 두 번 낙제하고 4년간 비디오 가게 알바·식료품 새벽 진열·TV 광고 촬영 같은 잡일을 전전한 끝에 23살에 다시 대학으로 돌아갔다. "다른 옵션이 다 떨어졌다"는 게 본인의 표현이다. 잡은 건 수학이었다.</p>
+      <div class="section-label">주요 활동과 이력</div>
+      <p>퀸즐랜드 대학교에서 양자정보이론 박사 → MIT 박사후 연구원 → 2014년 Cipher Q(양자 보안) 창업 → 투자자들이 "보안보다 양자 컴퓨팅에 투자하고 싶다"고 해서 방향 전환 → 2016년 Xanadu 창업 → 토론토대 Creative Destruction Lab 인큐베이터 합류 → 2018년 오픈소스 라이브러리 PennyLane 공개(현재 활성 사용자 35,000명) → 2022년 광자 양자컴퓨터 Borealis로 quantum advantage 입증(슈퍼컴퓨터 9,000년 걸릴 작업을 수 밀리초에) → 2026년 3월 SPAC 합병으로 캐나다 최초의 순수 광자 양자컴퓨팅 상장사 → 정부 지원금 2억 8,700만 달러 확보 → 2030년까지 첫 양자 데이터센터 건설 목표 → 2026년 4월 17일, Nvidia가 양자 AI 모델 Ising 발표 → Xanadu 주가 5일간 약 250% 폭등, 위드브룩 지분 가치 약 15.6%로 1.5조 원 돌파.</p>
+      <div class="section-label">성공한 것과 실패한 것</div>
+      <div class="grid">
+        <div class="box">
+          <div class="box-label">성공 / 확신</div>
+          <p>다른 사람들이 안 가는 길을 골랐다. 양자컴퓨팅 업계 대부분이 초저온 환경의 전기 회로 방식을 갈 때, 위드브룩은 "광자(빛)"를 골랐다. 상온에서 작동하고, 광섬유로 연결할 수 있다. 실리콘과 닮은 길이었다.</p>
+          <p>실험실 결과로 증명했다. 2022년 Borealis 논문은 Nature에 실렸고, "양자 우위"라는 추상적인 단어를 측정 가능한 수치로 만들었다.</p>
+        </div>
+        <div class="box">
+          <div class="box-label">실패 / 한계</div>
+          <p>첫 회사 Cipher Q는 양자 보안이었지만, 투자자들이 "보안보다 양자 컴퓨팅에 베팅하고 싶다"고 했다. 본인이 가고 싶었던 방향과 시장이 원하는 방향이 어긋난 것이다. 그걸 인정하고 회사 자체를 바꿨다.</p>
+          <p>Xanadu 창업 후 첫 칩이 실패했다. 검증된 실적이 없는 상태에서 OMERS·Bessemer 같은 투자자에게 "맞으면 어마어마하게 크고, 틀리면 0인 베팅"으로 설득해야 했다. 자금이 끊기면 회사도 끊긴다는 압박을 안고 일했다.</p>
+        </div>
+      </div>
+      <div class="section-label">인사이트</div>
+      <p class="insight-p">맞는 방향이라고 확신한 사람만이 시간을 무기로 쓸 수 있다. 위드브룩은 광자 양자컴퓨팅이 옳다고 본 첫날부터 10년을 한 자리에서 버텼다. <span class="highlight">길게 보면, 옳은 방향에 오래 머무는 사람이 결국 운까지 끌어온다.</span> Nvidia의 발표는 그가 만들어낸 결과가 아니지만, 그 발표가 그를 빌리어네어로 만든 것은 그가 거기 있었기 때문이다.</p>
+      <p class="insight-p">실패도 방향을 바꾸는 데이터다. 첫 회사 Cipher Q를 접고 Xanadu를 만든 결정이 그를 살렸다. <span class="highlight">고집과 유연함을 동시에 가진 사람만이 멀리 간다.</span> 방향은 유연하게, 신념은 단단하게.</p>
+      <p class="insight-p">남이 안 가는 길은 외롭지만, 거기엔 줄을 설 사람이 없다. 위드브룩이 광자 방식을 골랐을 때 업계는 거의 보지 않았다. 시장이 따라온 건 10년 뒤다. <span class="highlight">남보다 빠르게 가는 사람이 아니라, 남보다 오래 머무는 사람이 결국 시장을 만든다.</span></p>
+      <div class="source">출처: Fortune — "How Xanadu CEO Christian Weedbrook went from film school dropout to billionaire" (2026.4.22) · Bloomberg (2026.4.17) · The Globe and Mail (2026.3) · Canadian Business · Quantum Computing Report Podcast (2026.3)</div>
+    </div>
+  </div>
+</div>
+
+<!-- Article 2: 김도균 -->
+<div class="article">
+  <div class="article-tag">창업 철학 · 김도균 · 달파(Dalpha)</div>
+  <div class="article-title">99년생 수학 영재가 매일 영업 메일 300통을 보낸 이유</div>
+  <div class="article-summary">김도균은 99년생이다. 한국수학올림피아드 금상, 서울대 수리과학·컴공 출신. 23살에 친구 셋과 달파를 차렸다. AI 만드는 회사인데, 본인이 매일 영업 이메일 300통을 보냈다. 2년 만에 누적 투자 130억, 고객사 250개, 재구매율 93%. AI 시대에 가장 빨리 큰 회사가, 가장 발로 뛴 회사였다.</div>
+  <div class="btn-wrap">
+    <button class="toggle-btn" onclick="var d=document.getElementById('d2'),b=this;d.classList.toggle('open');b.textContent=d.classList.contains('open')?'접기 ▲':'더 보기 ▼'">더 보기 ▼</button>
+    <button class="toggle-btn">🎧 오디오로 듣기 (준비 중)</button>
+  </div>
+  <div id="d2" class="article-detail">
+    <div class="detail-inner">
+      <div class="section-label">이 사람은 누구인가</div>
+      <p>김도균은 한국 B2B AI 스타트업 달파(Dalpha)의 창업자이자 CEO다. 1999년생. 서울과학고를 나와 서울대에서 수학과 컴퓨터공학을 전공했다. 한국수학올림피아드 금상 수상자다. 학창시절부터 사람들과 팀을 꾸려 문제를 푸는 일에 흥미를 느꼈고, 수학자가 아니라 창업가의 길을 골랐다고 했다. 졸업 후 생성형 AI 스타트업 CNAI에서 테크 리더로 일하다, 2023년 1월 동기 친구 3명(유선빈·명기범·권의진)과 달파를 창업했다.</p>
+      <div class="section-label">주요 활동과 이력</div>
+      <p>대학생 때 첫 창업 시도 후 실패 → CNAI에서 AI 테크 리더 경험 → 2023년 1월 달파 창업, 4명 공동창업자 모두 1999년생 서울대 동기 → "AI 다이소" 표방, 100여 개 오픈소스 AI 모듈을 레고처럼 조립해 기업 맞춤형 솔루션 → 창업 7개월차 첫 시드 투자 → 2024년 7월 딥테크 팁스 선정 → 누적 투자 약 130억 원, 누적 고객사 250개+ → 누적 재구매율 93% → 2년 동안 만난 기업 1,800개 → KT커머스·대홍기획 등과 협업, 마케팅 자동화 플랫폼 AIMS 출시 → 2025년 5월 미국 법인 설립 → 2025 포브스코리아 30 under 30(딥/엔터프라이즈 테크) 선정 → 2026년 현재 직원 50명+, 글로벌 진출 단계.</p>
+      <div class="section-label">성공한 것과 실패한 것</div>
+      <div class="grid">
+        <div class="box">
+          <div class="box-label">성공 / 확신</div>
+          <p>"AI 모델을 만든다"가 아니라 "기업이 쓸 수 있게 만든다"를 골랐다. LLM 개발 경쟁은 빅테크의 자리라고 본 것이다. 빈자리는 적용·맞춤·컨설팅이었다.</p>
+          <p>처음부터 발로 뛰었다. 본인 포함 직원이 매일 영업 이메일 300통씩 보냈고, AI와 무관한 행사에도 명함을 들고 나갔다. 2년 동안 1,800개 기업과 미팅했다. 입소문이 그 뒤에 따라왔다.</p>
+        </div>
+        <div class="box">
+          <div class="box-label">실패 / 한계</div>
+          <p>대학생 때 첫 창업은 실패했다. 그 실패가 5년 뒤 같은 친구들과 다시 뭉치는 자산이 됐지만, 첫 시도가 곧 결과를 주진 않았다.</p>
+          <p>맞춤형 AI는 SaaS와 달리 매출이 자동으로 늘지 않는다. 한 곳 한 곳 직접 들어가야 한다. 1,800개 기업과의 미팅도 그 한계 안에서 나온 절박함이다. 확장성과 끝까지 싸워야 하는 모델이다.</p>
+        </div>
+      </div>
+      <div class="section-label">인사이트</div>
+      <p class="insight-p">AI 시대의 진짜 차별점은 모델이 아니다. <span class="highlight">"누가 그 모델을 산업에 가장 빨리 박아 넣느냐"</span>가 차별점이다. 김도균은 그걸 일찍 알았다. 그래서 빅테크가 못 가는 곳—개별 기업의 업무 프로세스 안쪽—으로 들어갔다.</p>
+      <p class="insight-p">기술 회사일수록 발로 뛰어야 한다는 역설. 수학 영재인 그가 매일 영업 이메일을 300통씩 쓴 건 모순이 아니라 전략이었다. <span class="highlight">초기 스타트업의 가장 비싼 자산은 알고리즘이 아니라 미팅 횟수다.</span> 1,800번의 미팅이 그 회사를 만들었다.</p>
+      <p class="insight-p">두 번째 시도가 첫 번째보다 강한 이유는 같은 사람들이 다시 모일 수 있을 만큼 신뢰가 쌓였기 때문이다. <span class="highlight">대학생 때 한 번 망했던 그 팀이, 5년 뒤 같은 멤버로 돌아왔다.</span> 한 번 함께 망해본 팀은, 망하는 게 어떤 건지 안다.</p>
+      <div class="source">출처: 비즈워치 — "AI 에이전트 1위 노리는 무서운 99년생들" (2025.7) · 한국경제 — "김도균 달파 대표 '2주에 AI 솔루션 완성…2년새 150社 확보'" (2025.3) · 포브스코리아 30 under 30 (2025) · 테크42 인터뷰 · ZDNet Korea</div>
+    </div>
+  </div>
+</div>
+
+<!-- Article 3: AI·테크 브리핑 -->
+<div class="article">
+  <div class="article-tag">AI · 테크 브리핑 · 2026년 5월 4일</div>
+  <div class="article-title">방향이 정해진 시장에서, 줄을 어디 설 것인가</div>
+  <div class="article-summary">Nvidia가 양자컴퓨팅을 AI 인프라의 다음 단계라고 못 박으면서 양자 종목이 일제히 뛰었다. DeepSeek은 1년 만에 다시 V4를 풀었고, 백악관은 한 번 잘랐던 Anthropic과 다시 대화를 시작했다. 새로운 줄이 그어지고 있는 한 주였다.</div>
+  <div class="btn-wrap">
+    <button class="toggle-btn" onclick="var d=document.getElementById('d3'),b=this;d.classList.toggle('open');b.textContent=d.classList.contains('open')?'접기 ▲':'더 보기 ▼'">더 보기 ▼</button>
+    <button class="toggle-btn">🎧 오디오로 듣기 (준비 중)</button>
+  </div>
+  <div id="d3" class="article-detail">
+    <div class="detail-inner">
+
+      <div class="news-item">
+        <span class="badge">양자·AI</span><span class="news-title">Nvidia, 양자컴퓨팅을 AI의 다음 인프라로 — 'Ising' 오픈소스 모델 공개</span>
+        <p><span class="highlight">무슨 일인가:</span> Nvidia가 양자 컴퓨팅 보정과 오류 수정의 병목을 푸는 오픈소스 AI 모델군 'Ising'을 발표했다. 양자 컴퓨팅을 AI 인프라 확장의 한 축으로 인정한 첫 발언이다. Xanadu·IonQ·Rigetti 등 양자 종목 일제히 급등, Xanadu CEO는 5일 만에 빌리어네어가 됐다.</p>
+        <p><span class="highlight">왜 중요한가:</span> "양자 컴퓨팅은 언제 오나"라는 질문이, "양자 컴퓨팅이 AI 인프라에 들어오기 시작했다"로 바뀌었다. 5~10년짜리 로드맵이 처음으로 시장 가격에 반영됐다.</p>
+        <p><span class="highlight">인사이트:</span> 빅 플레이어가 새로운 산업의 길목에 서명을 하면, 그 산업은 더 이상 "있을 수도 있는 미래"가 아니다. 줄을 설 곳이 정해진다는 뜻이고, 줄을 일찍 선 사람이 보상을 받는다는 뜻이다.</p>
+      </div>
+
+      <div class="news-item">
+        <span class="badge">모델</span><span class="news-title">DeepSeek V4 출시 — 100만 토큰 컨텍스트, 코딩 벤치 1위 주장</span>
+        <p><span class="highlight">무슨 일인가:</span> 작년 V3로 실리콘밸리를 흔들었던 중국 DeepSeek이 V4 Flash·V4 Pro를 공개했다. Hybrid Attention Architecture로 긴 대화 기억력을 개선했고, 100만 토큰 컨텍스트로 코드베이스 전체를 한 번에 넣을 수 있다. 오픈웨이트로 풀었다.</p>
+        <p><span class="highlight">왜 중요한가:</span> 미·중 AI 격차가 다시 좁혀졌다. 그리고 오픈웨이트 진영이 빅테크 클로즈드 모델을 거의 따라잡았다. 1년 전엔 "DeepSeek가 정말로 따라왔나"였지만, 지금은 "어디까지 따라왔나"의 문제다.</p>
+        <p><span class="highlight">인사이트:</span> 모델은 빠르게 평준화되고 있다. 차별점은 모델 자체가 아니라, 모델 위에 무엇을 얹느냐로 옮겨간다. 산업·데이터·워크플로우를 깊이 아는 쪽이 이긴다.</p>
+      </div>
+
+      <div class="news-item">
+        <span class="badge">정책</span><span class="news-title">백악관, Anthropic과 다시 대화 — 펜타곤 7개사 계약에서 빠졌던 회사</span>
+        <p><span class="highlight">무슨 일인가:</span> 미 펜타곤이 SpaceX·OpenAI·Google·MS·Nvidia·AWS·Reflection 7개사와 AI 계약을 맺었다. Anthropic은 빠졌다. 자율 무기·대규모 감시에 Claude를 쓰는 걸 거부했기 때문이다. 단, Anthropic이 사이버 위협 탐지 모델 Mythos를 발표한 뒤 백악관이 다시 대화를 시작했다.</p>
+        <p><span class="highlight">왜 중요한가:</span> AI 회사가 처음으로 "팔지 않는 시장"을 골랐다. 그 결정이 단기 매출에서는 손해지만, 장기 협상력에서는 자산이 될 수 있다는 사례다.</p>
+        <p><span class="highlight">인사이트:</span> 무엇을 안 할 것인지 정의하는 게, 무엇을 할 것인지 정의하는 것보다 어렵다. 그리고 그 결정이 회사의 정체성을 만든다. 시장이 다 받는 회사는 시장이 다 떠나면 같이 사라진다.</p>
+      </div>
+
+      <div class="source">출처: Fortune (2026.4.22) · Bloomberg (2026.4.24) · CNN Business (2026.5.1) · CNBC (2026.4.24)</div>
+    </div>
+  </div>
+</div>
+
+<!-- Article 4: 오늘의 신제품 -->
+<div class="article">
+  <div class="article-tag">오늘의 신제품 · 2026년 4월 29일 · ProductHunt</div>
+  <div class="article-title">일에 끼워 쓰는 작은 에이전트들</div>
+  <div class="article-summary">거대 모델 발표가 헤드라인을 차지하는 사이, 진짜 변화는 책상 위에서 일어난다. 4월 29일 ProductHunt에서 골라낸 네 가지. 거대한 도구를 기다리지 말고, 오늘 하나를 일에 끼워 넣어 보는 게 빠르다.</div>
+  <div class="btn-wrap">
+    <button class="toggle-btn" onclick="var d=document.getElementById('d4'),b=this;d.classList.toggle('open');b.textContent=d.classList.contains('open')?'접기 ▲':'더 보기 ▼'">더 보기 ▼</button>
+    <button class="toggle-btn">🎧 오디오로 듣기 (준비 중)</button>
+  </div>
+  <div id="d4" class="article-detail">
+    <div class="detail-inner">
+
+      <div class="news-item">
+        <span class="badge">채용</span><span class="news-title">Clera — iMessage·WhatsApp으로 오는 AI 채용 에이전트</span>
+        <p>사용자가 원하는 직무를 이해하고, 흥미로운 기회를 골라 메시지로 직접 보낸다. 채용 사이트를 뒤지고 지원서를 쓰는 시간을 대신 가져간다.</p>
+      </div>
+
+      <div class="news-item">
+        <span class="badge">에이전시</span><span class="news-title">SureThing.io — 결과를 사람처럼 소통하는 자율 AI 대행사</span>
+        <p>일반 AI 대행사를 표방한다. 팀과 팀 사이에 정보가 끊기는 지점을 찾아내, 의사결정 속도를 높이는 데 초점을 뒀다.</p>
+      </div>
+
+      <div class="news-item">
+        <span class="badge">협업</span><span class="news-title">Jitera — 팀이 공유하는 컨텍스트 위에서 일하는 AI 동료</span>
+        <p>팀 전체가 공유하는 컨텍스트 그래프를 만든다. AI 에이전트가 그 위에서 사람처럼 맥락을 알고 협업한다. 같은 설명을 반복하는 비용을 줄인다.</p>
+      </div>
+
+      <div class="news-item">
+        <span class="badge">생산성</span><span class="news-title">Curflow — Mac에서 제스처 하나로 명령 실행</span>
+        <p>자주 쓰는 작업을 사용자 맞춤 제스처에 매핑한다. 손가락 동작 한 번으로 여러 앱 명령을 한꺼번에 호출할 수 있다.</p>
+      </div>
+
+      <div class="source">출처: ProductHunt 2026.4.29 — choi님 큐레이션 제공</div>
+    </div>
+  </div>
+</div>
+
+<!-- Editor Note -->
+<div class="editor">
+  <div class="section-label">에디터 한마디</div>
+  <p>"방향이 옳다면, 시간이 가장 큰 무기다."</p>
+</div>
+
+<div class="footer">오늘의 밑줄 · 매일 발행 · 출처 표기 기반 요약 콘텐츠</div>
+
+<div style="display:flex; justify-content:center; gap:10px; margin-top:20px; padding-bottom:20px;">
+  <a href="vol33.html" style="display:inline-block; padding:10px 20px; border:1px solid #1a1a1a; border-radius:8px; font-size:13px; font-family:Arial,sans-serif; color:#fff; text-decoration:none; background:#1a1a1a;">← 이전 호</a>
+  <a href="archive.html" style="display:inline-block; padding:10px 20px; border:1px solid #ccc; border-radius:8px; font-size:13px; font-family:Arial,sans-serif; color:#555; text-decoration:none; background:#fff;">전체 보기</a>
+  <a id="next-btn" href="vol35.html" style="display:none; padding:10px 20px; border:1px solid #1a1a1a; border-radius:8px; font-size:13px; font-family:Arial,sans-serif; color:#fff; text-decoration:none; background:#1a1a1a;">다음 호 →</a>
+</div>
+<script>
+(function(){
+  fetch('vol35.html', {method:'HEAD'}).then(function(r){ if(r.ok) document.getElementById('next-btn').style.display='inline-block'; }).catch(function(){});
+})();
+</script>
+
+</body>
+</html>
