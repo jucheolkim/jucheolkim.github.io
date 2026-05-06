@@ -29,7 +29,7 @@ body { font-family: Georgia, serif; max-width: 680px; margin: 0 auto; padding: 4
 <div class="header">
   <div class="header-sub">ONEDAY DIGEST</div>
   <div class="header-title">오늘의 밑줄</div>
-  <div class="header-date">전체 보기</div>
+  <div class="header-date">전체 호 보기</div>
 </div>
 <div class="meta">
   <span>창업 · 브랜드 · AI·테크</span>
@@ -45,6 +45,7 @@ body { font-family: Georgia, serif; max-width: 680px; margin: 0 auto; padding: 4
 // 새 호 발행 시 이 배열 맨 앞에 한 줄만 추가하면 됩니다.
 // ============================================================
 var VOLS = [
+  { vol: 36, date: "2026년 5월 6일", title: "다음 시대가 오기 전에 먼저 짓는 사람이, 그 시대가 왔을 때 가장 유리한 자리에 있다", tags: "Marc Lore · Peter Sarlin · AI 테크 브리핑" },
   { vol: 35, date: "2026년 5월 5일", title: "설득하지 않는다. 알아보는 사람만 찾는다", tags: "David Cramer · Immad Akhund · AI 테크 브리핑" },
   { vol: 34, date: "2026년 5월 4일", title: "방향이 옳다면, 시간이 가장 큰 무기다", tags: "Christian Weedbrook · 김도균 · AI 테크 브리핑" },
   { vol: 33, date: "2026년 5월 1일", title: "자원이 부족할수록 입구를 좁혀라", tags: "셀린 할리우아 · 케빈 부스크 · AI 테크 브리핑" },
@@ -81,21 +82,18 @@ var VOLS = [
   { vol: 2, date: "2026년 3월 18일", title: "쓰나미가 보이는데 사람들은 빛의 굴절이라 한다", tags: "다리오 아모데이 · Max Brodeur-Urbas · AI 테크 브리핑" },
   { vol: 1, date: "2026년 3월 18일", title: "네가 싫어하는 기업이 40년 뒤에 회사를 만든 법", tags: "Mario Schlosser · 곽형석 · AI 테크 브리핑" },
 ];
-
 var list = document.getElementById('archive-list');
 var latestVol = VOLS[0].vol;
-
 VOLS.forEach(function(v) {
   var a = document.createElement('a');
   a.href = 'vol' + v.vol + '.html';
   a.className = 'archive-item';
-  a.innerHTML =
-    '<div class="archive-left">' +
-      '<div class="archive-vol">Vol. ' + v.vol + ' · ' + v.date + '</div>' +
-      '<div class="archive-title">' + v.title + '</div>' +
-      '<div class="archive-tags">' + v.tags + '</div>' +
+  a.innerHTML = '<div class="archive-left">' +
+    '<div class="archive-vol">Vol. ' + v.vol + ' · ' + v.date + '</div>' +
+    '<div class="archive-title">' + v.title + '</div>' +
+    '<div class="archive-tags">' + v.tags + '</div>' +
     '</div>' +
-    '<div class="archive-meta">' + (v.vol === latestVol ? '\uc5c5\uc220\ud638' : '\u2192') + '</div>';
+    '<div class="archive-meta">' + (v.vol === latestVol ? '업술호' : '→') + '</div>';
   list.appendChild(a);
 });
 </script>

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>오늘의 밑줄 · Vol.36</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap');
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { background: #f0efeb; }
+body { font-family: Georgia, serif; max-width: 680px; margin: 0 auto; padding: 40px 20px; color: #1a1a1a; background: #fff; word-break: keep-all; box-shadow: 0 0 40px rgba(0,0,0,0.06); }
+.header { text-align: center; border-top: 3px solid #1a1a1a; border-bottom: 3px solid #1a1a1a; padding: 12px 0; margin-bottom: 4px; }
+.header-sub { font-size: 11px; font-family: Arial, sans-serif; color: #888; letter-spacing: 2px; margin-bottom: 6px; }
+.header-title { font-size: 36px; font-weight: 800; letter-spacing: 0px; font-family: 'Nanum Myeongjo', Georgia, serif; white-space: nowrap; }
+.header-date { font-size: 11px; font-family: Arial, sans-serif; color: #888; margin-top: 6px; }
+.meta { display: flex; justify-content: space-between; border-bottom: 1px solid #e0e0e0; padding: 4px 0; margin-bottom: 28px; font-size: 10px; font-family: Arial, sans-serif; color: #888; }
+.article { margin-bottom: 28px; padding-bottom: 28px; border-bottom: 1px solid #e0e0e0; }
+.article-tag { font-size: 10px; font-family: Arial, sans-serif; color: #888; letter-spacing: 1px; border-top: 2px solid #1a1a1a; padding-top: 8px; margin-bottom: 8px; }
+.article-title { font-size: 24px; font-weight: bold; line-height: 1.3; margin-bottom: 12px; font-family: 'Nanum Myeongjo', Georgia, serif; letter-spacing: -0.5px; }
+.article-summary { font-size: 13px; color: #555; line-height: 1.75; margin-bottom: 14px; }
+.btn-wrap { display: flex; gap: 6px; margin-bottom: 14px; }
+.toggle-btn { font-size: 11px; font-family: Arial, sans-serif; color: #555; background: none; border: 1px solid #ccc; border-radius: 6px; padding: 4px 10px; cursor: pointer; }
+.toggle-btn:hover { background: #f5f5f5; }
+.article-detail { display: none; }
+.article-detail.open { display: block; }
+.detail-inner { border-left: 2px solid #e0e0e0; padding-left: 16px; }
+.section-label { font-size: 10px; font-family: Arial, sans-serif; color: #888; letter-spacing: 1px; margin-bottom: 6px; margin-top: 16px; }
+.detail-inner p { font-size: 13px; color: #555; line-height: 1.75; margin-bottom: 8px; }
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 8px; }
+.box { background: #f5f5f5; border-radius: 8px; padding: 10px 12px; }
+.box-label { font-size: 11px; font-family: Arial, sans-serif; color: #888; margin-bottom: 6px; }
+.box p { font-size: 12px; color: #555; line-height: 1.65; margin-bottom: 6px; }
+.news-item { margin-bottom: 14px; padding-bottom: 14px; border-bottom: 1px solid #e0e0e0; }
+.news-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+.badge { display: inline-block; font-size: 10px; font-family: Arial, sans-serif; background: #f5f5f5; color: #888; padding: 2px 8px; border-radius: 4px; margin-right: 6px; }
+.news-title { font-size: 13px; font-weight: bold; }
+.news-item p { font-size: 12px; color: #555; line-height: 1.7; margin-top: 6px; }
+.source { font-size: 10px; font-family: Arial, sans-serif; color: #aaa; border-top: 1px solid #e0e0e0; padding-top: 8px; margin-top: 16px; }
+.highlight { font-weight: bold; color: #1a1a1a; }
+.insight-p { font-size: 15px !important; color: #333 !important; line-height: 1.85 !important; margin-bottom: 10px !important; }
+.editor { border-top: 2px solid #1a1a1a; padding-top: 10px; margin-bottom: 16px; }
+.editor p { font-size: 16px; color: #1a1a1a; line-height: 1.85; font-style: italic; font-family: 'Nanum Myeongjo', Georgia, serif; font-weight: 800; }
+.footer { border-top: 1px solid #e0e0e0; padding-top: 8px; text-align: center; font-size: 10px; font-family: Arial, sans-serif; color: #aaa; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-sub">ONEDAY DIGEST</div>
+  <div class="header-title">오늘의 밑줄</div>
+  <div class="header-date">2026년 5월 6일 · Vol. 36</div>
+</div>
+<div class="meta">
+  <span>창업 철학 · AI·테크 브리핑 · 오늘의 신제품</span>
+  <span>출처 표기 기반 요약 콘텐츠</span>
+</div>
+
+<!-- Article 1: Marc Lore -->
+<div class="article">
+  <div class="article-tag">창업 철학 · Marc Lore · Wonder · 음식의 미래</div>
+  <div class="article-title">세 번 팔고 네 번째로 산업 전체를 바꾸려 한다</div>
+  <div class="article-summary">마크 로어는 Diapers.com을 아마존에 5,450억 원에 팔았다. Jet.com을 월마트에 3조 3천억 원에 팔았다. 그리고 지금은 Wonder를 키우고 있다. 음식 배달 플랫폼이지만 그가 부르는 이름은 다르다. "밥상의 슈퍼앱." AI가 내 건강 목표와 식성을 배워 매끼 메뉴를 알아서 정해주는 세계를 만들겠다고 한다.</div>
+  <div class="btn-wrap">
+    <button class="toggle-btn" onclick="var d=document.getElementById('d1'),b=this;d.classList.toggle('open');b.textContent=d.classList.contains('open')?'접기 ▲':'더 보기 ▼'">더 보기 ▼</button>
+    <button class="toggle-btn">🎧 오디오로 듣기 (준비 중)</button>
+  </div>
+  <div id="d1" class="article-detail">
+    <div class="detail-inner">
+      <div class="section-label">이 사람은 누구인가</div>
+      <p>마크 로어(Marc Lore)는 미국의 연쇄 창업자다. Quidsi(Diapers.com 모회사)를 2011년 아마존에 약 5,450억 원에 매각했고, 이커머스 플랫폼 Jet.com을 2016년 월마트에 약 3조 3천억 원에 넘겼다. 그 후 월마트 이커머스 CEO를 맡아 미국 이커머스 매출을 176% 끌어올렸다. 2021년 월마트를 떠난 뒤 Wonder를 창업했다. 현재 NBA 미네소타 팀버울브스 공동 구단주이기도 하다.</p>
+      <div class="section-label">주요 활동과 이력</div>
+      <p>Quidsi 창업(2005) → 아마존 매각(2011) → Jet.com 창업(2015) → 월마트 인수(2016) → 월마트 이커머스 CEO → Wonder 창업(2021) → Blue Apron 인수(2023) → Grubhub 인수(2024, $6,500억 원) → Tastemade 인수 → 2026년 IPO 준비 중. Wonder는 현재 120개 이상 매장을 운영하며 주 2개꼴로 확장 중이다. GrubHub의 37만 5천 개 레스토랑 메뉴 데이터를 AI 플랫폼에 연결해 "AI 개인 셰프" 구현을 목표로 삼고 있다.</p>
+      <div class="section-label">성공한 것과 실패한 것</div>
+      <div class="grid">
+        <div class="box">
+          <div class="box-label">성공 / 확신</div>
+          <p>시장을 역방향으로 설계했다. Jet.com은 아마존에 맞서기 위해 가격 구조를 근본부터 다시 짰다. Wonder도 마찬가지다. 배달 앱이 아니라 직접 음식을 만드는 회사가 배달망도 소유하는 구조를 만들었다.</p>
+          <p>자신의 식사 90%를 AI에 맡기고 있다고 밝혔다. 제품이 스스로 작동한다는 증거를 가장 먼저 자신에게 적용한다.</p>
+        </div>
+        <div class="box">
+          <div class="box-label">실패 / 한계</div>
+          <p>Wonder는 아직 흑자가 아니다. 빠른 확장과 대규모 인수가 맞물려 손익분기점까지 갈 길이 멀다. 그는 이것이 전략이라고 말하지만, 시장의 시선은 다르다.</p>
+          <p>Jet.com은 월마트가 인수한 뒤 결국 2020년 문을 닫았다. 그의 전략은 시장보다 앞서가는 경향이 있고, 그 간격을 채우는 데 시간이 걸린다.</p>
+        </div>
+      </div>
+      <div class="section-label">인사이트</div>
+      <p class="insight-p">마크 로어가 Wonder에서 하는 일은 단순한 확장이 아니다. 그는 음식을 먹는 방식 자체를 바꾸려 한다. <span class="highlight">슈퍼앱, 개인 AI 셰프, 자율 식단 관리.</span> 이 단어들이 실제로 작동하는지는 시간이 알려주겠지만, 그는 이미 자신의 밥상에서 실험하고 있다.</p>
+      <p class="insight-p">그의 창업 철학에는 "VCP(Vision-Capital-People)"라는 틀이 있다. 비전이 먼저이고, 자본은 그다음이며, 사람은 그 비전에 맞게 배치된다. <span class="highlight">돈을 빠르게 쓰는 것도 전략</span>이라고 그는 말한다. 18개월마다 조달 규모를 두 배로 늘리면, 더 빠르게 움직이고 더 빠르게 배울 수 있다는 논리다.</p>
+      <p class="insight-p">경쟁자보다 먼저 가격을 낮췄다. 불확실성이 높을수록 남들이 올릴 때 내린다. 그 선택이 맞는지는 아직 모른다. 하지만 <span class="highlight">이기는 회사는 항상 반대 방향으로 움직였다</span>는 게 그의 판단이다.</p>
+      <div class="source">출처: Fast Company "Marc Lore wants AI to feed you" · TechCrunch (2026.05.06) · Masters of Scale Podcast · Inc. Magazine</div>
+    </div>
+  </div>
+</div>
+
+<!-- Article 2: Peter Sarlin -->
+<div class="article">
+  <div class="article-tag">창업 철학 · Peter Sarlin · Qutwo · 양자 컴퓨팅</div>
+  <div class="article-title">AI를 팔고, 다음 컴퓨팅 시대를 미리 짓고 있다</div>
+  <div class="article-summary">핀란드의 창업자 페터 사를린은 유럽 최대 AI 모델 랩 Silo AI를 AMD에 약 9천억 원에 팔았다. 그리고 18개월 만에 다시 창업했다. 이번엔 양자 컴퓨팅이다. 양자 컴퓨터가 상용화되기 전부터 기업들이 준비할 수 있게 돕는 회사, Qutwo를 세웠다. "기다리지 않는다. 미리 짓는다."</div>
+  <div class="btn-wrap">
+    <button class="toggle-btn" onclick="var d=document.getElementById('d2'),b=this;d.classList.toggle('open');b.textContent=d.classList.contains('open')?'접기 ▲':'더 보기 ▼'">더 보기 ▼</button>
+    <button class="toggle-btn">🎧 오디오로 듣기 (준비 중)</button>
+  </div>
+  <div id="d2" class="article-detail">
+    <div class="detail-inner">
+      <div class="section-label">이 사람은 누구인가</div>
+      <p>페터 사를린(Peter Sarlin)은 핀란드의 연쇄 창업자다. 2017년 Silo AI를 설립했다. 생성형 AI가 대중화되기 전부터 유럽 기업들을 위한 언어 모델과 AI 인프라를 구축했고, 이 회사는 유럽 최대 민간 AI 모델 랩으로 성장했다. 2024년 AMD에 약 9천억 원(6억 6천5백만 달러)에 매각하며 유럽 AI 생태계의 대표적인 엑싯 사례가 됐다. 매각 후 AMD Silo AI 유닛 CEO를 맡다가 18개월 만에 물러나 새 회사를 세웠다.</p>
+      <div class="section-label">주요 활동과 이력</div>
+      <p>Silo AI 창업(2017) → 유럽 최대 AI 모델 랩으로 성장 → AMD 인수(2024, 약 9천억 원) → AMD Silo AI CEO → 18개월 후 퇴임 → 가족 오피스 PostScriptum 운영 → Qutwo 창업(2026.02) · NestAI(물리 AI 연구소) 의장 겸임. Qutwo는 창업 시점부터 Zalando, OP Pohjola 등 대형 기업과 파트너십을 맺고 유럽에서만 이미 2천만 유로 이상의 계약을 확보했다. 2026년 5월 기준 기업가치 3억 8천만 달러의 엔젤 라운드를 마무리했다.</p>
+      <div class="section-label">성공한 것과 실패한 것</div>
+      <div class="grid">
+        <div class="box">
+          <div class="box-label">성공 / 확신</div>
+          <p>생성형 AI 붐 이전부터 유럽 기업을 위한 AI 인프라를 쌓았다. 남들이 관심 갖기 전에 시작한 사람이 매각 시점에 제값을 받았다.</p>
+          <p>Qutwo는 양자 컴퓨터가 나오기 전부터 기업들이 준비할 수 있도록 돕는다. 하드웨어 없이 소프트웨어로 양자 방식의 작업을 시뮬레이션하는 구조다. 이미 계약부터 시작했다.</p>
+        </div>
+        <div class="box">
+          <div class="box-label">실패 / 한계</div>
+          <p>양자 컴퓨팅의 상용화 시점은 여전히 불확실하다. 대부분의 전문가는 2030년대 이후를 본다. Qutwo의 사업 자체가 아직 도래하지 않은 미래를 기반으로 한다.</p>
+          <p>AWS, 마이크로소프트, 구글은 이미 양자 클라우드 서비스를 제공 중이다. 대형 플랫폼과의 경쟁에서 Qutwo가 어떤 차별점을 유지할 수 있을지는 아직 검증되지 않았다.</p>
+        </div>
+      </div>
+      <div class="section-label">인사이트</div>
+      <p class="insight-p">사를린은 AI가 CPU에서 GPU로 넘어간 흐름을 양자에 대입한다. 알고리즘의 혁신보다 <span class="highlight">컴퓨팅 인프라의 전환이 진짜 변화를 만든다</span>는 것. 그 전환이 오기 전에, 기업들이 준비할 수 있는 자리를 먼저 만드는 게 Qutwo의 전략이다.</p>
+      <p class="insight-p">Silo AI를 팔고 나서 바로 다음 판을 짰다. 돈을 번 뒤 쉬지 않고 다음 물결을 찾아 움직이는 패턴이다. <span class="highlight">언제 올지 모르는 기술에 먼저 올라타는 사람</span>이 결국 시장을 선점한다는 판단이다.</p>
+      <p class="insight-p">그는 Qutwo를 "양자 시대를 위한 AI 회사"라고 정의한다. 양자 하드웨어 회사가 아니다. 전환 구간을 관리하는 소프트웨어 회사다. 도래하지 않은 시대를 대비하면서도, 지금 당장 쓸 수 있는 제품을 판다. 이 둘을 동시에 잡는 것이 그의 방식이다.</p>
+      <div class="source">출처: TechCrunch "Peter Sarlin's QuTwo reaches $380M valuation" (2026.05.06) · TechCrunch "Before quantum computing arrives" (2026.03) · The Quantum Insider · Sifted</div>
+    </div>
+  </div>
+</div>
+
+<!-- Article 3: AI·테크 브리핑 -->
+<div class="article">
+  <div class="article-tag">AI · 테크 브리핑 · 2026년 5월 6일</div>
+  <div class="article-title">에이전트가 프리뷰를 벗어나 현장으로 들어오고 있다</div>
+  <div class="article-summary">OpenAI는 GPT-5.5 기반 코딩 에이전트를 8,000명 개발자에게 무료 개방했다. 마이크로소프트는 기업용 AI 에이전트를 정식 출시했다. SAP는 설립 18개월 된 독일 AI 스타트업에 약 1조 7천억 원을 쏟았다. 에이전트가 실험실을 떠나 업무 현장으로 들어오는 속도가 빨라지고 있다.</div>
+  <div class="btn-wrap">
+    <button class="toggle-btn" onclick="var d=document.getElementById('d3'),b=this;d.classList.toggle('open');b.textContent=d.classList.contains('open')?'접기 ▲':'더 보기 ▼'">더 보기 ▼</button>
+    <button class="toggle-btn">🎧 오디오로 듣기 (준비 중)</button>
+  </div>
+  <div id="d3" class="article-detail">
+    <div class="detail-inner">
+
+      <div class="news-item">
+        <span class="badge">AI 에이전트</span><span class="news-title">OpenAI, GPT-5.5 Codex 개발자 8천 명 무료 개방</span>
+        <p><span class="highlight">무슨 일인가:</span> OpenAI가 GPT-5.5 기반 코딩 에이전트 Codex를 개발자 8,000명에게 한 달간 무료 제공한다. 솔드아웃됐던 GPT-5.5 행사를 Codex 무료 체험으로 전환한 것이다.</p>
+        <p><span class="highlight">왜 중요한가:</span> 코딩 에이전트의 대중화 속도가 빨라지고 있다. 개발자가 AI를 도구로 쓰는 게 아니라, AI가 개발자의 업무를 대신 수행하는 구조로 전환되는 신호다.</p>
+        <p><span class="highlight">인사이트:</span> 에이전트가 대중에게 열리는 속도가 모델 출시 속도를 따라잡고 있다. 만드는 것과 쓰는 것 사이의 간격이 좁아진다.</p>
+      </div>
+
+      <div class="news-item">
+        <span class="badge">엔터프라이즈 AI</span><span class="news-title">Microsoft Agent 365, 프리뷰 종료 — 기업 현장 투입</span>
+        <p><span class="highlight">무슨 일인가:</span> 마이크로소프트가 기업용 AI 에이전트 Agent 365를 정식 출시했다. 동시에 직원들이 공식 승인 없이 AI를 사용하는 '그림자 AI(shadow AI)'가 기업의 새로운 보안 위협으로 부상하고 있다는 분석이 나왔다.</p>
+        <p><span class="highlight">왜 중요한가:</span> 기업이 공식 AI 도구를 도입하는 속도보다 직원들이 개인적으로 AI를 쓰는 속도가 더 빠르다. 도입 전략보다 통제 전략이 먼저 필요한 국면이다.</p>
+        <p><span class="highlight">인사이트:</span> AI 도입의 주도권이 IT 부서에서 개별 직원에게로 이미 넘어갔다. 기업이 이 사실을 인정하는 속도가 경쟁력이 된다.</p>
+      </div>
+
+      <div class="news-item">
+        <span class="badge">유럽 AI</span><span class="news-title">SAP, 18개월 된 독일 AI 스타트업 NemoClaw에 약 1조 7천억 원 베팅</span>
+        <p><span class="highlight">무슨 일인가:</span> 독일 ERP 기업 SAP가 설립 18개월에 불과한 AI 스타트업 NemoClaw를 약 11억 6천만 달러에 인수했다.</p>
+        <p><span class="highlight">왜 중요한가:</span> 유럽 기술 기업이 미국 빅테크에 의존하지 않기 위해 자체 AI 역량을 확보하려는 움직임이 가속화되고 있다. 설립 2년도 안 된 회사에 1조 원이 넘는 금액은 AI 시장의 조기 선점 경쟁이 본격화됐다는 신호다.</p>
+        <p><span class="highlight">인사이트:</span> 유럽 AI 생태계가 빠르게 가치를 인정받는 구조로 바뀌고 있다. Peter Sarlin의 Qutwo가 주목받는 맥락도 이 흐름 안에 있다.</p>
+      </div>
+
+      <div class="source">출처: VentureBeat (2026.05.05) · TechCrunch (2026.05.05)</div>
+    </div>
+  </div>
+</div>
+
+<!-- Article 4: 오늘의 신제품 -->
+<div class="article">
+  <div class="article-tag">오늘의 신제품 · ProductHunt · 2026년 5월 6일</div>
+  <div class="article-title">오늘 나온 것들 — 5월 6일의 제품들</div>
+  <div class="article-summary">코딩 에이전트, 영상 편집, AI 디자인, 콘텐츠 자동화까지. 오늘 ProductHunt에 오른 제품들 중 실제로 쓸 만한 것들을 골랐다.</div>
+  <div class="btn-wrap">
+    <button class="toggle-btn" onclick="var d=document.getElementById('d4'),b=this;d.classList.toggle('open');b.textContent=d.classList.contains('open')?'접기 ▲':'더 보기 ▼'">더 보기 ▼</button>
+    <button class="toggle-btn">🎧 오디오로 듣기 (준비 중)</button>
+  </div>
+  <div id="d4" class="article-detail">
+    <div class="detail-inner">
+
+      <div class="news-item">
+        <span class="badge">코딩</span><span class="news-title">Kilo Code v7 for VS Code</span>
+        <p><span class="highlight">무슨 일인가:</span> VS Code에 통합된 코딩 에이전트의 7번째 버전. 서브에이전트 위임 기능을 탑재해 복잡한 작업을 자동으로 분산 처리한다.</p>
+        <p><span class="highlight">왜 주목하나:</span> 단순 코드 자동완성이 아니라 작업 단위를 쪼개 처리하는 에이전트 방식으로 전환됐다. 코딩 환경 안에서 에이전트가 얼마나 깊이 들어올 수 있는지를 보여주는 사례다.</p>
+      </div>
+
+      <div class="news-item">
+        <span class="badge">영상</span><span class="news-title">Velo 2.0</span>
+        <p><span class="highlight">무슨 일인가:</span> 화면 녹화를 채팅 기반으로 편집하는 도구. 음성 클론과 스마트 스크립트 리라이팅 기능을 포함해 녹화 후 바로 공유 가능한 영상을 만든다.</p>
+        <p><span class="highlight">왜 주목하나:</span> 영상 제작의 병목이 '찍기'에서 '다듬기'로 이동했다. Velo는 그 다듬기 구간을 없앤다.</p>
+      </div>
+
+      <div class="news-item">
+        <span class="badge">디자인</span><span class="news-title">Flowstep 1.0</span>
+        <p><span class="highlight">무슨 일인가:</span> 아이디어를 텍스트로 입력하면 즉시 UI로 변환하고 배포 가능한 코드를 내보내는 AI 디자인 엔지니어 툴.</p>
+        <p><span class="highlight">왜 주목하나:</span> 디자인과 개발의 경계를 좁히는 방향의 도구가 빠르게 등장하고 있다. 아이디어에서 프로토타입까지의 시간이 줄어들수록 실험 비용도 낮아진다.</p>
+      </div>
+
+      <div class="news-item">
+        <span class="badge">콘텐츠</span><span class="news-title">Ghostwriter</span>
+        <p><span class="highlight">무슨 일인가:</span> LinkedIn과 X에서 자동으로 콘텐츠를 작성·예약·게시하는 AI 작가 도구. 개인 스타일을 학습해 일정에 맞게 포스팅을 이어간다.</p>
+        <p><span class="highlight">왜 주목하나:</span> 꾸준한 발행이 중요해질수록, 그 꾸준함을 자동화하는 도구의 가치가 높아진다.</p>
+      </div>
+
+      <div class="news-item">
+        <span class="badge">마케팅</span><span class="news-title">Oriane</span>
+        <p><span class="highlight">무슨 일인가:</span> 하루 수백만 개의 소셜 영상을 분석해 통계·트렌드 데이터를 제공하는 분석 도구. 마케팅 팀과 AI 앱에서 활용 가능한 인사이트를 추출한다.</p>
+        <p><span class="highlight">왜 주목하나:</span> 소셜 트렌드 분석의 속도가 사람의 감각을 넘어서고 있다. AI가 흐름을 먼저 읽고 인간이 판단하는 구조로 바뀐다.</p>
+      </div>
+
+      <div class="source">출처: choi님 (@choi.openai) · ProductHunt 2026년 5월 6일</div>
+    </div>
+  </div>
+</div>
+
+<!-- Editor Note -->
+<div class="editor">
+  <div class="section-label">에디터 한마디</div>
+  <p>"다음 시대가 오기 전에 먼저 짓는 사람이, 그 시대가 왔을 때 가장 유리한 자리에 있다."</p>
+</div>
+
+<div class="footer">오늘의 밑줄 · 매일 발행 · 출처 표기 기반 요약 콘텐츠</div>
+
+<div style="display:flex; justify-content:center; gap:10px; margin-top:20px; padding-bottom:20px;">
+  <a href="vol35.html" style="display:inline-block; padding:10px 20px; border:1px solid #1a1a1a; border-radius:8px; font-size:13px; font-family:Arial,sans-serif; color:#fff; text-decoration:none; background:#1a1a1a;">← 이전 호</a>
+  <a href="archive.html" style="display:inline-block; padding:10px 20px; border:1px solid #ccc; border-radius:8px; font-size:13px; font-family:Arial,sans-serif; color:#555; text-decoration:none; background:#fff;">전체 보기</a>
+  <a id="next-btn" href="vol37.html" style="display:none; padding:10px 20px; border:1px solid #1a1a1a; border-radius:8px; font-size:13px; font-family:Arial,sans-serif; color:#fff; text-decoration:none; background:#1a1a1a;">다음 호 →</a>
+</div>
+<script>
+(function(){
+  fetch('vol37.html', {method:'HEAD'}).then(function(r){ if(r.ok) document.getElementById('next-btn').style.display='inline-block'; }).catch(function(){});
+})();
+</script>
+
+</body>
+</html>
