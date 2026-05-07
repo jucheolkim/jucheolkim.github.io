@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>오늘의 밑줄 · Vol.37</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap');
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { background: #f0efeb; }
+body { font-family: Georgia, serif; max-width: 680px; margin: 0 auto; padding: 40px 20px; color: #1a1a1a; background: #fff; word-break: keep-all; box-shadow: 0 0 40px rgba(0,0,0,0.06); }
+.header { text-align: center; border-top: 3px solid #1a1a1a; border-bottom: 3px solid #1a1a1a; padding: 12px 0; margin-bottom: 4px; }
+.header-sub { font-size: 11px; font-family: Arial, sans-serif; color: #888; letter-spacing: 2px; margin-bottom: 6px; }
+.header-title { font-size: 36px; font-weight: 800; letter-spacing: 0px; font-family: 'Nanum Myeongjo', Georgia, serif; white-space: nowrap; }
+.header-date { font-size: 11px; font-family: Arial, sans-serif; color: #888; margin-top: 6px; }
+.meta { display: flex; justify-content: space-between; border-bottom: 1px solid #e0e0e0; padding: 4px 0; margin-bottom: 28px; font-size: 10px; font-family: Arial, sans-serif; color: #888; }
+.article { margin-bottom: 28px; padding-bottom: 28px; border-bottom: 1px solid #e0e0e0; }
+.article-tag { font-size: 10px; font-family: Arial, sans-serif; color: #888; letter-spacing: 1px; border-top: 2px solid #1a1a1a; padding-top: 8px; margin-bottom: 8px; }
+.article-title { font-size: 24px; font-weight: bold; line-height: 1.3; margin-bottom: 12px; font-family: 'Nanum Myeongjo', Georgia, serif; letter-spacing: -0.5px; }
+.article-summary { font-size: 13px; color: #555; line-height: 1.75; margin-bottom: 14px; }
+.btn-wrap { display: flex; gap: 6px; margin-bottom: 14px; }
+.toggle-btn { font-size: 11px; font-family: Arial, sans-serif; color: #555; background: none; border: 1px solid #ccc; border-radius: 6px; padding: 4px 10px; cursor: pointer; }
+.toggle-btn:hover { background: #f5f5f5; }
+.article-detail { display: none; }
+.article-detail.open { display: block; }
+.detail-inner { border-left: 2px solid #e0e0e0; padding-left: 16px; }
+.section-label { font-size: 10px; font-family: Arial, sans-serif; color: #888; letter-spacing: 1px; margin-bottom: 6px; margin-top: 16px; }
+.detail-inner p { font-size: 13px; color: #555; line-height: 1.75; margin-bottom: 8px; }
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 8px; }
+.box { background: #f5f5f5; border-radius: 8px; padding: 10px 12px; }
+.box-label { font-size: 11px; font-family: Arial, sans-serif; color: #888; margin-bottom: 6px; }
+.box p { font-size: 12px; color: #555; line-height: 1.65; margin-bottom: 6px; }
+.news-item { margin-bottom: 14px; padding-bottom: 14px; border-bottom: 1px solid #e0e0e0; }
+.news-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+.badge { display: inline-block; font-size: 10px; font-family: Arial, sans-serif; background: #f5f5f5; color: #888; padding: 2px 8px; border-radius: 4px; margin-right: 6px; }
+.news-title { font-size: 13px; font-weight: bold; }
+.news-item p { font-size: 12px; color: #555; line-height: 1.7; margin-top: 6px; }
+.source { font-size: 10px; font-family: Arial, sans-serif; color: #aaa; border-top: 1px solid #e0e0e0; padding-top: 8px; margin-top: 16px; }
+.highlight { font-weight: bold; color: #1a1a1a; }
+.insight-p { font-size: 15px !important; color: #333 !important; line-height: 1.85 !important; margin-bottom: 10px !important; }
+.editor { border-top: 2px solid #1a1a1a; padding-top: 10px; margin-bottom: 16px; }
+.editor p { font-size: 16px; color: #1a1a1a; line-height: 1.85; font-style: italic; font-family: 'Nanum Myeongjo', Georgia, serif; font-weight: 800; }
+.footer { border-top: 1px solid #e0e0e0; padding-top: 8px; text-align: center; font-size: 10px; font-family: Arial, sans-serif; color: #aaa; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-sub">ONEDAY DIGEST</div>
+  <div class="header-title">오늘의 밑줄</div>
+  <div class="header-date">2026년 5월 7일 · Vol. 37</div>
+</div>
+<div class="meta">
+  <span>창업 철학 · 테크 · AI·테크 브리핑</span>
+  <span>출처 표기 기반 요약 콘텐츠</span>
+</div>
+
+<!-- Article 1: Garry Tan -->
+<div class="article">
+  <div class="article-tag">창업 철학 · Garry Tan · Y Combinator · gstack</div>
+  <div class="article-title">AI를 인턴으로 쓰면 2배, 팀으로 구성하면 100배다</div>
+  <div class="article-summary">개리 탄은 YC CEO다. 세계에서 가장 바쁜 사람 중 하나다. 그런데 올해 그는 부업으로 팀 20명분의 코드를 혼자 출력했다. AI 덕분이 아니다. AI를 구성하는 방식이 달랐다.</div>
+  <div class="btn-wrap">
+    <button class="toggle-btn" onclick="var d=document.getElementById('d1'),b=this;d.classList.toggle('open');b.textContent=d.classList.contains('open')?'접기 ▲':'더 보기 ▼'">더 보기 ▼</button>
+    <button class="toggle-btn">🎧 오디오로 듣기 (준비 중)</button>
+  </div>
+  <div id="d1" class="article-detail">
+    <div class="detail-inner">
+      <div class="section-label">이 사람은 누구인가</div>
+      <p>개리 탄은 Y Combinator의 사장 겸 CEO다. Coinbase, Instacart, Airbnb 초기에 함께했고, Posterous를 창업해 트위터에 매각했다. Palantir 초기 엔지니어이자 디자이너였다. 현재 YC를 이끌며 매년 수천 개의 스타트업을 심사한다. 2026년 초, YC를 운영하면서 부업으로 AI 코딩 시스템 gstack을 만들어 오픈소스로 공개했다.</p>
+      <div class="section-label">주요 활동과 이력</div>
+      <p>Stanford 컴퓨터시스템 공학 → Palantir 초기 엔지니어·디자이너 → Posterous 창업(트위터 인수) → Initialized Capital 공동 창업 → YC 파트너(2011~2015) → YC 사장 겸 CEO(2023~현재). 2026년 3월, "지난 50일간 주당 평균 1만 줄씩 출력했다"며 gstack을 오픈소스로 공개. 48시간 만에 GitHub 스타 1만 개. 이후 하루 3만7천 줄 출력 인증 → 논란 폭발 → 정규화 재측정 결과 2013년 대비 810배 생산성 확인.</p>
+      <div class="section-label">성공한 것과 실패한 것</div>
+      <div class="grid">
+        <div class="box">
+          <div class="box-label">성공 / 확신</div>
+          <p>AI에게 역할을 부여했다. CEO, 디자이너, QA, 릴리즈 매니저. 한 번에 하나씩 시키는 대신, 팀처럼 병렬로 구성했다. gstack은 그 구성도를 Markdown으로 만든 것이다.</p>
+          <p>"코드를 누가 타이핑했냐가 아니라 무엇이 출시됐냐가 중요하다." 비판에 흔들리지 않고 정규화 데이터로 응수했다.</p>
+        </div>
+        <div class="box">
+          <div class="box-label">실패 / 한계</div>
+          <p>원시 코드 줄수(LOC)로 생산성을 자랑한 건 실수였다. AI가 줄수를 과장한다는 비판이 정확히 맞았다. 정규화 지표로 다시 측정해야 했다.</p>
+          <p>gstack 자체는 특별한 기술이 없다. Markdown 파일 모음이다. "YC CEO가 아니면 주목받지 못했을 것"이라는 비판도 틀리지 않다.</p>
+        </div>
+      </div>
+      <div class="section-label">인사이트</div>
+      <p class="insight-p">탄이 발견한 건 이거다. <span class="highlight">같은 AI 모델을 써도 2배인 사람과 100배인 사람이 나뉜다. 차이는 모델이 아니라 구성이다.</span> 대부분은 AI에게 한 번에 하나씩 시킨다. 탄은 AI를 CEO, 디자이너, QA로 나눠 동시에 돌렸다.</p>
+      <p class="insight-p">Andrej Karpathy가 말했다. "2026년 3월 이후로 코드를 한 줄도 타이핑하지 않았다." 탄도 같은 방향이다. <span class="highlight">타이핑을 멈춘 게 아니라, 타이핑의 의미가 바뀐 것이다.</span> 개인이 팀의 속도로 움직일 수 있는 시대가 됐다. 남은 질문은 그 속도를 어떻게 구성하느냐다.</p>
+      <p class="insight-p">논란은 LOC 숫자에 집중됐지만, 핵심은 다른 곳에 있다. AI 시대의 생산성은 얼마나 빨리 치느냐가 아니라, <span class="highlight">얼마나 잘 설계하느냐로 측정된다.</span> 탄이 증명한 건 코딩 실력이 아니라 시스템 설계 능력이다.</p>
+      <div class="source">출처: "Y Combinator's CEO says he ships 37,000 lines of AI code per day" · Fast Company (2026.04.03) / github.com/garrytan/gstack</div>
+    </div>
+  </div>
+</div>
+
+<!-- Article 2: David Silver -->
+<div class="article">
+  <div class="article-tag">창업 철학 · David Silver · Ineffable Intelligence · DeepMind</div>
+  <div class="article-title">업계 전체가 오르는 산이 틀렸다고 판단했다</div>
+  <div class="article-summary">데이비드 실버는 알파고를 만든 사람이다. 인간 챔피언을 꺾은 AI. 그는 지금 그 방법론을 버렸다. LLM이 대세인 시대에, 인간 데이터에 의존하지 않는 AI를 만들겠다고 DeepMind를 나왔다. 11억 달러가 그 베팅에 걸렸다.</div>
+  <div class="btn-wrap">
+    <button class="toggle-btn" onclick="var d=document.getElementById('d2'),b=this;d.classList.toggle('open');b.textContent=d.classList.contains('open')?'접기 ▲':'더 보기 ▼'">더 보기 ▼</button>
+    <button class="toggle-btn">🎧 오디오로 듣기 (준비 중)</button>
+  </div>
+  <div id="d2" class="article-detail">
+    <div class="detail-inner">
+      <div class="section-label">이 사람은 누구인가</div>
+      <p>데이비드 실버는 강화학습(Reinforcement Learning) 분야의 선구자다. DeepMind에서 AlphaGo, AlphaZero, AlphaStar를 이끌었다. AlphaGo는 2016년 바둑 세계 챔피언을 꺾었고, AlphaZero는 인간의 기보 없이 스스로 학습해 체스·바둑·쇼기에서 최고 수준에 도달했다. University College London 교수이기도 하다. 2025년 말 DeepMind를 떠나 Ineffable Intelligence를 창업했다.</p>
+      <div class="section-label">주요 활동과 이력</div>
+      <p>케임브리지 졸업 → 게임 회사 Elixir Studios CTO → 앨버타 대학교 강화학습 박사 → DeepMind 합류(2013) → AlphaGo 개발 총괄(2016년 이세돌 꺾음) → AlphaZero·AlphaStar·AlphaFold 기여 → 2025년 말 Ineffable Intelligence 창업 → 2026년 4월 11억 달러 시드 라운드(기업가치 약 7조 원), 유럽 역대 최대 시드. Sequoia·Lightspeed·NVIDIA·Google 참여. 목표는 인간 데이터 없이 스스로 학습하는 "슈퍼러너(superlearner)" 구축이다.</p>
+      <div class="section-label">성공한 것과 실패한 것</div>
+      <div class="grid">
+        <div class="box">
+          <div class="box-label">성공 / 확신</div>
+          <p>AlphaZero는 인간 기보 없이 스스로 학습해 역대 최강이 됐다. 인간 데이터 없이도 초인적 성능이 가능하다는 걸 직접 증명했다.</p>
+          <p>연구자로서 쌓은 신뢰가 창업 직후 11억 달러를 끌어모았다. 트랙 레코드가 자본을 불렀다.</p>
+        </div>
+        <div class="box">
+          <div class="box-label">실패 / 한계</div>
+          <p>강화학습은 명확한 규칙이 있는 환경에선 강력하지만, 현실 세계의 복잡한 문제에 적용하는 건 아직 미지의 영역이다.</p>
+          <p>LLM 중심의 시장에서 완전히 다른 방향을 선택한 만큼, 상업적 수익화 경로가 아직 불분명하다.</p>
+        </div>
+      </div>
+      <div class="section-label">인사이트</div>
+      <p class="insight-p">실버의 논리는 단순하다. <span class="highlight">인간이 만든 데이터로 학습한 AI는 인간을 넘을 수 없다.</span> 천장이 정해져 있다. 지금 대부분의 AI가 그 천장 아래서 경쟁하고 있다.</p>
+      <p class="insight-p">그는 AlphaZero에서 이미 답을 봤다. 인간의 기보를 주지 않았더니, AI는 인간이 수천 년간 발견하지 못한 수를 스스로 찾아냈다. <span class="highlight">제약을 없앴더니 가능성이 확장됐다.</span> 그 경험이 Ineffable Intelligence의 출발점이다.</p>
+      <p class="insight-p">업계 전체가 같은 방향을 향할 때, 그 방향이 맞는지 먼저 묻는 것. 실버가 DeepMind를 나온 이유다. 틀릴 수도 있다. 하지만 그 질문 자체를 포기하면, 정답에 도달할 기회도 없다.</p>
+      <div class="source">출처: "DeepMind's David Silver just raised $1.1B to build an AI that learns without human data" · TechCrunch (2026.04.27)</div>
+    </div>
+  </div>
+</div>
+
+<!-- Article 3: AI·테크 브리핑 -->
+<div class="article">
+  <div class="article-tag">AI · 테크 브리핑 · 2026년 5월 7일</div>
+  <div class="article-title">이번 주 AI 판이 흔들린 세 가지</div>
+  <div class="article-summary">OpenAI가 연 250억 달러를 벌면서 IPO를 준비하고 있다. 생성형 AI는 PC보다 빠르게 퍼졌다. 그런데 Snap과 Perplexity의 4억 달러 계약은 조용히 깨졌다. 숫자는 크지만, 흐름은 여전히 불안정하다.</div>
+  <div class="btn-wrap">
+    <button class="toggle-btn" onclick="var d=document.getElementById('d3'),b=this;d.classList.toggle('open');b.textContent=d.classList.contains('open')?'접기 ▲':'더 보기 ▼'">더 보기 ▼</button>
+    <button class="toggle-btn">🎧 오디오로 듣기 (준비 중)</button>
+  </div>
+  <div id="d3" class="article-detail">
+    <div class="detail-inner">
+      <div class="news-item">
+        <span class="badge">OpenAI</span><span class="news-title">연환산 매출 250억 달러 돌파 · IPO 준비 중</span>
+        <p><span class="highlight">무슨 일인가:</span> OpenAI의 연환산 매출이 2026년 2월 기준 250억 달러를 넘었다. Salesforce가 같은 규모에 도달하는 데 18년, Google은 17년이 걸렸다. OpenAI는 약 39개월이다. 하반기 IPO 신청이 유력하다.</p>
+        <p><span class="highlight">왜 중요한가:</span> 매출과 동시에 연간 손실도 약 140억 달러다. 역사상 가장 빠르게 성장하는 회사가 동시에 가장 많이 태우는 회사다. 수익성 전환은 2030년 전망이다.</p>
+        <p><span class="highlight">인사이트:</span> 빠른 성장이 안전을 보장하지 않는다. 공개 시장은 성장 속도만큼 수익 경로도 본다.</p>
+      </div>
+      <div class="news-item">
+        <span class="badge">Stanford AI Index</span><span class="news-title">생성형 AI, PC·인터넷보다 빠른 확산</span>
+        <p><span class="highlight">무슨 일인가:</span> Stanford AI Index 2026 보고서에 따르면, 생성형 AI는 출시 3년 만에 전 세계 인구의 53%가 채택했다. PC와 인터넷보다 빠른 속도다. 미국은 28.3%로 24위에 그쳤다.</p>
+        <p><span class="highlight">왜 중요한가:</span> 확산 속도는 빠르지만, 활용 수준은 불균등하다. 싱가포르(61%), UAE(54%)가 미국을 앞섰다. 빠른 채택이 곧 깊은 활용을 의미하지 않는다.</p>
+        <p><span class="highlight">인사이트:</span> 도구가 퍼지는 속도보다 쓰는 방식이 차별화를 만든다. 가장 먼저 쓴 나라가 가장 잘 쓰는 나라가 아니다.</p>
+      </div>
+      <div class="news-item">
+        <span class="badge">Snap · Perplexity</span><span class="news-title">4억 달러 파트너십, 조용히 파기</span>
+        <p><span class="highlight">무슨 일인가:</span> Snap이 Perplexity AI와 체결했던 4억 달러 규모의 파트너십이 "합의 종료"로 끝났다. 양측 모두 이유를 밝히지 않았다.</p>
+        <p><span class="highlight">왜 중요한가:</span> AI 업계의 대형 계약도 빠르게 변한다. 파트너십 발표가 실행을 보장하지 않는다는 걸 다시 보여줬다.</p>
+        <p><span class="highlight">인사이트:</span> AI 협업 생태계는 아직 유동적이다. 발표보다 실행, 계약보다 지속이 진짜 지표다.</p>
+      </div>
+      <div class="source">출처: TechCrunch, Stanford HAI AI Index 2026, Sacra Research</div>
+    </div>
+  </div>
+</div>
+
+<!-- Article 4: 오늘의 신제품 -->
+<div class="article">
+  <div class="article-tag">오늘의 신제품 · ProductHunt · 2026년 5월 7일</div>
+  <div class="article-title">오늘 나온 것들</div>
+  <div class="article-summary">회의가 끝나기 전에 후속 작업을 처리하는 AI, 팀과 에이전트가 함께 쓰는 오픈소스 워크스페이스, 수백 개의 코딩 에이전트를 병렬로 돌리는 플랫폼까지. 오늘 ProductHunt에서 주목할 만한 제품들을 추렸다.</div>
+  <div class="btn-wrap">
+    <button class="toggle-btn" onclick="var d=document.getElementById('d4'),b=this;d.classList.toggle('open');b.textContent=d.classList.contains('open')?'접기 ▲':'더 보기 ▼'">더 보기 ▼</button>
+    <button class="toggle-btn">🎧 오디오로 듣기 (준비 중)</button>
+  </div>
+  <div id="d4" class="article-detail">
+    <div class="detail-inner">
+      <div class="news-item">
+        <span class="badge">생산성</span><span class="news-title">Shadow 2.0 — 회의 중 할 일을 회의가 끝나기 전에 처리한다</span>
+        <p>모든 온라인 회의를 실시간으로 분석해 할 일을 자동 추출한다. PDF 작성, 슬라이드 생성, CRM 업데이트까지 회의가 끝나기 전에 처리한다. 회의 후 남는 일이 없어지는 것이 목표다.</p>
+      </div>
+      <div class="news-item">
+        <span class="badge">협업</span><span class="news-title">Kanwas — 팀과 에이전트가 함께 쓰는 오픈소스 워크스페이스</span>
+        <p>팀의 주요 지식, 연구, 결정, 데이터를 한 곳에 보관한다. 사람과 AI 에이전트 모두가 접근하고 활용할 수 있는 공유 컨텍스트를 제공한다. 오픈소스로 공개됐다.</p>
+      </div>
+      <div class="news-item">
+        <span class="badge">개발</span><span class="news-title">Superset 2.0 — 수백 개의 코딩 에이전트를 병렬 실행</span>
+        <p>여러 기계에서 수백 개의 코딩 에이전트를 동시에 돌릴 수 있는 플랫폼이다. 원격 작업 공간 지원과 팀원 간 실시간 협업 기능을 갖췄다.</p>
+      </div>
+      <div class="news-item">
+        <span class="badge">인프라</span><span class="news-title">pay.sh — AI 에이전트용 실시간 API 결제 인프라</span>
+        <p>AI 에이전트가 API를 탐색하고 호출당 직접 결제할 수 있는 실시간 결제 인프라다. Google Cloud와 협력해 개발됐으며 오픈소스로 공개됐다.</p>
+      </div>
+      <div class="news-item">
+        <span class="badge">네트워크</span><span class="news-title">Alumni Founder — 창업자 네트워크를 시각화한다</span>
+        <p>특정 회사나 대학 출신 창업자 네트워크를 시각적으로 보여주는 툴이다. 연결성과 영향력을 한눈에 파악할 수 있어 VC와 창업자에게 유용하다.</p>
+      </div>
+      <div class="source">출처: choi님 ProductHunt 큐레이션 (@choi.openai) · 2026년 5월 7일</div>
+    </div>
+  </div>
+</div>
+
+<!-- Editor Note -->
+<div class="editor">
+  <div class="section-label">에디터 한마디</div>
+  <p>"AI를 도구로 쓰면 2배, 팀으로 설계하면 100배다. 제약을 없애는 방식이 결과를 바꾼다."</p>
+</div>
+
+<div class="footer">오늘의 밑줄 · 매일 발행 · 출처 표기 기반 요약 콘텐츠</div>
+
+<div style="display:flex; justify-content:center; gap:10px; margin-top:20px; padding-bottom:20px;">
+  <a href="vol36.html" style="display:inline-block; padding:10px 20px; border:1px solid #1a1a1a; border-radius:8px; font-size:13px; font-family:Arial,sans-serif; color:#fff; text-decoration:none; background:#1a1a1a;">← 이전 호</a>
+  <a href="archive.html" style="display:inline-block; padding:10px 20px; border:1px solid #ccc; border-radius:8px; font-size:13px; font-family:Arial,sans-serif; color:#555; text-decoration:none; background:#fff;">전체 보기</a>
+  <a id="next-btn" href="vol38.html" style="display:none; padding:10px 20px; border:1px solid #1a1a1a; border-radius:8px; font-size:13px; font-family:Arial,sans-serif; color:#fff; text-decoration:none; background:#1a1a1a;">다음 호 →</a>
+</div>
+<script>
+(function(){
+  fetch('vol38.html', {method:'HEAD'}).then(function(r){ if(r.ok) document.getElementById('next-btn').style.display='inline-block'; }).catch(function(){});
+})();
+</script>
+
+</body>
+</html>
