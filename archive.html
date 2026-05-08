@@ -45,56 +45,29 @@ body { font-family: Georgia, serif; max-width: 680px; margin: 0 auto; padding: 4
 // 새 호 발행 시 이 배열 맨 앞에 한 줄만 추가하면 됩니다.
 // ============================================================
 var VOLS = [
-  { vol: 37, date: "2026년 5월 7일", title: "AI를 인턴으로 쓰면 2배, 팀으로 구성하면 100배다", tags: "개리 탄 · 데이비드 실버 · AI 테크 브리핑" },
-  { vol: 36, date: "2026년 5월 6일", title: "다음 시대가 오기 전에 먼저 짓는 사람이, 그 시대가 왔을 때 가장 유리한 자리에 있다", tags: "Marc Lore · Peter Sarlin · AI 테크 브리핑" },
-  { vol: 35, date: "2026년 5월 5일", title: "설득하지 않는다. 알아보는 사람만 찾는다", tags: "David Cramer · Immad Akhund · AI 테크 브리핑" },
-  { vol: 34, date: "2026년 5월 4일", title: "방향이 옳다면, 시간이 가장 큰 무기다", tags: "Christian Weedbrook · 김도균 · AI 테크 브리핑" },
-  { vol: 33, date: "2026년 5월 1일", title: "자원이 부족할수록 입구를 좁혀라", tags: "셀린 할리우아 · 케빈 부스크 · AI 테크 브리핑" },
-  { vol: 32, date: "2026년 4월 30일", title: "팀과 내통다, 회의는 아무것도 결정하지 않는다", tags: "Christopher Gray · Nathaneo Johnson · AI 테크 브리핑" },
-  { vol: 31, date: "2026년 4월 29일", title: "내 자리를 지키는 사람만이, 결국 새로운 자리를 만든다", tags: "Colin Kaepernick · Jan Oberhauser · AI 테크 브리핑" },
-  { vol: 30, date: "2026년 4월 28일", title: "통념을 거꾸로 가는 사람만 새로운 시장을 본다", tags: "Adam Guild · Karri Saarinen · AI 테크 브리핑" },
-  { vol: 29, date: "2026년 4월 27일", title: "가장 어려운 길을 일부러 골랐더니, 따라올 수 없는 회사가 됐다", tags: "Jack Zhang · Stacy Brown-Philpot · AI 테크 브리핑" },
-  { vol: 28, date: "2026년 4월 24일", title: "사람 뽑지 마세요라고 광고한 CEO가, 100명을 뽑고 60명을 내보냈다", tags: "Jaspar Carmichael-Jack · James Beshara · AI 테크 브리핑" },
-  { vol: 27, date: "2026년 4월 23일", title: "자기 회사를 잡아먹을 수 있는 걸, 자기가 먼저 만들었다", tags: "Jake Jurewicz · Max Hodak · AI 테크 브리핑" },
-  { vol: 26, date: "2026년 4월 22일", title: "자기 병에 founder mode를 켠 창업자", tags: "Sid Sijbrandij · Matthew Gallagher · AI 테크 브리핑" },
-  { vol: 25, date: "2026년 4월 21일", title: "문학 전공자가 AI 프론티어의 가장 중요한 자리에 앉았다", tags: "Jack Clark · Dan Lewis · AI 테크 브리핑" },
-  { vol: 24, date: "2026년 4월 20일", title: "자기 회사를 잡아먹을 수 있는 걸, 자기가 먼저 만들었다", tags: "Howie Liu · Thomas Roulet · AI 테크 브리핑" },
-  { vol: 23, date: "2026년 4월 17일", title: "실패한 제품이 회사를 살렸다", tags: "Will Ahmed · Winston Chesterfield · AI 테크 브리핑" },
-  { vol: 22, date: "2026년 4월 16일", title: "AGI 이후를 먼저 상상한 사람", tags: "Mustafa Suleyman · Victor Riparbelli · AI 테크 브리핑" },
-  { vol: 21, date: "2026년 4월 15일", title: "코딩을 민주화하겠다는 사람이 코딩을 가장 잘했다", tags: "Amjad Masad · Campbell Brown · AI 테크 브리핑" },
-  { vol: 20, date: "2026년 4월 14일", title: "로봇이 집에 들어오는 날은 30년 전에 설계한 사람", tags: "Colin Angle · Vishal Virani · AI 테크 브리핑" },
-  { vol: 19, date: "2026년 4월 13일", title: "농부가 되려다 농업을 바꿨다", tags: "Craig Piggott · Afsheen Afshar · AI 테크 브리핑" },
-  { vol: 18, date: "2026년 4월 10일", title: "보안을 팔지 않고 보안을 없애려 했다", tags: "Anjuna Security 창업자 · 브렛 테일러 · AI 테크 브리핑" },
-  { vol: 17, date: "2026년 4월 9일", title: "회의를 없앤 회사가 더 빠르게 움직였다", tags: "Jason Fried · Peter Yang · AI 테크 브리핑" },
-  { vol: 16, date: "2026년 4월 8일", title: "94살의 투자자가 아직도 출근하는 이유", tags: "Warren Buffett · 안무역 · AI 테크 브리핑" },
-  { vol: 15, date: "2026년 4월 7일", title: "실리콘밸리의 문화 전쟁을 선언한 두 남자", tags: "Ben Horowitz · Marc Andreessen · AI 테크 브리핑" },
-  { vol: 14, date: "2026년 4월 6일", title: "칩을 설계하는 사람이 아니라 칩의 철학을 만드는 사람", tags: "Jensen Huang · Yossi Matias · AI 테크 브리핑" },
-  { vol: 13, date: "2026년 4월 3일", title: "행복을 팔겠다고 나선 사람이 행복을 잃었다", tags: "Ron Baron · Mo Gawdat · AI 테크 브리핑" },
-  { vol: 12, date: "2026년 4월 2일", title: "월가의 제왕이 말하는 리더의 조건", tags: "Lloyd Blankfein · 안서형 · AI 테크 브리핑" },
-  { vol: 11, date: "2026년 4월 1일", title: "10대가 만든 회사에 어른들이 줄을 섰다", tags: "Jim Keller · Zach Yadegari · AI 테크 브리핑" },
-  { vol: 10, date: "2026년 3월 30일", title: "실리콘밸리의 아웃사이더가 은행을 만든 이유", tags: "Palmer Luckey · 류한주 · AI 테크 브리핑" },
-  { vol: 9, date: "2026년 3월 27일", title: "가장 비관적인 투자자가 가장 오래 살아남은 이유", tags: "Howard Marks · 김범섭 · AI 테크 브리핑" },
-  { vol: 8, date: "2026년 3월 26일", title: "정치인이 된 이유가 돈이 아니었던 사람", tags: "Bernie Sanders · Mihal Erik · AI 테크 브리핑" },
-  { vol: 7, date: "2026년 3월 25일", title: "작은 나라를 선진국으로 만든 남자의 단 하나의 원칙", tags: "Lee Kuan Yew · Olivia Moore · AI 테크 브리핑" },
+  { vol: 38, date: "2026년 5월 8일", title: "회사가 커질수록 창업자는 뒤로 밀린다. 그가 다시 앞으로 나왔을 때 성장률이 두 배가 됐다", tags: "페드로 프란체스키 · 마오르 슐로모 · AI 테크 브리핑→" },
   { vol: 6, date: "2026년 3월 24일", title: "탁상공론이 전쟁터에서 무너지는 이유", tags: "알렉스 카프 · 렘 코닝 · AI 테크 브리핑" },
   { vol: 5, date: "2026년 3월 23일", title: "AGI를 가장 오래 기다려온 사람이 내린 단 하나의 정의", tags: "데미스 허사비스 · 매트 그레이 · AI 논문 브리핑" },
   { vol: 4, date: "2026년 3월 20일", title: "하루를 3개의 법칙으로 쪼갠 남자", tags: "Cal Newport · 정지헌 · AI 테크 브리핑" },
   { vol: 3, date: "2026년 3월 19일", title: "50년 동안 살아남은 회사는 무엇이 달랐나", tags: "팀 쿡 · 제레미 어틀리 · AI 테크 브리핑" },
   { vol: 2, date: "2026년 3월 18일", title: "쓰나미가 보이는데 사람들은 빛의 굴절이라 한다", tags: "다리오 아모데이 · Max Brodeur-Urbas · AI 테크 브리핑" },
-  { vol: 1, date: "2026년 3월 18일", title: "네가 싫어하는 기업이 40년 뒤에 회사를 만든 법", tags: "Mario Schlosser · 곽형석 · AI 테크 브리핑" },
+  { vol: 1, date: "2026년 3월 18일", title: "매 시간을 기록한 남자가 40억 달러 회사를 만든 법", tags: "Mario Schlosser · 곽형석 · AI 테크 브리핑" },
 ];
+
 var list = document.getElementById('archive-list');
 var latestVol = VOLS[0].vol;
+
 VOLS.forEach(function(v) {
   var a = document.createElement('a');
   a.href = 'vol' + v.vol + '.html';
   a.className = 'archive-item';
-  a.innerHTML = '<div class="archive-left">' +
-    '<div class="archive-vol">Vol. ' + v.vol + ' · ' + v.date + '</div>' +
-    '<div class="archive-title">' + v.title + '</div>' +
-    '<div class="archive-tags">' + v.tags + '</div>' +
+  a.innerHTML =
+    '<div class="archive-left">' +
+      '<div class="archive-vol">Vol. ' + v.vol + ' \u00b7 ' + v.date + '</div>' +
+      '<div class="archive-title">' + v.title + '</div>' +
+      '<div class="archive-tags">' + v.tags + '</div>' +
     '</div>' +
-    '<div class="archive-meta">' + (v.vol === latestVol ? '업술호' : '→') + '</div>';
+    '<div class="archive-meta">' + (v.vol === latestVol ? '\ucd5c\uc2e0\ud638' : '\u2192') + '</div>';
   list.appendChild(a);
 });
 </script>
