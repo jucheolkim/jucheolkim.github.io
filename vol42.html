@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>오늘의 밑줄 · Vol.42</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap');
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { background: #f0efeb; }
+body { font-family: Georgia, serif; max-width: 680px; margin: 0 auto; padding: 40px 20px; color: #1a1a1a; background: #fff; word-break: keep-all; box-shadow: 0 0 40px rgba(0,0,0,0.06); }
+.header { text-align: center; border-top: 3px solid #1a1a1a; border-bottom: 3px solid #1a1a1a; padding: 12px 0; margin-bottom: 4px; }
+.header-sub { font-size: 11px; font-family: Arial, sans-serif; color: #888; letter-spacing: 2px; margin-bottom: 6px; }
+.header-title { font-size: 36px; font-weight: 800; letter-spacing: 0px; font-family: 'Nanum Myeongjo', Georgia, serif; white-space: nowrap; }
+.header-date { font-size: 11px; font-family: Arial, sans-serif; color: #888; margin-top: 6px; }
+.meta { display: flex; justify-content: space-between; border-bottom: 1px solid #e0e0e0; padding: 4px 0; margin-bottom: 28px; font-size: 10px; font-family: Arial, sans-serif; color: #888; }
+.article { margin-bottom: 28px; padding-bottom: 28px; border-bottom: 1px solid #e0e0e0; }
+.article-tag { font-size: 10px; font-family: Arial, sans-serif; color: #888; letter-spacing: 1px; border-top: 2px solid #1a1a1a; padding-top: 8px; margin-bottom: 8px; }
+.article-title { font-size: 24px; font-weight: bold; line-height: 1.3; margin-bottom: 12px; font-family: 'Nanum Myeongjo', Georgia, serif; letter-spacing: -0.5px; }
+.article-summary { font-size: 13px; color: #555; line-height: 1.75; margin-bottom: 14px; }
+.btn-wrap { display: flex; gap: 6px; margin-bottom: 14px; }
+.toggle-btn { font-size: 11px; font-family: Arial, sans-serif; color: #555; background: none; border: 1px solid #ccc; border-radius: 6px; padding: 4px 10px; cursor: pointer; }
+.toggle-btn:hover { background: #f5f5f5; }
+.article-detail { display: none; }
+.article-detail.open { display: block; }
+.detail-inner { border-left: 2px solid #e0e0e0; padding-left: 16px; }
+.section-label { font-size: 10px; font-family: Arial, sans-serif; color: #888; letter-spacing: 1px; margin-bottom: 6px; margin-top: 16px; }
+.detail-inner p { font-size: 13px; color: #555; line-height: 1.75; margin-bottom: 8px; }
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 8px; }
+.box { background: #f5f5f5; border-radius: 8px; padding: 10px 12px; }
+.box-label { font-size: 11px; font-family: Arial, sans-serif; color: #888; margin-bottom: 6px; }
+.box p { font-size: 12px; color: #555; line-height: 1.65; margin-bottom: 6px; }
+.news-item { margin-bottom: 14px; padding-bottom: 14px; border-bottom: 1px solid #e0e0e0; }
+.news-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+.badge { display: inline-block; font-size: 10px; font-family: Arial, sans-serif; background: #f5f5f5; color: #888; padding: 2px 8px; border-radius: 4px; margin-right: 6px; }
+.news-title { font-size: 13px; font-weight: bold; }
+.news-item p { font-size: 12px; color: #555; line-height: 1.7; margin-top: 6px; }
+.source { font-size: 10px; font-family: Arial, sans-serif; color: #aaa; border-top: 1px solid #e0e0e0; padding-top: 8px; margin-top: 16px; }
+.highlight { font-weight: bold; color: #1a1a1a; }
+.insight-p { font-size: 15px !important; color: #333 !important; line-height: 1.85 !important; margin-bottom: 10px !important; }
+.editor { border-top: 2px solid #1a1a1a; padding-top: 10px; margin-bottom: 16px; }
+.editor p { font-size: 16px; color: #1a1a1a; line-height: 1.85; font-style: italic; font-family: 'Nanum Myeongjo', Georgia, serif; font-weight: 800; }
+.footer { border-top: 1px solid #e0e0e0; padding-top: 8px; text-align: center; font-size: 10px; font-family: Arial, sans-serif; color: #aaa; }
+.product-item { margin-bottom: 12px; padding-bottom: 12px; border-bottom: 1px solid #f0f0f0; }
+.product-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+.product-name { font-size: 13px; font-weight: bold; color: #1a1a1a; margin-bottom: 4px; }
+.product-item p { font-size: 12px; color: #555; line-height: 1.65; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-sub">ONEDAY DIGEST</div>
+  <div class="header-title">오늘의 밑줄</div>
+  <div class="header-date">2026년 5월 14일 · Vol.42</div>
+</div>
+<div class="meta">
+  <span>founder philosophy × ai briefing × new products</span>
+  <span>jucheolkim.github.io</span>
+</div>
+
+<!-- ARTICLE 1: Melanie Perkins -->
+<article class="article">
+  <div class="article-tag">창업 철학 · Melanie Perkins · Canva</div>
+  <h2 class="article-title">100번 거절당하는 동안, 그는 목적지를 바꾸지 않았다</h2>
+  <p class="article-summary">
+    Melanie Perkins는 Canva를 창업하기 전 100곳이 넘는 투자자에게 거절당했다. 자신이 옳다고 믿는 방향을 바꾸지 않으면서, 동시에 그 방향을 현실로 만드는 법을 찾아갔다. 지금 Canva는 2억 4천만 명이 쓰는 플랫폼이 됐고, 그는 부의 80% 이상을 기부하겠다고 서약했다.
+  </p>
+  <div class="btn-wrap">
+    <button class="toggle-btn" onclick="toggle(this)">더 보기 ↓</button>
+  </div>
+  <div class="article-detail">
+    <div class="detail-inner">
+      <div class="section-label">이 사람은 누구인가</div>
+      <p>Melanie Perkins(1987~)는 호주 퍼스 출신의 기술 창업자로, Canva의 공동창업자이자 CEO다. 대학에서 그래픽 디자인을 가르치며 기존 도구의 복잡함에 불편함을 느꼈고, 2007년 고등학생 대상 연감 제작 플랫폼 Fusion Books를 먼저 만들었다. 이를 발판으로 2013년 Canva를 공동창업했다. 남편이자 공동창업자인 Cliff Obrecht와 함께 회사를 이끌며, 서로의 역할을 철저히 분리해 운영 갈등을 최소화했다.</p>
+
+      <div class="section-label">주요 활동과 이력</div>
+      <p>Canva는 출시 2년 만에 월 100만 명 사용자를 넘어섰고, 이후 매년 두 배 성장을 이어갔다. 2018년 Perkins는 31살에 기업가치 10억 달러를 넘는 회사를 이끄는 가장 젊은 여성 CEO 중 한 명이 됐다. 2025년 기준 Canva의 기업가치는 420억 달러, 월간 사용자는 2억 4천만 명이다. 2026년에는 Canva AI 2.0을 발표하며 대화형 디자인과 에이전트 오케스트레이션 기능을 선보였다. Canva Foundation을 통해 자산의 80% 이상을 기부하겠다고 서약했다.</p>
+
+      <div class="section-label">성공한 것과 실패한 것</div>
+      <div class="grid">
+        <div class="box">
+          <div class="box-label">✓ 작동한 것</div>
+          <p>'디자인의 민주화'라는 단 하나의 문장을 10년 동안 바꾸지 않았다. 공동창업자 간 역할 분리(Perkins: 제품·비전 / Obrecht: 운영·재무)로 갈등 없이 각자의 판을 키웠다. "레고를 나눠줘라"는 철학으로 팀이 커져도 빠른 이양과 확장을 동시에 이뤄냈다.</p>
+        </div>
+        <div class="box">
+          <div class="box-label">✗ 돌아온 것</div>
+          <p>초기 투자자 미팅에서 100번 이상 거절당했다. 첫 미팅 기회를 잡기 위해 키트서핑 강습을 받으며 투자자 곁에 접근한 일화는 유명하다. 제품의 방향은 옳다고 확신했지만, 그것을 다른 사람에게 납득시키는 데만 수 년이 걸렸다.</p>
+        </div>
+      </div>
+
+      <div class="section-label">인사이트</div>
+      <p class="insight-p">Perkins는 "Column B 사고"를 직접 정의했다. 지금 가진 자원으로 뭘 쌓을 수 있는지 묻는 것이 Column A라면, <span class="highlight">Column B는 먼저 원하는 성을 상상하고, 거기에 맞는 벽돌을 찾아가는 방식이다.</span> 대부분의 계획은 Column A에서 시작해 Column A에서 끝난다. 그게 결과의 크기를 미리 제한한다.</p>
+      <p class="insight-p">100번의 거절은 방향이 틀렸다는 신호가 아니었다. <span class="highlight">아직 그 미래를 보는 사람을 못 찾은 것이었다.</span> 확신의 방향을 유지하면서 접근 방식만 바꾸는 것, 그것이 그가 포기하지 않은 방법이었다.</p>
+
+      <div class="source">출처: HSG Capital · BBNTimes · Hustle Inspires Hustle · Canva Newsroom (2025–2026)</div>
+    </div>
+  </div>
+</article>
+
+<!-- ARTICLE 2: Daniel Ek -->
+<article class="article">
+  <div class="article-tag">창업 철학 · Daniel Ek · Spotify</div>
+  <h2 class="article-title">7억 명의 플랫폼을 만들고, CEO 자리를 내려놨다</h2>
+  <p class="article-summary">
+    Daniel Ek는 2026년 1월, Spotify CEO 자리를 두 명의 사내 인물에게 넘기고 Executive Chairman으로 물러났다. 권력을 지키는 대신 다음 단계를 준비하기 위한 선택이었다. 음악 산업 전체를 설득해 불법 다운로드 시대를 끝낸 창업자가, 이번엔 스스로를 재배치했다.
+  </p>
+  <div class="btn-wrap">
+    <button class="toggle-btn" onclick="toggle(this)">더 보기 ↓</button>
+  </div>
+  <div class="article-detail">
+    <div class="detail-inner">
+      <div class="section-label">이 사람은 누구인가</div>
+      <p>Daniel Ek(1983~)는 스웨덴 스톡홀름 출신으로, 13살 때 소규모 기업을 위한 웹사이트 개발로 사업을 시작했다. 23살에 온라인 광고 스타트업 Advertigo를 매각한 뒤 잠시 은퇴했다가, 같은 해 Martin Lorentzon과 함께 Spotify를 공동창업했다. 냅스터 이후 혼란에 빠진 음악 산업에 합법적이고 사용자 친화적인 대안을 제시하겠다는 목표였다.</p>
+
+      <div class="section-label">주요 활동과 이력</div>
+      <p>Spotify는 2008년 유럽에서 출시됐으나 미국 진입에 3년이 걸렸다. 음반사들과의 계약 협상 때문이었는데, Ek는 이 지연이 오히려 회사를 살렸다고 말한다. 그 시간 동안 스웨덴과 영국 시장을 충분히 성숙시킬 수 있었다. 2025년 3분기 기준 Spotify의 프리미엄 구독자는 2억 8,100만 명, 분기 영업이익은 5억 8,200만 유로다. 2026년 1월, Ek는 CEO직을 Gustav Söderström과 Alex Norström 두 사람에게 넘기고 Executive Chairman으로 전환했다.</p>
+
+      <div class="section-label">성공한 것과 실패한 것</div>
+      <div class="grid">
+        <div class="box">
+          <div class="box-label">✓ 작동한 것</div>
+          <p>음악 산업과 싸우는 대신 파트너로 대우하는 전략을 선택했다. 프리미엄-무료 병행 모델로 불법 다운로드 사용자들을 합법적 플랫폼으로 끌어들였다. "회사가 내일 사라질 것 같은" 위기를 세 번 넘기면서도 오디오 시장 전체를 목표로 방향을 유지했다.</p>
+        </div>
+        <div class="box">
+          <div class="box-label">✗ 돌아온 것</div>
+          <p>아티스트 수익 배분 문제는 끝까지 논란으로 남았다. 독점 콘텐츠 없이 경쟁사와 동일한 라이브러리를 가져가는 구조는 차별화의 한계를 드러냈다. 팟캐스트 독점 투자 전략도 기대보다 낮은 성과로 일부 계약을 철수했다.</p>
+        </div>
+      </div>
+
+      <div class="section-label">인사이트</div>
+      <p class="insight-p">Ek가 CEO 자리를 내려놓은 건 실패가 아니라 설계였다. 그는 오래전부터 <span class="highlight">"창업자의 역할은 회사를 경영하는 것이 아니라 다음 가능성을 먼저 보는 것"</span>이라고 말해왔다. 두 명의 공동 CEO를 세운 것도 단일 권력 구조보다 더 빠른 실행을 위한 선택이었다.</p>
+      <p class="insight-p">스스로의 자리를 유지하려는 창업자와, 회사의 다음 단계를 위해 스스로를 재배치하는 창업자의 차이는 여기서 드러난다. <span class="highlight">자리를 지키는 것과 영향력을 키우는 것은 같은 방향이 아닐 수 있다.</span></p>
+
+      <div class="source">출처: Music Business Worldwide · Quartr · Spotify Newsroom (2025–2026)</div>
+    </div>
+  </div>
+</article>
+
+<!-- ARTICLE 3: AI 브리핑 -->
+<article class="article">
+  <div class="article-tag">AI · 테크 브리핑 · 2026년 5월 14일</div>
+  <h2 class="article-title">성장은 AI가, 일자리는 AI가 — 같은 날의 두 기사</h2>
+  <p class="article-summary">
+    AI가 기업 실적을 끌어올리는 동시에 고용을 줄이는 구조가 같은 날 뉴스에 나란히 실렸다. Google은 다음 주 I/O에서 새 Gemini 모델을 발표할 예정이고, OpenAI는 ChatGPT 안에 광고 플랫폼을 공식 출시했다. 판이 바뀌는 속도가 뉴스 주기보다 빠르다.
+  </p>
+  <div class="btn-wrap">
+    <button class="toggle-btn" onclick="toggle(this)">더 보기 ↓</button>
+  </div>
+  <div class="article-detail">
+    <div class="detail-inner">
+
+      <div class="news-item">
+        <span class="badge">기업·시장</span>
+        <span class="news-title">Cisco, AI 수혜로 매출 12% 성장 — 동시에 4,000명 감원</span>
+        <p><strong>무슨 일인가</strong> Cisco가 2026년 3분기 실적을 발표했다. 매출은 전년 대비 12% 증가한 158억 달러, 순이익도 크게 늘었다. 같은 발표에서 4,000명 미만 감원 계획을 공개했다. AI 인프라 수요 급증이 성장을 이끌었고, 같은 이유로 기존 인력 구조가 재편된다.</p>
+        <p><strong>왜 중요한가</strong> 성장과 감원이 같은 원인에서 동시에 나오는 구조가 선명해졌다. AI가 효율을 높일수록 특정 직군의 필요성이 줄어드는 흐름은 Cisco만의 이야기가 아니다.</p>
+        <p><strong>인사이트</strong> "AI 시대에서 이기는 기업은 집중력과 규율을 갖춘 기업"이라는 Cisco CEO의 발언은 실적 발표이자 시장 선언이다. 기술 수요는 늘고 인력은 줄어드는 이 방정식이 산업 전반으로 번질 가능성이 높다.</p>
+      </div>
+
+      <div class="news-item">
+        <span class="badge">모델·플랫폼</span>
+        <span class="news-title">Google, 다음 주 I/O에서 Gemini 신모델 발표 예정</span>
+        <p><strong>무슨 일인가</strong> Google이 다음 주 I/O 개발자 행사에서 새로운 Gemini 모델을 공개할 예정이다. 성능은 GPT-5.5 수준으로, 이미 Android 전반에 Gemini를 기본 AI 레이어로 배치하는 작업이 진행 중이다.</p>
+        <p><strong>왜 중요한가</strong> AI가 앱 하나가 아니라 OS 기본값이 되는 구조 변화가 가속화되고 있다. 스마트폰, 크롬, 노트북, 자동차까지 Gemini를 중심으로 묶는 전략이다. Apple의 AI 재편 전에 선점하려는 의도가 읽힌다.</p>
+        <p><strong>인사이트</strong> 모델 경쟁이 성능 벤치마크에서 플랫폼 점유로 무게 중심을 옮기고 있다. 더 좋은 모델보다 더 많이 쓰이는 모델이 이긴다는 논리가 본격화되는 국면이다.</p>
+      </div>
+
+      <div class="news-item">
+        <span class="badge">비즈니스</span>
+        <span class="news-title">OpenAI, ChatGPT 광고 플랫폼 공식 출시 — 2030년 목표 $1,000억</span>
+        <p><strong>무슨 일인가</strong> OpenAI가 광고주가 직접 ChatGPT 안에서 캠페인을 만들고 운영할 수 있는 자체 광고 플랫폼을 출시했다. CPC·CPM 방식 모두 지원하며, Dentsu, Publicis, WPP 등 주요 광고 대행사와 이미 통합됐다. OpenAI는 광고가 ChatGPT의 자연 답변에 영향을 주지 않는다고 밝혔다.</p>
+        <p><strong>왜 중요한가</strong> OpenAI가 모델 판매에서 광고 수익으로 수익 구조를 다변화하는 신호다. AI 검색이 광고 시장에 구글과 같은 방식으로 진입한다는 뜻이기도 하다.</p>
+        <p><strong>인사이트</strong> 무료 사용자가 많아질수록 광고 기반 수익 모델은 매력적이다. 그러나 광고와 신뢰 기반 답변을 동시에 유지할 수 있는가는 아직 열린 질문이다.</p>
+      </div>
+
+      <div class="news-item">
+        <span class="badge">규제·안보</span>
+        <span class="news-title">5개국 사이버 기관, 에이전트 AI 보안 가이드 공동 발표</span>
+        <p><strong>무슨 일인가</strong> 미국, 영국, 호주, 캐나다, 뉴질랜드 5개국 사이버보안 기관이 '에이전트 AI 서비스의 신중한 도입'이라는 공동 가이드를 발표했다. 권한 과다 부여, 설계 취약점, 예측 불가한 행동 등 5가지 위험 범주를 식별하고 대응 원칙을 제시했다.</p>
+        <p><strong>왜 중요한가</strong> 단일 국가가 아닌 5개국이 동시에 에이전트 AI 보안 기준을 내놓은 건 처음이다. 에이전트 AI가 인프라 수준의 규제 대상으로 진입하고 있다는 의미다.</p>
+        <p><strong>인사이트</strong> 에이전트 AI를 도입하는 기업이 이제 단순한 기술 리스크가 아니라 규제 리스크도 함께 안게 됐다. 도입 속도만큼 거버넌스 설계 속도를 올려야 하는 국면이다.</p>
+      </div>
+
+      <div class="source">출처: CNBC · TechCrunch · LLM News Today · Air Street Press · CAISI (2026.05.14)</div>
+    </div>
+  </div>
+</article>
+
+<!-- ARTICLE 4: 오늘의 신제품 -->
+<article class="article">
+  <div class="article-tag">오늘의 신제품 · ProductHunt · 2026년 5월 14일</div>
+  <h2 class="article-title">오늘 나온 것들</h2>
+  <p class="article-summary">
+    오늘의 신제품은 외부 기여자 choi님(@choi.openai)이 ProductHunt에서 선별한 제품을 소개합니다.
+  </p>
+  <div class="btn-wrap">
+    <button class="toggle-btn" onclick="toggle(this)">더 보기 ↓</button>
+  </div>
+  <div class="article-detail">
+    <div class="detail-inner">
+
+      <div class="product-item">
+        <div class="product-name">Memoket Gem</div>
+        <p>하루 종일 대화를 기억하는 AI 웨어러블. 회의, 전화, 커피 채팅의 내용을 실시간으로 캡처해 요약하고, 업무 도구 안에서 후속 작업과 노트를 자동 생성한다.</p>
+      </div>
+
+      <div class="product-item">
+        <div class="product-name">Blaze 2.0</div>
+        <p>SMB를 위한 AI 마케터. 비즈니스 분석에 기반해 콘텐츠 전략을 수립하고 실행까지 자동화한다. 마케팅 업무 전반을 줄이고 시간을 돌려준다.</p>
+      </div>
+
+      <div class="product-item">
+        <div class="product-name">Frontdesk AI</div>
+        <p>웹사이트 URL 하나를 입력하면 필요한 AI 에이전트를 자동 구성해 고객 응대를 처리하는 AI COO. CRM부터 웹사이트 빌더까지 통합 솔루션을 제공한다.</p>
+      </div>
+
+      <div class="product-item">
+        <div class="product-name">Liminary</div>
+        <p>저장된 지식을 AI의 작업 기억으로 변환해주는 도구. 작문, 회의, 리서치 중 필요한 맥락을 자동으로 AI에 제공해 반복 설명 없이 작업을 이어간다.</p>
+      </div>
+
+      <div class="source">출처: ProductHunt 2026년 5월 14일 · 큐레이션: @choi.openai</div>
+    </div>
+  </div>
+</article>
+
+<!-- 에디터 한마디 -->
+<div class="editor">
+  <p>&#8220;무엇을 쥐고 있는가보다, 무엇을 향해 가고 있는가가 사람과 회사를 가른다.&#8221;</p>
+</div>
+
+<div class="footer">
+  <p>오늘의 밑줄 · Threads @oneday.underline · jucheolkim.github.io</p>
+</div>
+
+<script>
+function toggle(btn) {
+  const detail = btn.closest('.article').querySelector('.article-detail');
+  const isOpen = detail.classList.contains('open');
+  detail.classList.toggle('open');
+  btn.textContent = isOpen ? '더 보기 ↓' : '접기 ↑';
+}
+</script>
+</body>
+</html>
