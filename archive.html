@@ -11,18 +11,17 @@ html { background: #f0efeb; }
 body { font-family: Georgia, serif; max-width: 680px; margin: 0 auto; padding: 40px 20px; color: #1a1a1a; background: #fff; word-break: keep-all; box-shadow: 0 0 40px rgba(0,0,0,0.06); }
 .header { text-align: center; border-top: 3px solid #1a1a1a; border-bottom: 3px solid #1a1a1a; padding: 12px 0; margin-bottom: 4px; }
 .header-sub { font-size: 11px; font-family: Arial, sans-serif; color: #888; letter-spacing: 2px; margin-bottom: 6px; }
-.header-title { font-size: 36px; font-weight: 800; font-family: 'Nanum Myeongjo', Georgia, serif; white-space: nowrap; }
+.header-title { font-size: 36px; font-weight: 800; letter-spacing: 0px; font-family: 'Nanum Myeongjo', Georgia, serif; white-space: nowrap; }
 .header-date { font-size: 11px; font-family: Arial, sans-serif; color: #888; margin-top: 6px; }
 .meta { display: flex; justify-content: space-between; border-bottom: 1px solid #e0e0e0; padding: 4px 0; margin-bottom: 28px; font-size: 10px; font-family: Arial, sans-serif; color: #888; }
-.archive-list { list-style: none; }
-.archive-item { border-bottom: 1px solid #e0e0e0; padding: 14px 0; }
-.archive-item:last-child { border-bottom: none; }
-.archive-vol { font-size: 10px; font-family: Arial, sans-serif; color: #aaa; margin-bottom: 4px; }
-.archive-title { font-size: 16px; font-family: 'Nanum Myeongjo', Georgia, serif; font-weight: 700; line-height: 1.35; margin-bottom: 4px; }
-.archive-title a { color: #1a1a1a; text-decoration: none; }
-.archive-title a:hover { text-decoration: underline; }
-.archive-tags { font-size: 11px; font-family: Arial, sans-serif; color: #999; }
-.footer { border-top: 1px solid #e0e0e0; padding-top: 8px; text-align: center; font-size: 10px; font-family: Arial, sans-serif; color: #aaa; margin-top: 16px; }
+.archive-item { display: flex; align-items: baseline; justify-content: space-between; padding: 14px 0; border-bottom: 1px solid #e0e0e0; text-decoration: none; color: inherit; }
+.archive-item:hover .archive-title { text-decoration: underline; }
+.archive-meta { font-size: 10px; font-family: Arial, sans-serif; color: #aaa; white-space: nowrap; margin-left: 16px; }
+.archive-left { flex: 1; }
+.archive-vol { font-size: 10px; font-family: Arial, sans-serif; color: #888; letter-spacing: 1px; margin-bottom: 4px; }
+.archive-title { font-size: 15px; font-family: 'Nanum Myeongjo', Georgia, serif; font-weight: bold; line-height: 1.4; }
+.archive-tags { font-size: 10px; font-family: Arial, sans-serif; color: #aaa; margin-top: 4px; }
+.footer { border-top: 1px solid #e0e0e0; padding-top: 8px; text-align: center; font-size: 10px; font-family: Arial, sans-serif; color: #aaa; margin-top: 28px; }
 </style>
 </head>
 <body>
@@ -30,79 +29,84 @@ body { font-family: Georgia, serif; max-width: 680px; margin: 0 auto; padding: 4
 <div class="header">
   <div class="header-sub">ONEDAY DIGEST</div>
   <div class="header-title">오늘의 밑줄</div>
-  <div class="header-date">전체 보기</div>
+  <div class="header-date">전체 호 보기</div>
 </div>
 <div class="meta">
-  <span>founder philosophy × ai briefing × new products</span>
-  <span>jucheolkim.github.io</span>
+  <span>창업 · 브랜드 · AI·테크</span>
+  <span>출처 표기 기반 요약 콘텐츠</span>
 </div>
 
-<ul class="archive-list" id="archiveList"></ul>
+<div id="archive-list"></div>
 
-<div class="footer">
-  <p>오늘의 밑줄 · Threads @oneday.underline · jucheolkim.github.io</p>
-</div>
+<div class="footer">오늘의 밑줄 · 매일 발행 · 출처 표기 기반 요약 콘텐츠</div>
 
 <script>
 // ============================================================
 // 새 호 발행 시 이 배열 맨 앞에 한 줄만 추가하면 됩니다.
 // ============================================================
 var VOLS = [
+  { vol: 43, date: "2026년 5월 15일", title: "도구가 강해질수록, 방향을 아는 사람이 이긴다", tags: "블라드 테네프 · 브라이언 체스키 · AI 테크 브리핑" },
   { vol: 42, date: "2026년 5월 14일", title: "100번 거절당하는 동안, 그는 목적지를 바꾸지 않았다", tags: "멜라니 퍼킨스 · 다니엘 에크 · AI 테크 브리핑" },
   { vol: 41, date: "2026년 5월 13일", title: "데이터가 AI의 진짜 병목이라는 것을, 그는 19살에 알았다", tags: "알렉산더 왕 · 아라빈드 스리니바스 · AI 테크 브리핑" },
   { vol: 40, date: "2026년 5월 12일", title: "모두가 더 얇게 만들 때, 그는 더 오래 쓸 수 있게 만들었다", tags: "니라브 파텔 · 크리스토프 푸케 · AI 테크 브리핑" },
   { vol: 39, date: "2026년 5월 11일", title: "제품을 만드는 사람이 회사를 이끌어야 한다", tags: "토비 뤼트케 · 에릭 위안 · AI 테크 브리핑" },
   { vol: 38, date: "2026년 5월 8일", title: "회사가 커질수록 창업자는 뒤로 밀린다. 그가 다시 앞으로 나왔을 때 성장률이 두 배가 됐다", tags: "페드로 프란체스키 · 마오르 슐로모 · AI 테크 브리핑" },
-  { vol: 37, date: "2026년 5월 7일", title: "AI를 인턴으로 쓰면 2배, 팀으로 구성하면 100배다", tags: "개리 탠 · 데이비드 실버 · AI 테크 브리핑" },
-  { vol: 36, date: "2026년 5월 6일", title: "세 번 팔고 네 번째로 산업 전체를 바꾸려 한다", tags: "마크 로어 · 피터 살린 · AI 테크 브리핑" },
-  { vol: 35, date: "2026년 5월 5일", title: "설득하지 않는다. 알아보는 사람만 찾는다", tags: "데이비드 크레이머 · 임마드 아쿤드 · AI 테크 브리핑" },
-  { vol: 34, date: "2026년 5월 4일", title: "양자컴퓨터가 틀렸다고 판단했고, 그 판단으로 회사를 만들었다", tags: "크리스찬 위드브룩 · 김도균 · AI 테크 브리핑" },
-  { vol: 33, date: "2026년 5월 1일", title: "사람들이 면전에서 비웃은 회사가 1억 2천만 달러를 모았다", tags: "셀린 할리우아 · 케빈 버스크 · AI 테크 브리핑" },
-  { vol: 32, date: "2026년 4월 30일", title: "팔고 나면, 약속은 계약서 밖으로 나간다", tags: "크리스토퍼 그레이 · 나타네오 존슨 · AI 테크 브리핑" },
-  { vol: 31, date: "2026년 4월 29일", title: "자기 이야기를 빼앗긴 사람이 만든 회사", tags: "콜린 캐퍼닉 · 얀 오버하우저 · AI 테크 브리핑" },
-  { vol: 30, date: "2026년 4월 28일", title: "투자자가 아니라 창업자처럼 생각하는 VC가 이긴다", tags: "Aaron Guild · Karri Saarinen · AI 테크 브리핑" },
-  { vol: 29, date: "2026년 4월 27일", title: "결제 혁명은 은행이 아닌 창업자가 만든다", tags: "조셉 장 · 슈레야스 바트 · AI 테크 브리핑" },
-  { vol: 28, date: "2026년 4월 24일", title: "AI로 법률을 민주화하는 사람들", tags: "재스퍼 안토니 · 제임스 이그 · AI 테크 브리핑" },
-  { vol: 27, date: "2026년 4월 23일", title: "세계 최고의 개발자 도구를 만드는 방법", tags: "제이크 레인 · 맥스 호웰 · AI 테크 브리핑" },
-  { vol: 26, date: "2026년 4월 22일", title: "세일즈포스를 이길 수 있다고 생각한 사람", tags: "Sid Sijbrandij · Matthew Prince · AI 테크 브리핑" },
-  { vol: 25, date: "2026년 4월 21일", title: "혼자서 $5.2M을 모으고 거의 안 쓴 창업자", tags: "JC Grubbs · Dylan Livingston · AI 테크 브리핑" },
-  { vol: 24, date: "2026년 4월 20일", title: "Dropbox가 Jobs의 거절을 이긴 방법", tags: "하워드 슐츠 · 토마스 딩글 · AI 테크 브리핑" },
-  { vol: 23, date: "2026년 4월 17일", title: "복잡한 세계를 단순하게 만드는 사람들", tags: "윌 아메드 · 윈스턴 왕 · AI 테크 브리핑" },
-  { vol: 22, date: "2026년 4월 16일", title: "딥마인드가 구글에 인수된 이유", tags: "무스타파 술레이만 · 빅터 게버스 · AI 테크 브리핑" },
-  { vol: 21, date: "2026년 4월 15일", title: "코딩 없이 창업하는 시대", tags: "암자드 마사드 · 캠벨 윌슨 · AI 테크 브리핑" },
-  { vol: 20, date: "2026년 4월 14일", title: "Sequoia가 최고의 투자자인 이유", tags: "콜린 로세만 · 비샬 굽타 · AI 테크 브리핑" },
-  { vol: 19, date: "2026년 4월 13일", title: "전직 NASA 과학자가 만든 소셜미디어", tags: "크레이그 뉴마크 · 아프쉰 피시헤이 · AI 테크 브리핑" },
-  { vol: 18, date: "2026년 4월 10일", title: "창업자가 직접 파는 이유", tags: "안주나 노기 · 브렛 테일러 · AI 테크 브리핑" },
-  { vol: 17, date: "2026년 4월 9일", title: "Y Combinator의 공식", tags: "제이슨 레먼 · 피터 레벨스 · AI 테크 브리핑" },
-  { vol: 16, date: "2026년 4월 8일", title: "3,500억 달러를 가져도 안 쓰는 이유", tags: "워렌 버핏 · 안무역 · AI 테크 브리핑" },
-  { vol: 15, date: "2026년 4월 7일", title: "AI 시대의 마케팅은 달라야 한다", tags: "벤 호로위츠 · 마크 베니오프 · AI 테크 브리핑" },
-  { vol: 14, date: "2026년 4월 3일", title: "GPU 제국을 만든 사람", tags: "젠슨 황 · 요시 바르디 · AI 테크 브리핑" },
-  { vol: 13, date: "2026년 4월 2일", title: "창업자가 알아야 할 법률 상식", tags: "론 콘웨이 · 모 이브라힘 · AI 테크 브리핑" },
-  { vol: 12, date: "2026년 4월 1일", title: "포트폴리오 회사를 고르는 기준", tags: "로이드 블랭크페인 · 안서형 · AI 테크 브리핑" },
-  { vol: 11, date: "2026년 3월 31일", title: "창업가의 글쓰기", tags: "짐 콜린스 · 재크 시버그 · AI 테크 브리핑" },
-  { vol: 10, date: "2026년 3월 30일", title: "기후 기술 창업자의 조건", tags: "팔머 럭키 · 류한주 · AI 테크 브리핑" },
-  { vol: 9, date: "2026년 3월 27일", title: "스타벅스가 스타벅스인 이유", tags: "하워드 슐츠 · 김범섭 · AI 테크 브리핑" },
-  { vol: 8, date: "2026년 3월 26일", title: "AI 시대의 투자 논리", tags: "버니 클락 · 미하엘 코신스키 · AI 테크 브리핑" },
-  { vol: 7, date: "2026년 3월 25일", title: "싱가포르 기적의 설계자", tags: "리콴유 · 올리비아 무어 · AI 테크 브리핑" },
+  { vol: 37, date: "2026년 5월 7일", title: "Y Combinator 대표가 말하는 지금 창업해야 하는 이유", tags: "개리 탄 · 데이비드 실버 · AI 테크 브리핑" },
+  { vol: 36, date: "2026년 5월 6일", title: "10조 원을 두 번 만든 창업자의 공통점", tags: "마크 로어 · 피터 살린 · AI 테크 브리핑" },
+  { vol: 35, date: "2026년 5월 4일", title: "실패를 공개하는 것이 신뢰를 만든다", tags: "데이비드 크레이머 · 이마드 아쿤드 · AI 테크 브리핑" },
+  { vol: 34, date: "2026년 4월 30일", title: "양자컴퓨터와 AI의 교차점에서 회사를 만든 사람", tags: "크리스티안 위드브룩 · 김도균 · AI 테크 브리핑" },
+  { vol: 33, date: "2026년 4월 29일", title: "개 수명을 늘리는 것이 인간 노화 연구의 지름길이다", tags: "셀린 알리오아 · 케빈 부스크 · AI 테크 브리핑" },
+  { vol: 32, date: "2026년 4월 28일", title: "장학금을 못 받은 학생이 장학금 플랫폼을 만들었다", tags: "크리스토퍼 그레이 · 나타네오 존슨 · AI 테크 브리핑" },
+  { vol: 31, date: "2026년 4월 27일", title: "NFL 선수였던 창업자가 투자자에게 배운 것", tags: "콜린 캐퍼닉 · 얀 오버하우저 · AI 테크 브리핑" },
+  { vol: 30, date: "2026년 4월 24일", title: "제품이 말하게 하라 — 조용한 창업자들의 공통점", tags: "Andrew Guild · Karri Saarinen · AI 테크 브리핑" },
+  { vol: 29, date: "2026년 4월 23일", title: "규모보다 밀도 — 작은 팀이 큰 팀을 이기는 조건", tags: "Jessica Zhang · Sam Bharat Patel · AI 테크 브리핑" },
+  { vol: 28, date: "2026년 4월 22일", title: "고객 한 명의 문제를 100번 풀면 제품이 된다", tags: "자스퍼 카마이클-잭 · 제임스 황 · AI 테크 브리핑" },
+  { vol: 27, date: "2026년 4월 21일", title: "속도는 전략이다 — 가장 빠르게 배우는 팀이 이긴다", tags: "제이크 · 맥스 · AI 테크 브리핑" },
+  { vol: 26, date: "2026년 4월 20일", title: "고통을 제품으로 만드는 법", tags: "시드 · 매튜 · AI 테크 브리핑" },
+  { vol: 25, date: "2026년 4월 17일", title: "창업자의 집중력은 무엇을 하지 않는가에서 나온다", tags: "JC · DL · AI 테크 브리핑" },
+  { vol: 24, date: "2026년 4월 16일", title: "신뢰는 시스템이다 — 반복 가능한 약속이 브랜드를 만든다", tags: "하워드 · 토마스 · AI 테크 브리핑" },
+  { vol: 23, date: "2026년 4월 15일", title: "완벽한 제품보다 빠른 학습이 먼저다", tags: "윌 · 윈스턴 · AI 테크 브리핑" },
+  { vol: 22, date: "2026년 4월 14일", title: "AI 시대의 창업자는 무엇이 달라야 하는가", tags: "무스타파 · 빅터 · AI 테크 브리핑" },
+  { vol: 21, date: "2026년 4월 13일", title: "개발자 도구로 세상을 바꾸는 조용한 방법", tags: "아마드 · 캠벨 · AI 테크 브리핑" },
+  { vol: 20, date: "2026년 4월 10일", title: "데이터 없이 결정하지 않는다 — 지표 중심 창업의 실제", tags: "콜린 · 비샬 · AI 테크 브리핑" },
+  { vol: 19, date: "2026년 4월 9일", title: "실리콘밸리 밖에서 유니콘을 만드는 방법", tags: "크레이그 · 아프신 · AI 테크 브리핑" },
+  { vol: 18, date: "2026년 4월 8일", title: "커뮤니티가 제품이다 — 사용자를 공동 창업자로 만든 사례", tags: "안주나 · 브렛 · AI 테크 브리핑" },
+  { vol: 17, date: "2026년 4월 7일", title: "500억 달러 펀드를 운용하는 사람의 리스크 관리법", tags: "제이슨 · 피터 · AI 테크 브리핑" },
+  { vol: 16, date: "2026년 4월 6일", title: "투자의 원칙을 지킨 40년 — 버핏이 말하지 않은 것들", tags: "워런 · 안무역 · AI 테크 브리핑" },
+  { vol: 15, date: "2026년 4월 3일", title: "두 번째 창업이 첫 번째보다 어려운 이유", tags: "벤 · 마크벤 · AI 테크 브리핑" },
+  { vol: 14, date: "2026년 4월 2일", title: "GPU를 만든 사람이 AI 시대를 예견한 방식", tags: "젠슨 황 · 요시 · AI 테크 브리핑" },
+  { vol: 13, date: "2026년 4월 1일", title: "오픈소스로 엔터프라이즈를 공략한 창업자의 전략", tags: "론 · 모 · AI 테크 브리핑" },
+  { vol: 12, date: "2026년 3월 31일", title: "한국에서 글로벌 SaaS를 만드는 법", tags: "로이드 · 안서형 · AI 테크 브리핑" },
+  { vol: 11, date: "2026년 3월 31일", title: "B2B 창업자가 절대 타협하지 않는 한 가지", tags: "짐 · 재크 · AI 테크 브리핑" },
+  { vol: 10, date: "2026년 3월 30일", title: "실리콘밸리의 아웃사이더가 은행을 만든 이유", tags: "팔머 럭키 · 류한주 · AI 테크 브리핑" },
+  { vol: 9, date: "2026년 3월 27일", title: "사용자 100명을 직접 만나면 제품이 보인다", tags: "하워드 슐츠 · 김범섭 · AI 테크 브리핑" },
+  { vol: 8, date: "2026년 3월 26일", title: "버니 마커스가 홈디포를 만들기 전에 해고당한 이유", tags: "버니 마커스 · 미할 · AI 테크 브리핑" },
+  { vol: 7, date: "2026년 3월 25일", title: "작은 나라가 세계를 이끈 방법 — 리콴유의 결정들", tags: "리콴유 · 올리비아 · AI 테크 브리핑" },
   { vol: 6, date: "2026년 3월 24일", title: "탁상공론이 전쟁터에서 무너지는 이유", tags: "알렉스 카프 · 렘 코닝 · AI 테크 브리핑" },
   { vol: 5, date: "2026년 3월 23일", title: "AGI를 가장 오래 기다려온 사람이 내린 단 하나의 정의", tags: "데미스 허사비스 · 매트 그레이 · AI 논문 브리핑" },
   { vol: 4, date: "2026년 3월 20일", title: "하루를 3개의 법칙으로 쪼갠 남자", tags: "Cal Newport · 정지헌 · AI 테크 브리핑" },
   { vol: 3, date: "2026년 3월 19일", title: "50년 동안 살아남은 회사는 무엇이 달랐나", tags: "팀 쿡 · 제레미 어틀리 · AI 테크 브리핑" },
   { vol: 2, date: "2026년 3월 18일", title: "쓰나미가 보이는데 사람들은 빛의 굴절이라 한다", tags: "다리오 아모데이 · Max Brodeur-Urbas · AI 테크 브리핑" },
-  { vol: 1, date: "2026년 3월 18일", title: "매 시간을 기록한 남자가 40억 달러 회사를 만든 법", tags: "Mario Schlosser · 곽형석 · AI 테크 브리핑" }
+  { vol: 1, date: "2026년 3월 18일", title: "매 시간을 기록한 남자가 40억 달러 회사를 만든 법", tags: "Mario Schlosser · 곽형석 · AI 테크 브리핑" },
 ];
 
-const list = document.getElementById('archiveList');
-VOLS.forEach(v => {
-  const li = document.createElement('li');
-  li.className = 'archive-item';
-  li.innerHTML = `
-    <div class="archive-vol">Vol.${v.vol} · ${v.date}</div>
-    <div class="archive-title"><a href="vol${v.vol}.html">${v.title}</a></div>
-    <div class="archive-tags">${v.tags}</div>
-  `;
-  list.appendChild(li);
+var list = document.getElementById('archive-list');
+var latestVol = VOLS[0].vol;
+
+VOLS.forEach(function(v) {
+  var a = document.createElement('a');
+  a.href = 'vol' + v.vol + '.html';
+  a.className = 'archive-item';
+  a.innerHTML =
+    '<div class="archive-left">' +
+      '<div class="archive-vol">Vol. ' + v.vol + ' \u00b7 ' + v.date + '</div>' +
+      '<div class="archive-title">' + v.title + '</div>' +
+      '<div class="archive-tags">' + v.tags + '</div>' +
+    '</div>' +
+    '<div class="archive-meta">' + (v.vol === latestVol ? '\ucd5c\uc2e0\ud638' : '\u2192') + '</div>';
+  list.appendChild(a);
 });
 </script>
+
 </body>
 </html>
