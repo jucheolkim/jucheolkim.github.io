@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>오늘의 밑줄 · Vol.44</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap');
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { background: #f0efeb; }
+body { font-family: Georgia, serif; max-width: 680px; margin: 0 auto; padding: 40px 20px; color: #1a1a1a; background: #fff; word-break: keep-all; box-shadow: 0 0 40px rgba(0,0,0,0.06); }
+.header { text-align: center; border-top: 3px solid #1a1a1a; border-bottom: 3px solid #1a1a1a; padding: 12px 0; margin-bottom: 4px; }
+.header-sub { font-size: 11px; font-family: Arial, sans-serif; color: #888; letter-spacing: 2px; margin-bottom: 6px; }
+.header-title { font-size: 36px; font-weight: 800; letter-spacing: 0px; font-family: 'Nanum Myeongjo', Georgia, serif; white-space: nowrap; }
+.header-date { font-size: 11px; font-family: Arial, sans-serif; color: #888; margin-top: 6px; }
+.meta { display: flex; justify-content: space-between; border-bottom: 1px solid #e0e0e0; padding: 4px 0; margin-bottom: 28px; font-size: 10px; font-family: Arial, sans-serif; color: #888; }
+.article { margin-bottom: 28px; padding-bottom: 28px; border-bottom: 1px solid #e0e0e0; }
+.article-tag { font-size: 10px; font-family: Arial, sans-serif; color: #888; letter-spacing: 1px; border-top: 2px solid #1a1a1a; padding-top: 8px; margin-bottom: 8px; }
+.article-title { font-size: 24px; font-weight: bold; line-height: 1.3; margin-bottom: 12px; font-family: 'Nanum Myeongjo', Georgia, serif; letter-spacing: -0.5px; }
+.article-summary { font-size: 13px; color: #555; line-height: 1.75; margin-bottom: 14px; }
+.btn-wrap { display: flex; gap: 6px; margin-bottom: 14px; }
+.toggle-btn { font-size: 11px; font-family: Arial, sans-serif; color: #555; background: none; border: 1px solid #ccc; border-radius: 6px; padding: 4px 10px; cursor: pointer; }
+.toggle-btn:hover { background: #f5f5f5; }
+.article-detail { display: none; }
+.article-detail.open { display: block; }
+.detail-inner { border-left: 2px solid #e0e0e0; padding-left: 16px; }
+.section-label { font-size: 10px; font-family: Arial, sans-serif; color: #888; letter-spacing: 1px; margin-bottom: 6px; margin-top: 16px; }
+.detail-inner p { font-size: 13px; color: #555; line-height: 1.75; margin-bottom: 8px; }
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 8px; }
+.box { background: #f5f5f5; border-radius: 8px; padding: 10px 12px; }
+.box-label { font-size: 11px; font-family: Arial, sans-serif; color: #888; margin-bottom: 6px; }
+.box p { font-size: 12px; color: #555; line-height: 1.65; margin-bottom: 6px; }
+.news-item { margin-bottom: 14px; padding-bottom: 14px; border-bottom: 1px solid #e0e0e0; }
+.news-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+.badge { display: inline-block; font-size: 10px; font-family: Arial, sans-serif; background: #f5f5f5; color: #888; padding: 2px 8px; border-radius: 4px; margin-right: 6px; }
+.news-title { font-size: 13px; font-weight: bold; }
+.news-item p { font-size: 12px; color: #555; line-height: 1.7; margin-top: 6px; }
+.source { font-size: 10px; font-family: Arial, sans-serif; color: #aaa; border-top: 1px solid #e0e0e0; padding-top: 8px; margin-top: 16px; }
+.highlight { font-weight: bold; color: #1a1a1a; }
+.insight-p { font-size: 15px !important; color: #333 !important; line-height: 1.85 !important; margin-bottom: 10px !important; }
+.product-name { font-size: 13px; font-weight: bold; color: #1a1a1a; margin-bottom: 4px; }
+.editor { border-top: 2px solid #1a1a1a; padding-top: 10px; margin-bottom: 16px; }
+.editor p { font-size: 16px; color: #1a1a1a; line-height: 1.85; font-style: italic; font-family: 'Nanum Myeongjo', Georgia, serif; font-weight: 800; }
+.footer { border-top: 1px solid #e0e0e0; padding-top: 8px; text-align: center; font-size: 10px; font-family: Arial, sans-serif; color: #aaa; }
+.nav-wrap { display: flex; justify-content: space-between; margin-bottom: 24px; font-size: 11px; font-family: Arial, sans-serif; }
+.nav-wrap a { color: #888; text-decoration: none; }
+.nav-wrap a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-sub">ONEDAY DIGEST</div>
+  <div class="header-title">오늘의 밑줄</div>
+  <div class="header-date">2026년 5월 18일 · Vol. 44</div>
+</div>
+<div class="meta">
+  <span>창업 철학 · AI·테크 브리핑 · 오늘의 신제품</span>
+  <span>출처 표기 기반 요약 콘텐츠</span>
+</div>
+
+<div class="nav-wrap">
+  <a href="vol43.html">← 이전 호</a>
+  <a href="archive.html">전체 보기</a>
+</div>
+
+<!-- Article 1: Hamid Moghadam -->
+<div class="article">
+  <div class="article-tag">창업 철학 · Hamid Moghadam · Prologis</div>
+  <div class="article-title">42년 동안 항상 옳았던 건 아니었다. 단지 남보다 먼저 틀렸을 뿐이다.</div>
+  <div class="article-summary">하미드 모가담은 1983년 샌프란시스코에서 물류 부동산 회사를 공동창업했다. 42년 후, 그 회사 Prologis는 S&P 100 기업이 됐다. 세계 GDP의 약 3%가 그의 창고와 물류 시설을 통해 흐른다. 비결은 단순했다. 남보다 먼저 고객의 다음 문제를 알아채는 것.</div>
+  <div class="btn-wrap">
+    <button class="toggle-btn" onclick="var d=document.getElementById('d1'),b=this;d.classList.toggle('open');b.textContent=d.classList.contains('open')?'접기 ▲':'더 보기 ▼'">더 보기 ▼</button>
+    <button class="toggle-btn">🎧 오디오로 듣기 (준비 중)</button>
+  </div>
+  <div id="d1" class="article-detail">
+    <div class="detail-inner">
+      <div class="section-label">이 사람은 누구인가</div>
+      <p>하미드 모가담은 이란 출신으로 MIT에서 공학, 스탠퍼드 GSB에서 MBA를 마쳤다. 1983년 AMB Property Corporation을 공동창업하고, 1997년 상장, 2011년 최대 경쟁사 ProLogis와 합병해 오늘의 Prologis를 만들었다. 42년간 CEO를 역임하며 기업가치 $1,120억, 20개국 6,000개 이상 부동산 포트폴리오를 구축했다. 2026년 초 경영 일선에서 물러나 회장직을 맡고 있다. HBR 선정 세계 최고 CEO 17위.</p>
+      <div class="section-label">주요 활동과 이력</div>
+      <p>AMB 창업(1983) → NYSE 상장(1997) → ProLogis 합병, Prologis 출범(2011) → e커머스 물류 수요 선제 대응 → 데이터센터용 전력 인프라 확장 → 2026년 회장 전환. 그의 철학은 일관됐다. 고객에게 직접 듣고, 포지셔닝하고, 실험하고, 투자한다. 아마존이 물류를 재편하기 전 e커머스 창고 수요를 미리 쌓았고, AI 인프라 붐 전 데이터센터 전력 수요에 먼저 베팅했다. 두 번 모두 "너무 이르다"는 말을 들었다.</p>
+      <div class="section-label">성공한 것과 실패한 것</div>
+      <div class="grid">
+        <div class="box">
+          <div class="box-label">성공 / 확신</div>
+          <p>e커머스 수요를 10년 먼저 내다봤다. 1990년대 후반부터 고객들이 입지보다 속도를 원한다는 신호를 읽었다. 2000년대 초 도심 근거리 물류 창고를 쌓기 시작했고, 아마존 프라임이 등장했을 때 이미 준비가 돼 있었다.</p>
+          <p>경쟁사와 합병이 아닌 통합을 선택했다. 싸우는 대신 같이 커지는 구조를 설계했다. 합병 후 중복을 줄이고 글로벌 플랫폼으로 전환하는 데 3년을 투자했다.</p>
+        </div>
+        <div class="box">
+          <div class="box-label">실패 / 한계</div>
+          <p>오피스와 리테일 자산에도 한때 투자했다. 수요가 구조적으로 달랐다. 일찍 정리했지만 집중하는 데 시간이 걸렸다. 이후 물류 부동산 하나에만 집중하는 전략으로 전환했다.</p>
+          <p>글로벌 확장 과정에서 일부 시장 진입 타이밍을 놓쳤다. 규제와 파트너십 구조를 과소평가한 지역이 있었다. 지금은 시장마다 현지 전문가를 먼저 세운다.</p>
+        </div>
+      </div>
+      <div class="section-label">인사이트</div>
+      <p class="insight-p">모가담이 42년을 버틴 건 정확해서가 아니었다. <span class="highlight">변화를 먼저 틀리고, 그 경험을 자산으로 바꾸는 속도</span>가 경쟁자보다 빨랐기 때문이다. 그는 "최대의 경쟁 우위는 변화를 예측하는 능력"이라고 했다. 예측이 아니라 먼저 질문하는 습관이다.</p>
+      <p class="insight-p">그의 플레이북은 4단계다. 고객 말 듣기 → 포지셔닝 → 실험 → 투자. <span class="highlight">순서가 바뀌면 작동하지 않는다.</span> 확신 없이 투자하면 트렌드를 따라가게 되고, 포지셔닝 없이 실험하면 방향이 없어진다. 듣는 것이 첫 번째다.</p>
+      <p class="insight-p">그는 경쟁사를 인수하거나 무너뜨리는 대신 합병을 택했다. 파이를 두고 싸우지 않고, 파이 자체를 키우는 데 에너지를 썼다. 부동산업에서 42년이 가능했던 구조적 이유다.</p>
+      <div class="source">출처: Harvard Business Review "The Founder and CEO of Prologis on Staying Ahead of Disruptive Change" (2026년 1~2월호) · Fortune CEO 인터뷰 (2025)</div>
+    </div>
+  </div>
+</div>
+
+<!-- Article 2: Richard Socher -->
+<div class="article">
+  <div class="article-tag">창업 철학 · Richard Socher · Recursive Superintelligence · You.com</div>
+  <div class="article-title">논문이 줄줄이 거절당했다. 지금 그 방법론은 모든 AI 모델의 기반이다.</div>
+  <div class="article-summary">리처드 소처는 2010년 스탠퍼드에서 신경망으로 자연어 처리를 연구했다. 당시 학계는 신경망에 적대적이었고 논문 대부분이 리젝됐다. 지금 그의 연구는 23만 건 이상 인용됐다. 그리고 올해, AI가 스스로를 개선하는 시스템을 만들기 위해 $6.5억을 조달했다.</div>
+  <div class="btn-wrap">
+    <button class="toggle-btn" onclick="var d=document.getElementById('d2'),b=this;d.classList.toggle('open');b.textContent=d.classList.contains('open')?'접기 ▲':'더 보기 ▼'">더 보기 ▼</button>
+    <button class="toggle-btn">🎧 오디오로 듣기 (준비 중)</button>
+  </div>
+  <div id="d2" class="article-detail">
+    <div class="detail-inner">
+      <div class="section-label">이 사람은 누구인가</div>
+      <p>리처드 소처는 독일 출신 AI 연구자·연쇄창업자다. 스탠퍼드 CS 박사 출신으로, 자연어 처리(NLP)에 신경망을 도입한 선구자로 꼽힌다. 워드 벡터·문맥 벡터·프롬프트 엔지니어링을 사실상 발명한 연구자다. AI 스타트업 MetaMind를 창업해 Salesforce에 매각(2016), 이후 Salesforce 수석 과학자 역임. You.com(AI 검색 엔진)을 공동창업해 LLM을 검색에 처음 통합했다. 2026년 5월 Recursive Superintelligence를 스텔스에서 공개하며 $6.5억 조달.</p>
+      <div class="section-label">주요 활동과 이력</div>
+      <p>스탠퍼드 박사(2014) → MetaMind 창업 → Salesforce 인수·수석 과학자 → You.com 공동창업(2020, LLM 최초 검색 통합) → AIX Ventures 설립 → Recursive Superintelligence 창업·공개(2026). Recursive의 목표는 AI가 스스로 약점을 찾아 개선하는 재귀적 자기 개선 시스템이다. Peter Norvig, Tim Rocktäschel(전 DeepMind) 등 최정상 연구자들이 합류했다. 소처는 이를 "AI가 AI를 연구하는 마지막 단계"라고 부른다.</p>
+      <div class="section-label">성공한 것과 실패한 것</div>
+      <div class="grid">
+        <div class="box">
+          <div class="box-label">성공 / 확신</div>
+          <p>학계가 신경망을 외면할 때 혼자 밀었다. 트렌드를 따르지 않고 원칙을 따른 결과, 분야 전체가 그 방향으로 전환됐다. 인용 23만 건이 그 결과다.</p>
+          <p>You.com은 OpenAI가 ChatGPT를 내놓기 전에 이미 LLM을 검색에 연결했다. 시장이 생기기 전에 먼저 만든 제품이었다.</p>
+        </div>
+        <div class="box">
+          <div class="box-label">실패 / 한계</div>
+          <p>You.com은 Google·Bing에 비해 브랜드 인지도와 유통 경쟁에서 밀렸다. 기술 우위만으로는 시장 점유를 가져오기 어렵다는 현실을 경험했다.</p>
+          <p>Recursive는 아직 제품이 없는 연구 단계다. 소처 본인도 "제품은 분기 단위로 나올 것"이라고 했지만, 초지능 연구는 불확실성이 크다. 자금 소진 속도와 연구 진척이 맞지 않을 리스크가 있다.</p>
+        </div>
+      </div>
+      <div class="section-label">인사이트</div>
+      <p class="insight-p">소처가 반복적으로 강조하는 건 "구성적 낙관주의(constructive optimism)"다. <span class="highlight">기술이 문제를 만드는 게 아니라, 기술을 올바르게 적용하는 사람이 문제를 푼다</span>는 믿음이다. AI 안전성 논쟁에서도 그는 "여러 개의 초지능이 서로 경쟁하면 오히려 리스크가 0에 수렴한다"는 역설적 주장을 편다.</p>
+      <p class="insight-p">그의 경력 패턴은 일관된다. 아무도 가지 않는 방향에서 출발하고, 필드가 뒤따라온다. <span class="highlight">선도하는 연구자의 가장 큰 자산은 방향이 틀렸을 때도 계속할 수 있는 확신의 근거</span>다. 소처에게 그 근거는 항상 원칙이었다.</p>
+      <p class="insight-p">그는 "neolab(연구 우선 AI 스타트업)"이라는 꼬리표를 거부한다. 연구만 하는 회사가 아니라 사람들이 실제로 사용하는 제품을 만드는 회사가 되고 싶다고 했다. Recursive의 다음 질문은 기술이 아니라 제품이다.</p>
+      <div class="source">출처: TechCrunch "What happens when AI starts building itself?" (2026.05.14) · Thought Economics 인터뷰 (2026.03.27)</div>
+    </div>
+  </div>
+</div>
+
+<!-- Article 3: AI 브리핑 -->
+<div class="article">
+  <div class="article-tag">AI · 테크 브리핑 · 2026년 5월 18일</div>
+  <div class="article-title">Google I/O 전야, AI는 기기를 바꾸고 기업을 재편한다</div>
+  <div class="article-summary">Google I/O를 이틀 앞두고 Gemini 4.0과 새 OS 윤곽이 드러났다. Anthropic은 PwC와 손잡고 전문직 업무를 재설계하기 시작했다. OpenAI는 앱 없는 AI 기기를 구상 중이다. AI가 소프트웨어를 넘어 하드웨어와 조직 구조까지 바꾸는 주간이었다.</div>
+  <div class="btn-wrap">
+    <button class="toggle-btn" onclick="var d=document.getElementById('d3'),b=this;d.classList.toggle('open');b.textContent=d.classList.contains('open')?'접기 ▲':'더 보기 ▼'">더 보기 ▼</button>
+  </div>
+  <div id="d3" class="article-detail">
+    <div class="detail-inner">
+
+      <div class="news-item">
+        <div><span class="badge">Google</span><span class="news-title">Google I/O 2026 — Gemini 4.0·Aluminium OS 윤곽 공개</span></div>
+        <p><strong>무슨 일인가</strong> 5월 20일 Google I/O를 앞두고 사전 유출이 이어졌다. Gemini 4.0은 멀티모달 추론과 에이전트 신뢰성이 대폭 개선될 예정이며, Gemini Omni라는 AI 영상 생성 시스템도 함께 공개될 것으로 보인다. Google이 ChromeOS를 대체하는 Android 기반 새 OS 'Aluminium OS'도 올해 출시가 확인됐다.</p>
+        <p><strong>왜 중요한가</strong> Gemini 4.0이 현재 Claude나 GPT-5.5 수준을 따라잡는다면, 기업용 AI 시장의 경쟁 구도가 다시 흔들린다. Aluminium OS는 ChromeOS 사용자 기반 전체를 Android 생태계로 흡수하는 플랫폼 전략이다.</p>
+        <p><strong>인사이트</strong> Google은 이번 I/O를 모델 발표가 아닌 플랫폼 통합의 무대로 쓰고 있다. AI 전쟁의 전선이 모델 벤치마크에서 OS·기기·생태계로 이동 중이다.</p>
+      </div>
+
+      <div class="news-item">
+        <div><span class="badge">Anthropic</span><span class="news-title">Anthropic·PwC 전략 동맹 — 30만 전문직에 Claude 도입</span></div>
+        <p><strong>무슨 일인가</strong> Anthropic과 PwC가 확장 전략 동맹을 발표했다. PwC는 전 세계 직원에게 Claude Code·Cowork를 도입하고, 미국 내 3만 명을 Claude로 인증한다. 핵심은 CFO 사무소 전체를 Claude 기반으로 재편하는 것이다. 보험 심사 기간이 10주에서 10일로, 보안 작업이 수 시간에서 수 분으로 줄었다는 사례가 공개됐다.</p>
+        <p><strong>왜 중요한가</strong> 단순한 라이선스 계약이 아니다. 전문직 업무 프로세스 자체를 AI 중심으로 재설계하는 첫 대규모 사례다. PwC 규모의 조직이 실제 운영에 AI를 통합하면, 컨설팅·회계·법무 업계 전반의 표준이 바뀔 수 있다.</p>
+        <p><strong>인사이트</strong> Anthropic의 기업 시장 전략이 명확해지고 있다. GPT와 가격 경쟁을 하는 게 아니라, 특정 산업의 업무 프로세스에 깊이 파고드는 방식이다.</p>
+      </div>
+
+      <div class="news-item">
+        <div><span class="badge">OpenAI</span><span class="news-title">OpenAI, Jony Ive와 AI 퍼스트 기기 개발 추진</span></div>
+        <p><strong>무슨 일인가</strong> OpenAI가 앱 없는 AI 레이어 기기를 개발 중이라는 보도가 나왔다. 기존 스마트폰 인터페이스를 없애고 AI가 상시 작동하는 새로운 기기 형태다. 애플의 전 수석 디자이너 조니 아이브가 초기 설계에 참여한 것으로 알려졌다. MediaTek·Qualcomm과 칩 공급 파트너십도 이미 체결된 상태다.</p>
+        <p><strong>왜 중요한가</strong> 실현된다면 스마트폰 이후 처음 등장하는 새로운 컴퓨팅 패러다임이다. 앱 생태계 전체가 흔들리고, Apple의 하드웨어 독점이 처음으로 도전받는 구도가 만들어진다.</p>
+        <p><strong>인사이트</strong> OpenAI는 이미 소프트웨어 구독 시장의 한계를 보고 있다. 하드웨어로 가는 건 유통 채널과 사용자 접점을 직접 소유하겠다는 선언이다.</p>
+      </div>
+
+      <div class="news-item">
+        <div><span class="badge">마케팅</span><span class="news-title">HubSpot AEO Sensor 출시 — ChatGPT 레퍼럴 12개월 최저</span></div>
+        <p><strong>무슨 일인가</strong> HubSpot이 AI 검색 엔진 트래픽을 추적하는 무료 대시보드 'AEO Sensor'를 출시했다. ChatGPT·Gemini·Perplexity의 인용 변동과 레퍼럴 패턴을 업계 수준에서 측정한다. 공개 시점에 ChatGPT가 2026년 4월 기준 비즈니스 레퍼럴 트래픽이 12개월 최저를 기록했다는 데이터도 함께 공개됐다.</p>
+        <p><strong>왜 중요한가</strong> AI 검색 최적화(AEO)가 기존 SEO와 별도의 마케팅 분야로 공식화되고 있다는 신호다. 어떤 AI가 어느 브랜드를 얼마나 인용하는지가 트래픽의 새로운 변수가 됐다.</p>
+        <p><strong>인사이트</strong> GEO(Generative Engine Optimization) 시대가 본격화되고 있다. AI 검색에서 인용되지 않는 브랜드는 존재하지 않는 것과 같아진다. 콘텐츠 전략의 기준이 바뀐다.</p>
+      </div>
+
+      <div class="source">출처: buildfastwithai.com (2026.05.18) · marketingprofs.com (2026.05.15) · TechCrunch (2026.05.14~18)</div>
+    </div>
+  </div>
+</div>
+
+<!-- Article 4: 오늘의 신제품 -->
+<div class="article">
+  <div class="article-tag">오늘의 신제품 · ProductHunt · 2026년 5월 9일</div>
+  <div class="article-title">오늘의 신제품</div>
+  <div class="article-summary">AI 소셜, 개인 지식 관리, 에이전트 품질 보증까지 — 이번 주 ProductHunt에서 주목할 네 가지 제품.</div>
+  <div class="btn-wrap">
+    <button class="toggle-btn" onclick="var d=document.getElementById('d4'),b=this;d.classList.toggle('open');b.textContent=d.classList.contains('open')?'접기 ▲':'더 보기 ▼'">더 보기 ▼</button>
+  </div>
+  <div id="d4" class="article-detail">
+    <div class="detail-inner">
+
+      <div class="news-item">
+        <div class="product-name">Flare</div>
+        <p>Z세대를 위한 AI 소셜앱. 좋아요·팔로워·댓글이 없다. 감정, 짧은 영상, 사진으로 기억과 정체성을 쌓고, 알고리즘 없이 친구와 연결되는 구조다.</p>
+      </div>
+
+      <div class="news-item">
+        <div class="product-name">Kuku</div>
+        <p>오픈소스 로컬 세컨드 브레인. Markdown 파일로 지식을 관리하고 AI 모델·도구와 유연하게 연결한다. 인터넷 없이도 작동하는 독립형 메모리 시스템이다.</p>
+      </div>
+
+      <div class="news-item">
+        <div class="product-name">Fabraix</div>
+        <p>AI 에이전트 실패를 사전에 찾아주는 도구. 에이전트를 다양한 조건으로 테스트해 실패 가능성을 미리 탐지하고, 실시간으로 환경에 적응하는 전략을 제안한다.</p>
+      </div>
+
+      <div class="news-item">
+        <div class="product-name">Socrati</div>
+        <p>PDF·YouTube 영상·사진을 넣으면 개인 맞춤형 오디오 강좌를 만들어준다. 이동 중에도 내 콘텐츠로 학습할 수 있는 개인 팟캐스트 생성기다.</p>
+      </div>
+
+      <div class="source">출처: ProductHunt 2026년 5월 9일 · 큐레이션: @choi.openai</div>
+    </div>
+  </div>
+</div>
+
+<!-- 에디터 한마디 -->
+<div class="editor">
+  <p>먼저 질문하는 사람이 먼저 도착한다.</p>
+</div>
+
+<div class="footer">오늘의 밑줄 · 매일 발행 · 출처 표기 기반 요약 콘텐츠 · <a href="archive.html" style="color:#aaa;">전체 보기</a></div>
+
+</body>
+</html>
