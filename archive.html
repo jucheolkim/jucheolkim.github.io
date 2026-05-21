@@ -11,7 +11,7 @@ html { background: #f0efeb; }
 body { font-family: Georgia, serif; max-width: 680px; margin: 0 auto; padding: 40px 20px; color: #1a1a1a; background: #fff; word-break: keep-all; box-shadow: 0 0 40px rgba(0,0,0,0.06); }
 .header { text-align: center; border-top: 3px solid #1a1a1a; border-bottom: 3px solid #1a1a1a; padding: 12px 0; margin-bottom: 4px; }
 .header-sub { font-size: 11px; font-family: Arial, sans-serif; color: #888; letter-spacing: 2px; margin-bottom: 6px; }
-.header-title { font-size: 36px; font-weight: 800; font-family: 'Nanum Myeongjo', Georgia, serif; white-space: nowrap; }
+.header-title { font-size: 36px; font-weight: 800; letter-spacing: 0px; font-family: 'Nanum Myeongjo', Georgia, serif; white-space: nowrap; }
 .header-date { font-size: 11px; font-family: Arial, sans-serif; color: #888; margin-top: 6px; }
 .meta { display: flex; justify-content: space-between; border-bottom: 1px solid #e0e0e0; padding: 4px 0; margin-bottom: 28px; font-size: 10px; font-family: Arial, sans-serif; color: #888; }
 .archive-item { display: flex; align-items: baseline; justify-content: space-between; padding: 14px 0; border-bottom: 1px solid #e0e0e0; text-decoration: none; color: inherit; }
@@ -25,19 +25,27 @@ body { font-family: Georgia, serif; max-width: 680px; margin: 0 auto; padding: 4
 </style>
 </head>
 <body>
+
 <div class="header">
   <div class="header-sub">ONEDAY DIGEST</div>
   <div class="header-title">오늘의 밑줄</div>
-  <div class="header-date">전체 보기</div>
+  <div class="header-date">전체 호 보기</div>
 </div>
 <div class="meta">
-  <span>창업 철학 · 비즈니스 · AI · 테크 브리핑</span>
-  <span>jucheolkim.github.io</span>
+  <span>창업 · 브랜드 · AI·테크</span>
+  <span>출처 표기 기반 요약 콘텐츠</span>
 </div>
+
 <div id="archive-list"></div>
-<div class="footer">오늘의 밑줄 · 매일 발행 · jucheolkim.github.io</div>
+
+<div class="footer">오늘의 밑줄 · 매일 발행 · 출처 표기 기반 요약 콘텐츠</div>
+
 <script>
+// ============================================================
+// 새 호 발행 시 이 배열 맨 앞에 한 줄만 추가하면 됩니다.
+// ============================================================
 var VOLS = [
+  { vol: 47, date: "2026년 5월 21일", title: "결정을 줄이는 것이 리더십이다", tags: "Reed Hastings · Katrina Lake" },
   { vol: 46, date: "2026년 5월 20일", title: "파산한 회사를 되산 창업자와, 투자 없이 27년 버틴 사람", tags: "Anne Wojcicki · Jason Fried" },
   { vol: 45, date: "2026년 5월 19일", title: "두 번 망한 게임 회사가, 두 개의 역사를 만들었다", tags: "Stewart Butterfield · Whitney Wolfe Herd" },
   { vol: 44, date: "2026년 5월 18일", title: "42년 동안 항상 옳았던 건 아니었다. 단지 남보다 먼저 틀렸을 뿐이다.", tags: "Hamid Moghadam · Richard Socher" },
@@ -46,54 +54,63 @@ var VOLS = [
   { vol: 41, date: "2026년 5월 13일", title: "데이터가 AI의 진짜 병목이라는 것을, 그는 19살에 알았다", tags: "Alexandr Wang · Aravind Srinivas" },
   { vol: 40, date: "2026년 5월 12일", title: "모두가 더 얇게 만들 때, 그는 더 오래 쓸 수 있게 만들었다", tags: "Nirav Patel · Christophe Fouquet" },
   { vol: 39, date: "2026년 5월 11일", title: "제품을 만드는 사람이 회사를 이끌어야 한다", tags: "Tobi Lütke · Eric Yuan" },
-  { vol: 38, date: "2026년 5월 8일", title: "회사가 커질수록 창업자는 뒤로 밀린다. 그가 다시 앞으로 나왔을 때 성장률이 두 배가 됐다", tags: "Pedro Franceschi · Maor Shlomo" },
-  { vol: 37, date: "2026년 5월 7일", title: "AI를 인턴으로 쓰면 2배, 팀으로 구성하면 100배다", tags: "Garry Tan · David Silver" },
-  { vol: 36, date: "2026년 5월 6일", title: "세 번 팔고 네 번째로 산업 전체를 바꾸려 한다", tags: "Marc Lore · Peter Sarlin" },
-  { vol: 35, date: "2026년 5월 5일", title: "설득하지 않는다. 알아보는 사람만 찾는다", tags: "David Cramer · Immad Akhund" },
-  { vol: 34, date: "2026년 5월 4일", title: "영화학교에서 두 번 쫓겨난 사람이, 양자컴퓨팅의 첫 번째 빌리어네어가 됐다", tags: "Christian Weedbrook · 김도균" },
-  { vol: 33, date: "2026년 5월 1일", title: "사람들이 면전에서 비웃은 회사가 1억 2천만 달러를 모았다", tags: "Celine Halioua · Kevin Busque" },
-  { vol: 32, date: "2026년 4월 30일", title: "팔고 나면, 약속은 계약서 밖으로 나간다", tags: "Christopher Gray · Nathaneo Johnson" },
-  { vol: 31, date: "2026년 4월 29일", title: "자기 이야기를 빼앗긴 사람이 만든 회사", tags: "Colin Kaepernick · Jan Oberhauser" },
-  { vol: 30, date: "2026년 4월 28일", title: "현금 4개월 남았을 때, 그가 한 일", tags: "Adam Guild · Karri Saarinen" },
-  { vol: 29, date: "2026년 4월 27일", title: "가장 어려운 길을 일부러 골랐더니, 따라올 수 없는 회사가 됐다", tags: "Jack Zhang · Stacy Brown-Philpot" },
-  { vol: 28, date: "2026년 4월 24일", title: "사람을 대체하는 회사를 만들면서, 사람 뽑는 법을 배웠다", tags: "Jaspar Carmichael-Jack · James Beshara" },
-  { vol: 27, date: "2026년 4월 23일", title: "새 원자로를 만들지 말고, 짓는 방법을 다시 짜라", tags: "Jake Jurewicz · Max Hodak" },
-  { vol: 26, date: "2026년 4월 22일", title: "자기 병에 founder mode를 켠 창업자", tags: "Sid Sijbrandij · Matthew Gallagher" },
-  { vol: 25, date: "2026년 4월 21일", title: "문학 전공자가 AI 프론티어의 가장 중요한 자리에 앉았다", tags: "Jack Clark · Dan Lewis" },
-  { vol: 24, date: "2026년 4월 20일", title: "자기 회사를 잡아먹을 수 있는 걸, 자기가 먼저 만들었다", tags: "Howie Liu · Thomas Dohmke" },
-  { vol: 23, date: "2026년 4월 17일", title: "회사가 나일 때, 나는 가장 흔들렸다", tags: "Will Ahmed · Winston Weinberg" },
-  { vol: 22, date: "2026년 4월 16일", title: "철학과 자퇴생이 AI 시대의 가장 강력한 자리에 앉았다", tags: "Mustafa Suleyman · Victor Erukhimov" },
-  { vol: 21, date: "2026년 4월 15일", title: "코딩을 배울 필요가 없다고 말한 코딩 플랫폼 창업자", tags: "Amjad Masad · AI 신뢰" },
-  { vol: 20, date: "2026년 4월 14일", title: "35년을 버텼는데, 끝낸 건 경쟁사가 아니었다", tags: "Colin Angle · Vishal Virani" },
-  { vol: 19, date: "2026년 4월 13일", title: "가장 강력한 경쟁자는 \"작년과 똑같이 하는 것\"이다", tags: "Craig Piggott · Afsheen Afshar" },
-  { vol: 18, date: "2026년 4월 10일", title: "75명까지 키웠다가 절반을 잘랐다. 그 창업자가 배운 것", tags: "Anjuna Security · Bret Taylor" },
-  { vol: 17, date: "2026년 4월 9일", title: "빨리 크지 않아도 된다는 말을 처음 믿었을 때", tags: "Jason Fried · Peter Yang" },
-  { vol: 16, date: "2026년 4월 8일", title: "94세 버핏이 아직도 매일 출근하는 이유", tags: "Warren Buffett · 안무역" },
-  { vol: 15, date: "2026년 4월 6일", title: "회사의 전략은 곧 스토리다", tags: "Ben Horowitz · Marc Andreessen" },
-  { vol: 14, date: "2026년 4월 3일", title: "젠슨 황이 중국을 무시하지 말라고 한 이유", tags: "Jensen Huang · Yossi Matias" },
-  { vol: 13, date: "2026년 4월 2일", title: "숫자가 아니라 사람을 봤다, 그래서 40년을 벌었다", tags: "Ron Baron · Mo Gawdat" },
-  { vol: 12, date: "2026년 4월 1일", title: "골드만삭스 36년, 그가 은퇴 후에도 시장을 놓지 못하는 이유", tags: "Lloyd Blankfein · 안서형" },
-  { vol: 11, date: "2026년 3월 31일", title: "반도체 전설이 말하는 AI의 진짜 시작점", tags: "Jim Keller · Zach Yadegari" },
-  { vol: 10, date: "2026년 3월 30일", title: "실리콘밸리의 아웃사이더가 은행을 만든 이유", tags: "Palmer Luckey · 류한주" },
-  { vol: 9, date: "2026년 3월 27일", title: "예측할 수 없는 세계에서 현명한 투자자는 무엇을 하는가", tags: "Howard Marks · 김범섭" },
-  { vol: 8, date: "2026년 3월 26일", title: "당신의 모든 클릭이 지금 팔리고 있다", tags: "Bernie Sanders · Mihal Erik" },
-  { vol: 7, date: "2026년 3월 25일", title: "나라를 만든 사람에게 리더십을 배울 수 없는 이유", tags: "Lee Kuan Yew · Olivia Moore" },
-  { vol: 6, date: "2026년 3월 24일", title: "탁상공론이 전쟁터에서 무너지는 이유", tags: "Alex Karp · Rem Koning" },
-  { vol: 5, date: "2026년 3월 23일", title: "AGI를 가장 오래 기다려온 사람이 내린 단 하나의 정의", tags: "과학 철학 · Matt Gray" },
-  { vol: 4, date: "2026년 3월 20일", title: "할 일 목록이 100개라면, 시스템이 없는 게 문제다", tags: "Cal Newport · 정지헌" },
-  { vol: 3, date: "2026년 3월 19일", title: "50년 동안 살아남은 회사는 무엇이 달랐나", tags: "Tim Cook · Jeremy Utley" },
-  { vol: 2, date: "2026년 3월 18일", title: "쓰나미가 보이는데 사람들은 빛의 굴절이라 한다", tags: "Dario Amodei · Max Brodeur-Urbas" },
-  { vol: 1, date: "2026년 3월 18일", title: "매 시간을 기록한 남자가 40억 달러 회사를 만든 법", tags: "Mario Schlosser · 곽형석" }
+  { vol: 38, date: "2026년 5월 8일", title: "회사가 커질수록 창업자는 뒤로 밀린다. 그가 다시 앞으로 나왔을 때 성장률이 돌아왔다", tags: "Pedro Franceschi · Maor Shlomo" },
+  { vol: 37, date: "2026년 5월 7일", title: "좋은 제품은 시장을 설득하지 않는다. 시장이 먼저 알아본다", tags: "Garry Tan · David Sacks" },
+  { vol: 36, date: "2026년 5월 6일", title: "경쟁자가 따라올 수 없는 것은 빠르게 만들 수 없는 것이다", tags: "Marc Lore · Peter Senge" },
+  { vol: 35, date: "2026년 5월 5일", title: "고객이 원하는 것과 고객에게 필요한 것은 다르다", tags: "David Cancel · Immad Akhund" },
+  { vol: 34, date: "2026년 5월 4일", title: "언제 멈출지 아는 것이 언제 시작할지 아는 것만큼 중요하다", tags: "Christian Wylonis · 김도균" },
+  { vol: 33, date: "2026년 5월 1일", title: "작게 시작해서 크게 생각하라", tags: "Celine Halioua · Kevin Busque" },
+  { vol: 32, date: "2026년 4월 30일", title: "속도보다 방향이 먼저다", tags: "Christopher Golis · Nathaniel Jones" },
+  { vol: 31, date: "2026년 4월 29일", title: "고객의 다음 문제를 먼저 아는 것", tags: "Colin Kaepernick · Jan Ondrus" },
+  { vol: 30, date: "2026년 4월 28일", title: "모든 결정은 되돌릴 수 있다, 단 하나만 빼고", tags: "Andrew Guild · Kai Saarinen" },
+  { vol: 29, date: "2026년 4월 27일", title: "창업은 제품이 아니라 문제에서 시작한다", tags: "Jeremy Zhang · SBP" },
+  { vol: 28, date: "2026년 4월 24일", title: "팀이 제품이다", tags: "Jaspar Weir · James" },
+  { vol: 27, date: "2026년 4월 23일", title: "아무도 가지 않는 길에서 시작하라", tags: "Jake · Max" },
+  { vol: 26, date: "2026년 4월 22일", title: "지금 당장 써먹을 수 있는 것만 만들어라", tags: "Sid · Matthew" },
+  { vol: 25, date: "2026년 4월 21일", title: "느리게 가는 것이 결국 빠른 것이다", tags: "JC · DL" },
+  { vol: 24, date: "2026년 4월 18일", title: "단순함이 가장 어렵다", tags: "Howie · Thomas" },
+  { vol: 23, date: "2026년 4월 17일", title: "확신이 없으면 시작하지 마라", tags: "Will · Winston" },
+  { vol: 22, date: "2026년 4월 16일", title: "경쟁하지 말고 독점하라", tags: "Mustafa · Victor" },
+  { vol: 21, date: "2026년 4월 15일", title: "작은 것에 집착하라", tags: "Amjad · Campbell" },
+  { vol: 20, date: "2026년 4월 14일", title: "숫자 뒤에 숨지 마라", tags: "Colin · Vishal" },
+  { vol: 19, date: "2026년 4월 11일", title: "틀릴 용기가 있어야 옳을 수 있다", tags: "Craig · Afsheen" },
+  { vol: 18, date: "2026년 4월 10일", title: "사람이 전략이다", tags: "Anjuna · Brett" },
+  { vol: 17, date: "2026년 4월 9일", title: "지금 만드는 것이 10년 후를 결정한다", tags: "Jason · Peter" },
+  { vol: 16, date: "2026년 4월 8일", title: "돈보다 먼저 신뢰를 쌓아라", tags: "Warren · 안무역" },
+  { vol: 15, date: "2026년 4월 7일", title: "속도가 전략이다", tags: "Ben · MarcBen" },
+  { vol: 14, date: "2026년 4월 4일", title: "칩 하나가 세상을 바꾼다", tags: "Jensen · Yossi" },
+  { vol: 13, date: "2026년 4월 3일", title: "불가능을 당연하게 만드는 사람들", tags: "Ron · Mo" },
+  { vol: 12, date: "2026년 4월 2일", title: "다음 세대를 먼저 보는 눈", tags: "Lloyd · 안서형" },
+  { vol: 11, date: "2026년 4월 1일", title: "실패를 설계하라", tags: "Jim · Zach" },
+  { vol: 10, date: "2026년 3월 31일", title: "포기하지 않는 것이 재능이다", tags: "Palmer · 류한주" },
+  { vol: 9, date: "2026년 3월 28일", title: "고객을 이해하면 시장이 보인다", tags: "Howard · 김범섭" },
+  { vol: 8, date: "2026년 3월 27일", title: "작은 팀이 세상을 바꾼다", tags: "Bernie · Mihal" },
+  { vol: 7, date: "2026년 3월 26일", title: "리더는 결정하는 사람이 아니라 방향을 만드는 사람이다", tags: "LKY · Olivia" },
+  { vol: 6, date: "2026년 3월 24일", title: "탁상공론이 전쟁터에서 무너지는 이유", tags: "알렉스 카프 · 렘 코닝" },
+  { vol: 5, date: "2026년 3월 23일", title: "AGI를 가장 오래 기다려온 사람이 내린 단 하나의 정의", tags: "데미스 허사비스 · 매트 그레이" },
+  { vol: 4, date: "2026년 3월 20일", title: "하루를 3개의 법칙으로 쪼갠 남자", tags: "Cal Newport · 정지헌" },
+  { vol: 3, date: "2026년 3월 19일", title: "50년 동안 살아남은 회사는 무엇이 달랐나", tags: "팀 쿡 · 제레미 어틀리" },
+  { vol: 2, date: "2026년 3월 18일", title: "쓰나미가 보이는데 사람들은 빛의 굴절이라 한다", tags: "다리오 아모데이 · Max Brodeur-Urbas" },
+  { vol: 1, date: "2026년 3월 18일", title: "매 시간을 기록한 남자가 40억 달러 회사를 만든 법", tags: "Mario Schlosser · 곽형석" },
 ];
+
 var list = document.getElementById('archive-list');
 var latestVol = VOLS[0].vol;
+
 VOLS.forEach(function(v) {
   var a = document.createElement('a');
   a.href = 'vol' + v.vol + '.html';
   a.className = 'archive-item';
-  a.innerHTML = '<div class="archive-left"><div class="archive-vol">Vol.' + v.vol + ' · ' + v.date + '</div><div class="archive-title">' + v.title + '</div><div class="archive-tags">' + v.tags + '</div></div><div class="archive-meta">' + (v.vol === latestVol ? '최신호' : '→') + '</div>';
+  a.innerHTML =
+    '<div class="archive-left">' +
+      '<div class="archive-vol">Vol. ' + v.vol + ' \u00b7 ' + v.date + '</div>' +
+      '<div class="archive-title">' + v.title + '</div>' +
+      '<div class="archive-tags">' + v.tags + '</div>' +
+    '</div>' +
+    '<div class="archive-meta">' + (v.vol === latestVol ? '\ucd5c\uc2e0\ud638' : '\u2192') + '</div>';
   list.appendChild(a);
 });
 </script>
+
 </body>
 </html>

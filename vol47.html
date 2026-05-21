@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>오늘의 밑줄 · Vol.47</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap');
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { background: #f0efeb; }
+body { font-family: Georgia, serif; max-width: 680px; margin: 0 auto; padding: 40px 20px; color: #1a1a1a; background: #fff; word-break: keep-all; box-shadow: 0 0 40px rgba(0,0,0,0.06); }
+.header { text-align: center; border-top: 3px solid #1a1a1a; border-bottom: 3px solid #1a1a1a; padding: 12px 0; margin-bottom: 4px; }
+.header-sub { font-size: 11px; font-family: Arial, sans-serif; color: #888; letter-spacing: 2px; margin-bottom: 6px; }
+.header-title { font-size: 36px; font-weight: 800; letter-spacing: 0px; font-family: 'Nanum Myeongjo', Georgia, serif; white-space: nowrap; }
+.header-date { font-size: 11px; font-family: Arial, sans-serif; color: #888; margin-top: 6px; }
+.meta { display: flex; justify-content: space-between; border-bottom: 1px solid #e0e0e0; padding: 4px 0; margin-bottom: 28px; font-size: 10px; font-family: Arial, sans-serif; color: #888; }
+.nav-wrap { display: flex; justify-content: space-between; margin-bottom: 24px; font-size: 11px; font-family: Arial, sans-serif; }
+.nav-wrap a { color: #888; text-decoration: none; }
+.nav-wrap a:hover { text-decoration: underline; }
+.article { margin-bottom: 28px; padding-bottom: 28px; border-bottom: 1px solid #e0e0e0; }
+.article-tag { font-size: 10px; font-family: Arial, sans-serif; color: #888; letter-spacing: 1px; border-top: 2px solid #1a1a1a; padding-top: 8px; margin-bottom: 8px; }
+.article-title { font-size: 24px; font-weight: bold; line-height: 1.3; margin-bottom: 12px; font-family: 'Nanum Myeongjo', Georgia, serif; letter-spacing: -0.5px; }
+.article-summary { font-size: 13px; color: #555; line-height: 1.75; margin-bottom: 14px; }
+.btn-wrap { display: flex; gap: 6px; margin-bottom: 14px; }
+.toggle-btn { font-size: 11px; font-family: Arial, sans-serif; color: #555; background: none; border: 1px solid #ccc; border-radius: 6px; padding: 4px 10px; cursor: pointer; }
+.toggle-btn:hover { background: #f5f5f5; }
+.article-detail { display: none; }
+.article-detail.open { display: block; }
+.detail-inner { border-left: 2px solid #e0e0e0; padding-left: 16px; }
+.section-label { font-size: 10px; font-family: Arial, sans-serif; color: #888; letter-spacing: 1px; margin-bottom: 6px; margin-top: 16px; }
+.detail-inner p { font-size: 13px; color: #555; line-height: 1.75; margin-bottom: 8px; }
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 8px; }
+.box { background: #f5f5f5; border-radius: 8px; padding: 10px 12px; }
+.box-label { font-size: 11px; font-family: Arial, sans-serif; color: #888; margin-bottom: 6px; }
+.box p { font-size: 12px; color: #555; line-height: 1.65; margin-bottom: 6px; }
+.news-item { margin-bottom: 14px; padding-bottom: 14px; border-bottom: 1px solid #e0e0e0; }
+.news-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+.badge { display: inline-block; font-size: 10px; font-family: Arial, sans-serif; background: #f5f5f5; color: #888; padding: 2px 8px; border-radius: 4px; margin-right: 6px; }
+.news-title { font-size: 13px; font-weight: bold; }
+.news-item p { font-size: 12px; color: #555; line-height: 1.7; margin-top: 6px; }
+.product-name { font-size: 13px; font-weight: bold; color: #1a1a1a; margin-bottom: 4px; }
+.product-item { margin-bottom: 12px; padding-bottom: 12px; border-bottom: 1px solid #e0e0e0; }
+.product-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+.product-item p { font-size: 12px; color: #555; line-height: 1.7; }
+.source { font-size: 10px; font-family: Arial, sans-serif; color: #aaa; border-top: 1px solid #e0e0e0; padding-top: 8px; margin-top: 16px; }
+.highlight { font-weight: bold; color: #1a1a1a; }
+.insight-p { font-size: 15px !important; color: #333 !important; line-height: 1.85 !important; margin-bottom: 10px !important; }
+.editor { border-top: 2px solid #1a1a1a; padding-top: 10px; margin-bottom: 16px; }
+.editor p { font-size: 16px; color: #1a1a1a; line-height: 1.85; font-style: italic; font-family: 'Nanum Myeongjo', Georgia, serif; font-weight: 800; }
+.footer { border-top: 1px solid #e0e0e0; padding-top: 8px; text-align: center; font-size: 10px; font-family: Arial, sans-serif; color: #aaa; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-sub">ONEDAY DIGEST</div>
+  <div class="header-title">오늘의 밑줄</div>
+  <div class="header-date">2026년 5월 21일 · Vol. 47</div>
+</div>
+<div class="meta">
+  <span>비즈니스 인사이트 · AI·테크 브리핑 · 오늘의 신제품</span>
+  <span>jucheolkim.github.io</span>
+</div>
+
+<!-- Article 1: Reed Hastings -->
+<article class="article">
+  <div class="article-tag">비즈니스 인사이트 · REED HASTINGS · Netflix</div>
+  <div class="article-title">결정을 줄이는 것이 리더십이다</div>
+  <div class="article-summary">리드 헤이스팅스는 CEO로 25년간 Netflix를 이끌며 세 번 자기 사업을 스스로 무너뜨렸다. DVD를 버리고, 스트리밍을 택하고, 오리지널 콘텐츠에 올인했다. 그가 말하는 리더십의 핵심은 더 많이 결정하는 것이 아니라, 스스로 결정해도 되는 구조를 만드는 것이다.</div>
+  <div class="btn-wrap">
+    <button class="toggle-btn" onclick="var d=document.getElementById('d1'),b=this;d.classList.toggle('open');b.textContent=d.classList.contains('open')?'접기 ▲':'더 보기 ▼'">더 보기 ▼</button>
+    <button class="toggle-btn">🎧 오디오로 듣기 (준비 중)</button>
+  </div>
+  <div id="d1" class="article-detail">
+    <div class="detail-inner">
+      <div class="section-label">이 사람은 누구인가</div>
+      <p>리드 헤이스팅스는 1997년 Netflix를 공동창업했다. 비디오 연체료에서 아이디어를 얻어 DVD 우편 대여 서비스로 시작, 스트리밍으로 전환하고 오리지널 콘텐츠까지 직접 제작하며 글로벌 엔터테인먼트 산업을 재편했다. 2023년 공동 CEO에서 물러나 이사회 의장직을 맡고 있다. 현재는 AI 교육 스타트업 지원, 차터스쿨 확산, 스키 리조트 운영 등 다양한 활동을 이어가고 있다.</p>
+      <div class="section-label">주요 활동과 이력</div>
+      <p>Bowdoin 졸업 후 교육 NGO 봉사 → Stanford 컴퓨터공학 석사 → Pure Atria 창업·매각(1997) → Netflix 공동창업(1997) → DVD 우편 서비스 출시 → Blockbuster 거절(2000) → 스트리밍 전환(2007) → House of Cards 오리지널 콘텐츠 투자(2013) → 나스닥 상장(2002) → No Rules Rules 출간(2020) → 공동 CEO 체제 전환 후 의장 취임(2023) → AI 시대 인문학 강화 주장(2026).</p>
+      <div class="section-label">성공한 것과 실패한 것</div>
+      <div class="grid">
+        <div class="box">
+          <div class="box-label">✓ 성공한 것</div>
+          <p>자기 파괴적 피벗을 세 번 실행했다. DVD 사업이 잘 될 때 스트리밍으로 갔고, 라이선스 콘텐츠에 안주하지 않고 오리지널에 100억 달러를 베팅했다. "충분한 수행에는 후한 퇴직금을"이라는 인재 밀도 철학으로 조직 역량을 유지했다.</p>
+          <p>Drive to Survive, Squid Game처럼 특정 장르·문화권에서 전혀 예상치 못한 글로벌 히트가 나왔다. 그는 이를 "놀라움을 허용하는 문화"의 결과로 본다.</p>
+        </div>
+        <div class="box">
+          <div class="box-label">✗ 실패한 것</div>
+          <p>2011년 DVD 사업부를 Qwikster로 분리하려다 대규모 이탈을 겪고 한 달 만에 철회했다. 속도보다 커뮤니케이션이 먼저였어야 했다는 것을 이후 인정했다.</p>
+          <p>광고 없는 구독 모델을 오래 고집하다 결국 광고 요금제를 도입했다. 원칙과 수익 사이에서 타이밍을 놓쳤다는 평가가 있다.</p>
+        </div>
+      </div>
+      <div class="section-label">인사이트</div>
+      <p class="insight-p">헤이스팅스가 반복하는 말은 "가능한 한 적게 결정하라"다. <span class="highlight">CEO가 결정을 줄일수록 조직이 더 빠르게 움직인다</span>는 역설이다. 그가 구축한 자유와 책임 문화는 규칙을 없애는 게 아니라, 판단력 있는 사람이 맥락을 갖고 스스로 결정할 수 있도록 정보를 투명하게 공유하는 구조다.</p>
+      <p class="insight-p">그는 AI 시대에 오히려 인문학이 더 중요해진다고 주장한다. 코딩은 AI가 대체하지만, <span class="highlight">무엇을 만들지·왜 만드는지를 판단하는 능력은 인간이 더 잘할 수 있는 영역으로 남는다</span>는 것이다. 도구가 강해질수록 방향을 묻는 질문이 더 중요해진다.</p>
+      <p class="insight-p">세 번의 자기 파괴 중 가장 어려운 것은 기술이 아니라 타이밍이었다. 너무 이르면 조직이 따라오지 못하고, 너무 늦으면 경쟁자가 먼저 간다. <span class="highlight">헤이스팅스가 매번 옳았던 건 아니지만, 매번 결정을 미루지 않았다.</span></p>
+      <div class="source">출처: Knowledge Project Podcast (2025.08) · Stanford GSB "Make as Few Decisions as Possible" · No Rules Rules (2020) · Tekedia 인터뷰 (2026.05)</div>
+    </div>
+  </div>
+</article>
+
+<!-- Article 2: Katrina Lake -->
+<article class="article">
+  <div class="article-tag">비즈니스 인사이트 · KATRINA LAKE · Stitch Fix</div>
+  <div class="article-title">취향을 데이터로 번역한 사람</div>
+  <div class="article-summary">카트리나 레이크는 패션이라는 감성 산업에 알고리즘을 이식했다. 사람의 취향을 숫자로 바꾸고, 그 숫자로 스타일리스트의 직관을 보완했다. 2017년 미국 역사상 최연소 여성 IPO CEO가 됐고, 회사가 흔들릴 때 다시 돌아왔다.</div>
+  <div class="btn-wrap">
+    <button class="toggle-btn" onclick="var d=document.getElementById('d2'),b=this;d.classList.toggle('open');b.textContent=d.classList.contains('open')?'접기 ▲':'더 보기 ▼'">더 보기 ▼</button>
+    <button class="toggle-btn">🎧 오디오로 듣기 (준비 중)</button>
+  </div>
+  <div id="d2" class="article-detail">
+    <div class="detail-inner">
+      <div class="section-label">이 사람은 누구인가</div>
+      <p>카트리나 레이크는 하버드 MBA 재학 중 Stitch Fix를 창업했다. 소비자 데이터와 알고리즘으로 개인화된 패션 박스를 배송하는 서비스로, 인간 스타일리스트와 AI 추천 엔진을 결합한 하이브리드 모델이 핵심이다. 2017년 나스닥 상장 당시 33세로 미국 역사상 최연소 여성 IPO CEO였다. 2021년 CEO직을 후임자에게 넘겼다가 2023년 회사가 흔들리자 복귀했다.</p>
+      <div class="section-label">주요 활동과 이력</div>
+      <p>스탠퍼드 경제학 졸업 → 컨설팅·벤처 경력 → 하버드 MBA 재학 중 Stitch Fix 창업(2011) → Y Combinator 합류 → 나스닥 상장(2017, 최연소 여성 IPO CEO) → CEO 이임(2021) → 이사회 의장으로 복귀(2023) → 재구조화 진행 중(2026). 현재 Stitch Fix 외에도 이사회 활동과 투자로 패션·테크 교차 영역에서 영향력을 유지하고 있다.</p>
+      <div class="section-label">성공한 것과 실패한 것</div>
+      <div class="grid">
+        <div class="box">
+          <div class="box-label">✓ 성공한 것</div>
+          <p>감성 산업인 패션에 데이터 과학을 도입했다. 가격, 핏, 색상, 이전 구매 이력 등의 가중치를 사람마다 다르게 설정해 개인화 추천의 정밀도를 높였다. 알고리즘이 스타일리스트의 직관을 대체하는 게 아니라 보완한다는 철학이 차별점이었다.</p>
+          <p>구독 박스라는 새로운 유통 카테고리를 패션에 처음 안착시켰다. 이후 수많은 모방 모델이 등장했지만 Stitch Fix가 선점한 데이터 자산은 쉽게 따라오기 어렵다.</p>
+        </div>
+        <div class="box">
+          <div class="box-label">✗ 실패한 것</div>
+          <p>상장 이후 구독 박스에서 온디맨드 쇼핑 플랫폼으로 피벗을 시도했지만 실패했다. 사용자 이탈이 가속됐고 주가는 IPO 대비 90% 이상 하락했다. 핵심 강점에서 벗어난 확장의 부작용이었다.</p>
+          <p>Z세대의 패션앱 이탈이라는 구조적 변화에 대응이 늦었다. 데이터에 기반한 의사결정을 강조했지만, 시장 트렌드 자체가 달라지는 국면에서는 데이터의 한계도 있었다.</p>
+        </div>
+      </div>
+      <div class="section-label">인사이트</div>
+      <p class="insight-p">레이크의 핵심 통찰은 단순하다. <span class="highlight">데이터는 인간의 판단을 대체하는 게 아니라 인간이 더 나은 판단을 내리게 돕는 도구</span>라는 것이다. Stitch Fix의 알고리즘은 스타일리스트가 고를 후보군을 추려주지만, 최종 선택은 사람이 한다. AI와 인간의 협업 구조를 패션에서 먼저 실험한 셈이다.</p>
+      <p class="insight-p">그가 CEO로 돌아온 이유는 자리가 비어서가 아니었다. <span class="highlight">아직 끝내지 못한 미션이 있다고 판단했기 때문</span>이다. 데이터로 취향을 이해하고 각 사람에게 맞는 것을 찾아주겠다는 처음의 질문이 아직 완성되지 않았다는 것. 제품이 아니라 문제 의식이 그를 다시 불러들였다.</p>
+      <p class="insight-p">패션이라는 산업을 선택한 것 자체가 전략이었다. 경쟁자들이 외면하던 <span class="highlight">'감성적이라 데이터화하기 어렵다'는 영역에서 오히려 데이터의 가치가 더 크게 작동했다.</span> 모두가 쉬운 곳에 있을 때, 어려운 곳에서 먼저 구조를 만드는 것이 해자가 된다.</p>
+      <div class="source">출처: Fortune (2023.01) · TIME 인터뷰 · businessupturn.com (2025.05) · Marie Claire 인터뷰</div>
+    </div>
+  </div>
+</article>
+
+<!-- Article 3: AI 브리핑 -->
+<article class="article">
+  <div class="article-tag">AI · 테크 브리핑 · 2026년 5월 21일</div>
+  <div class="article-title">IPO, 감원, 과학 — AI가 시장·조직·연구를 동시에 바꾼다</div>
+  <div class="article-summary">OpenAI가 상장을 준비하고, 전통 소프트웨어 기업이 AI 전환 비용을 인력 감축으로 치르고, AI가 과학 연구 방법론 자체를 바꾸고 있다. 오늘 하루의 뉴스는 AI가 이제 산업 전체의 구조를 재편하는 단계에 진입했음을 보여준다.</div>
+  <div class="btn-wrap">
+    <button class="toggle-btn" onclick="var d=document.getElementById('d3'),b=this;d.classList.toggle('open');b.textContent=d.classList.contains('open')?'접기 ▲':'더 보기 ▼'">더 보기 ▼</button>
+  </div>
+  <div id="d3" class="article-detail">
+    <div class="detail-inner">
+
+      <div class="news-item">
+        <div><span class="badge">IPO</span><span class="news-title">OpenAI, 이번 주 내 비밀 IPO 파일링 추진 — 가을 상장 목표</span></div>
+        <p><strong>무슨 일인가:</strong> OpenAI가 Goldman Sachs·Morgan Stanley와 함께 이르면 이번 주 금요일 비밀 IPO 파일링을 준비 중이다. 가을 상장을 목표로 하며, 기업가치는 약 8,500억 달러로 추산된다. Musk vs. Altman 소송 종결 직후 타이밍이다.</p>
+        <p><strong>왜 중요한가:</strong> OpenAI, SpaceX(xAI와 합병), Anthropic이 연달아 상장을 준비하며 AI 기업 공개 시장이 본격 열린다. 상장이 완료되면 AI 기업들의 실제 수익 구조와 비용 구조가 공개되고, 산업 전체의 평가 기준이 바뀐다.</p>
+        <p><strong>인사이트:</strong> <span class="highlight">AI가 사기업 시대에서 공개 시장 시대로 이동하는 변곡점이다.</span> 투명성이 높아지면 거품도 걷히고 진짜 기업 가치도 드러난다. 어떤 AI 기업이 실제로 돈을 버는지 처음으로 공개된다.</p>
+      </div>
+
+      <div class="news-item">
+        <div><span class="badge">구조조정</span><span class="news-title">Intuit, 직원 17% 감원 + Anthropic·OpenAI 동시 파트너십 체결</span></div>
+        <p><strong>무슨 일인가:</strong> TurboTax·QuickBooks 운영사 Intuit가 3,000명을 해고하며 AI 중심 재편을 선언했다. 같은 날 Anthropic·OpenAI와 각각 다년간 파트너십을 체결해 양사 AI 모델을 제품에 내장하기로 했다. 올해 테크 업계 감원 누적은 11만 명을 넘겼다.</p>
+        <p><strong>왜 중요한가:</strong> 소셜미디어·하드웨어 기업이 아닌 회계·세무 소프트웨어 기업도 AI 재편의 파고를 피하지 못했다. AI를 도입하는 비용을 기존 인력이 치르는 구조가 전통 SaaS 기업까지 확산되고 있다.</p>
+        <p><strong>인사이트:</strong> <span class="highlight">AI 전환은 효율의 문제가 아니라 조직 구조의 문제다.</span> 새 도구를 쓰기 위해 기존 인력을 줄이는 방정식이 업종을 가리지 않고 반복되고 있다. 어떤 역할이 남고 어떤 역할이 사라지는지를 읽는 것이 지금 가장 중요한 비즈니스 판단이다.</p>
+      </div>
+
+      <div class="news-item">
+        <div><span class="badge">과학</span><span class="news-title">Google, Gemini for Science 공개 — AI가 가설을 세우고 실험을 설계한다</span></div>
+        <p><strong>무슨 일인가:</strong> Google이 Google I/O 후속으로 Gemini for Science를 공개했다. 연구자가 가설을 생성하고, 실험을 설계하고, 방대한 논문을 분석하는 작업을 AI와 함께 수행하는 실험적 도구 세트다.</p>
+        <p><strong>왜 중요한가:</strong> AI가 논문을 요약하거나 검색하는 수준을 넘어, 과학적 사고 과정 자체에 개입하기 시작했다. 연구 속도가 빨라지면 신약 개발, 기후 연구, 재료 과학 등 장기 과제의 진척 속도도 달라질 수 있다.</p>
+        <p><strong>인사이트:</strong> <span class="highlight">지식 생산의 속도가 바뀌면 가능성의 범위가 달라진다.</span> 지금까지 10년이 걸리던 연구가 2년으로 단축된다면, 그동안 시도조차 못했던 문제들이 테이블 위에 오른다. AI가 과학을 바꾸는 건 결과만이 아니라 질문 자체다.</p>
+      </div>
+
+      <div class="source">출처: Bloomberg (2026.05.20) · CNBC (2026.05.20) · TechCrunch (2026.05.20~21) · Engadget (2026.05.21) · Reuters (2026.05.20)</div>
+    </div>
+  </div>
+</article>
+
+<!-- Article 4: 오늘의 신제품 -->
+<article class="article">
+  <div class="article-tag">오늘의 신제품 · PRODUCT HUNT · 2026년 5월</div>
+  <div class="article-title">오늘의 신제품 3선</div>
+  <div class="article-summary">SaaS 결제 인프라, AI 개발 교육 플랫폼, 오픈소스 코드 에디터 — 개발자와 창업자의 워크플로를 바꾸는 이번 달 주목할 제품들이다.</div>
+  <div class="btn-wrap">
+    <button class="toggle-btn" onclick="var d=document.getElementById('d4'),b=this;d.classList.toggle('open');b.textContent=d.classList.contains('open')?'접기 ▲':'더 보기 ▼'">더 보기 ▼</button>
+  </div>
+  <div id="d4" class="article-detail">
+    <div class="detail-inner">
+
+      <div class="product-item">
+        <div class="product-name">Kelviq</div>
+        <p>SaaS·AI 기업을 위한 결제·세금·빌링 통합 인프라. 복잡한 글로벌 결제와 세무 처리를 단일 플랫폼으로 처리해 창업자가 핵심 제품에 집중할 수 있도록 설계됐다. 5월 12일 일간 1위.</p>
+      </div>
+
+      <div class="product-item">
+        <div class="product-name">Open Vibe</div>
+        <p>AI로 SaaS를 빠르게 출시하는 개발 교육 플랫폼. 막히는 곳 없이 제품을 완성하도록 AI가 단계별로 안내하며 GitHub 연동과 배포까지 지원한다. 비개발자와 초기 창업자를 위한 실전 중심 도구.</p>
+      </div>
+
+      <div class="product-item">
+        <div class="product-name">Zed 1.0</div>
+        <p>오픈소스 고성능 멀티플레이어 코드 에디터. 실시간 협업과 빠른 속도를 핵심으로 설계됐으며, AI 코딩 에이전트 통합을 지원한다. 5월 월간 상위권 진입.</p>
+      </div>
+
+      <div class="source">출처: ProductHunt 2026년 5월 · producthunt.com/leaderboard</div>
+    </div>
+  </div>
+</article>
+
+<!-- 에디터 한마디 -->
+<div class="editor">
+  <p>무엇을 버릴지 알고, 데이터로 직관을 보완하고, 결정을 미루지 않는 것 — 이 세 가지가 지금의 리더를 구분한다.</p>
+</div>
+
+<div class="nav-wrap">
+  <a href="vol46.html">← 이전 호</a>
+  <a href="archive.html">전체 보기</a>
+</div>
+
+<div class="footer">
+  <p>오늘의 밑줄 · 매일 발행 · <a href="https://jucheolkim.github.io" style="color:#aaa;">jucheolkim.github.io</a></p>
+</div>
+
+<script>
+</script>
+</body>
+</html>
