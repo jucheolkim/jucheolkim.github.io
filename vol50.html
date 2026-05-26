@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>오늘의 밑줄 · Vol.50</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap');
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { background: #f0efeb; }
+body { font-family: Georgia, serif; max-width: 680px; margin: 0 auto; padding: 40px 20px; color: #1a1a1a; background: #fff; word-break: keep-all; box-shadow: 0 0 40px rgba(0,0,0,0.06); }
+.header { text-align: center; border-top: 3px solid #1a1a1a; border-bottom: 3px solid #1a1a1a; padding: 12px 0; margin-bottom: 4px; }
+.header-sub { font-size: 11px; font-family: Arial, sans-serif; color: #888; letter-spacing: 2px; margin-bottom: 6px; }
+.header-title { font-size: 36px; font-weight: 800; letter-spacing: 0px; font-family: 'Nanum Myeongjo', Georgia, serif; white-space: nowrap; }
+.header-date { font-size: 11px; font-family: Arial, sans-serif; color: #888; margin-top: 6px; }
+.meta { display: flex; justify-content: space-between; border-bottom: 1px solid #e0e0e0; padding: 4px 0; margin-bottom: 28px; font-size: 10px; font-family: Arial, sans-serif; color: #888; }
+.nav-wrap { display: flex; justify-content: space-between; margin-bottom: 24px; font-size: 11px; font-family: Arial, sans-serif; }
+.nav-wrap a { color: #888; text-decoration: none; }
+.nav-wrap a:hover { text-decoration: underline; }
+.article { margin-bottom: 28px; padding-bottom: 28px; border-bottom: 1px solid #e0e0e0; }
+.article-tag { font-size: 10px; font-family: Arial, sans-serif; color: #888; letter-spacing: 1px; border-top: 2px solid #1a1a1a; padding-top: 8px; margin-bottom: 8px; }
+.article-title { font-size: 24px; font-weight: bold; line-height: 1.3; margin-bottom: 12px; font-family: 'Nanum Myeongjo', Georgia, serif; letter-spacing: -0.5px; }
+.article-summary { font-size: 13px; color: #555; line-height: 1.75; margin-bottom: 14px; }
+.btn-wrap { display: flex; gap: 6px; margin-bottom: 14px; }
+.toggle-btn { font-size: 11px; font-family: Arial, sans-serif; color: #555; background: none; border: 1px solid #ccc; border-radius: 6px; padding: 4px 10px; cursor: pointer; }
+.toggle-btn:hover { background: #f5f5f5; }
+.article-detail { display: none; }
+.article-detail.open { display: block; }
+.detail-inner { border-left: 2px solid #e0e0e0; padding-left: 16px; }
+.section-label { font-size: 10px; font-family: Arial, sans-serif; color: #888; letter-spacing: 1px; margin-bottom: 6px; margin-top: 16px; }
+.detail-inner p { font-size: 13px; color: #555; line-height: 1.75; margin-bottom: 8px; }
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 8px; }
+.box { background: #f5f5f5; border-radius: 8px; padding: 10px 12px; }
+.box-label { font-size: 11px; font-family: Arial, sans-serif; color: #888; margin-bottom: 6px; }
+.box p { font-size: 12px; color: #555; line-height: 1.65; margin-bottom: 6px; }
+.news-item { margin-bottom: 14px; padding-bottom: 14px; border-bottom: 1px solid #e0e0e0; }
+.news-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+.badge { display: inline-block; font-size: 10px; font-family: Arial, sans-serif; background: #f5f5f5; color: #888; padding: 2px 8px; border-radius: 4px; margin-right: 6px; }
+.news-title { font-size: 13px; font-weight: bold; }
+.news-item p { font-size: 12px; color: #555; line-height: 1.7; margin-top: 6px; }
+.product-name { font-size: 13px; font-weight: bold; color: #1a1a1a; margin-bottom: 4px; }
+.product-item { margin-bottom: 12px; padding-bottom: 12px; border-bottom: 1px solid #e0e0e0; }
+.product-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+.product-item p { font-size: 12px; color: #555; line-height: 1.7; }
+.source { font-size: 10px; font-family: Arial, sans-serif; color: #aaa; border-top: 1px solid #e0e0e0; padding-top: 8px; margin-top: 16px; }
+.highlight { font-weight: bold; color: #1a1a1a; }
+.insight-p { font-size: 15px !important; color: #333 !important; line-height: 1.85 !important; margin-bottom: 10px !important; }
+.editor { border-top: 2px solid #1a1a1a; padding-top: 10px; margin-bottom: 16px; }
+.editor p { font-size: 16px; color: #1a1a1a; line-height: 1.85; font-style: italic; font-family: 'Nanum Myeongjo', Georgia, serif; font-weight: 800; }
+.footer { border-top: 1px solid #e0e0e0; padding-top: 8px; text-align: center; font-size: 10px; font-family: Arial, sans-serif; color: #aaa; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-sub">ONEDAY DIGEST</div>
+  <div class="header-title">오늘의 밑줄</div>
+  <div class="header-date">2026년 5월 26일 · Vol. 50</div>
+</div>
+<div class="meta">
+  <span>비즈니스 인사이트 · AI·테크 브리핑 · 오늘의 신제품</span>
+  <span>jucheolkim.github.io</span>
+</div>
+
+<!-- Article 1: Sara Blakely -->
+<article class="article">
+  <div class="article-tag">비즈니스 인사이트 · SARA BLAKELY · Spanx / Sneex</div>
+  <div class="article-title">아이디어는 생겨난 순간이 가장 취약하다</div>
+  <div class="article-summary">사라 블레이클리는 5,000달러와 팩스기 세일즈 경력으로 Spanx를 창업했다. 외부 투자를 한 푼도 받지 않고 21년을 버텼고, 2021년 12억 달러에 매각했다. 그가 먼저 한 것은 피칭이 아니었다. 아이디어를 1년간 비밀로 유지한 것이었다.</div>
+  <div class="btn-wrap">
+    <button class="toggle-btn" onclick="var d=document.getElementById('d1'),b=this;d.classList.toggle('open');b.textContent=d.classList.contains('open')?'접기 ▲':'더 보기 ▼'">더 보기 ▼</button>
+    <button class="toggle-btn">🎧 오디오로 듣기 (준비 중)</button>
+  </div>
+  <div id="d1" class="article-detail">
+    <div class="detail-inner">
+      <div class="section-label">이 사람은 누구인가</div>
+      <p>사라 블레이클리는 팩스기 방문판매원으로 일하며 모은 5,000달러로 1998년 Spanx를 창업했다. 셰이프웨어(shapewear)라는 새로운 카테고리를 만들며 기존 패션 시장의 빈자리를 채웠다. 외부 투자 없이 자체 자금만으로 운영해 2012년 포브스 선정 자수성가 여성 억만장자에 이름을 올렸고, 2021년 사모펀드 Blackstone에 12억 달러에 매각했다. 이후 하이힐과 스니커즈를 결합한 Sneex를 새로 창업해 운영 중이다.</p>
+      <div class="section-label">주요 활동과 이력</div>
+      <p>Florida State University 졸업 → LSAT 두 번 낙방 → Disney World 놀이기구 안내원 → 7년간 팩스기 방문판매 → Spanx 창업(1998, $5,000 자기자금) → 1년간 아이디어 비밀 유지 → Neiman Marcus 10분 피칭 성공 → Oprah's Favorite Things 선정(2000) → Richard Branson 리얼리티쇼 출연(2004) → 포브스 자수성가 여성 억만장자 등록(2012) → Blackstone에 12억 달러 매각(2021) → Sneex 창업(2024) → Florida State University 졸업식 기조연설(2026.05).</p>
+      <div class="section-label">성공한 것과 실패한 것</div>
+      <div class="grid">
+        <div class="box">
+          <div class="box-label">✓ 성공한 것</div>
+          <p>외부 투자 없이 21년을 운영했다. 지분을 희석시키지 않고 수십억 달러 기업을 만든 것은 실리콘밸리 VC 모델과 정반대의 경로였다. 방향을 외부에 빼앗기지 않았다.</p>
+          <p>셰이프웨어라는 새로운 카테고리를 만들었다. 기존 속옷도, 일반 의류도 아닌 영역. 남들이 없던 자리였기 때문에 경쟁이 없었고, 선점이 해자가 됐다.</p>
+        </div>
+        <div class="box">
+          <div class="box-label">✗ 실패한 것</div>
+          <p>Spanx 매각 이후 브랜드 방향성에 대한 논란이 있었다. 창업자가 경영에서 물러난 이후 브랜드 정체성을 유지하는 것이 과제로 남았다.</p>
+          <p>Sneex는 아직 초기 단계다. 디지털 전용 전략으로 출발했지만, Spanx가 가진 오프라인 유통과 브랜드 인지도를 처음부터 다시 구축해야 한다.</p>
+        </div>
+      </div>
+      <div class="section-label">인사이트</div>
+      <p class="insight-p">"아이디어는 생겨난 순간이 가장 취약하다." 블레이클리는 Spanx 아이디어를 1년간 주변에 말하지 않았다. 설득하기 전에 증명하는 것을 택했다. <span class="highlight">가장 중요한 것을 가장 오래 보호하는 능력이 창업자의 첫 번째 실력이다.</span></p>
+      <p class="insight-p">"비즈니스는 전쟁이라는 말을 들었을 때, 나는 전쟁을 안 하기로 결심했다." 경쟁이 아닌 방향을 선택했다. <span class="highlight">남이 없는 곳을 찾아 먼저 들어가는 것이 전략이었고, 오래 버티는 것이 해자가 됐다.</span></p>
+      <p class="insight-p">투자 없이 성장한 것은 제약이 아니라 선택이었다. 속도는 느렸지만 방향을 잃지 않았다. <span class="highlight">21년간 지킬 수 있었던 문화와 가치는 외부 자본이 없었기 때문에 가능했다.</span> 무엇을 받지 않을지 결정하는 것도 전략이다.</p>
+      <div class="source">출처: Fortune (2025.09) · Inc (2026.05) · Fast Company (2026.05) · School of Hard Knocks 인터뷰</div>
+    </div>
+  </div>
+</article>
+
+<!-- Article 2: Naval Ravikant -->
+<article class="article">
+  <div class="article-tag">비즈니스 인사이트 · NAVAL RAVIKANT · AngelList</div>
+  <div class="article-title">부는 운이 아니라 레버리지에서 온다</div>
+  <div class="article-summary">나발 라비칸트는 2012년 "회사의 효율적인 크기는 빠르게 줄어들 것이다 — 미래는 거의 모두 스타트업일 것이다"라고 말했다. AI가 그 예언을 현실로 만들고 있다. 그가 말하는 부의 구조는 단순하다. 특정 지식에 레버리지를 얹는 것이다.</div>
+  <div class="btn-wrap">
+    <button class="toggle-btn" onclick="var d=document.getElementById('d2'),b=this;d.classList.toggle('open');b.textContent=d.classList.contains('open')?'접기 ▲':'더 보기 ▼'">더 보기 ▼</button>
+    <button class="toggle-btn">🎧 오디오로 듣기 (준비 중)</button>
+  </div>
+  <div id="d2" class="article-detail">
+    <div class="detail-inner">
+      <div class="section-label">이 사람은 누구인가</div>
+      <p>나발 라비칸트는 2010년 AngelList를 공동창업했다. 스타트업이 투자자를 찾고, 인재를 채용하고, 고객에게 출시하는 전 과정을 하나의 플랫폼에서 할 수 있도록 만든 인프라다. Uber, Twitter, Yammer 등 100개 이상의 초기 스타트업에 투자했으며, Product Hunt를 인수해 스타트업 생태계 전반으로 영향력을 확장했다. 창업가이자 투자자이면서 동시에 사상가로, Almanack of Naval Ravikant는 수백만 명이 읽었다.</p>
+      <div class="section-label">주요 활동과 이력</div>
+      <p>뭄바이 출생 → 9세에 미국 이민 → Cornell 컴퓨터공학 졸업 → Epinions 공동창업(1999) → Vast.com 창업 → AngelList 공동창업(2010) → Twitter·Uber 초기 투자 → MetaStable Capital 공동창업(2014, 암호화폐 헤지펀드) → Product Hunt 인수(2016) → AngelList CEO 사임(2018) → Almanack of Naval Ravikant 출간(2020) → 현재: 투자·저술.</p>
+      <div class="section-label">성공한 것과 실패한 것</div>
+      <div class="grid">
+        <div class="box">
+          <div class="box-label">✓ 성공한 것</div>
+          <p>2012년 "회사의 효율적인 크기는 빠르게 줄어들 것이다 — 미래는 거의 모두 스타트업일 것이다"라고 말했다. 소수의 인원이 AI 레버리지로 거대한 가치를 만드는 2026년 현실이 이를 증명하고 있다.</p>
+          <p>Specific Knowledge + Leverage = 부의 구조라는 프레임을 만들었다. 코드와 미디어는 자는 동안에도 작동한다는 개념으로, 인터넷과 AI 시대 레버리지의 본질을 먼저 설명했다.</p>
+        </div>
+        <div class="box">
+          <div class="box-label">✗ 실패한 것</div>
+          <p>Epinions는 eBay에 매각됐지만 초기 창업자들 사이에 지분 분쟁이 있었다. 라비칸트 자신도 이를 "관계와 지분 구조 설계의 실패"로 인정했다.</p>
+          <p>AngelList 초기에는 창업자와 VC 모두에게 불신을 받았다. 플랫폼으로 투자를 표준화한다는 아이디어는 기존 업계의 강한 반발을 샀다. 방향이 옳아도 타이밍과 설득에는 시간이 필요했다.</p>
+        </div>
+      </div>
+      <div class="section-label">인사이트</div>
+      <p class="insight-p">라비칸트의 핵심 주장은 하나다. "특정 지식을 가진 사람이 레버리지를 얻으면, 노력과 시간이 분리된다." 코드는 자는 동안 실행되고, 미디어는 공유되며, AI는 그 레버리지를 100배로 키운다. <span class="highlight">AI 시대에 그의 2012년 예언은 더 빠르게 현실이 되고 있다.</span></p>
+      <p class="insight-p">"판단력은 경험보다 중요하다." 같은 상황에서 누가 더 나은 결정을 내리는지가 장기적으로 복리처럼 쌓인다. <span class="highlight">빠른 실행보다 방향이 먼저고, 방향을 판단하는 능력이 레버리지보다 먼저 쌓여야 한다.</span></p>
+      <p class="insight-p">그가 CEO 자리를 내려놓은 이유는 능력이 없어서가 아니었다. "나는 내가 잘 못하는 것에 시간을 쓰는 구조를 원하지 않는다"는 것이었다. <span class="highlight">무엇을 하지 않을지 결정하는 것이 레버리지를 지키는 방법이다.</span></p>
+      <div class="source">출처: Farnam Street Knowledge Project 인터뷰 · Almanack of Naval Ravikant (2020) · PandoMonthly 강연(2012) · Startup Archive</div>
+    </div>
+  </div>
+</article>
+
+<!-- Article 3: AI 브리핑 -->
+<article class="article">
+  <div class="article-tag">AI · 테크 브리핑 · 2026년 5월 25일</div>
+  <div class="article-title">규제·전력·오픈소스·종교 — AI가 한꺼번에 사회 전체를 흔들다</div>
+  <div class="article-summary">행정명령이 서명 당일 취소되고, 670억 달러짜리 전력 합병이 성사되고, 오픈소스 AI 패권이 중국으로 넘어가고, 교황이 AI 회칙을 발표했다. 하루 안에 일어난 일들이다. AI는 이제 기술 뉴스가 아니다.</div>
+  <div class="btn-wrap">
+    <button class="toggle-btn" onclick="var d=document.getElementById('d3'),b=this;d.classList.toggle('open');b.textContent=d.classList.contains('open')?'접기 ▲':'더 보기 ▼'">더 보기 ▼</button>
+  </div>
+  <div id="d3" class="article-detail">
+    <div class="detail-inner">
+
+      <div class="news-item">
+        <div><span class="badge">규제</span><span class="news-title">트럼프, AI 안전 행정명령 서명 당일 취소 — 빅테크 CEO 3인의 전화 한 통</span></div>
+        <p><strong>무슨 일인가:</strong> 프론티어 AI 모델에 대한 사전 검토 제도를 도입하려던 행정명령이 서명 직전 전격 취소됐다. Axios 보도에 따르면 Zuckerberg·Musk·Sacks가 대통령에게 직접 연락했고, 트럼프는 "미국의 경쟁 우위를 해친다"며 철회했다.</p>
+        <p><strong>왜 중요한가:</strong> AI 안전 규제의 실질적 결정권이 누구에게 있는지 드러난 사건이다. 행정부도 입법부도 아니었다. 빅테크 CEO 3명의 전화가 정책을 바꿨다.</p>
+        <p><strong>인사이트:</strong> <span class="highlight">AI 규제는 기술의 문제가 아니라 권력의 문제다.</span> 누가 규칙을 만들 수 있는지가 결국 산업의 구조를 결정한다. 창업자가 정책을 이해해야 하는 이유가 여기 있다.</p>
+      </div>
+
+      <div class="news-item">
+        <div><span class="badge">전력</span><span class="news-title">미국 역대 최대 전력사 합병 — AI 데이터센터가 670억 달러짜리 딜을 만들다</span></div>
+        <p><strong>무슨 일인가:</strong> NextEra Energy가 Dominion Energy를 670억 달러에 인수했다. 미국 역사상 최대 전력사 합병이다. 이유는 단 하나, AI 데이터센터의 전력 수요다. AI 데이터센터는 2030년까지 미국 전력 소비의 15~25%를 차지할 것으로 전망된다.</p>
+        <p><strong>왜 중요한가:</strong> 지금 AI의 병목은 모델 성능이 아니라 전력이다. 훈련과 추론을 돌릴 전력을 확보하는 것이 AI 인프라 경쟁의 핵심 변수가 됐다.</p>
+        <p><strong>인사이트:</strong> <span class="highlight">AI 시대의 진짜 희소 자원이 드러나고 있다.</span> 모델, 데이터, 칩에 이어 전력이 그다음 병목으로 떠올랐다. 어디에 제약이 생기는지를 먼저 아는 것이 다음 기회를 보는 눈이다.</p>
+      </div>
+
+      <div class="news-item">
+        <div><span class="badge">오픈소스</span><span class="news-title">중국 오픈소스 AI, OpenRouter 사용의 60% 점유 — 오픈웨이트 패권 이동</span></div>
+        <p><strong>무슨 일인가:</strong> Kimi K2.6, DeepSeek V4, GLM-5.1, Qwen 3 등 중국 모델이 AI 모델 라우터 OpenRouter 전체 사용량의 60%를 차지했다. 미국의 마지막 오픈소스 경쟁자였던 Meta Avocado 모델은 개발이 침묵 상태다.</p>
+        <p><strong>왜 중요한가:</strong> 오픈웨이트 AI 시장의 패권이 사실상 중국으로 넘어갔다. 누구나 무료로 쓸 수 있는 AI 모델의 기준이 중국이 정하는 구조가 되고 있다.</p>
+        <p><strong>인사이트:</strong> <span class="highlight">오픈소스 AI는 인프라다.</span> 표준을 누가 만드는지가 생태계를 결정한다. 클로즈드 모델이 성능을 경쟁할 때, 오픈소스는 기반을 장악한다.</p>
+      </div>
+
+      <div class="news-item">
+        <div><span class="badge">사회</span><span class="news-title">교황 레오 14세, AI 시대 인간 존엄 회칙 발표 — Anthropic 공동창업자와 함께</span></div>
+        <p><strong>무슨 일인가:</strong> 교황 레오 14세가 AI 시대 인간 보호를 주제로 한 회칙 Magnifica Humanitas를 발표했다. Anthropic 공동창업자 Christopher Olah와 함께했으며, 135년 전 산업혁명 당시 노동자 권리를 다룬 회칙과 같은 날을 택했다. "AI는 우리 시대의 산업혁명"이라는 선언이다.</p>
+        <p><strong>왜 중요한가:</strong> AI가 기술 업계를 넘어 종교·윤리·철학 영역에서도 공식 담론이 됐다. 바티칸이 파트너로 Anthropic을 선택한 것은 AI 안전에 대한 신뢰 신호로도 읽힌다.</p>
+        <p><strong>인사이트:</strong> <span class="highlight">AI의 영향이 산업을 넘어 사회 전체로 확산되는 속도가 빨라지고 있다.</span> 기술이 강해질수록 "무엇을 위해 만드는가"라는 질문은 더 중요해진다. 그리고 그 질문은 이제 기술자만의 것이 아니다.</p>
+      </div>
+
+      <div class="source">출처: Axios (2026.05.25) · Bloomberg (2026.05.25) · OpenRouter 데이터 (2026.05.25) · Vatican 공식 발표 (2026.05.25)</div>
+    </div>
+  </div>
+</article>
+
+<!-- Article 4: 오늘의 신제품 -->
+<article class="article">
+  <div class="article-tag">오늘의 신제품 · PRODUCT HUNT · 2026년 5월 24일</div>
+  <div class="article-title">오늘의 신제품 3선</div>
+  <div class="article-summary">AI 디자인 캔버스, 영상 편집 에이전트, 로컬 LLM 관리 도구 — 만드는 방식을 바꾸는 이번 주 주목할 제품들이다.</div>
+  <div class="btn-wrap">
+    <button class="toggle-btn" onclick="var d=document.getElementById('d4'),b=this;d.classList.toggle('open');b.textContent=d.classList.contains('open')?'접기 ▲':'더 보기 ▼'">더 보기 ▼</button>
+  </div>
+  <div id="d4" class="article-detail">
+    <div class="detail-inner">
+
+      <div class="product-item">
+        <div class="product-name">Stitch 3.0 by Google</div>
+        <p>AI로 UI 화면을 라이브 캔버스에서 즉시 생성하고 반복 수정하는 구글의 디자인 도구. 텍스트 프롬프트로 인터페이스를 만들고 실시간으로 수정·조합할 수 있다. 5월 24일 일간 1위.</p>
+      </div>
+
+      <div class="product-item">
+        <div class="product-name">Runway Agent</div>
+        <p>채팅 지시 한 줄로 편집·사운드 디자인까지 완성된 영상을 만들어주는 AI 에이전트. 촬영 후 편집 과정을 대화 형식으로 처리하며, 소셜 미디어와 마케팅 영상 제작에 최적화됐다.</p>
+      </div>
+
+      <div class="product-item">
+        <div class="product-name">ModelHub</div>
+        <p>Mac 메뉴바에서 로컬 LLM을 관리하는 오픈소스 앱. 클라우드 없이 여러 AI 모델을 전환·실행할 수 있으며, 구독료 없이 AI를 운용하려는 개발자를 위해 설계됐다.</p>
+      </div>
+
+      <div class="source">출처: ProductHunt 2026년 5월 24일 · producthunt.com/leaderboard</div>
+    </div>
+  </div>
+</article>
+
+<!-- 에디터 한마디 -->
+<div class="editor">
+  <p>남들이 피하는 자리에 먼저 앉는 것이 전략이고, 그 자리를 오래 지키는 것이 레버리지다.</p>
+</div>
+
+<div class="nav-wrap">
+  <a href="vol49.html">← 이전 호</a>
+  <a href="archive.html">전체 보기</a>
+</div>
+
+<div class="footer">
+  <p>오늘의 밑줄 · 매일 발행 · <a href="https://jucheolkim.github.io" style="color:#aaa;">jucheolkim.github.io</a></p>
+</div>
+
+</body>
+</html>
