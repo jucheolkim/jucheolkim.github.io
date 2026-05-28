@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>오늘의 밑줄 · Vol.52</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap');
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { background: #f0efeb; }
+body { font-family: Georgia, serif; max-width: 680px; margin: 0 auto; padding: 40px 20px; color: #1a1a1a; background: #fff; word-break: keep-all; box-shadow: 0 0 40px rgba(0,0,0,0.06); }
+.header { text-align: center; border-top: 3px solid #1a1a1a; border-bottom: 3px solid #1a1a1a; padding: 12px 0; margin-bottom: 4px; }
+.header-sub { font-size: 11px; font-family: Arial, sans-serif; color: #888; letter-spacing: 2px; margin-bottom: 6px; }
+.header-title { font-size: 36px; font-weight: 800; letter-spacing: 0px; font-family: 'Nanum Myeongjo', Georgia, serif; white-space: nowrap; }
+.header-date { font-size: 11px; font-family: Arial, sans-serif; color: #888; margin-top: 6px; }
+.meta { display: flex; justify-content: space-between; border-bottom: 1px solid #e0e0e0; padding: 4px 0; margin-bottom: 28px; font-size: 10px; font-family: Arial, sans-serif; color: #888; }
+.nav-wrap { display: flex; justify-content: space-between; margin-bottom: 24px; font-size: 11px; font-family: Arial, sans-serif; }
+.nav-wrap a { color: #888; text-decoration: none; }
+.nav-wrap a:hover { text-decoration: underline; }
+.article { margin-bottom: 28px; padding-bottom: 28px; border-bottom: 1px solid #e0e0e0; }
+.article-tag { font-size: 10px; font-family: Arial, sans-serif; color: #888; letter-spacing: 1px; border-top: 2px solid #1a1a1a; padding-top: 8px; margin-bottom: 8px; }
+.article-title { font-size: 24px; font-weight: bold; line-height: 1.3; margin-bottom: 12px; font-family: 'Nanum Myeongjo', Georgia, serif; letter-spacing: -0.5px; }
+.article-summary { font-size: 13px; color: #555; line-height: 1.75; margin-bottom: 14px; }
+.btn-wrap { display: flex; gap: 6px; margin-bottom: 14px; }
+.toggle-btn { font-size: 11px; font-family: Arial, sans-serif; color: #555; background: none; border: 1px solid #ccc; border-radius: 6px; padding: 4px 10px; cursor: pointer; }
+.toggle-btn:hover { background: #f5f5f5; }
+.article-detail { display: none; }
+.article-detail.open { display: block; }
+.detail-inner { border-left: 2px solid #e0e0e0; padding-left: 16px; }
+.section-label { font-size: 10px; font-family: Arial, sans-serif; color: #888; letter-spacing: 1px; margin-bottom: 6px; margin-top: 16px; }
+.detail-inner p { font-size: 13px; color: #555; line-height: 1.75; margin-bottom: 8px; }
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 8px; }
+.box { background: #f5f5f5; border-radius: 8px; padding: 10px 12px; }
+.box-label { font-size: 11px; font-family: Arial, sans-serif; color: #888; margin-bottom: 6px; }
+.box p { font-size: 12px; color: #555; line-height: 1.65; margin-bottom: 6px; }
+.news-item { margin-bottom: 14px; padding-bottom: 14px; border-bottom: 1px solid #e0e0e0; }
+.news-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+.badge { display: inline-block; font-size: 10px; font-family: Arial, sans-serif; background: #f5f5f5; color: #888; padding: 2px 8px; border-radius: 4px; margin-right: 6px; }
+.news-title { font-size: 13px; font-weight: bold; }
+.news-item p { font-size: 12px; color: #555; line-height: 1.7; margin-top: 6px; }
+.product-name { font-size: 13px; font-weight: bold; color: #1a1a1a; margin-bottom: 4px; }
+.product-item { margin-bottom: 12px; padding-bottom: 12px; border-bottom: 1px solid #e0e0e0; }
+.product-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+.product-item p { font-size: 12px; color: #555; line-height: 1.7; }
+.source { font-size: 10px; font-family: Arial, sans-serif; color: #aaa; border-top: 1px solid #e0e0e0; padding-top: 8px; margin-top: 16px; }
+.highlight { font-weight: bold; color: #1a1a1a; }
+.insight-p { font-size: 15px !important; color: #333 !important; line-height: 1.85 !important; margin-bottom: 10px !important; }
+.editor { border-top: 2px solid #1a1a1a; padding-top: 10px; margin-bottom: 16px; }
+.editor p { font-size: 16px; color: #1a1a1a; line-height: 1.85; font-style: italic; font-family: 'Nanum Myeongjo', Georgia, serif; font-weight: 800; }
+.footer { border-top: 1px solid #e0e0e0; padding-top: 8px; text-align: center; font-size: 10px; font-family: Arial, sans-serif; color: #aaa; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-sub">ONEDAY DIGEST</div>
+  <div class="header-title">오늘의 밑줄</div>
+  <div class="header-date">2026년 5월 28일 · Vol. 52</div>
+</div>
+<div class="meta">
+  <span>비즈니스 인사이트 · AI·테크 브리핑 · 오늘의 신제품</span>
+  <span>jucheolkim.github.io</span>
+</div>
+
+<!-- Article 1: Lisa Su -->
+<article class="article">
+  <div class="article-tag">비즈니스 인사이트 · LISA SU · AMD</div>
+  <div class="article-title">무엇을 안 할지 정한 순간, 회사가 살아났다</div>
+  <div class="article-summary">리사 수는 2014년, 생존을 걱정하던 AMD의 CEO가 됐다. 그가 한 일은 더 많은 사업을 벌이는 게 아니라, 이길 수 없는 싸움을 접고 고성능 컴퓨팅 한 곳에 모든 것을 거는 것이었다. 12년 뒤 AMD는 AI 칩 시장에서 Nvidia를 유일하게 위협하는 회사가 됐다.</div>
+  <div class="btn-wrap">
+    <button class="toggle-btn" onclick="var d=document.getElementById('d1'),b=this;d.classList.toggle('open');b.textContent=d.classList.contains('open')?'접기 ▲':'더 보기 ▼'">더 보기 ▼</button>
+    <button class="toggle-btn">🎧 오디오로 듣기 (준비 중)</button>
+  </div>
+  <div id="d1" class="article-detail">
+    <div class="detail-inner">
+      <div class="section-label">이 사람은 누구인가</div>
+      <p>리사 수는 대만 타이난에서 태어나 세 살 무렵 미국으로 이주했다. MIT에서 전기공학으로 학·석·박사를 마치고 IBM과 프리스케일을 거쳐 2012년 AMD에 합류, 2014년 CEO에 올랐다. 당시 AMD는 인텔에 밀리고 자금난에 시달리며 생존을 걱정하던 회사였다. 그는 Zen 아키텍처와 데이터센터·고성능 컴퓨팅에 집중해 회사를 되살렸고, 2026년 현재 회장 겸 CEO로 AI 가속기(MI400·Helios)와 OpenAI 공급 계약을 이끌고 있다. Nvidia의 젠슨 황과는 친척 관계로도 알려져 있다.</p>
+      <div class="section-label">주요 활동과 이력</div>
+      <p>MIT 전기공학 박사(SOI 트랜지스터 연구) → IBM 반도체 연구 → 프리스케일 CTO → AMD 합류(2012) → CEO 취임(2014, 생존 위기) → Zen 아키텍처 공개(2017) → EPYC 서버 칩으로 인텔 점유율 잠식 → Xilinx 인수(2022) → MI300·MI350 가속기 출시(2025, 사상 최고 속도의 판매 확대) → MI400·Helios 플랫폼 및 OpenAI 6GW 공급 계약(2026) → 시가총액 약 6,750억 달러, 취임 후 주가 100배 이상 상승 → Time '올해의 CEO'(2024).</p>
+      <div class="section-label">성공한 것과 실패한 것</div>
+      <div class="grid">
+        <div class="box">
+          <div class="box-label">✓ 성공한 것</div>
+          <p>이길 수 없는 전선을 접고 한 곳에 집중했다. 승산 낮은 시장을 정리하고 고성능 컴퓨팅과 데이터센터에 자원을 몰았다. Zen 아키텍처와 칩렛 설계로 인텔의 아성을 깼고, EPYC 서버 칩은 점유율을 빠르게 늘렸다.</p>
+          <p>MI300·MI350 AI 가속기는 회사 역사상 가장 빠르게 팔린 제품이 됐다. 2026년 1분기 데이터센터 매출만 약 58억 달러를 기록했다.</p>
+        </div>
+        <div class="box">
+          <div class="box-label">✗ 실패한 것</div>
+          <p>가속기 칩 자체보다 소프트웨어(ROCm)가 Nvidia의 CUDA 생태계에 한참 뒤처졌다. 좋은 칩을 만들고도 채택이 더뎠고, 하드웨어 성능만으로는 좁혀지지 않는 격차였다.</p>
+          <p>턴어라운드는 단숨에 오지 않았다. 취임 전 회사는 공장까지 떼어내며 버텼고, 수익성이 안정되기까지 수년이 걸렸다. AI 칩 시장에서는 여전히 Nvidia에 이은 2위다.</p>
+        </div>
+      </div>
+      <div class="section-label">인사이트</div>
+      <p class="insight-p">리사 수가 반복하는 말은 "가장 큰 기회는 가장 어려운 문제에 있다"다. <span class="highlight">그는 더 많은 사업을 벌이는 대신, 이길 수 없는 싸움을 먼저 접었다.</span> 집중은 무언가를 더 하는 게 아니라, 하지 않을 것을 정하는 데서 시작한다.</p>
+      <p class="insight-p">AI 시대에 칩은 곧 권력이지만, 그는 칩 한 개가 아니라 랙 전체(Helios)를 파는 쪽으로 판을 옮겼다. <span class="highlight">경쟁의 단위를 부품에서 시스템으로 바꾼 것이다.</span> 고객이 다음에 무엇을 필요로 할지를 먼저 읽었다.</p>
+      <p class="insight-p">12년의 턴어라운드에서 가장 어려웠던 건 기술이 아니라 인내였다. 성과가 보이기까지 수년을 견뎌야 했다. <span class="highlight">그는 매 분기 옳았던 게 아니라, 방향을 한 번 정한 뒤 흔들지 않았다.</span></p>
+      <div class="source">출처: AMD Q1 2026 Earnings Call · CES 2026 Keynote · Time "CEO of the Year"(2024) · VnExpress(2026.05)</div>
+    </div>
+  </div>
+</article>
+
+<!-- Article 2: Brunello Cucinelli -->
+<article class="article">
+  <div class="article-tag">비즈니스 인사이트 · BRUNELLO CUCINELLI · Brunello Cucinelli</div>
+  <div class="article-title">더 키울 수 있는데, 일부러 멈췄다</div>
+  <div class="article-summary">브루넬로 쿠치넬리는 이탈리아 작은 마을에서 캐시미어 회사를 세웠다. 그는 더 빨리, 더 크게 키울 수 있었지만 장인과 일의 존엄을 지키려 성장 속도를 일부러 제한했다. "우아한 성장"이라는 그의 원칙은, 무엇을 하지 않을지를 정하는 경영의 다른 이름이다.</div>
+  <div class="btn-wrap">
+    <button class="toggle-btn" onclick="var d=document.getElementById('d2'),b=this;d.classList.toggle('open');b.textContent=d.classList.contains('open')?'접기 ▲':'더 보기 ▼'">더 보기 ▼</button>
+    <button class="toggle-btn">🎧 오디오로 듣기 (준비 중)</button>
+  </div>
+  <div id="d2" class="article-detail">
+    <div class="detail-inner">
+      <div class="section-label">이 사람은 누구인가</div>
+      <p>브루넬로 쿠치넬리는 1978년 이탈리아 움브리아에서 색을 입힌 여성용 캐시미어 니트로 사업을 시작했다. 회사는 14세기 중세 마을 솔로메오에 자리 잡고 있으며, 그는 이 마을을 복원하고 극장·도서관·장인학교를 세웠다. "인간적 자본주의(humanistic capitalism)"를 내걸고 이익과 윤리, 성장과 절제를 함께 추구한다. 2012년 밀라노 증시에 상장했고, 2026년 현재도 회장으로 회사를 이끈다.</p>
+      <div class="section-label">주요 활동과 이력</div>
+      <p>전기 없는 시골 농가에서 성장 → 공학 중퇴 → 약 550달러로 첫 캐시미어 생산(1978) → 솔로메오 마을 매입·복원 시작(1985~) → "우아한 성장" 원칙 정립 → 밀라노 증시 상장(2012) → 솔로메오 장인학교·도서관 설립 → "Brunello Cucinelli for Humanity"로 약 3,200만 유로 상당 의류 기부(2020) → 휴머니즘과 AI를 잇는 "Solomei AI"(brunellocucinelli.ai) 3년 프로젝트 공개(2025) → 2026년에도 인간 존엄 중심의 철학적 저술을 이어감.</p>
+      <div class="section-label">성공한 것과 실패한 것</div>
+      <div class="grid">
+        <div class="box">
+          <div class="box-label">✓ 성공한 것</div>
+          <p>감성·장인 산업인 럭셔리에 '절제'를 전략으로 세웠다. 직원에게 동종 대비 약 20% 높은 임금을 주고, 퇴근 후 업무를 금지하며, 마을 전체를 일터이자 공동체로 가꿨다. 이 원칙이 곧 브랜드의 정체성이 됐다.</p>
+          <p>기술을 거부하지도 않았다. 수학자·엔지니어·철학자·예술가가 3년간 함께 만든 "Solomei AI"로, AI조차 인간의 감수성과 존엄을 담아야 한다는 자기 철학 위에 올렸다.</p>
+        </div>
+        <div class="box">
+          <div class="box-label">✗ 실패한 것</div>
+          <p>'우아한 성장'은 더 빠른 확장의 기회를 의도적으로 포기한다는 뜻이다. 공격적 성장을 원하는 시장과 투자자에게는 답답한 속도일 수 있다.</p>
+          <p>회사의 정체성이 창업자 개인의 철학과 존재에 깊게 묶여 있다. 상장사로서 그 이후의 승계와 지속성은 풀어야 할 숙제로 남아 있다.</p>
+        </div>
+      </div>
+      <div class="section-label">인사이트</div>
+      <p class="insight-p">쿠치넬리의 핵심은 "이익은 좋되, 손상 없이"다. <span class="highlight">그는 더 벌 수 있는 길을 알면서도, 무엇을 하지 않을지를 먼저 정했다.</span> 할인하지 않고, 감시하지 않고, 무리해서 키우지 않는다. 절제가 곧 브랜드가 됐다.</p>
+      <p class="insight-p">그는 기술을 적으로 두지 않았다. AI마저 자기 철학의 언어로 다시 썼다. <span class="highlight">도구가 강해질수록, 그 도구를 무엇을 위해 쓸지 정하는 일이 더 중요해진다는 것이다.</span> 방향을 가진 사람에게 기술은 위협이 아니라 재료다.</p>
+      <p class="insight-p">시골과 가난은 그의 서사에서 비참함이 아니라 기준점이다. <span class="highlight">그는 일의 존엄을 지키는 것을 회사의 목적으로 삼았고, 그 목적이 모든 '하지 않을 결정'의 근거가 됐다.</span> 무엇을 지킬지가 분명하면, 무엇을 버릴지도 분명해진다.</p>
+      <div class="source">출처: brunellocucinelli.com(Humanistic Capitalism) · "The Dream of Solomeo" · Living Ideas Journal(2025.09) · brunellocucinelli.ai</div>
+    </div>
+  </div>
+</article>
+
+<!-- Article 3: AI 브리핑 -->
+<article class="article">
+  <div class="article-tag">AI · 테크 브리핑 · 2026년 5월 28일</div>
+  <div class="article-title">같은 값에 다른 모델, 평균을 넘은 창의성, 그리고 누군가의 첫 외출</div>
+  <div class="article-summary">ChatGPT 음성모드가 텍스트보다 한참 낡은 모델로 돌아가고, AI가 평균 인간의 창의성 점수를 넘어섰으며, 자율주행이 시각장애인에게 '혼자 나설 자유'를 줬다. 오늘의 뉴스는 AI가 어디서 기대에 못 미치고 어디서 과소평가됐는지를 동시에 보여준다.</div>
+  <div class="btn-wrap">
+    <button class="toggle-btn" onclick="var d=document.getElementById('d3'),b=this;d.classList.toggle('open');b.textContent=d.classList.contains('open')?'접기 ▲':'더 보기 ▼'">더 보기 ▼</button>
+  </div>
+  <div id="d3" class="article-detail">
+    <div class="detail-inner">
+
+      <div class="news-item">
+        <div><span class="badge">제품·신뢰</span><span class="news-title">ChatGPT 음성모드가 텍스트보다 낡은 모델로 작동한다</span></div>
+        <p><strong>무슨 일인가:</strong> ChatGPT 음성모드가 텍스트(GPT-5.5 계열)와 달리 2024년 4월 지식 컷오프의 구형(GPT-4o 세대) 모델로 작동한다는 점이 개발자들 사이에서 지적됐다. 두 모드 사이에 약 13개월의 성능 격차가 있는데, 이 사실은 눈에 띄게 고지되지 않았다.</p>
+        <p><strong>왜 중요한가:</strong> 월 정액을 내고 '최신'을 기대한 사용자가, 모드에 따라 다른 품질을 받고 있었다는 뜻이다. 실시간 음성은 낮은 지연이 필요해 최신 모델을 그대로 올리기 어렵다는 기술적 제약이 있지만, 같은 값에 다른 경험은 신뢰의 문제가 된다. 구글 Gemini Live는 최신 모델을 그대로 쓴다.</p>
+        <p><strong>인사이트:</strong> <span class="highlight">제품의 신뢰는 성능이 아니라 '약속과 실제의 일치'에서 나온다.</span> 무엇을 주는지보다, 주기로 한 것을 주는지가 먼저다. 보이지 않는 곳에서 격차가 쌓이면, 가장 먼저 무너지는 건 신뢰다.</p>
+      </div>
+
+      <div class="news-item">
+        <div><span class="badge">연구</span><span class="news-title">AI가 평균 인간의 창의성 점수를 넘어섰다 — 10만 명 비교 연구</span></div>
+        <p><strong>무슨 일인가:</strong> 10만 명 이상을 최신 생성형 AI와 비교한 연구에서, AI가 표준 창의성 검사(대안 용도 과제·원격 연상 검사 등)에서 평균적인 인간을 앞섰다는 결과가 나왔다. 다만 연구진은 이 검사가 '구조화된 창의성'을 측정할 뿐, 문학·예술 같은 열린 창의성과 같지 않다고 단서를 달았다.</p>
+        <p><strong>왜 중요한가:</strong> 이 검사들은 수십 년간 채용에서 창의적 잠재력을 가늠하는 데 쓰여 왔다. AI가 평균 지원자를 넘었다면, '평균적 창의성'을 요구하는 일자리가 가장 먼저 자동화에 노출된다는 의미다. 반대로 예외적·문화적 창의성은 더 오래 인간의 몫으로 남는다.</p>
+        <p><strong>인사이트:</strong> <span class="highlight">AI에 가장 먼저 노출되는 건 일의 '평균' 구간이다.</span> 누구나 할 수 있는 창의성은 도구가 대신하고, 그 위와 아래—탁월함과 맥락—가 사람의 자리가 된다. 질문은 'AI가 창의적인가'가 아니라 '내 일의 어느 구간이 평균인가'다.</p>
+      </div>
+
+      <div class="news-item">
+        <div><span class="badge">자율주행</span><span class="news-title">Waymo, 시각장애인에게 '혼자 나설 자유'를 주다</span></div>
+        <p><strong>무슨 일인가:</strong> 뉴욕타임스가 캘리포니아의 시각장애인 Waymo 이용자들을 취재했다. 이들은 앱을 열고 타기만 하면 되는 자율주행 서비스가, 타인의 일정·판단·시선에 기대지 않고 이동할 수 있게 해줬다고 말한다. 운전이 불가능한 이들에게 이는 단순한 편의가 아니라 독립의 문제였다.</p>
+        <p><strong>왜 중요한가:</strong> 자율주행 논의는 대개 기술·규제·안전에 머문다. 그러나 특정 사용자에게 이 기술은 고용·의료 접근·사회적 연결의 조건 자체를 바꾼다. 그동안 과소평가돼 온 실제 효용이 가장 분명하게 드러나는 지점이다.</p>
+        <p><strong>인사이트:</strong> <span class="highlight">기술의 가치는 평균이 아니라 가장 절실한 사용자에게서 가장 크게 나타난다.</span> 누구에게 무엇이 가능해지는가—그 질문이 안전만큼이나 규제와 확산의 근거가 되어야 한다.</p>
+      </div>
+
+      <div class="source">출처: Simon Willison · 개발자 커뮤니티(2026.05.27) · ScienceDaily 동료심사 연구(2026.05.27) · The New York Times(2026.05.27)</div>
+    </div>
+  </div>
+</article>
+
+<!-- Article 4: 오늘의 신제품 -->
+<article class="article">
+  <div class="article-tag">오늘의 신제품 · PRODUCT HUNT · 2026년 5월</div>
+  <div class="article-title">오늘의 신제품 3선</div>
+  <div class="article-summary">AI 검색에서 내 브랜드가 어떻게 인용되는지 보는 도구, Postgres로 AI 앱을 짓는 플랫폼, 그리고 AI로 만드는 웹사이트 빌더 — 만드는 사람의 일을 바꾸는 이번 달 제품들이다.</div>
+  <div class="btn-wrap">
+    <button class="toggle-btn" onclick="var d=document.getElementById('d4'),b=this;d.classList.toggle('open');b.textContent=d.classList.contains('open')?'접기 ▲':'더 보기 ▼'">더 보기 ▼</button>
+  </div>
+  <div id="d4" class="article-detail">
+    <div class="detail-inner">
+
+      <div class="product-item">
+        <div class="product-name">Wellows</div>
+        <p>AI 검색(ChatGPT 등)에서 내 브랜드가 어떤 출처를 통해 인용되는지 보여주는 가시성 도구. '몇 번 언급됐나'를 넘어 모델이 실제로 끌어오는 제3자 페이지를 짚어줘, '어떤 글에 들어가야 하는가'를 실행 과제로 바꾼다.</p>
+      </div>
+
+      <div class="product-item">
+        <div class="product-name">Powabase</div>
+        <p>Postgres·RAG·에이전트를 묶어 AI 앱을 만드는 개발 플랫폼. 데이터베이스부터 검색·에이전트까지 한곳에서 다뤄, 초기 제품을 빠르게 세우려는 팀에 맞춰져 있다.</p>
+      </div>
+
+      <div class="product-item">
+        <div class="product-name">Framer</div>
+        <p>자연어와 AI로 웹사이트를 만드는 빌더. 스타트업의 속도로 시작하되 엔터프라이즈 수준의 요구까지 담을 수 있게 설계됐다는 점을 내세운다.</p>
+      </div>
+
+      <div class="source">출처: ProductHunt 2026년 5월 · producthunt.com</div>
+    </div>
+  </div>
+</article>
+
+<!-- 에디터 한마디 -->
+<div class="editor">
+  <p>기술이 커질수록, 무엇을 더 할지가 아니라 무엇을 하지 않을지를 아는 사람이 앞선다.</p>
+</div>
+
+<div class="nav-wrap">
+  <a href="vol51.html">← 이전 호</a>
+  <a href="archive.html">전체 보기</a>
+</div>
+
+<div class="footer">
+  <p>오늘의 밑줄 · 매일 발행 · <a href="https://jucheolkim.github.io" style="color:#aaa;">jucheolkim.github.io</a></p>
+</div>
+
+<script>
+</script>
+</body>
+</html>
