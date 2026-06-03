@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>오늘의 밑줄 · Vol.56</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap');
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { background: #f0efeb; }
+body { font-family: Georgia, serif; max-width: 680px; margin: 0 auto; padding: 40px 20px; color: #1a1a1a; background: #fff; word-break: keep-all; box-shadow: 0 0 40px rgba(0,0,0,0.06); }
+.header { text-align: center; border-top: 3px solid #1a1a1a; border-bottom: 3px solid #1a1a1a; padding: 12px 0; margin-bottom: 4px; }
+.header-sub { font-size: 11px; font-family: Arial, sans-serif; color: #888; letter-spacing: 2px; margin-bottom: 6px; }
+.header-title { font-size: 36px; font-weight: 800; letter-spacing: 0px; font-family: 'Nanum Myeongjo', Georgia, serif; white-space: nowrap; }
+.header-date { font-size: 11px; font-family: Arial, sans-serif; color: #888; margin-top: 6px; }
+.meta { display: flex; justify-content: space-between; border-bottom: 1px solid #e0e0e0; padding: 4px 0; margin-bottom: 28px; font-size: 10px; font-family: Arial, sans-serif; color: #888; }
+.nav-wrap { display: flex; justify-content: space-between; margin-bottom: 24px; font-size: 11px; font-family: Arial, sans-serif; }
+.nav-wrap a { color: #888; text-decoration: none; }
+.nav-wrap a:hover { text-decoration: underline; }
+.article { margin-bottom: 28px; padding-bottom: 28px; border-bottom: 1px solid #e0e0e0; }
+.article-tag { font-size: 10px; font-family: Arial, sans-serif; color: #888; letter-spacing: 1px; border-top: 2px solid #1a1a1a; padding-top: 8px; margin-bottom: 8px; }
+.article-title { font-size: 24px; font-weight: bold; line-height: 1.3; margin-bottom: 12px; font-family: 'Nanum Myeongjo', Georgia, serif; letter-spacing: -0.5px; }
+.article-summary { font-size: 13px; color: #555; line-height: 1.75; margin-bottom: 14px; }
+.btn-wrap { display: flex; gap: 6px; margin-bottom: 14px; }
+.toggle-btn { font-size: 11px; font-family: Arial, sans-serif; color: #555; background: none; border: 1px solid #ccc; border-radius: 6px; padding: 4px 10px; cursor: pointer; }
+.toggle-btn:hover { background: #f5f5f5; }
+.article-detail { display: none; }
+.article-detail.open { display: block; }
+.detail-inner { border-left: 2px solid #e0e0e0; padding-left: 16px; }
+.section-label { font-size: 10px; font-family: Arial, sans-serif; color: #888; letter-spacing: 1px; margin-bottom: 6px; margin-top: 16px; }
+.detail-inner p { font-size: 13px; color: #555; line-height: 1.75; margin-bottom: 8px; }
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 8px; }
+.box { background: #f5f5f5; border-radius: 8px; padding: 10px 12px; }
+.box-label { font-size: 11px; font-family: Arial, sans-serif; color: #888; margin-bottom: 6px; }
+.box p { font-size: 12px; color: #555; line-height: 1.65; margin-bottom: 6px; }
+.news-item { margin-bottom: 14px; padding-bottom: 14px; border-bottom: 1px solid #e0e0e0; }
+.news-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+.badge { display: inline-block; font-size: 10px; font-family: Arial, sans-serif; background: #f5f5f5; color: #888; padding: 2px 8px; border-radius: 4px; margin-right: 6px; }
+.news-title { font-size: 13px; font-weight: bold; }
+.news-item p { font-size: 12px; color: #555; line-height: 1.7; margin-top: 6px; }
+.product-name { font-size: 13px; font-weight: bold; color: #1a1a1a; margin-bottom: 4px; }
+.product-item { margin-bottom: 12px; padding-bottom: 12px; border-bottom: 1px solid #e0e0e0; }
+.product-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+.product-item p { font-size: 12px; color: #555; line-height: 1.7; }
+.source { font-size: 10px; font-family: Arial, sans-serif; color: #aaa; border-top: 1px solid #e0e0e0; padding-top: 8px; margin-top: 16px; }
+.highlight { font-weight: bold; color: #1a1a1a; }
+.insight-p { font-size: 15px !important; color: #333 !important; line-height: 1.85 !important; margin-bottom: 10px !important; }
+.editor { border-top: 2px solid #1a1a1a; padding-top: 10px; margin-bottom: 16px; }
+.editor p { font-size: 16px; color: #1a1a1a; line-height: 1.85; font-style: italic; font-family: 'Nanum Myeongjo', Georgia, serif; font-weight: 800; }
+.footer { border-top: 1px solid #e0e0e0; padding-top: 8px; text-align: center; font-size: 10px; font-family: Arial, sans-serif; color: #aaa; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-sub">ONEDAY DIGEST</div>
+  <div class="header-title">오늘의 밑줄</div>
+  <div class="header-date">2026년 6월 3일 · Vol. 56</div>
+</div>
+<div class="meta">
+  <span>비즈니스 인사이트 · AI·테크 브리핑 · 오늘의 신제품</span>
+  <span>jucheolkim.github.io</span>
+</div>
+
+<!-- Article 1: Mary Meeker -->
+<article class="article">
+  <div class="article-tag">비즈니스 인사이트 · MARY MEEKER · Bond Capital</div>
+  <div class="article-title">노이즈 속에서 구조를 읽는 사람</div>
+  <div class="article-summary">메리 미커는 25년간 인터넷의 방향을 가장 먼저 읽은 애널리스트다. 남들이 개별 기업과 주가를 볼 때, 그는 산업 전체의 구조를 지도로 그렸다. 그 확신이 그를 '인터넷의 여왕'으로 만들었고, 동시에 거품의 한복판에 세웠다.</div>
+  <div class="btn-wrap">
+    <button class="toggle-btn" onclick="var d=document.getElementById('d1'),b=this;d.classList.toggle('open');b.textContent=d.classList.contains('open')?'접기 ▲':'더 보기 ▼'">더 보기 ▼</button>
+    <button class="toggle-btn">🎧 오디오로 듣기 (준비 중)</button>
+  </div>
+  <div id="d1" class="article-detail">
+    <div class="detail-inner">
+      <div class="section-label">이 사람은 누구인가</div>
+      <p>메리 미커는 월스트리트 애널리스트로 출발해 1996년 'The Internet Report'로 인터넷을 하나의 산업으로 처음 지도화한 인물이다. 1995년부터 2019년까지 매년 펴낸 'Internet Trends'는 업계 필독서가 됐다. 2010년 Kleiner Perkins로 옮겨 투자자로 변신했고, 2018년 자신의 벤처캐피털 Bond를 세웠다. 6년 침묵 끝에 2025년 5월, 340페이지짜리 'AI Trends' 리포트로 돌아왔다. 현재 Block·OpenEvidence 등의 이사회에도 참여한다.</p>
+      <div class="section-label">주요 활동과 이력</div>
+      <p>Merrill Lynch 주식중개인 → Salomon Brothers 기술 애널리스트 → Morgan Stanley 합류(1990년대 초) → Netscape IPO 주관(1995) · The Internet Report 발표(1996) → 닷컴 버블과 붕괴(2000) → Google IPO 대표 애널리스트(2004) → Kleiner Perkins 파트너로 투자자 전환(2010) → Bond Capital 창업(2018) → AI Trends 리포트로 복귀(2025) → 130개사 176건 투자 · 유니콘 51개(2026).</p>
+      <div class="section-label">성공한 것과 실패한 것</div>
+      <div class="grid">
+        <div class="box">
+          <div class="box-label">✓ 성공한 것</div>
+          <p>인터넷을 '주식'이 아니라 '산업 구조'로 처음 본 사람이다. 디지털화가 경제를 바꾸고, 먼저 자리 잡은 기업이 큰 우위를 갖는다는 것을 1996년에 데이터로 정리했다. 늘 남보다 먼저 옳았다.</p>
+          <p>Kleiner와 Bond에서 Facebook·Spotify·Snap 같은 후기 단계 베팅을 성공시켰다. 애널리스트에서 투자자로의 전환도 50대에 해냈다.</p>
+        </div>
+        <div class="box">
+          <div class="box-label">✗ 실패한 것</div>
+          <p>닷컴 붕괴 때 너무 오래 낙관에 머물렀다. 2000년 폭락을 지나며 eBay·Amazon 분석이 투자은행 거래와 얽혀 편향됐다는 소송에 휘말렸다.</p>
+          <p>구조는 옳게 봤지만 가격이 현실을 앞질렀다는 신호는 늦게 읽었다. 일찍 지지한 Netscape·AOL은 원래 형태로 살아남지 못했다.</p>
+        </div>
+      </div>
+      <div class="section-label">인사이트</div>
+      <p class="insight-p">미커의 강점은 한 문장으로 요약된다. <span class="highlight">소음 아래의 구조를 본다.</span> 개별 기업의 등락이 아니라 기술이 산업과 행동을 어떻게 재편하는지를 데이터로 먼저 지도화한다. 그래서 그는 방향을 늘 남보다 먼저 맞혔다.</p>
+      <p class="insight-p">하지만 같은 확신이 약점이 됐다. <span class="highlight">방향을 먼저 본 사람은, 그 방향이 과열되는 순간을 가장 늦게 의심한다.</span> 구조가 맞다는 믿음이 강할수록 가격이 현실을 앞질러도 버티게 된다. 닷컴의 교훈이 그것이었다.</p>
+      <p class="insight-p">그의 2025년 AI 리포트는 "전례 없다"는 말을 50번 넘게 썼다. AI 도입 속도가 역사상 가장 빠르다는 구조적 판단이다. <span class="highlight">맞는 방향을 먼저 보는 것과, 그 방향에 언제 돈이 앞서갔는지를 아는 것은 다른 능력이다.</span> 오늘의 AI 시장이 그에게 다시 던지는 질문이기도 하다.</p>
+      <div class="source">출처: Bond 'Trends — Artificial Intelligence' (2025.05) · CNBC (2010) · Fordham J. Corp. & Fin. L. (2001) · Fortune</div>
+    </div>
+  </div>
+</article>
+
+<!-- Article 2: Hamdi Ulukaya -->
+<article class="article">
+  <div class="article-tag">비즈니스 인사이트 · HAMDI ULUKAYA · Chobani</div>
+  <div class="article-title">회사를 누구의 것으로 둘지가 전략이었다</div>
+  <div class="article-summary">함디 울루카야는 표준 창업 공식을 거의 다 거부했다. 벤처 투자 대신 부채로, 빠른 매각 대신 창업자 지배로, 주주 이익 극대화 대신 직원·난민과 나누는 쪽을 택했다. 그리고 그 '다른 선택'들이 곧 Chobani의 속도이자 해자가 됐다.</div>
+  <div class="btn-wrap">
+    <button class="toggle-btn" onclick="var d=document.getElementById('d2'),b=this;d.classList.toggle('open');b.textContent=d.classList.contains('open')?'접기 ▲':'더 보기 ▼'">더 보기 ▼</button>
+    <button class="toggle-btn">🎧 오디오로 듣기 (준비 중)</button>
+  </div>
+  <div id="d2" class="article-detail">
+    <div class="detail-inner">
+      <div class="section-label">이 사람은 누구인가</div>
+      <p>함디 울루카야는 터키 동부의 목축 가정에서 자라 1994년 미국으로 건너왔다. 2005년 폐업한 90년 된 요거트 공장을 정부 보증 대출(SBA)로 사들여 Chobani를 창업했고, 그릭 요거트로 미국 요거트 시장 약 20%를 차지하는 1위 브랜드로 키웠다. 2023년 La Colombe 커피를 인수하며 종합 식음료 기업으로 확장 중이다. 회사는 여전히 비상장이고, 그는 지배 지분을 유지하고 있다.</p>
+      <div class="section-label">주요 활동과 이력</div>
+      <p>터키 목축 가정에서 성장 → 미국 이주(1994) → 작은 치즈 사업 시작(2002) → SBA 대출로 폐 요거트 공장 인수 · Agro Farma 창업(2005) → 첫 제품 출시(2007) → 외부 벤처 없이 부트스트랩 성장(~2011) → TPG 7.5억 달러 금융 유치(2014) → 직원 약 2,000명에게 지분 10% 부여(2016) → La Colombe 9억 달러 인수(2023) → 매출 약 36억 달러 · 연 20%대 성장(2025).</p>
+      <div class="section-label">성공한 것과 실패한 것</div>
+      <div class="grid">
+        <div class="box">
+          <div class="box-label">✓ 성공한 것</div>
+          <p>외부 벤처 투자 없이 부채와 이익 재투자만으로 10년 만에 매출 10억 달러에 다가섰다. VC 자금에 의존한 경쟁사보다 오히려 빨랐다. 창업자 지배를 유지한 덕에 이사회의 단기 압박 없이 큰 베팅을 할 수 있었다.</p>
+          <p>품질로 이겼다. 더 많은 단백질, 더 적은 설탕, 진짜 그릭 요거트. 정체된 카테고리에 프리미엄 제품을 들고 들어가 시장을 다시 그렸다.</p>
+        </div>
+        <div class="box">
+          <div class="box-label">✗ 실패한 것</div>
+          <p>2014년 급성장 과정에서 결국 외부 자금(TPG)을 끌어와야 했고, 한동안 부채 부담과 성장통을 겪었다. 창업자 지배를 지키려는 선택에는 비용이 따랐다.</p>
+          <p>비상장 · 창업자 집중 구조는 속도를 주지만 외부 견제와 유동성에서는 약점을 안는다. 커피 등으로의 확장이 핵심에서 멀어질 위험도 함께 진다.</p>
+        </div>
+      </div>
+      <div class="section-label">인사이트</div>
+      <p class="insight-p">울루카야의 선택은 하나의 질문으로 모인다. <span class="highlight">회사가 누구의 것이냐.</span> 그는 지분을 외부 투자자에게 넘기는 대신 부채로 자금을 조달했고, 2016년엔 직원들에게 지분 약 10%를 나눠줬다. 소유 구조가 곧 제품과 속도를 정했다.</p>
+      <p class="insight-p">그는 표준 CEO 공식을 거의 다 거부했다. 주주 이익 극대화 대신 직원·난민·지역을 먼저 놓았다. 흥미로운 건 그게 자선이 아니라 <span class="highlight">성장 엔진이었다는 점</span>이다. 비용을 치르는 게 아니라, 이탈을 줄이고 신뢰를 쌓는 투자였다.</p>
+      <p class="insight-p">모두가 따르는 공식을 거절하는 데는 대가가 따른다. 더 느린 자금 조달, 더 외로운 의사결정. 하지만 <span class="highlight">그 공식을 거절했기 때문에 남들이 못 하는 결정을 빠르게 내릴 수 있었다.</span> '다르게'가 곧 해자가 된 사례다.</p>
+      <div class="source">출처: Fortune · CBS News (2016) · Wikipedia · Sacra (2026.03) · Thought Economics (2026.03)</div>
+    </div>
+  </div>
+</article>
+
+<!-- Article 3: AI 브리핑 -->
+<article class="article">
+  <div class="article-tag">AI · 테크 브리핑 · 2026년 6월 3일</div>
+  <div class="article-title">시장·정부·소비자 — AI 확장에 동시에 반작용이 켜졌다</div>
+  <div class="article-summary">AI 자본은 더 뜨거워지고, 정부는 프런티어 모델을 안보 자산으로 묶고, 소비자는 'AI 강요'에 등을 돌리기 시작했다. 오늘의 뉴스는 AI의 확장이 시장·국가·사용자 모두에게서 동시에 반응을 끌어내고 있음을 보여준다.</div>
+  <div class="btn-wrap">
+    <button class="toggle-btn" onclick="var d=document.getElementById('d3'),b=this;d.classList.toggle('open');b.textContent=d.classList.contains('open')?'접기 ▲':'더 보기 ▼'">더 보기 ▼</button>
+  </div>
+  <div id="d3" class="article-detail">
+    <div class="detail-inner">
+
+      <div class="news-item">
+        <div><span class="badge">밸류에이션</span><span class="news-title">Cyera, 적자에도 ARR 80배 · 기업가치 120억 달러 추진</span></div>
+        <p><strong>무슨 일인가:</strong> 데이터 보안 기업 Cyera가 Evolution Equity Partners 주도로 3억 달러 이상을 조달하며 기업가치 120억 달러를 추진 중이다. ARR은 1.5억 달러를 넘겼지만 아직 적자이고, 밸류는 ARR의 약 80배 — 빠르게 크는 AI 스타트업들보다도 높은 배수다. 불과 5개월 전엔 90억 달러였다.</p>
+        <p><strong>왜 중요한가:</strong> AI 위협으로 기업들이 데이터 보안에 몰리며 방어 영역까지 자본이 쏠리고 있다. 수익이 아니라 성장 속도와 'AI 수혜 서사'에 값을 매기는 패턴이 보안 분야로도 번졌다.</p>
+        <p><strong>인사이트:</strong> <span class="highlight">밸류에이션이 실적이 아니라 서사를 따라갈 때, 시장은 방향은 맞아도 가격은 틀릴 수 있다.</span> ARR 80배는 미래를 당겨온 숫자다. 그 미래가 언제 도착하느냐가 진짜 질문이다.</p>
+      </div>
+
+      <div class="news-item">
+        <div><span class="badge">정책</span><span class="news-title">백악관, 프런티어 AI 행정명령 — 사이버 능력 모델에 정부 선접근</span></div>
+        <p><strong>무슨 일인가:</strong> 미국이 사이버 능력이 강한 AI 모델을 'covered frontier model'로 지정하는 기밀 벤치마킹 절차를 만들고, 개발사가 출시 전 최대 30일 정부에 모델 접근을 제공하는 자발적 프레임워크를 설계하도록 했다. 동시에 의무 라이선스·사전허가 제도는 명시적으로 배제했다.</p>
+        <p><strong>왜 중요한가:</strong> AI가 국가안보 인프라로 공식 분류되기 시작했다. 정부와 프런티어 연구소의 관계가 '규제 대 혁신'이 아니라 '선접근·협력'이라는 구조로 짜이고 있다.</p>
+        <p><strong>인사이트:</strong> <span class="highlight">강력한 도구일수록 만드는 곳과 지키는 곳의 경계가 흐려진다.</span> 의무화 대신 자발적 선접근을 택한 건 통제하면서도 속도를 죽이지 않으려는 줄타기다. 그 균형을 어떻게 잡느냐가 향후 AI 거버넌스의 표준이 된다.</p>
+      </div>
+
+      <div class="news-item">
+        <div><span class="badge">소비자</span><span class="news-title">DuckDuckGo 'AI 없는 검색' 트래픽 급증 — 전용 확장 출시</span></div>
+        <p><strong>무슨 일인가:</strong> 구글이 검색을 AI 중심으로 전면 개편하자, DuckDuckGo의 'AI 없는 검색' 페이지 트래픽이 평소 대비 약 84% 높은 수준으로 뛰었다. DuckDuckGo는 이를 기본 검색으로 지정하는 Chrome·Firefox 확장을 새로 내놨다.</p>
+        <p><strong>왜 중요한가:</strong> 모두가 AI를 기본값으로 미는 흐름에 대한 분명한 반작용이다. 'AI를 끄고 싶다'는 수요가 실제 트래픽과 설치 수로 나타나기 시작했다.</p>
+        <p><strong>인사이트:</strong> <span class="highlight">새 기술이 기본값이 되는 속도가 빠를수록, 그 반대편의 시장도 함께 열린다.</span> 강요된 AI에 피로를 느끼는 사용자는 '선택할 자유'에 돈과 시간을 쓴다. 모두가 한 방향으로 갈 때, 반대 방향에 틈새가 생긴다.</p>
+      </div>
+
+      <div class="source">출처: TechCrunch (2026.06.02) · The White House (2026.06.02) · TechCrunch (2026.06.01)</div>
+    </div>
+  </div>
+</article>
+
+<!-- Article 4: 오늘의 신제품 -->
+<article class="article">
+  <div class="article-tag">오늘의 신제품 · PRODUCT HUNT · 2026년 6월</div>
+  <div class="article-title">오늘의 신제품 3선</div>
+  <div class="article-summary">세일즈·엔지니어링·온보딩 — 창업자가 일하는 방식을 바꾸는 이번 주 ProductHunt 주목 제품들이다.</div>
+  <div class="btn-wrap">
+    <button class="toggle-btn" onclick="var d=document.getElementById('d4'),b=this;d.classList.toggle('open');b.textContent=d.classList.contains('open')?'접기 ▲':'더 보기 ▼'">더 보기 ▼</button>
+  </div>
+  <div id="d4" class="article-detail">
+    <div class="detail-inner">
+
+      <div class="product-item">
+        <div class="product-name">Prospecting by Clarify</div>
+        <p>CRM 안에서 리드 발굴부터 아웃바운드, 파이프라인 관리까지 한 번에 처리한다. 세일즈 도구를 따로 띄울 필요 없이 고객 데이터가 있는 곳에서 영업을 돌리고, AI가 잠재고객을 찾아 접촉을 제안한다. 6월 2일 일간 상위권.</p>
+      </div>
+
+      <div class="product-item">
+        <div class="product-name">Moxie Docs</div>
+        <p>GitHub 레포에 '살아있는 문서'와 MCP 컨텍스트를 붙이는 개발자 도구. 코드가 바뀌면 문서가 따라 갱신되고, AI 에이전트가 레포 맥락을 그대로 읽어 작업할 수 있다. 문서와 코드의 간극을 줄이는 데 초점.</p>
+      </div>
+
+      <div class="product-item">
+        <div class="product-name">Kompassify 2.0</div>
+        <p>AI 코파일럿이 붙은 사용자 온보딩 툴. 노코드로 가입 직후 흐름을 설계하고, 사용자가 어디서 막히는지 짚어 이탈을 줄인다. 초기 SaaS 창업자를 위한 활성화(activation) 도구.</p>
+      </div>
+
+      <div class="source">출처: ProductHunt 2026년 6월 · producthunt.com/leaderboard</div>
+    </div>
+  </div>
+</article>
+
+<!-- 에디터 한마디 -->
+<div class="editor">
+  <p>남들이 소음을 들을 때 구조를 읽고, 남들이 공식을 따를 때 구조를 다시 짠다 — 차이는 늘 거기서 갈린다.</p>
+</div>
+
+<div class="nav-wrap">
+  <a href="vol55.html">← 이전 호</a>
+  <a href="archive.html">전체 보기</a>
+</div>
+
+<div class="footer">
+  <p>오늘의 밑줄 · 매일 발행 · <a href="https://jucheolkim.github.io" style="color:#aaa;">jucheolkim.github.io</a></p>
+</div>
+
+<script>
+</script>
+</body>
+</html>
