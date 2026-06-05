@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>오늘의 밑줄 · Vol.58</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap');
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { background: #f0efeb; }
+body { font-family: Georgia, serif; max-width: 680px; margin: 0 auto; padding: 40px 20px; color: #1a1a1a; background: #fff; word-break: keep-all; box-shadow: 0 0 40px rgba(0,0,0,0.06); }
+.header { text-align: center; border-top: 3px solid #1a1a1a; border-bottom: 3px solid #1a1a1a; padding: 12px 0; margin-bottom: 4px; }
+.header-sub { font-size: 11px; font-family: Arial, sans-serif; color: #888; letter-spacing: 2px; margin-bottom: 6px; }
+.header-title { font-size: 36px; font-weight: 800; letter-spacing: 0px; font-family: 'Nanum Myeongjo', Georgia, serif; white-space: nowrap; }
+.header-date { font-size: 11px; font-family: Arial, sans-serif; color: #888; margin-top: 6px; }
+.meta { display: flex; justify-content: space-between; border-bottom: 1px solid #e0e0e0; padding: 4px 0; margin-bottom: 28px; font-size: 10px; font-family: Arial, sans-serif; color: #888; }
+.nav-wrap { display: flex; justify-content: space-between; margin-bottom: 24px; font-size: 11px; font-family: Arial, sans-serif; }
+.nav-wrap a { color: #888; text-decoration: none; }
+.nav-wrap a:hover { text-decoration: underline; }
+.article { margin-bottom: 28px; padding-bottom: 28px; border-bottom: 1px solid #e0e0e0; }
+.article-tag { font-size: 10px; font-family: Arial, sans-serif; color: #888; letter-spacing: 1px; border-top: 2px solid #1a1a1a; padding-top: 8px; margin-bottom: 8px; }
+.article-title { font-size: 24px; font-weight: bold; line-height: 1.3; margin-bottom: 12px; font-family: 'Nanum Myeongjo', Georgia, serif; letter-spacing: -0.5px; }
+.article-summary { font-size: 13px; color: #555; line-height: 1.75; margin-bottom: 14px; }
+.btn-wrap { display: flex; gap: 6px; margin-bottom: 14px; }
+.toggle-btn { font-size: 11px; font-family: Arial, sans-serif; color: #555; background: none; border: 1px solid #ccc; border-radius: 6px; padding: 4px 10px; cursor: pointer; }
+.toggle-btn:hover { background: #f5f5f5; }
+.article-detail { display: none; }
+.article-detail.open { display: block; }
+.detail-inner { border-left: 2px solid #e0e0e0; padding-left: 16px; }
+.section-label { font-size: 10px; font-family: Arial, sans-serif; color: #888; letter-spacing: 1px; margin-bottom: 6px; margin-top: 16px; }
+.detail-inner p { font-size: 13px; color: #555; line-height: 1.75; margin-bottom: 8px; }
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 8px; }
+.box { background: #f5f5f5; border-radius: 8px; padding: 10px 12px; }
+.box-label { font-size: 11px; font-family: Arial, sans-serif; color: #888; margin-bottom: 6px; }
+.box p { font-size: 12px; color: #555; line-height: 1.65; margin-bottom: 6px; }
+.news-item { margin-bottom: 14px; padding-bottom: 14px; border-bottom: 1px solid #e0e0e0; }
+.news-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+.badge { display: inline-block; font-size: 10px; font-family: Arial, sans-serif; background: #f5f5f5; color: #888; padding: 2px 8px; border-radius: 4px; margin-right: 6px; }
+.news-title { font-size: 13px; font-weight: bold; }
+.news-item p { font-size: 12px; color: #555; line-height: 1.7; margin-top: 6px; }
+.product-name { font-size: 13px; font-weight: bold; color: #1a1a1a; margin-bottom: 4px; }
+.product-item { margin-bottom: 12px; padding-bottom: 12px; border-bottom: 1px solid #e0e0e0; }
+.product-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+.product-item p { font-size: 12px; color: #555; line-height: 1.7; }
+.source { font-size: 10px; font-family: Arial, sans-serif; color: #aaa; border-top: 1px solid #e0e0e0; padding-top: 8px; margin-top: 16px; }
+.highlight { font-weight: bold; color: #1a1a1a; }
+.insight-p { font-size: 15px !important; color: #333 !important; line-height: 1.85 !important; margin-bottom: 10px !important; }
+.editor { border-top: 2px solid #1a1a1a; padding-top: 10px; margin-bottom: 16px; }
+.editor p { font-size: 16px; color: #1a1a1a; line-height: 1.85; font-style: italic; font-family: 'Nanum Myeongjo', Georgia, serif; font-weight: 800; }
+.footer { border-top: 1px solid #e0e0e0; padding-top: 8px; text-align: center; font-size: 10px; font-family: Arial, sans-serif; color: #aaa; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-sub">ONEDAY DIGEST</div>
+  <div class="header-title">오늘의 밑줄</div>
+  <div class="header-date">2026년 6월 5일 · Vol. 58</div>
+</div>
+<div class="meta">
+  <span>비즈니스 인사이트 · AI·테크 브리핑 · 오늘의 신제품</span>
+  <span>jucheolkim.github.io</span>
+</div>
+
+<!-- Article 1: Doug McMillon -->
+<article class="article">
+  <div class="article-tag">비즈니스 인사이트 · DOUG MCMILLON · Walmart</div>
+  <div class="article-title">AI는 기능이 아니라, 회사가 돌아가는 방식이다</div>
+  <div class="article-summary">더그 맥밀런은 2014년부터 2026년 1월까지 12년간 월마트를 이끌며, 아마존에 위협받던 오프라인 거인을 온·오프라인 하이브리드로 바꿨다. 그가 한 일의 핵심은 AI를 한두 개의 기능으로 붙인 게 아니라, 회사가 돌아가는 기본 구조로 심은 뒤 다음 사람에게 깨끗하게 넘긴 것이다.</div>
+  <div class="btn-wrap">
+    <button class="toggle-btn" onclick="var d=document.getElementById('d1'),b=this;d.classList.toggle('open');b.textContent=d.classList.contains('open')?'접기 ▲':'더 보기 ▼'">더 보기 ▼</button>
+    <button class="toggle-btn">🎧 오디오로 듣기 (준비 중)</button>
+  </div>
+  <div id="d1" class="article-detail">
+    <div class="detail-inner">
+      <div class="section-label">이 사람은 누구인가</div>
+      <p>더그 맥밀런은 1984년 10대 시절 월마트 물류센터에서 일을 시작해, 30년간 샘스클럽·해외사업·미국사업을 모두 거친 뒤 2014년 CEO에 올랐다. 재임 중 전자상거래에 대규모로 투자하고 공급망을 현대화하며, 세계 최대 오프라인 유통기업을 디지털과 물리 양쪽에서 작동하는 회사로 바꿨다. 2025년 OpenAI와 손잡아 'AI 우선 쇼핑'을 추진했고, 2026년 1월 은퇴하며 30년 내부 임원 존 퍼너에게 자리를 넘겼다.</p>
+      <div class="section-label">주요 활동과 이력</div>
+      <p>월마트 물류센터 시급직 시작(1984) → 샘스클럽·월마트 인터내셔널·월마트US CEO 등 전 부문 경험 → 월마트 본사 CEO 취임(2014) → 전자상거래 대규모 투자·Jet.com 인수(2016) → 공급망 현대화 → OpenAI 파트너십·AI-first 쇼핑(2025.10) → 내부 AI 플랫폼 전사 확산 → 은퇴·존 퍼너에게 승계(2026.1) → 차기 주총까지 이사회 잔류.</p>
+      <div class="section-label">성공한 것과 실패한 것</div>
+      <div class="grid">
+        <div class="box">
+          <div class="box-label">✓ 성공한 것</div>
+          <p>아마존의 위협 속에서 오프라인 거인을 온·오프라인 하이브리드로 전환했다. 재임 동안 시가총액이 약 2,500억 달러에서 8,000억 달러 이상으로 커졌다.</p>
+          <p>AI를 일부 기능이 아니라 운영 전반의 기본 구조로 심었다. "한 번 만들어 어디서나 쓴다"는 플랫폼 규율로, 거대 조직의 규모를 약점이 아닌 강점으로 돌렸다.</p>
+        </div>
+        <div class="box">
+          <div class="box-label">✗ 실패한 것</div>
+          <p>전자상거래는 오랫동안 수익성이 따라오지 못했다. 33억 달러에 인수한 Jet.com은 통합이 순탄치 않아 결국 브랜드를 접었다.</p>
+          <p>모든 시장에서 이긴 건 아니다. 영국·일본·브라질 등 일부 해외 사업은 철수하거나 지분을 넘겼다. 확장만큼 정리에도 결단이 필요했다.</p>
+        </div>
+      </div>
+      <div class="section-label">인사이트</div>
+      <p class="insight-p">맥밀런이 AI를 다룬 방식은 "데모나 기능"이 아니라 <span class="highlight">"회사가 돌아가는 방식"으로 본 것</span>이다. 쇼핑하는 법부터 매장과 공급망이 움직이는 법까지, AI를 위에 얹은 게 아니라 운영의 바탕에 깔았다. 거대 조직에서 이런 전환은 한 번의 발표가 아니라 수년에 걸친 표준화로만 가능하다.</p>
+      <p class="insight-p">그는 혼자 다 바꾸려 하지 않았다. <span class="highlight">바꿀 구조와 바꿀 사람을 함께 만들어 넘겼다.</span> 물류센터 시급직에서 시작한 30년 내부 인물에게 승계한 것은, 변화를 개인기가 아니라 제도로 만들었다는 뜻이다. 좋은 전환은 떠난 뒤에도 방향이 유지된다.</p>
+      <p class="insight-p">거대한 배는 한 번에 돌릴 수 없다. <span class="highlight">맥밀런이 매번 옳았던 건 아니지만, 무엇을 표준화하고 무엇을 정리할지를 12년간 일관되게 밀어붙였다.</span> 속도가 아니라 방향의 일관성이 거대 조직의 진짜 무기였다.</p>
+      <div class="source">출처: CNBC (2025.11) · Walmart 발표 (2025.11) · Supply Chain Digital (2025.11) · McMillanDoolittle (2025.12)</div>
+    </div>
+  </div>
+</article>
+
+<!-- Article 2: Tope Awotona -->
+<article class="article">
+  <div class="article-tag">비즈니스 인사이트 · TOPE AWOTONA · Calendly</div>
+  <div class="article-title">무엇을 안 만들지가 제품을 만든다</div>
+  <div class="article-summary">토페 아워토나는 세 번의 사업 실패 뒤, 돈이 아니라 자신이 매일 겪던 문제 하나를 풀기로 했다. 전 재산을 넣어 일정 조율 도구 Calendly를 만들었고, 8년간 외부 투자 없이 키웠다. "우리는 많은 것에 아니라고 말한다" — 한 가지만 탁월하게 하기로 한 절제가 회사의 모양을 만들었다.</div>
+  <div class="btn-wrap">
+    <button class="toggle-btn" onclick="var d=document.getElementById('d2'),b=this;d.classList.toggle('open');b.textContent=d.classList.contains('open')?'접기 ▲':'더 보기 ▼'">더 보기 ▼</button>
+    <button class="toggle-btn">🎧 오디오로 듣기 (준비 중)</button>
+  </div>
+  <div id="d2" class="article-detail">
+    <div class="detail-inner">
+      <div class="section-label">이 사람은 누구인가</div>
+      <p>토페 아워토나는 나이지리아 라고스에서 태어나 10대에 미국 조지아로 이주했다. 데이팅 사이트, 프로젝터 판매, 그릴 판매 등 세 번의 사업을 시도했지만 모두 실패했다. 돈을 좇았기 때문이라고 그는 회고한다. 이후 자신이 매일 겪던 미팅 일정 조율 문제에 주목해, 전 재산을 넣어 2013년 Calendly를 창업했다. 8년간 외부 투자 없이 부트스트랩으로 키웠고, 실리콘밸리가 아닌 애틀랜타에 회사를 뒀다.</p>
+      <div class="section-label">주요 활동과 이력</div>
+      <p>세 번의 사업 실패(돈을 좇음) → 일정 조율 문제 발견 → 전 재산 투입·Calendly 창업(2013) → 8년 부트스트랩, 수익성 유지 → 3억 5천만 달러 투자 유치(2021, OpenView·Iconiq) → 기업가치 30억 달러, 창업자 다수 지분 유지 → 1,000만+ 사용자, 포춘500 다수 고객 → 일정 조율을 넘어 업무 생산성 도구로 확장.</p>
+      <div class="section-label">성공한 것과 실패한 것</div>
+      <div class="grid">
+        <div class="box">
+          <div class="box-label">✓ 성공한 것</div>
+          <p>화려한 출시도, 창업자 쇼맨십도 없이 제품·시장 적합성·인내로 성장했다. 부트스트랩으로 수익성을 확보한 뒤 투자를 받아, 창업자가 다수 지분을 유지하는 드문 사례를 만들었다.</p>
+          <p>실리콘밸리 밖 애틀랜타에서 유니콘을 만들었다. 약속을 보내는 사람이 아니라 약속을 받는 상대(초대받는 사람)의 경험에 집착한 것이 차별점이었다.</p>
+        </div>
+        <div class="box">
+          <div class="box-label">✗ 실패한 것</div>
+          <p>Calendly 이전 세 번의 사업은 모두 실패했다. 시장이 원하는 것이 아니라 돈이 될 것을 좇았던 시기였다.</p>
+          <p>일정 조율이라는 단일 기능에 집중한 만큼, 구글·MS의 무료 기능과 신생 AI 스케줄러가 같은 영역을 노린다. 한 가지를 잘하는 회사일수록 그 한 가지가 흔들릴 때의 위험도 크다.</p>
+        </div>
+      </div>
+      <div class="section-label">인사이트</div>
+      <p class="insight-p">아워토나의 원칙은 단순하다. <span class="highlight">"우리는 많은 것에 아니라고 말한다."</span> 여러 가지를 적당히 하는 대신 한 가지를 탁월하게 한다는 것. 기능을 더하라는 압박 속에서 무엇을 안 만들지를 정하는 것이, 역설적으로 제품의 모양을 만들었다.</p>
+      <p class="insight-p">세 번의 실패와 한 번의 성공을 가른 건 능력이 아니라 질문이었다. <span class="highlight">돈이 될 것을 좇을 때는 실패했고, 자신이 진짜 겪는 문제를 풀 때 시장이 따라왔다.</span> 제품·시장 적합성은 멀리 있는 게 아니라 자기 일상의 마찰 속에 있었다.</p>
+      <p class="insight-p">그는 천천히, 조용히 갔다. <span class="highlight">남들이 거대한 비전을 외칠 때 그는 좁은 문제 하나에 집중했고, 그 절제가 따라오기 어려운 해자가 됐다.</span> 무엇을 하지 않을지 아는 능력은, 무엇을 할지 아는 것만큼이나 전략이다.</p>
+      <div class="source">출처: TechCrunch (Disrupt 인터뷰) · SaaS Club Podcast (2026.03) · AfroTech · Calendly 발표 자료</div>
+    </div>
+  </div>
+</article>
+
+<!-- Article 3: AI 브리핑 -->
+<article class="article">
+  <div class="article-tag">AI · 테크 브리핑 · 2026년 6월 5일</div>
+  <div class="article-title">돈도 모델도 충분하다 — 진짜 병목은 실행과 인프라다</div>
+  <div class="article-summary">칩과 랙을 함께 만들 동맹이 짜이고, 막대한 투자에도 모델 출시는 미뤄지고, 에이전트를 감시할 새 인프라가 자금을 모은다. 오늘의 뉴스는 AI 경쟁의 무게중심이 '더 좋은 모델'에서 '실제로 돌리고 배포하는 능력'으로 옮겨갔음을 보여준다.</div>
+  <div class="btn-wrap">
+    <button class="toggle-btn" onclick="var d=document.getElementById('d3'),b=this;d.classList.toggle('open');b.textContent=d.classList.contains('open')?'접기 ▲':'더 보기 ▼'">더 보기 ▼</button>
+  </div>
+  <div id="d3" class="article-detail">
+    <div class="detail-inner">
+
+      <div class="news-item">
+        <div><span class="badge">인프라</span><span class="news-title">Foxconn·Intel, 차세대 AI 인프라 공동개발 — 실리콘부터 시스템까지</span></div>
+        <p><strong>무슨 일인가:</strong> 세계 최대 위탁생산사 Foxconn이 6월 4일 Intel과 차세대 AI 인프라·지능형 컴퓨팅 플랫폼을 공동 개발·배포한다고 발표했다. Intel Xeon 기반 랙, AI 가속기, 고속 인터커넥트, 냉각·에너지 효율을 함께 다루며, 데이터센터를 넘어 공장·스마트시티·로봇 같은 '피지컬 AI'까지 겨냥한다.</p>
+        <p><strong>왜 중요한가:</strong> 칩 기업과 제조 거인이 손잡아 '실리콘→랙→시스템→애플리케이션' 전 층을 하나로 묶는다. 경쟁의 초점이 모델 성능에서, 그 모델을 실제로 돌릴 물리적 인프라로 이동하고 있다는 신호다.</p>
+        <p><strong>인사이트:</strong> <span class="highlight">AI의 다음 승부처는 알고리즘이 아니라 전력·냉각·제조 같은 물리 세계다.</span> 모델은 복제되지만 인프라는 빠르게 만들 수 없다. 따라 만들기 어려운 것에 해자가 생긴다.</p>
+      </div>
+
+      <div class="news-item">
+        <div><span class="badge">실행격차</span><span class="news-title">Meta, Muse Spark 개발자 API 또 연기 — 출시일 미정</span></div>
+        <p><strong>무슨 일인가:</strong> Meta가 4월 공개한 첫 프런티어 모델 Muse Spark의 개발자 API를 두 달 가까이 연기했고, 6월 4일 보도 기준 출시일을 정하지 못했다(WSJ). 버그와 인프라 부족이 원인으로 꼽힌다. Meta는 올해 자본지출을 1,250~1,450억 달러로 상향한 상태다.</p>
+        <p><strong>왜 중요한가:</strong> OpenAI·Anthropic는 API로 수익을 내는데, Meta는 막대한 지출에도 개발자 생태계 진입이 늦다. '모델을 만드는 것'과 '제품으로 파는 것'은 전혀 다른 문제임을 보여준다.</p>
+        <p><strong>인사이트:</strong> <span class="highlight">지출 규모가 곧 실행력은 아니다.</span> 돈을 가장 많이 쓴 회사가 아니라, 약속한 것을 제때 배포하는 회사가 신뢰를 가져간다. 투자와 출시 사이의 간극이 곧 그 회사의 실력이다.</p>
+      </div>
+
+      <div class="news-item">
+        <div><span class="badge">운영층</span><span class="news-title">Coralogix, 2억 달러 유치 — "에이전트를 감시하는" 새 인프라</span></div>
+        <p><strong>무슨 일인가:</strong> 옵저버빌리티 스타트업 Coralogix가 6월 3일 2억 달러를 유치했다(기업가치 16억 달러). 자율적으로 움직이는 AI 에이전트가 늘면 이를 모니터링·관리할 새 도구 수요가 커진다는 베팅으로, 11개월 만의 후속 라운드다.</p>
+        <p><strong>왜 중요한가:</strong> 에이전트가 데모를 넘어 실무에 들어가면, '누가 그 에이전트를 지켜보는가'가 별도의 인프라 카테고리가 된다. 자율성이 커질수록 통제와 관측의 가치가 함께 커진다.</p>
+        <p><strong>인사이트:</strong> <span class="highlight">새 기술이 실무로 들어갈 때 돈은 '그걸 돌리고 지켜보는 층'으로 흐른다.</span> 에이전트 시대의 진짜 시장은 에이전트 자체가 아니라, 그 옆을 지키는 도구일 수 있다.</p>
+      </div>
+
+      <div class="source">출처: Reuters (2026.06.04) · WSJ / Slashdot (2026.06.04) · TechCrunch (2026.06.03)</div>
+    </div>
+  </div>
+</article>
+
+<!-- Article 4: 오늘의 신제품 -->
+<article class="article">
+  <div class="article-tag">오늘의 신제품 · PRODUCT HUNT · 2026년 6월</div>
+  <div class="article-title">오늘의 신제품 3선</div>
+  <div class="article-summary">고객지원 AI 에이전트, 사람과 에이전트가 함께 쓰는 워크스페이스, 지표를 한 번만 정의하는 데이터 레이어 — 에이전트를 '실무'로 들이려는 이번 달 주목할 제품들이다.</div>
+  <div class="btn-wrap">
+    <button class="toggle-btn" onclick="var d=document.getElementById('d4'),b=this;d.classList.toggle('open');b.textContent=d.classList.contains('open')?'접기 ▲':'더 보기 ▼'">더 보기 ▼</button>
+  </div>
+  <div id="d4" class="article-detail">
+    <div class="detail-inner">
+
+      <div class="product-item">
+        <div class="product-name">Cignara</div>
+        <p>대규모·고난도 고객 문의를 사람 수준 품질로 처리하는 것을 목표로 한 고객지원 AI 에이전트. 포춘500급 기업의 지원 워크플로에 맞춰 설계돼, 단순 챗봇을 넘어 실제 응대를 자동화하는 데 초점을 둔다.</p>
+      </div>
+
+      <div class="product-item">
+        <div class="product-name">Curata</div>
+        <p>사람과 AI 에이전트가 같은 공간에서 함께 일하는 공유 워크스페이스. 에이전트에게 일을 맡기고, 그 작업을 사람이 지켜보고 이어받는 협업 구조를 제공한다. '에이전트를 어떻게 관리할 것인가'라는 질문에 대한 한 가지 답.</p>
+      </div>
+
+      <div class="product-item">
+        <div class="product-name">Basedash Semantic Layer</div>
+        <p>핵심 지표를 한 번만 정의하면 대시보드·리포트·AI 질의 어디서나 같은 정의로 재사용하는 데이터 레이어. 팀마다 같은 지표를 다르게 계산해 숫자가 어긋나는 문제를 줄여, 의사결정의 기준을 통일한다.</p>
+      </div>
+
+      <div class="source">출처: ProductHunt 2026년 6월 · producthunt.com</div>
+    </div>
+  </div>
+</article>
+
+<!-- 에디터 한마디 -->
+<div class="editor">
+  <p>무엇을 더할지가 아니라, 무엇을 하지 않고 무엇을 끝까지 실행할지가 회사를 가른다.</p>
+</div>
+
+<div class="nav-wrap">
+  <a href="vol57.html">← 이전 호</a>
+  <a href="archive.html">전체 보기</a>
+</div>
+
+<div class="footer">
+  <p>오늘의 밑줄 · 매일 발행 · <a href="https://jucheolkim.github.io" style="color:#aaa;">jucheolkim.github.io</a></p>
+</div>
+
+<script>
+</script>
+</body>
+</html>
