@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>오늘의 밑줄 · Vol.62</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap');
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { background: #f0efeb; }
+body { font-family: Georgia, serif; max-width: 680px; margin: 0 auto; padding: 40px 20px; color: #1a1a1a; background: #fff; word-break: keep-all; box-shadow: 0 0 40px rgba(0,0,0,0.06); }
+.header { text-align: center; border-top: 3px solid #1a1a1a; border-bottom: 3px solid #1a1a1a; padding: 12px 0; margin-bottom: 4px; }
+.header-sub { font-size: 11px; font-family: Arial, sans-serif; color: #888; letter-spacing: 2px; margin-bottom: 6px; }
+.header-title { font-size: 36px; font-weight: 800; letter-spacing: 0px; font-family: 'Nanum Myeongjo', Georgia, serif; white-space: nowrap; }
+.header-date { font-size: 11px; font-family: Arial, sans-serif; color: #888; margin-top: 6px; }
+.meta { display: flex; justify-content: space-between; border-bottom: 1px solid #e0e0e0; padding: 4px 0; margin-bottom: 28px; font-size: 10px; font-family: Arial, sans-serif; color: #888; }
+.nav-wrap { display: flex; justify-content: space-between; margin-bottom: 24px; font-size: 11px; font-family: Arial, sans-serif; }
+.nav-wrap a { color: #888; text-decoration: none; }
+.nav-wrap a:hover { text-decoration: underline; }
+.article { margin-bottom: 28px; padding-bottom: 28px; border-bottom: 1px solid #e0e0e0; }
+.article-tag { font-size: 10px; font-family: Arial, sans-serif; color: #888; letter-spacing: 1px; border-top: 2px solid #1a1a1a; padding-top: 8px; margin-bottom: 8px; }
+.article-title { font-size: 24px; font-weight: bold; line-height: 1.3; margin-bottom: 12px; font-family: 'Nanum Myeongjo', Georgia, serif; letter-spacing: -0.5px; }
+.article-summary { font-size: 13px; color: #555; line-height: 1.75; margin-bottom: 14px; }
+.btn-wrap { display: flex; gap: 6px; margin-bottom: 14px; }
+.toggle-btn { font-size: 11px; font-family: Arial, sans-serif; color: #555; background: none; border: 1px solid #ccc; border-radius: 6px; padding: 4px 10px; cursor: pointer; }
+.toggle-btn:hover { background: #f5f5f5; }
+.article-detail { display: none; }
+.article-detail.open { display: block; }
+.detail-inner { border-left: 2px solid #e0e0e0; padding-left: 16px; }
+.section-label { font-size: 10px; font-family: Arial, sans-serif; color: #888; letter-spacing: 1px; margin-bottom: 6px; margin-top: 16px; }
+.detail-inner p { font-size: 13px; color: #555; line-height: 1.75; margin-bottom: 8px; }
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 8px; }
+.box { background: #f5f5f5; border-radius: 8px; padding: 10px 12px; }
+.box-label { font-size: 11px; font-family: Arial, sans-serif; color: #888; margin-bottom: 6px; }
+.box p { font-size: 12px; color: #555; line-height: 1.65; margin-bottom: 6px; }
+.news-item { margin-bottom: 14px; padding-bottom: 14px; border-bottom: 1px solid #e0e0e0; }
+.news-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+.badge { display: inline-block; font-size: 10px; font-family: Arial, sans-serif; background: #f5f5f5; color: #888; padding: 2px 8px; border-radius: 4px; margin-right: 6px; }
+.news-title { font-size: 13px; font-weight: bold; }
+.news-item p { font-size: 12px; color: #555; line-height: 1.7; margin-top: 6px; }
+.product-name { font-size: 13px; font-weight: bold; color: #1a1a1a; margin-bottom: 4px; }
+.product-item { margin-bottom: 12px; padding-bottom: 12px; border-bottom: 1px solid #e0e0e0; }
+.product-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+.product-item p { font-size: 12px; color: #555; line-height: 1.7; }
+.source { font-size: 10px; font-family: Arial, sans-serif; color: #aaa; border-top: 1px solid #e0e0e0; padding-top: 8px; margin-top: 16px; }
+.highlight { font-weight: bold; color: #1a1a1a; }
+.insight-p { font-size: 15px !important; color: #333 !important; line-height: 1.85 !important; margin-bottom: 10px !important; }
+.editor { border-top: 2px solid #1a1a1a; padding-top: 10px; margin-bottom: 16px; }
+.editor p { font-size: 16px; color: #1a1a1a; line-height: 1.85; font-style: italic; font-family: 'Nanum Myeongjo', Georgia, serif; font-weight: 800; }
+.footer { border-top: 1px solid #e0e0e0; padding-top: 8px; text-align: center; font-size: 10px; font-family: Arial, sans-serif; color: #aaa; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-sub">ONEDAY DIGEST</div>
+  <div class="header-title">오늘의 밑줄</div>
+  <div class="header-date">2026년 6월 11일 · Vol. 62</div>
+</div>
+<div class="meta">
+  <span>비즈니스 인사이트 · AI·테크 브리핑 · 오늘의 신제품</span>
+  <span>jucheolkim.github.io</span>
+</div>
+
+<!-- Article 1: Ray Dalio -->
+<article class="article">
+  <div class="article-tag">비즈니스 인사이트 · RAY DALIO · Bridgewater</div>
+  <div class="article-title">기술이 진짜여도, 값은 따로 묻는다</div>
+  <div class="article-summary">레이 달리오는 50년간 부채와 버블의 주기를 연구한 투자자다. 그는 2026년 AI 붐을 두고 "기술의 변혁성은 진짜지만, 지금은 버블의 초기 단계"라고 말한다. 위대한 기술과 좋은 투자는 전혀 다른 질문이라는 것이다.</div>
+  <div class="btn-wrap">
+    <button class="toggle-btn" onclick="var d=document.getElementById('d1'),b=this;d.classList.toggle('open');b.textContent=d.classList.contains('open')?'접기 ▲':'더 보기 ▼'">더 보기 ▼</button>
+    <button class="toggle-btn">🎧 오디오로 듣기 (준비 중)</button>
+  </div>
+  <div id="d1" class="article-detail">
+    <div class="detail-inner">
+      <div class="section-label">이 사람은 누구인가</div>
+      <p>레이 달리오는 1975년 자신의 아파트에서 브리지워터 어소시에이츠를 시작해 세계 최대 헤지펀드로 키웠다. 경제를 인과로 작동하는 '기계'로 보고, 부채 사이클·생산성·금리의 패턴으로 시장을 읽는 방식으로 유명하다. 저서 『원칙(Principles)』으로 자신의 의사결정 원칙을 공개했고, 2022년 회사 지배권을 넘긴 뒤로는 투자보다 집필과 교육에 집중하고 있다. 2026년에도 그는 시장이 사이클의 어디에 서 있는지를 진단하는, 가장 자주 인용되는 목소리 중 하나다.</p>
+      <div class="section-label">주요 활동과 이력</div>
+      <p>롱아일랜드 출생 → 하버드 MBA → 1975년 브리지워터 창업 → 'Pure Alpha' 전략과 '경제 기계' 프레임으로 세계 최대 헤지펀드 구축 → 2008 금융위기 사전 경고로 명성 → 『Principles』 출간(2017) → 경영·지배권 승계 완료(2022) → 『Principles for Dealing with the Changing World Order』·『How Countries Go Broke』 등 집필 → 2025~2026년 AI 버블·국가부채·통화정책에 대한 일련의 경고.</p>
+      <div class="section-label">성공한 것과 한계로 남은 것</div>
+      <div class="grid">
+        <div class="box">
+          <div class="box-label">✓ 성공한 것</div>
+          <p>경제를 반복되는 인과 구조로 모델링해, 부채 사이클과 버블을 미리 읽는 틀을 만들었다. 2008년 위기를 앞두고 경고한 것이 대표적이다.</p>
+          <p>자신의 판단 원칙을 글로 공개해 시스템화했다. 사람이 바뀌어도 같은 원칙으로 결정할 수 있는 구조를 회사에 남겼다.</p>
+        </div>
+        <div class="box">
+          <div class="box-label">✗ 한계로 남은 것</div>
+          <p>사이클을 읽는 거시 베팅이 늘 맞았던 것은 아니다. 강세장에서 신중론은 종종 '너무 일찍 틀린 것'처럼 보인다.</p>
+          <p>"기술은 진짜다"와 "지금 값이 맞다"를 분리하는 그의 경고는, 호황의 한가운데에서는 잘 들리지 않는다.</p>
+        </div>
+      </div>
+      <div class="section-label">인사이트</div>
+      <p class="insight-p">달리오가 2026년 반복하는 말은 분명하다. AI 붐은 "버블의 초기 단계"이고, 지금의 열기는 1929년 대공황·2000년 닷컴 직전의 약 80% 수준이라는 것이다. <span class="highlight">그는 AI의 변혁성 자체는 부정하지 않는다. 다만 변혁적인 기술과 좋은 가격은 전혀 다른 질문이라고 본다.</span> 인터넷이 세상을 바꾼 것과, 2000년에 인터넷 주식을 산 것이 좋은 투자였는지는 별개였던 것처럼.</p>
+      <p class="insight-p">그의 렌즈는 늘 '기계'다. 개별 회사가 아니라 사이클의 어디에 있는지를 먼저 본다. <span class="highlight">모두가 같은 것을 확신할 때가 버블의 신호이고, 그 확신이 가격을 끌어올린 만큼 조정의 폭도 크다</span>는 패턴이다. 생성형 AI 도입의 다수가 아직 수익을 내지 못한다는 점을, 그는 기술과 밸류에이션 사이의 간극으로 읽는다.</p>
+      <p class="insight-p">그래서 그가 말하는 규율은 단순하다. 흥분하지 말고, 지금 어디에 서 있는지를 알고, 분산하라. <span class="highlight">위대한 기술이 모두를 구하지는 않는다. 구하는 것은 값을 아는 사람이다.</span> 호황일수록, 무엇을 사지 않을지가 더 무거운 결정이 된다.</p>
+      <div class="source">출처: CNBC 인터뷰 (2025.11) · Fortune·X 2025 회고 (2026.01) · Principles (2017) · How Countries Go Broke (2025)</div>
+    </div>
+  </div>
+</article>
+
+<!-- Article 2: John Chambers -->
+<article class="article">
+  <div class="article-tag">비즈니스 인사이트 · JOHN CHAMBERS · JC2 Ventures</div>
+  <div class="article-title">닷컴을 통과한 사람이 보는 다음 10년</div>
+  <div class="article-summary">존 챔버스는 시스코를 20년간 이끌며 닷컴 호황과 붕괴를 모두 통과한 경영자다. 그는 2026년을 "AI에게 위대한 해"라 부르며 생산성이 시장 예상보다 빠르게 오를 것이라 본다. 단, 전략 없는 기업에는 "train wreck"이 온다는 경고도 함께 던진다.</div>
+  <div class="btn-wrap">
+    <button class="toggle-btn" onclick="var d=document.getElementById('d2'),b=this;d.classList.toggle('open');b.textContent=d.classList.contains('open')?'접기 ▲':'더 보기 ▼'">더 보기 ▼</button>
+    <button class="toggle-btn">🎧 오디오로 듣기 (준비 중)</button>
+  </div>
+  <div id="d2" class="article-detail">
+    <div class="detail-inner">
+      <div class="section-label">이 사람은 누구인가</div>
+      <p>존 챔버스는 1995년부터 2015년까지 시스코의 CEO로 일하며 매출을 약 12억 달러에서 500억 달러 규모로 키웠다. 인터넷이 산업의 뼈대를 까는 시기에 라우터·스위치를 공급하며 회사를 한때 세계 최고 가치 기업의 자리에 올려놓았고, 닷컴 붕괴와 금융위기를 모두 현장에서 통과했다. 은퇴 후에는 벤처펀드 JC2 Ventures를 세워 스타트업의 확장을 돕고 있다. 기술 혁명의 상승과 하강을 경영자로서 직접 겪어본 몇 안 되는 목소리다.</p>
+      <div class="section-label">주요 활동과 이력</div>
+      <p>웨스트버지니아 출생 → IBM·Wang 거쳐 1991년 시스코 합류 → 1995년 CEO 취임 → 인터넷 붐 속 매출 $1.2B→$50B, 한때 시가총액 세계 1위(2000) → 닷컴 붕괴·2008 위기 통과 → 2015년 CEO 이임, 회장 거쳐 은퇴 → JC2 Ventures 설립, 스타트업 투자·멘토링 → 2026년 "AI는 10년짜리 현상"이라며 생산성 낙관론 전개(Yahoo Finance 인터뷰).</p>
+      <div class="section-label">성공한 것과 한계로 남은 것</div>
+      <div class="grid">
+        <div class="box">
+          <div class="box-label">✓ 성공한 것</div>
+          <p>인터넷이라는 진짜 혁명의 인프라를 공급하며 회사를 세계 최고 가치 기업까지 끌어올렸다. 사이클의 상승과 하강을 모두 경영했다.</p>
+          <p>수십 번의 인수로 성장을 설계했다. 혁명기에 무엇을 사서 붙일지를 판단하는 능력을 회사의 엔진으로 만들었다.</p>
+        </div>
+        <div class="box">
+          <div class="box-label">✗ 한계로 남은 것</div>
+          <p>닷컴 정점에서 그도 과열을 피하지 못했다. 붕괴 이후 시스코 주가는 오래 회복하지 못했고, 그 경험이 지금의 경고에 배어 있다.</p>
+          <p>모바일·클라우드 전환기에는 대응이 늦었다는 평가가 있다. 인프라 강자도 다음 파도에서 자동으로 이기지는 않았다.</p>
+        </div>
+      </div>
+      <div class="section-label">인사이트</div>
+      <p class="insight-p">챔버스가 2026년 반복하는 말은 낙관이다. "올해는 AI에게 위대한 해"이고, <span class="highlight">생산성은 시장이 예상하는 것보다 빠르게 오른다</span>는 것이다. 그는 AI를 단발 이벤트가 아니라 "10년짜리 현상"으로 보고, 월마트·포드의 공급망처럼 실제 현장에서 효과가 빠르게 나타나기 시작했다고 말한다.</p>
+      <p class="insight-p">하지만 그의 낙관에는 단서가 붙는다. <span class="highlight">기술이 진짜라고 해서 모든 회사가 이기는 건 아니다.</span> 그는 이른바 '매그니피센트 세븐' 중 일부도 향후 몇 년 안에 휘청일 수 있고, 명확하고 일관된 전략이 없는 기업에는 "train wreck"이 온다고 본다. 닷컴 때, 인터넷이 옳았어도 대부분의 인터넷 회사가 사라진 것을 그는 기억한다.</p>
+      <p class="insight-p">그래서 그의 결론은 기술이 아니라 실행에 있다. <span class="highlight">승자를 가르는 것은 어느 분야에 있느냐가 아니라, 전략과 실행이 있느냐다.</span> 도구가 같아질수록, 그 도구로 무엇을 어떻게 하느냐가 차이를 만든다. 사이클을 겪어본 사람의 낙관은, 늘 규율과 함께 온다.</p>
+      <div class="source">출처: Yahoo Finance Opening Bid 인터뷰 (2026) · CNBC · JC2 Ventures</div>
+    </div>
+  </div>
+</article>
+
+<!-- Article 3: AI 브리핑 -->
+<article class="article">
+  <div class="article-tag">AI · 테크 브리핑 · 2026년 6월 11일</div>
+  <div class="article-title">상장·컴퓨트·모델 — AI의 값을 시장이 처음 매기는 날</div>
+  <div class="article-summary">사상 최대 IPO가 오늘 가격을 확정하고, 중국은 컴퓨트를 국가 자원으로 묶고, 프런티어 모델은 한 달에 몰려 나온다. 오늘의 뉴스는 AI가 '기술'에서 '값을 매겨야 하는 자산'으로 넘어가는 장면을 보여준다.</div>
+  <div class="btn-wrap">
+    <button class="toggle-btn" onclick="var d=document.getElementById('d3'),b=this;d.classList.toggle('open');b.textContent=d.classList.contains('open')?'접기 ▲':'더 보기 ▼'">더 보기 ▼</button>
+  </div>
+  <div id="d3" class="article-detail">
+    <div class="detail-inner">
+
+      <div class="news-item">
+        <div><span class="badge">IPO</span><span class="news-title">SpaceX, 공모가 $135 확정 — 사상 최대 IPO, 기업가치 약 1.75조 달러</span></div>
+        <p><strong>무슨 일인가:</strong> SpaceX가 6월 11일 공모가를 주당 $135로 확정했다. 약 5.6억 주를 팔아 750억 달러를 조달하며, 기업가치는 약 1.75조 달러. 12일 나스닥에 'SPCX'로 상장하면 2019년 사우디 아람코를 넘는 사상 최대 IPO다. xAI 합병을 포함한 구조로, 기관 청약은 2배 이상 몰렸다.</p>
+        <p><strong>왜 중요한가:</strong> Starlink는 흑자지만 xAI·컴퓨트에 막대한 적자를 감수하는 회사에 공개시장이 1.75조 달러를 줄지 시험대다. Anthropic·OpenAI도 줄줄이 상장을 준비 중 — AI 자본이 사기업에서 공개시장으로 넘어가는 변곡점이다.</p>
+        <p><strong>인사이트:</strong> <span class="highlight">개장가가 $135 위냐 아래냐가, 'AI 인프라에 그 값을 줄 것인가'에 대한 시장의 첫 투표다.</span> 밸류에이션 스트레스 테스트가 오늘 시작된다. 어떤 AI 자산이 진짜 값을 하는지, 처음으로 공개적으로 매겨진다.</p>
+      </div>
+
+      <div class="news-item">
+        <div><span class="badge">인프라</span><span class="news-title">중국, 약 2,950억 달러 들여 국가 AI 데이터센터망 추진 — Nvidia 사실상 배제</span></div>
+        <p><strong>무슨 일인가:</strong> 중국이 향후 5년간 약 2조 위안(2,950억 달러)을 들여 전국 데이터센터를 하나의 컴퓨팅망으로 연결하는 청사진을 마련 중이라고 Bloomberg가 6월 9일 보도했다. 국가발전개혁위원회(NDRC)가 주도하고 China Mobile·China Telecom이 운영하며, AI 칩 등 기술의 80%를 화웨이 등 자국산으로 채워 Nvidia·AMD를 사실상 배제한다.</p>
+        <p><strong>왜 중요한가:</strong> 컴퓨트를 전기·교통 같은 국가 전략 자원으로 다루겠다는 선언이다. 미국 빅테크의 2026년 AI 투자(7,000억 달러+)와 달리, 국가 주도·부채 조달·자급이라는 정반대의 방식이다.</p>
+        <p><strong>인사이트:</strong> <span class="highlight">AI 경쟁이 모델·칩을 넘어 '컴퓨트 주권'의 싸움으로 옮겨간다.</span> 누가 더 똑똑한 모델을 만드느냐만큼, 누가 자기 힘으로 연산을 굴릴 수 있느냐가 갈리기 시작했다.</p>
+      </div>
+
+      <div class="news-item">
+        <div><span class="badge">모델</span><span class="news-title">6월, 프런티어 모델 러시 — Gemini 3.5 Pro GA 임박·경쟁 격화</span></div>
+        <p><strong>무슨 일인가:</strong> Google이 5월 I/O에서 공개한 Gemini 3.5 Pro(2백만 토큰 컨텍스트·Deep Think)의 일반 출시를 6월로 예고했고("다음 달"), 같은 달 Claude Sonnet 4.8, xAI Grok 5 등도 출시 윈도에 들어왔다. Flash는 이미 배포돼 가격이 한 단계 올랐다.</p>
+        <p><strong>왜 중요한가:</strong> 프런티어 모델이 한 달에 몰려 나오며 성능·가격 경쟁이 동시에 격화된다. 중국발 저가 모델은 비용을 끌어내리고, 미·중·빅랩이 동시에 최전선을 민다.</p>
+        <p><strong>인사이트:</strong> <span class="highlight">모델 자체는 빠르게 상향평준화된다.</span> 차별점은 '어떤 모델이 최고냐'에서 '내 워크플로에 무엇을, 어떻게 붙이느냐'로 옮겨가는 중이다. 도구가 같아질수록, 쓰는 사람의 판단이 비싸진다.</p>
+      </div>
+
+      <div class="source">출처: Reuters·TradingKey (2026.06.11) · Bloomberg (2026.06.09) · TechTimes·Google I/O (2026.06)</div>
+    </div>
+  </div>
+</article>
+
+<!-- Article 4: 오늘의 신제품 -->
+<article class="article">
+  <div class="article-tag">오늘의 신제품 · PRODUCT HUNT · 2026년 6월 7일</div>
+  <div class="article-title">오늘의 신제품 3선</div>
+  <div class="article-summary">Google Labs의 개인화 스토리 앱, 어디서나 쓰는 음성 입력, 채용 데이터 API — 데이터를 사람의 일상과 워크플로에 연결하는 이번 주 ProductHunt 상위 제품들이다.</div>
+  <div class="btn-wrap">
+    <button class="toggle-btn" onclick="var d=document.getElementById('d4'),b=this;d.classList.toggle('open');b.textContent=d.classList.contains('open')?'접기 ▲':'더 보기 ▼'">더 보기 ▼</button>
+  </div>
+  <div id="d4" class="article-detail">
+    <div class="detail-inner">
+
+      <div class="product-item">
+        <div class="product-name">Dreambeans by Google Labs</div>
+        <p>Gmail·캘린더·사진·검색 기록을 읽어 매일 10~14개의 AI 일러스트 '스토리'를 만들어준다. 무한 스크롤 대신 끝이 있는 피드를 지향한다. 이미지는 Nano Banana 2로 생성하고 Personal Intelligence 기반으로 작동하며, 미국 AI Ultra 구독자에게 먼저 열렸다. 6월 7일 일간 상위.</p>
+      </div>
+
+      <div class="product-item">
+        <div class="product-name">Wave</div>
+        <p>macOS에서 핫키를 누르고 말하면 음성을 텍스트로 바꿔 필요한 자리에 넣어준다. 로컬·클라우드 처리를 선택할 수 있고 모든 앱에서 작동하며, 선택한 텍스트에 맥락을 더해 답을 띄워주기도 한다.</p>
+      </div>
+
+      <div class="product-item">
+        <div class="product-name">Job Postings API</div>
+        <p>180만 개 이상의 미국 채용공고를 조회·모니터링·분석하는 개발자용 데이터 API. 채용 시장의 실시간 데이터를 제품·리서치에 바로 연결할 수 있게 한다.</p>
+      </div>
+
+      <div class="source">출처: ProductHunt 2026년 6월 7일 · producthunt.com/leaderboard</div>
+    </div>
+  </div>
+</article>
+
+<!-- 에디터 한마디 -->
+<div class="editor">
+  <p>기술이 진짜라는 것과, 지금 그 값이 맞다는 것은 전혀 다른 질문이다.</p>
+</div>
+
+<div class="nav-wrap">
+  <a href="vol61.html">← 이전 호</a>
+  <a href="archive.html">전체 보기</a>
+</div>
+
+<div class="footer">
+  <p>오늘의 밑줄 · 매일 발행 · <a href="https://jucheolkim.github.io" style="color:#aaa;">jucheolkim.github.io</a></p>
+</div>
+
+<script>
+</script>
+</body>
+</html>
