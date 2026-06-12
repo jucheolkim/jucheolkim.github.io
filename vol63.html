@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>오늘의 밑줄 · Vol.63</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap');
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { background: #f0efeb; }
+body { font-family: Georgia, serif; max-width: 680px; margin: 0 auto; padding: 40px 20px; color: #1a1a1a; background: #fff; word-break: keep-all; box-shadow: 0 0 40px rgba(0,0,0,0.06); }
+.header { text-align: center; border-top: 3px solid #1a1a1a; border-bottom: 3px solid #1a1a1a; padding: 12px 0; margin-bottom: 4px; }
+.header-sub { font-size: 11px; font-family: Arial, sans-serif; color: #888; letter-spacing: 2px; margin-bottom: 6px; }
+.header-title { font-size: 36px; font-weight: 800; letter-spacing: 0px; font-family: 'Nanum Myeongjo', Georgia, serif; white-space: nowrap; }
+.header-date { font-size: 11px; font-family: Arial, sans-serif; color: #888; margin-top: 6px; }
+.meta { display: flex; justify-content: space-between; border-bottom: 1px solid #e0e0e0; padding: 4px 0; margin-bottom: 28px; font-size: 10px; font-family: Arial, sans-serif; color: #888; }
+.nav-wrap { display: flex; justify-content: space-between; margin-bottom: 24px; font-size: 11px; font-family: Arial, sans-serif; }
+.nav-wrap a { color: #888; text-decoration: none; }
+.nav-wrap a:hover { text-decoration: underline; }
+.article { margin-bottom: 28px; padding-bottom: 28px; border-bottom: 1px solid #e0e0e0; }
+.article-tag { font-size: 10px; font-family: Arial, sans-serif; color: #888; letter-spacing: 1px; border-top: 2px solid #1a1a1a; padding-top: 8px; margin-bottom: 8px; }
+.article-title { font-size: 24px; font-weight: bold; line-height: 1.3; margin-bottom: 12px; font-family: 'Nanum Myeongjo', Georgia, serif; letter-spacing: -0.5px; }
+.article-summary { font-size: 13px; color: #555; line-height: 1.75; margin-bottom: 14px; }
+.btn-wrap { display: flex; gap: 6px; margin-bottom: 14px; }
+.toggle-btn { font-size: 11px; font-family: Arial, sans-serif; color: #555; background: none; border: 1px solid #ccc; border-radius: 6px; padding: 4px 10px; cursor: pointer; }
+.toggle-btn:hover { background: #f5f5f5; }
+.article-detail { display: none; }
+.article-detail.open { display: block; }
+.detail-inner { border-left: 2px solid #e0e0e0; padding-left: 16px; }
+.section-label { font-size: 10px; font-family: Arial, sans-serif; color: #888; letter-spacing: 1px; margin-bottom: 6px; margin-top: 16px; }
+.detail-inner p { font-size: 13px; color: #555; line-height: 1.75; margin-bottom: 8px; }
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 8px; }
+.box { background: #f5f5f5; border-radius: 8px; padding: 10px 12px; }
+.box-label { font-size: 11px; font-family: Arial, sans-serif; color: #888; margin-bottom: 6px; }
+.box p { font-size: 12px; color: #555; line-height: 1.65; margin-bottom: 6px; }
+.news-item { margin-bottom: 14px; padding-bottom: 14px; border-bottom: 1px solid #e0e0e0; }
+.news-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+.badge { display: inline-block; font-size: 10px; font-family: Arial, sans-serif; background: #f5f5f5; color: #888; padding: 2px 8px; border-radius: 4px; margin-right: 6px; }
+.news-title { font-size: 13px; font-weight: bold; }
+.news-item p { font-size: 12px; color: #555; line-height: 1.7; margin-top: 6px; }
+.product-name { font-size: 13px; font-weight: bold; color: #1a1a1a; margin-bottom: 4px; }
+.product-item { margin-bottom: 12px; padding-bottom: 12px; border-bottom: 1px solid #e0e0e0; }
+.product-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+.product-item p { font-size: 12px; color: #555; line-height: 1.7; }
+.source { font-size: 10px; font-family: Arial, sans-serif; color: #aaa; border-top: 1px solid #e0e0e0; padding-top: 8px; margin-top: 16px; }
+.highlight { font-weight: bold; color: #1a1a1a; }
+.insight-p { font-size: 15px !important; color: #333 !important; line-height: 1.85 !important; margin-bottom: 10px !important; }
+.editor { border-top: 2px solid #1a1a1a; padding-top: 10px; margin-bottom: 16px; }
+.editor p { font-size: 16px; color: #1a1a1a; line-height: 1.85; font-style: italic; font-family: 'Nanum Myeongjo', Georgia, serif; font-weight: 800; }
+.footer { border-top: 1px solid #e0e0e0; padding-top: 8px; text-align: center; font-size: 10px; font-family: Arial, sans-serif; color: #aaa; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-sub">ONEDAY DIGEST</div>
+  <div class="header-title">오늘의 밑줄</div>
+  <div class="header-date">2026년 6월 12일 · Vol. 63</div>
+</div>
+<div class="meta">
+  <span>비즈니스 인사이트 · AI·테크 브리핑 · 오늘의 신제품</span>
+  <span>jucheolkim.github.io</span>
+</div>
+
+<!-- Article 1: Marc Benioff -->
+<article class="article">
+  <div class="article-tag">비즈니스 인사이트 · MARC BENIOFF · Salesforce</div>
+  <div class="article-title">소프트웨어를 팔던 회사가 노동을 팔기 시작했다</div>
+  <div class="article-summary">마크 베니오프는 1999년 "소프트웨어의 종말"을 외치며 SaaS 시대를 열었다. 27년 뒤 그는 회사를 다시 정의하고 있다 — 이번에 파는 것은 소프트웨어가 아니라 '디지털 노동'이다. Agentforce는 15개월 만에 ARR 12억 달러를 넘겼고, 그는 자기 회사부터 그 첫 고객으로 만들었다. "엔지니어를 더 뽑지 않는다. 코딩 에이전트를 쓰니까."</div>
+  <div class="btn-wrap">
+    <button class="toggle-btn" onclick="var d=document.getElementById('d1'),b=this;d.classList.toggle('open');b.textContent=d.classList.contains('open')?'접기 ▲':'더 보기 ▼'">더 보기 ▼</button>
+    <button class="toggle-btn">🎧 오디오로 듣기 (준비 중)</button>
+  </div>
+  <div id="d1" class="article-detail">
+    <div class="detail-inner">
+      <div class="section-label">이 사람은 누구인가</div>
+      <p>마크 베니오프는 Salesforce의 공동창업자이자 회장 겸 CEO다. Oracle 최연소 부사장 출신으로 1999년 샌프란시스코의 아파트에서 Salesforce를 창업했고, 설치형 소프트웨어가 당연하던 시대에 "No Software"를 내걸어 SaaS라는 산업 자체를 만들었다. 2026년 그는 회사를 다시 한 번 재정의하는 중이다 — 사람과 AI 에이전트가 함께 일하는 "에이전틱 엔터프라이즈"의 운영체제. 그의 표현으로는, 이제 회사가 파는 것은 도구가 아니라 노동이다.</p>
+      <div class="section-label">주요 활동과 이력</div>
+      <p>USC 졸업 → Oracle 13년, 25세 최연소 부사장 → Salesforce 창업(1999) → "The End of Software" 캠페인으로 SaaS 카테고리 창출 → 상장(2004) → Slack 277억 달러 인수(2021) → Agentforce 출시(2024.10) → 회사 전체를 "Agentic Enterprise"로 재편(2025~26) → FY26 매출 415억 달러 → Agentforce ARR 12억 달러, 누적 에이전트 작업 38억 건(2026).</p>
+      <div class="section-label">성공한 것과 실패한 것</div>
+      <div class="grid">
+        <div class="box">
+          <div class="box-label">✓ 성공한 것</div>
+          <p>산업 카테고리를 두 번 만들었다. 첫 번째는 SaaS, 두 번째는 진행 중인 '디지털 노동'. Agentforce는 출시 15개월 만에 29,000건의 계약을 닫았고, ARR은 전년 대비 205% 늘었다.</p>
+          <p>자기 회사를 첫 번째 증명으로 썼다. 고객 지원 콜의 다수를 에이전트가 처리하게 했고, 코딩 에이전트로 엔지니어링 생산성을 약 30% 끌어올리며 회계연도 2026년 엔지니어 신규 채용을 멈췄다.</p>
+        </div>
+        <div class="box">
+          <div class="box-label">✗ 실패한 것과 한계</div>
+          <p>본업 성장은 한 자릿수로 둔화됐다. AI 매출이 빠르게 커져도, 그것이 핵심 사업의 감속을 상쇄할 수 있는지는 아직 증명 과제다.</p>
+          <p>"인간만 관리하는 마지막 CEO 세대"라는 그의 언어는 노동 불안을 키웠다는 비판을 받았다. 2026년 그는 "대체가 아니라 증강"으로 톤을 조정했고, 신입 1,000명 채용을 재개했다. 노동을 파는 회사일수록 노동의 언어에 비싼 값을 치른다.</p>
+        </div>
+      </div>
+      <div class="section-label">인사이트</div>
+      <p class="insight-p">베니오프는 AI를 기능이 아니라 카테고리로 정의한다. 그가 겨누는 시장은 소프트웨어 예산이 아니라 인건비 — 그의 표현으로 3~12조 달러의 '디지털 노동' 시장이다. <span class="highlight">파는 단위도 바꿨다. 라이선스가 아니라 에이전트가 수행한 작업 단위(AWU)로 센다.</span> 파는 단위가 바뀌면 시장의 크기가 바뀐다.</p>
+      <p class="insight-p">그의 영업 방식은 늘 같았다 — 자기 회사가 첫 번째 고객. <span class="highlight">고객에게 팔기 전에 자기 조직으로 증명한다.</span> 지원 조직을 재배치하고 엔지니어 채용을 멈춘 것은 비용 절감이기 이전에 제품 데모였다. 다만 2026년의 그는 "1만 5천 명의 엔지니어가 AI로 크게 증강되는 것"이라고 말을 고른다. 증명과 불안 사이의 줄타기다.</p>
+      <p class="insight-p">흥미로운 건 그가 모델 경쟁에 뛰어들지 않는다는 점이다. Salesforce의 에이전트는 Anthropic·OpenAI 모델을 가져다 쓴다. 그의 베팅은 "지능이 일이 일어나는 곳으로 이동할수록 우리는 더 가치 있어진다"는 것 — <span class="highlight">모델이 아니라 일이 일어나는 자리, 즉 데이터와 워크플로를 쥔다.</span> 모델이 흔해진다는 전제는 크리슈나와 같지만, 결론은 정반대로 공격적이다.</p>
+      <div class="source">출처: Salesforce Q1 FY27 실적 발표 (2026) · Q4 FY26 발표 (2026.02) · TBPN 인터뷰 · Storyboard18 (2026.05) · Cloud Wars</div>
+    </div>
+  </div>
+</article>
+
+<!-- Article 2: Arvind Krishna -->
+<article class="article">
+  <div class="article-tag">비즈니스 인사이트 · ARVIND KRISHNA · IBM</div>
+  <div class="article-title">모델은 흔해진다, 일하는 방식이 차이를 만든다</div>
+  <div class="article-summary">아빈드 크리슈나는 114년 된 IBM을 하이브리드 클라우드와 AI의 회사로 다시 세운 엔지니어 출신 CEO다. 2026년 그가 반복하는 진단은 단순하다 — 앞서가는 기업은 AI를 더 많이 배치하는 게 아니라, 일하는 방식을 재설계한다. 모델이 커머디티가 되는 시대, 가치는 운영 모델과 플랫폼으로 이동한다는 것이다.</div>
+  <div class="btn-wrap">
+    <button class="toggle-btn" onclick="var d=document.getElementById('d2'),b=this;d.classList.toggle('open');b.textContent=d.classList.contains('open')?'접기 ▲':'더 보기 ▼'">더 보기 ▼</button>
+    <button class="toggle-btn">🎧 오디오로 듣기 (준비 중)</button>
+  </div>
+  <div id="d2" class="article-detail">
+    <div class="detail-inner">
+      <div class="section-label">이 사람은 누구인가</div>
+      <p>아빈드 크리슈나는 IBM 회장 겸 CEO다. 인도 IIT 출신 엔지니어로 1990년 IBM에 입사해 30년을 연구·기술 조직에서 보냈고, 340억 달러 Red Hat 인수를 설계한 뒤 2020년 CEO가 됐다. 그는 거대 모델 경쟁 대신 하이브리드 클라우드·작고 효율적인 모델·거버넌스·양자 컴퓨팅이라는 엔터프라이즈 실용 노선을 택했고, 만년 정체라던 IBM을 다시 성장 기업으로 돌려놨다.</p>
+      <div class="section-label">주요 활동과 이력</div>
+      <p>IIT Kanpur 전기공학 → 일리노이대 박사 → IBM 입사(1990) → IBM Research 총괄 → Red Hat 340억 달러 인수 주도(2019) → CEO 취임(2020) → 인프라 서비스 Kyndryl 분사(2021) → watsonx 출시(2023) → Granite 소형 모델 라인 확장 → Think 2026에서 "AI는 기술 과제가 아니라 비즈니스 모델"이라는 운영 모델론 키노트(2026.05).</p>
+      <div class="section-label">성공한 것과 실패한 것</div>
+      <div class="grid">
+        <div class="box">
+          <div class="box-label">✓ 성공한 것</div>
+          <p>"가장 큰 모델"이 아니라 "기업이 실제로 굴릴 수 있는 AI"에 집중했다. 작고 싼 모델, 데이터 주권, 거버넌스를 묶은 노선으로 컨설팅 AI 수주를 수십억 달러 규모로 키웠고, IBM 주가를 사상 최고 수준으로 끌어올렸다.</p>
+          <p>양자 컴퓨팅을 과학에서 엔지니어링의 영역으로 옮겨 왔다. 2026년 그는 양자 우위가 빠르게 다가오고 있으며 AI와 양자는 서로를 가속하는 보완재라고 말한다.</p>
+        </div>
+        <div class="box">
+          <div class="box-label">✗ 실패한 것과 한계</div>
+          <p>초기 Watson의 과대 약속은 그의 재임 중 청산됐다. Watson Health는 2022년 매각됐고, "AI의 IBM"이라는 첫 이미지는 한동안 부채로 남았다.</p>
+          <p>2023년 "백오피스 업무의 30%는 AI로 대체 가능"이라는 발언과 채용 중단 방침은 거센 논란을 불렀다. 효율의 언어가 조직의 불안이 되는 지점을 보여준 사례였다.</p>
+        </div>
+      </div>
+      <div class="section-label">인사이트</div>
+      <p class="insight-p">2026년 기업들의 평균 생성형 AI 예산은 27% 늘었지만, 절반 가까이는 파일럿에서 멈춰 있다. 크리슈나의 진단은 모델 탓이 아니다. <span class="highlight">"앞서가는 기업은 AI를 더 많이 배치하지 않는다. 비즈니스가 돌아가는 방식을 재설계한다."</span> 도입의 병목은 기술이 아니라 운영 모델이라는 것이다.</p>
+      <p class="insight-p">그는 파운데이션 모델이 결국 커머디티가 된다고 본다. 하나를 다른 것으로 갈아 끼울 수 있게 된다는 뜻이다. 그래서 IBM이 지키는 규율은 두세 개의 모델 옵션을 항상 유지하고, <span class="highlight">모델의 특이성으로부터 사용자를 차단하며, 이식성을 플랫폼 계층에 보관하는 것</span>이다. 지속 가능한 가치는 모델이 아니라 그 위의 플랫폼에 쌓인다.</p>
+      <p class="insight-p">에이전트 인프라에 대해서도 그는 서두르지 않는다. 아직 초기이고, 완전한 합의가 아니라 거친 합의로 굴러갈 것이며, 승자 접근법을 선언하기엔 이르다는 것. <span class="highlight">모두가 빨리 선언할 때 늦게 확정하는 것도 전략이다.</span> 114년 된 회사가 전환기를 통과해 온 방식이기도 하다.</p>
+      <div class="source">출처: IBM Think 2026 키노트 (2026.05.05) · theCUBE Research AMA 분석 (2026.05.06) · CXOToday (2026.06) · SiliconANGLE (2026.05)</div>
+    </div>
+  </div>
+</article>
+
+<!-- Article 3: AI 브리핑 -->
+<article class="article">
+  <div class="article-tag">AI · 테크 브리핑 · 2026년 6월 11일</div>
+  <div class="article-title">유통·자본·여론 — AI 경쟁이 모델 밖으로 나왔다</div>
+  <div class="article-summary">같은 날 나온 세 개의 뉴스가 한 방향을 가리킨다. 모델을 누가 잘 만드느냐의 싸움은 이제 누가 잘 유통하고, 누가 비용을 감당하고, 누가 사회의 동의를 얻느냐의 싸움으로 번지고 있다.</div>
+  <div class="btn-wrap">
+    <button class="toggle-btn" onclick="var d=document.getElementById('d3'),b=this;d.classList.toggle('open');b.textContent=d.classList.contains('open')?'접기 ▲':'더 보기 ▼'">더 보기 ▼</button>
+  </div>
+  <div id="d3" class="article-detail">
+    <div class="detail-inner">
+
+      <div class="news-item">
+        <div><span class="badge">유통</span><span class="news-title">OpenAI, Oracle 클라우드 크레딧으로 모델 개방 — 조달 마찰을 없앴다</span></div>
+        <p><strong>무슨 일인가:</strong> OpenAI가 6월 11일, 기업 고객이 기존 Oracle Universal Credits로 OpenAI 프런티어 모델과 Codex를 쓸 수 있게 한다고 발표했다. Oracle 클라우드에 이미 수천만~수억 달러 계약을 가진 기업은 새 벤더 계약 없이 AI 워크로드를 OpenAI로 돌릴 수 있다.</p>
+        <p><strong>왜 중요한가:</strong> 1월 Stargate로 시작된 OpenAI·Oracle의 인프라 동맹이 엔터프라이즈 유통 채널로 진화했다. 대기업 AI 도입의 진짜 장벽은 모델 품질이 아니라 조달 절차였다는 것을 정면으로 겨눈 수다.</p>
+        <p><strong>인사이트:</strong> <span class="highlight">벤치마크 1점보다 결재 라인 하나를 없애는 것이 도입을 더 크게 움직인다.</span> 모델이 비슷해질수록, 고객이 이미 쓰는 결제·계약 안으로 들어가는 쪽이 이긴다.</p>
+      </div>
+
+      <div class="news-item">
+        <div><span class="badge">자본</span><span class="news-title">Amazon, 175억 달러 차입 — AI 인프라 경쟁이 파이낸싱 경쟁으로</span></div>
+        <p><strong>무슨 일인가:</strong> Amazon이 은행권에서 175억 달러를 차입하는 계약을 맺었다. AI 데이터센터와 클라우드 용량 확충 자금이다. 같은 날 KKR도 Nvidia·Vistra와 함께 100억 달러 규모 AI 인프라 회사 Helix를 출범시켰다 — 전 AWS CEO가 이끈다.</p>
+        <p><strong>왜 중요한가:</strong> 현금흐름의 제왕들조차 AI 버전 군비 경쟁을 부채로 치르기 시작했다. 사모펀드와 에너지 회사까지 같은 테이블에 앉으며, AI 인프라는 클라우드 이야기가 아니라 에너지·부동산·자본시장 이야기가 됐다.</p>
+        <p><strong>인사이트:</strong> <span class="highlight">경쟁의 질문이 "누가 좋은 모델을 갖고 있나"에서 "누가 그것을 서비스할 용량을 감당할 수 있나"로 바뀌고 있다.</span> 자본 조달 능력이 곧 제품 전략이 되는 국면이다.</p>
+      </div>
+
+      <div class="news-item">
+        <div><span class="badge">여론</span><span class="news-title">미국인 64%, AI 데이터센터 붐에 반대 — Reuters/Ipsos 조사</span></div>
+        <p><strong>무슨 일인가:</strong> 6월 11일 공개된 Reuters/Ipsos 조사에서 응답자의 64%가 데이터센터 건설 속도에 반대했다. 77%는 전기요금 인상을 우려했고, 내 동네에 데이터센터가 들어서는 것에 편하다는 응답은 14%에 그쳤다. 14개 주가 건설 모라토리엄을 검토 중이다.</p>
+        <p><strong>왜 중요한가:</strong> 정파를 가리지 않는 반대다. 전력·토지·지역 수용성이 AI 확장의 실질 변수로 떠올랐고, 이미 지역 반대가 전국에서 프로젝트를 지연시키고 있다.</p>
+        <p><strong>인사이트:</strong> <span class="highlight">AI 인프라의 다음 병목은 칩도 전력도 아닌 사회적 동의일 수 있다.</span> 수천억 달러 베팅의 변수에 이제 여론이 들어왔다. 지역에 이익을 설계해 주는 회사가 부지를 먼저 확보할 것이다.</p>
+      </div>
+
+      <div class="source">출처: OpenAI (2026.06.11) · TechCrunch (2026.06.11) · Reuters/Ipsos (2026.06.11) · WSJ (2026.06.11) · TechStartups (2026.06.11)</div>
+    </div>
+  </div>
+</article>
+
+<!-- Article 4: 오늘의 신제품 -->
+<article class="article">
+  <div class="article-tag">오늘의 신제품 · PRODUCT HUNT · 2026년 6월 둘째 주</div>
+  <div class="article-title">오늘의 신제품 3선</div>
+  <div class="article-summary">투자 유치, 팀 협업, 트레이딩 — 창업자의 일과 돈의 흐름에 AI 에이전트가 직접 들어온 이번 주 ProductHunt 상위 제품들이다.</div>
+  <div class="btn-wrap">
+    <button class="toggle-btn" onclick="var d=document.getElementById('d4'),b=this;d.classList.toggle('open');b.textContent=d.classList.contains('open')?'접기 ▲':'더 보기 ▼'">더 보기 ▼</button>
+  </div>
+  <div id="d4" class="article-detail">
+    <div class="detail-inner">
+
+      <div class="product-item">
+        <div class="product-name">Fundraisly</div>
+        <p>창업자를 위한 AI 펀드레이징 에이전트. 30만 명 이상의 투자자와 수백만 건의 딜 데이터를 분석해 지금 활발히 투자 중인 적합 투자자를 찾고, 내 네트워크의 웜 패스를 매핑한 뒤 나머지는 타깃 콜드 아웃리치로 커버한다. 일간 1위, 6월 월간 1위권.</p>
+      </div>
+
+      <div class="product-item">
+        <div class="product-name">Vokal</div>
+        <p>사람과 AI 에이전트가 한 공간에서 일하는 협업 워크스페이스. 개별 채팅과 도구에 흩어지던 맥락·작업·산출물을 실시간 공유 공간으로 모아, 결과물이 나오기 전에 사람과 에이전트가 조율하도록 설계됐다. 일간 2위.</p>
+      </div>
+
+      <div class="product-item">
+        <div class="product-name">Co-Invest</div>
+        <p>ChatGPT·Claude 대화창에서 500개 이상의 시장을 직접 거래하는 도구. 차트와 주문창 대신 대화가 트레이딩 인터페이스가 된다. 에이전트가 정보를 읽는 단계를 넘어 돈을 움직이는 흐름을 보여주는 제품. 일간 4위.</p>
+      </div>
+
+      <div class="source">출처: ProductHunt 2026년 6월 둘째 주 · producthunt.com/leaderboard · hunted.space</div>
+    </div>
+  </div>
+</article>
+
+<!-- 에디터 한마디 -->
+<div class="editor">
+  <p>경쟁이 모델 밖으로 번질수록, 어디에 베팅하고 무엇을 재설계할지 정하는 판단이 리더를 가른다.</p>
+</div>
+
+<div class="nav-wrap">
+  <a href="vol62.html">← 이전 호</a>
+  <a href="archive.html">전체 보기</a>
+</div>
+
+<div class="footer">
+  <p>오늘의 밑줄 · 매일 발행 · <a href="https://jucheolkim.github.io" style="color:#aaa;">jucheolkim.github.io</a></p>
+</div>
+
+<script>
+</script>
+</body>
+</html>
