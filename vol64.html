@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>오늘의 밑줄 · Vol.64</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap');
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { background: #f0efeb; }
+body { font-family: Georgia, serif; max-width: 680px; margin: 0 auto; padding: 40px 20px; color: #1a1a1a; background: #fff; word-break: keep-all; box-shadow: 0 0 40px rgba(0,0,0,0.06); }
+.header { text-align: center; border-top: 3px solid #1a1a1a; border-bottom: 3px solid #1a1a1a; padding: 12px 0; margin-bottom: 4px; }
+.header-sub { font-size: 11px; font-family: Arial, sans-serif; color: #888; letter-spacing: 2px; margin-bottom: 6px; }
+.header-title { font-size: 36px; font-weight: 800; letter-spacing: 0px; font-family: 'Nanum Myeongjo', Georgia, serif; white-space: nowrap; }
+.header-date { font-size: 11px; font-family: Arial, sans-serif; color: #888; margin-top: 6px; }
+.meta { display: flex; justify-content: space-between; border-bottom: 1px solid #e0e0e0; padding: 4px 0; margin-bottom: 28px; font-size: 10px; font-family: Arial, sans-serif; color: #888; }
+.nav-wrap { display: flex; justify-content: space-between; margin-bottom: 24px; font-size: 11px; font-family: Arial, sans-serif; }
+.nav-wrap a { color: #888; text-decoration: none; }
+.nav-wrap a:hover { text-decoration: underline; }
+.article { margin-bottom: 28px; padding-bottom: 28px; border-bottom: 1px solid #e0e0e0; }
+.article-tag { font-size: 10px; font-family: Arial, sans-serif; color: #888; letter-spacing: 1px; border-top: 2px solid #1a1a1a; padding-top: 8px; margin-bottom: 8px; }
+.article-title { font-size: 24px; font-weight: bold; line-height: 1.3; margin-bottom: 12px; font-family: 'Nanum Myeongjo', Georgia, serif; letter-spacing: -0.5px; }
+.article-summary { font-size: 13px; color: #555; line-height: 1.75; margin-bottom: 14px; }
+.btn-wrap { display: flex; gap: 6px; margin-bottom: 14px; }
+.toggle-btn { font-size: 11px; font-family: Arial, sans-serif; color: #555; background: none; border: 1px solid #ccc; border-radius: 6px; padding: 4px 10px; cursor: pointer; }
+.toggle-btn:hover { background: #f5f5f5; }
+.article-detail { display: none; }
+.article-detail.open { display: block; }
+.detail-inner { border-left: 2px solid #e0e0e0; padding-left: 16px; }
+.section-label { font-size: 10px; font-family: Arial, sans-serif; color: #888; letter-spacing: 1px; margin-bottom: 6px; margin-top: 16px; }
+.detail-inner p { font-size: 13px; color: #555; line-height: 1.75; margin-bottom: 8px; }
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 8px; }
+.box { background: #f5f5f5; border-radius: 8px; padding: 10px 12px; }
+.box-label { font-size: 11px; font-family: Arial, sans-serif; color: #888; margin-bottom: 6px; }
+.box p { font-size: 12px; color: #555; line-height: 1.65; margin-bottom: 6px; }
+.news-item { margin-bottom: 14px; padding-bottom: 14px; border-bottom: 1px solid #e0e0e0; }
+.news-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+.badge { display: inline-block; font-size: 10px; font-family: Arial, sans-serif; background: #f5f5f5; color: #888; padding: 2px 8px; border-radius: 4px; margin-right: 6px; }
+.news-title { font-size: 13px; font-weight: bold; }
+.news-item p { font-size: 12px; color: #555; line-height: 1.7; margin-top: 6px; }
+.product-name { font-size: 13px; font-weight: bold; color: #1a1a1a; margin-bottom: 4px; }
+.product-item { margin-bottom: 12px; padding-bottom: 12px; border-bottom: 1px solid #e0e0e0; }
+.product-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+.product-item p { font-size: 12px; color: #555; line-height: 1.7; }
+.source { font-size: 10px; font-family: Arial, sans-serif; color: #aaa; border-top: 1px solid #e0e0e0; padding-top: 8px; margin-top: 16px; }
+.highlight { font-weight: bold; color: #1a1a1a; }
+.insight-p { font-size: 15px !important; color: #333 !important; line-height: 1.85 !important; margin-bottom: 10px !important; }
+.editor { border-top: 2px solid #1a1a1a; padding-top: 10px; margin-bottom: 16px; }
+.editor p { font-size: 16px; color: #1a1a1a; line-height: 1.85; font-style: italic; font-family: 'Nanum Myeongjo', Georgia, serif; font-weight: 800; }
+.footer { border-top: 1px solid #e0e0e0; padding-top: 8px; text-align: center; font-size: 10px; font-family: Arial, sans-serif; color: #aaa; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-sub">ONEDAY DIGEST</div>
+  <div class="header-title">오늘의 밑줄</div>
+  <div class="header-date">2026년 6월 15일 · Vol. 64</div>
+</div>
+<div class="meta">
+  <span>비즈니스 인사이트 · AI·테크 브리핑 · 오늘의 신제품</span>
+  <span>jucheolkim.github.io</span>
+</div>
+
+<!-- Article 1: Marc Lou -->
+<article class="article">
+  <div class="article-tag">비즈니스 인사이트 · MARC LOU · ShipFast</div>
+  <div class="article-title">재능보다 횟수가 이긴다</div>
+  <div class="article-summary">마크 루는 혼자서 30개가 넘는 작은 제품을 만들어 월 8만 달러를 번다. 적중률은 약 5%. 그는 "내가 던지는 것의 개수가 유일한 지표"라고 말한다 — AI 시대에도. 더 똑똑한 도구가 아니라, 더 많이 던지는 규율이 결과를 만든다는 것이다.</div>
+  <div class="btn-wrap">
+    <button class="toggle-btn" onclick="var d=document.getElementById('d1'),b=this;d.classList.toggle('open');b.textContent=d.classList.contains('open')?'접기 ▲':'더 보기 ▼'">더 보기 ▼</button>
+    <button class="toggle-btn">🎧 오디오로 듣기 (준비 중)</button>
+  </div>
+  <div id="d1" class="article-detail">
+    <div class="detail-inner">
+      <div class="section-label">이 사람은 누구인가</div>
+      <p>마크 루(Marc Louvion)는 프랑스 출신의 1인 메이커이자 디지털 노마드다. 발리를 거점으로 ShipFast(Next.js 보일러플레이트), TrustMRR, DataFast, CodeFast 등 30개가 넘는 마이크로 SaaS를 전부 혼자 만들고 운영한다. 팀도 투자도 없이 월 8만 달러 안팎의 수익을 내며, 2026년 ProductHunt '올해의 메이커'로 선정됐다. 화려한 기술 스택 대신 단순한 도구를 고집하고, 매출과 과정을 모두 공개하는 build in public 방식의 대표 사례다.</p>
+      <div class="section-label">주요 활동과 이력</div>
+      <p>4년간 여러 제품을 시도했지만 좀처럼 자리 잡지 못함 → 방식 전환(하나에 오래 걸지 않고 많이·빠르게) → 발리 이주 → ShipFast 출시(2023), 48시간 만에 $6K·첫 달 $40K → DataFast·TrustMRR·CodeFast로 포트폴리오 확장 → 'Just Ship It' 뉴스레터 운영 → 2026년 코드 에디터와 ChatGPT만으로 앱 6개 추가 출시 → ProductHunt 2026 올해의 메이커 선정.</p>
+      <div class="section-label">성공한 것과 실패한 것</div>
+      <div class="grid">
+        <div class="box">
+          <div class="box-label">✓ 성공한 것</div>
+          <p>팀도 투자도 없이 30여 개 제품 포트폴리오로 안정적인 현금흐름을 만들었다. 한 제품에 올인하는 대신, 빠르게 던지고 결제 버튼으로 검증하는 과정을 수십 번 반복했다.</p>
+          <p>트위터·유튜브·ProductHunt를 잇는 배포 엔진을 직접 구축했다. 제품을 만드는 일보다 '도달'을 먼저 풀어둔 것이 반복 가능한 무기가 됐다.</p>
+        </div>
+        <div class="box">
+          <div class="box-label">✗ 한계로 남은 것</div>
+          <p>설계상 대부분의 시도는 자리 잡지 못한다(적중률 약 5%). 다작 모델은 완성도·깊이, 그리고 지속 가능성에 대한 질문을 남긴다.</p>
+          <p>엔진이 전적으로 본인 한 사람에게 의존한다. 던지는 손이 멈추면 흐름도 함께 멈춘다.</p>
+        </div>
+      </div>
+      <div class="section-label">인사이트</div>
+      <p class="insight-p">루의 명제는 단순하다. "던지는 것의 개수가 유일한 KPI다." 무엇이 맞을지 미리 알 수 없으니, 예측 대신 횟수로 확률을 산다. <span class="highlight">적게 신중히 거는 대신, 많이 빠르게 던져 시장이 고르게 한다.</span></p>
+      <p class="insight-p">AI에 대한 그의 태도는 의외로 절제돼 있다. 세팅은 코드 에디터와 단일 채팅창뿐이다. <span class="highlight">도구가 강해진 게 아니라, 도구를 쓰는 규율이 결과를 만든다</span>는 것. 그는 AI 뉴스가 만드는 FOMO가 오히려 깊은 작업을 갉아먹는다고 본다.</p>
+      <p class="insight-p">"v1이 부끄럽지 않으면 너무 늦게 출시한 것"이라는 말은 완성도에 대한 통념을 뒤집는다. <span class="highlight">부끄러움을 감수하고 일찍 내보내야, 시장이 무엇을 원하는지 빨리 알 수 있다.</span> 그에게 출시는 결과물이 아니라 질문이다.</p>
+      <div class="source">출처: BigGo Finance (2026.04) · IndieAI (2026.03) · TrustMRR 공개 대시보드 (2026) · Startup Stash (2026.01)</div>
+    </div>
+  </div>
+</article>
+
+<!-- Article 2: Arvid Kahl -->
+<article class="article">
+  <div class="article-tag">비즈니스 인사이트 · ARVID KAHL · The Bootstrapped Founder</div>
+  <div class="article-title">투명함이 무기였다, 이제는 약점이다</div>
+  <div class="article-summary">아르비드 칼은 모든 걸 공개하는 build in public으로 회사를 키워 매각했다. 그런데 2026년, 그는 정반대를 경고한다 — 에이전트 코딩이 등장하면서 공개한 구조와 매출이 며칠 만에 복제당하는 통로가 됐다는 것이다. 같은 무기가 어느새 약점이 됐다.</div>
+  <div class="btn-wrap">
+    <button class="toggle-btn" onclick="var d=document.getElementById('d2'),b=this;d.classList.toggle('open');b.textContent=d.classList.contains('open')?'접기 ▲':'더 보기 ▼'">더 보기 ▼</button>
+    <button class="toggle-btn">🎧 오디오로 듣기 (준비 중)</button>
+  </div>
+  <div id="d2" class="article-detail">
+    <div class="detail-inner">
+      <div class="section-label">이 사람은 누구인가</div>
+      <p>아르비드 칼은 독일 출신으로 현재 토론토에 거주하는 1인 부트스트래퍼이자 작가다. 온라인 교사용 SaaS인 FeedbackPanda를 투자 없이 키워 2019년 매각했고, 이후 『Zero to Sold』 『The Embedded Entrepreneur』를 쓰며 'calm &amp; sustainable business' 진영의 대표 목소리가 됐다. 지금은 팟캐스트 데이터 분석 도구 Podscan을 혼자 만들며, 매주 뉴스레터와 팟캐스트로 부트스트래핑과 오디언스 빌딩을 이야기한다.</p>
+      <div class="section-label">주요 활동과 이력</div>
+      <p>FeedbackPanda 부트스트랩 창업·공개 운영 → Stripe 매출 공개가 인수자를 끌어와 매각(2019) → 『Zero to Sold』 『The Embedded Entrepreneur』 출간 → The Bootstrapped Founder(블로그·뉴스레터·팟캐스트) 운영 → Podscan 개발(AI 기반 추출·분석) → 2026년 build in public의 위험과 AI 시대 부트스트래핑을 재정의하는 일련의 글·방송.</p>
+      <div class="section-label">성공한 것과 실패한 것</div>
+      <div class="grid">
+        <div class="box">
+          <div class="box-label">✓ 성공한 것</div>
+          <p>투자 없이 제품을 키우고, 모든 걸 공개하는 방식으로 인수까지 이끌었다. 공개한 매출과 과정 자체가 신뢰와 인수자를 불러왔다.</p>
+          <p>제품을 넘어 오디언스·책·교육으로 확장했다. 한 번의 매각이 아니라, 반복해서 쓸 수 있는 자산(독자·신뢰)을 만들었다.</p>
+        </div>
+        <div class="box">
+          <div class="box-label">✗ 한계로 남은 것</div>
+          <p>그가 키운 build in public의 해자가, 그 자신의 진단대로 무너지고 있다. 공개가 곧 복제의 입구가 된 시대다.</p>
+          <p>오디언스 우선 모델은 느리고, 작게 가는 선택은 규모의 상한을 스스로 긋는다. 끊임없이 바뀌는 AI API에 시스템을 계속 맞춰야 한다.</p>
+        </div>
+      </div>
+      <div class="section-label">인사이트</div>
+      <p class="insight-p">칼의 2026년 경고는 날카롭다. <span class="highlight">"빌드 인 퍼블릭이 나를 매각시켰지만, 이제 같은 투명성이 회사를 며칠 만에 복제당하게 만든다."</span> 에이전트 코딩으로 누구나 공개된 구조·매출·기능을 베끼는 시대, 한때 안전선이던 월 2~3만 달러 매출은 더 이상 방어막이 되지 못한다는 것이다.</p>
+      <p class="insight-p">그렇다고 그는 비관하지 않는다. "바이브 코딩이 SaaS를 죽인다"는 서사는 틀렸다고 말한다. <span class="highlight">만드는 일이 쉬워질수록 희소해지는 건 코드가 아니라, 누구를 위해 무엇을 만들지 아는 오디언스와 신뢰다.</span></p>
+      <p class="insight-p">20년 넘게 코딩한 끝에 그가 내린 결론도 같은 방향이다. <span class="highlight">"나는 코딩이 아니라, 코드가 만들어내는 것을 사랑했다."</span> 도구가 대신할 수 있는 건 손이고, 끝까지 남는 건 무엇을 만들지 정하는 판단이다.</p>
+      <div class="source">출처: The Bootstrapped Founder 팟캐스트 (2026.04) · tbf.fm (2026) · The Bootstrapped Founder 블로그 (2026.01~) · UN Networth (2026.03)</div>
+    </div>
+  </div>
+</article>
+
+<!-- Article 3: AI 브리핑 -->
+<article class="article">
+  <div class="article-tag">AI · 테크 브리핑 · 2026년 6월 15일</div>
+  <div class="article-title">상장·전력·주권 — AI 경쟁이 '모델 밖'으로 나왔다</div>
+  <div class="article-summary">어떤 모델이 더 똑똑한가를 두고 다투던 경쟁이, 누가 더 많은 자본·전력·주권 인프라를 쥐느냐의 싸움으로 옮겨갔다. 이번 주의 세 뉴스는 AI의 무게중심이 모델 성능 밖으로 이동했음을 보여준다.</div>
+  <div class="btn-wrap">
+    <button class="toggle-btn" onclick="var d=document.getElementById('d3'),b=this;d.classList.toggle('open');b.textContent=d.classList.contains('open')?'접기 ▲':'더 보기 ▼'">더 보기 ▼</button>
+  </div>
+  <div id="d3" class="article-detail">
+    <div class="detail-inner">
+
+      <div class="news-item">
+        <div><span class="badge">IPO</span><span class="news-title">SpaceX, 사상 최대 규모로 나스닥 상장 — 첫날 +19%, 시총 $2조 돌파</span></div>
+        <p><strong>무슨 일인가:</strong> SpaceX가 6월 12일 나스닥에 상장했다(티커 SPCX). 공모가 $135에 5억 5천만 주 이상을 팔아 약 750억 달러를 조달, 역사상 최대 규모 IPO가 됐다. 첫날 19% 올라 $161에 마감하며 시가총액 $2조를 넘겼고, 미국 6위 상장사로 올라섰다. 연초 xAI를 흡수해 AI 부문도 품고 있다.</p>
+        <p><strong>왜 중요한가:</strong> TechCrunch는 FAANG을 대체하는 새 머리글자로 'MANGOS'(Meta·Anthropic·Nvidia·Google·OpenAI·SpaceX)를 제시했다. Anthropic($965B·상장 신청)과 OpenAI도 공개시장 채비 중이다. 자본시장의 주역이 통째로 교체되고 있다.</p>
+        <p><strong>인사이트:</strong> <span class="highlight">AI 경쟁의 1차전이 모델이었다면, 2차전은 자본이다.</span> 누가 가장 비싼 컴퓨트와 가장 큰 자금을 끌어오느냐가 판도를 가른다. 상장은 그 자본을 끌어오는 가장 큰 수도꼭지다.</p>
+      </div>
+
+      <div class="news-item">
+        <div><span class="badge">주권 AI</span><span class="news-title">NAVER·NVIDIA, 세종에 기가와트급 'AI 팩토리' 구축 — 젠슨 황 방한</span></div>
+        <p><strong>무슨 일인가:</strong> NVIDIA와 NAVER가 세종 GAK 데이터센터에 NVIDIA DSX 기반 'AI 팩토리'를 구축한다고 발표했다(6/7). 2027년 55MW로 시작해 기가와트급까지 단계적으로 확장한다. 차세대 HyperCLOVA X, NVIDIA Cosmos와 결합한 'Seoul World Model', 피지컬 AI 서비스가 목표다. 젠슨 황이 직접 방한했고, 발표 직후 NAVER 주가는 9.2% 올랐다.</p>
+        <p><strong>왜 중요한가:</strong> 한국의 정부·규제 산업은 데이터가 국내에서 통제·처리되는 '소버린 AI'를 강하게 선호한다. 미국 퍼블릭 클라우드에 올리기 어려운 데이터를, 신뢰할 수 있는 국내 사업자가 받는 구조다.</p>
+        <p><strong>인사이트:</strong> <span class="highlight">컴퓨트의 '주권'이 새로운 경쟁축이 됐다.</span> 모델이 평준화될수록, 그것이 어디서 누구의 손에 돌아가느냐가 차별점이 된다. 한국·유럽·중동이 같은 질문을 동시에 던지고 있다.</p>
+      </div>
+
+      <div class="news-item">
+        <div><span class="badge">전력</span><span class="news-title">AI의 다음 병목은 '전기' — NERC, 대규모 연산 부하 안정성 경보</span></div>
+        <p><strong>무슨 일인가:</strong> 미국 전력신뢰도기구(NERC)는 여름 피크 수요가 향후 10년간 224GW 늘어날 것으로 보고, 대규모 연산 부하의 안정성 위험을 경고하는 이례적 경보를 냈다. 하이퍼스케일러들의 2026년 설비투자 계획은 최대 7,200억 달러에 이른다. 일부 기업은 본업을 접고 'AI 에너지 인프라'로 전환하고 있다.</p>
+        <p><strong>왜 중요한가:</strong> 모델을 돌릴 전기가 부족하면, 가장 똑똑한 모델도 멈춘다. 경쟁의 병목이 알고리즘에서 전력망으로 내려왔다.</p>
+        <p><strong>인사이트:</strong> <span class="highlight">AI의 다음 한계는 지능이 아니라 전기다.</span> 데이터·모델·칩 다음의 희소 자원은 전력과 그것을 감당할 그리드다. AI 시대의 진짜 인프라 경쟁이 여기서 벌어진다.</p>
+      </div>
+
+      <div class="source">출처: CNN · NPR · CNBC · TechCrunch (2026.06.12) · NVIDIA·NAVER (2026.06.07) · PR Newswire · NERC (2026.06)</div>
+    </div>
+  </div>
+</article>
+
+<!-- Article 4: 오늘의 신제품 -->
+<article class="article">
+  <div class="article-tag">오늘의 신제품 · PRODUCT HUNT · 2026년 6월 13일</div>
+  <div class="article-title">오늘의 신제품 3선</div>
+  <div class="article-summary">웹 데이터를 대신 모으는 에이전트, 가리키면 알려주는 언어 학습, 신뢰하는 사람으로 찾는 맛집 — 6월 13일 ProductHunt 상위에서 고른, 결이 다른 세 제품이다.</div>
+  <div class="btn-wrap">
+    <button class="toggle-btn" onclick="var d=document.getElementById('d4'),b=this;d.classList.toggle('open');b.textContent=d.classList.contains('open')?'접기 ▲':'더 보기 ▼'">더 보기 ▼</button>
+  </div>
+  <div id="d4" class="article-detail">
+    <div class="detail-inner">
+
+      <div class="product-item">
+        <div class="product-name">Prometheus by Firecrawl</div>
+        <p>웹에서 데이터를 수집·정리하는 일을 대신하는 'forward-deployed' AI 에이전트. 매번 스크래퍼를 짜는 대신, 에이전트가 필요한 웹 데이터를 알아서 가져오도록 설계됐다. 개발자·데이터 팀의 반복 작업을 줄인다. 6월 13일 일간 상위.</p>
+      </div>
+
+      <div class="product-item">
+        <div class="product-name">CakewordAI</div>
+        <p>사물을 카메라로 가리키면 어떤 언어로든 그 이름을 알려주는 학습 도구. 단어장 대신 '눈앞의 사물'에서 출발하는 몰입형 언어 학습을 지향한다. 일상이 곧 교재가 된다.</p>
+      </div>
+
+      <div class="product-item">
+        <div class="product-name">NomNak</div>
+        <p>신뢰하는 사람들의 추천을 통해 맛집을 찾는 소셜 발견 앱. 익명 별점이 아니라 '내가 아는 사람'의 취향을 신호로 삼는다. 평점 인플레이션에 지친 사용자를 겨냥했다.</p>
+      </div>
+
+      <div class="source">출처: ProductHunt 2026년 6월 13일 · producthunt.com/leaderboard</div>
+    </div>
+  </div>
+</article>
+
+<!-- 에디터 한마디 -->
+<div class="editor">
+  <p>누구나 빠르게 만들고 키울 수 있게 되자, 진짜 해자는 복제할 수 없는 것 — 신뢰와 집중, 무엇을 하지 않을지의 판단으로 옮겨갔다.</p>
+</div>
+
+<div class="nav-wrap">
+  <a href="vol63.html">← 이전 호</a>
+  <a href="archive.html">전체 보기</a>
+</div>
+
+<div class="footer">
+  <p>오늘의 밑줄 · 매일 발행 · <a href="https://jucheolkim.github.io" style="color:#aaa;">jucheolkim.github.io</a></p>
+</div>
+
+<script>
+</script>
+</body>
+</html>
