@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>오늘의 밑줄 · Vol.66</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap');
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { background: #f0efeb; }
+body { font-family: Georgia, serif; max-width: 680px; margin: 0 auto; padding: 40px 20px; color: #1a1a1a; background: #fff; word-break: keep-all; box-shadow: 0 0 40px rgba(0,0,0,0.06); }
+.header { text-align: center; border-top: 3px solid #1a1a1a; border-bottom: 3px solid #1a1a1a; padding: 12px 0; margin-bottom: 4px; }
+.header-sub { font-size: 11px; font-family: Arial, sans-serif; color: #888; letter-spacing: 2px; margin-bottom: 6px; }
+.header-title { font-size: 36px; font-weight: 800; letter-spacing: 0px; font-family: 'Nanum Myeongjo', Georgia, serif; white-space: nowrap; }
+.header-date { font-size: 11px; font-family: Arial, sans-serif; color: #888; margin-top: 6px; }
+.meta { display: flex; justify-content: space-between; border-bottom: 1px solid #e0e0e0; padding: 4px 0; margin-bottom: 28px; font-size: 10px; font-family: Arial, sans-serif; color: #888; }
+.nav-wrap { display: flex; justify-content: space-between; margin-bottom: 24px; font-size: 11px; font-family: Arial, sans-serif; }
+.nav-wrap a { color: #888; text-decoration: none; }
+.nav-wrap a:hover { text-decoration: underline; }
+.article { margin-bottom: 28px; padding-bottom: 28px; border-bottom: 1px solid #e0e0e0; }
+.article-tag { font-size: 10px; font-family: Arial, sans-serif; color: #888; letter-spacing: 1px; border-top: 2px solid #1a1a1a; padding-top: 8px; margin-bottom: 8px; }
+.article-title { font-size: 24px; font-weight: bold; line-height: 1.3; margin-bottom: 12px; font-family: 'Nanum Myeongjo', Georgia, serif; letter-spacing: -0.5px; }
+.article-summary { font-size: 13px; color: #555; line-height: 1.75; margin-bottom: 14px; }
+.btn-wrap { display: flex; gap: 6px; margin-bottom: 14px; }
+.toggle-btn { font-size: 11px; font-family: Arial, sans-serif; color: #555; background: none; border: 1px solid #ccc; border-radius: 6px; padding: 4px 10px; cursor: pointer; }
+.toggle-btn:hover { background: #f5f5f5; }
+.article-detail { display: none; }
+.article-detail.open { display: block; }
+.detail-inner { border-left: 2px solid #e0e0e0; padding-left: 16px; }
+.section-label { font-size: 10px; font-family: Arial, sans-serif; color: #888; letter-spacing: 1px; margin-bottom: 6px; margin-top: 16px; }
+.detail-inner p { font-size: 13px; color: #555; line-height: 1.75; margin-bottom: 8px; }
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 8px; }
+.box { background: #f5f5f5; border-radius: 8px; padding: 10px 12px; }
+.box-label { font-size: 11px; font-family: Arial, sans-serif; color: #888; margin-bottom: 6px; }
+.box p { font-size: 12px; color: #555; line-height: 1.65; margin-bottom: 6px; }
+.news-item { margin-bottom: 14px; padding-bottom: 14px; border-bottom: 1px solid #e0e0e0; }
+.news-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+.badge { display: inline-block; font-size: 10px; font-family: Arial, sans-serif; background: #f5f5f5; color: #888; padding: 2px 8px; border-radius: 4px; margin-right: 6px; }
+.news-title { font-size: 13px; font-weight: bold; }
+.news-item p { font-size: 12px; color: #555; line-height: 1.7; margin-top: 6px; }
+.product-name { font-size: 13px; font-weight: bold; color: #1a1a1a; margin-bottom: 4px; }
+.product-item { margin-bottom: 12px; padding-bottom: 12px; border-bottom: 1px solid #e0e0e0; }
+.product-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+.product-item p { font-size: 12px; color: #555; line-height: 1.7; }
+.source { font-size: 10px; font-family: Arial, sans-serif; color: #aaa; border-top: 1px solid #e0e0e0; padding-top: 8px; margin-top: 16px; }
+.highlight { font-weight: bold; color: #1a1a1a; }
+.insight-p { font-size: 15px !important; color: #333 !important; line-height: 1.85 !important; margin-bottom: 10px !important; }
+.editor { border-top: 2px solid #1a1a1a; padding-top: 10px; margin-bottom: 16px; }
+.editor p { font-size: 16px; color: #1a1a1a; line-height: 1.85; font-style: italic; font-family: 'Nanum Myeongjo', Georgia, serif; font-weight: 800; }
+.footer { border-top: 1px solid #e0e0e0; padding-top: 8px; text-align: center; font-size: 10px; font-family: Arial, sans-serif; color: #aaa; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-sub">ONEDAY DIGEST</div>
+  <div class="header-title">오늘의 밑줄</div>
+  <div class="header-date">2026년 6월 17일 · Vol. 66</div>
+</div>
+<div class="meta">
+  <span>비즈니스 인사이트 · AI·테크 브리핑 · 오늘의 신제품</span>
+  <span>jucheolkim.github.io</span>
+</div>
+
+<!-- Article 1: Cory Doctorow -->
+<article class="article">
+  <div class="article-tag">비즈니스 인사이트 · CORY DOCTOROW · 작가·활동가</div>
+  <div class="article-title">플랫폼이 망가지는 데는 순서가 있다</div>
+  <div class="article-summary">코리 닥터로우는 사업가가 아니다. 소설가이자 활동가인 그는 '인셔티피케이션'이라는 말로, 좋던 플랫폼이 왜 하나같이 썩는지를 한 단어에 담았다. 그의 답은 분명하다 — 문제는 기술이 아니라, 견제가 사라진 구조다.</div>
+  <div class="btn-wrap">
+    <button class="toggle-btn" onclick="var d=document.getElementById('d1'),b=this;d.classList.toggle('open');b.textContent=d.classList.contains('open')?'접기 ▲':'더 보기 ▼'">더 보기 ▼</button>
+    <button class="toggle-btn">🎧 오디오로 듣기 (준비 중)</button>
+  </div>
+  <div id="d1" class="article-detail">
+    <div class="detail-inner">
+      <div class="section-label">이 사람은 누구인가</div>
+      <p>코리 닥터로우는 캐나다·영국에서 활동하는 SF 소설가이자 디지털 권리 운동가다. 전자프런티어재단(EFF) 특별고문으로 오래 일했고, 블로그 'Pluralistic'에 매일 글을 쓴다. 거대 플랫폼이 어떻게 사용자를 가두고 망가지는지를 'enshittification(인셔티피케이션)'이라는 말로 정리해, 2023년 올해의 단어에 올렸다. 기술 자체가 아니라 그것을 둘러싼 권력 구조를 읽는 사람이다.</p>
+      <div class="section-label">주요 활동과 이력</div>
+      <p>SF 작가·EFF 특별고문 → 디지털 저작권·상호운용성 운동 → 'enshittification' 개념 제시(2022~23)·올해의 단어 선정 → 저서 《Enshittification: Why Everything Suddenly Got Worse and What To Do About It》(2025) → 플랫폼 통합과 그 해법을 다룬 일련의 강연·인터뷰(2026).</p>
+      <div class="section-label">성공한 것과 한계로 남은 것</div>
+      <div class="grid">
+        <div class="box">
+          <div class="box-label">✓ 성공한 것</div>
+          <p>막연하던 'IT 서비스가 점점 나빠진다'는 감각에, 단계와 원인이 있는 이름을 붙였다. 비평을 분석으로 바꿨다.</p>
+          <p>해법을 추상적 윤리가 아니라 '상호운용성·이동성'이라는 제도 설계로 구체화했다.</p>
+        </div>
+        <div class="box">
+          <div class="box-label">✗ 한계로 남은 것</div>
+          <p>처방(법적 상호운용성 의무화)은 거대 기업의 이해와 정면충돌한다. 실현 속도는 더디다.</p>
+          <p>구조를 보는 눈은 날카롭지만, 그 안에서 개인이 당장 무엇을 만들지에 대한 답은 옅다.</p>
+        </div>
+      </div>
+      <div class="section-label">인사이트</div>
+      <p class="insight-p">닥터로우의 진단엔 순서가 있다. <span class="highlight">먼저 사용자를 모으고, 다음엔 사용자를 미끼로 사업 고객을 끌어들이고, 마지막엔 양쪽을 모두 쥐어짜 회사 몫만 키운다.</span> 좋던 서비스가 나빠지는 건 우연이 아니라 정해진 경로라는 것이다.</p>
+      <p class="insight-p">그는 이걸 막던 네 가지 힘이 있었다고 말한다 — 경쟁·규제·노동력·상호운용성. <span class="highlight">지난 25년간 거대 기업이 이 네 견제를 차례로 무너뜨리면서, 통합과 잠금이 가능해졌다.</span> 그래서 그의 처방은 도덕이 아니라 제도다. 데이터를 들고 떠날 수 있게, 서비스끼리 강제로 연결되게 만들라는 것.</p>
+      <p class="insight-p">오늘 AI 도구들이 거대 기업으로 빨려 들어가는 풍경을, 그의 틀은 정확히 설명한다. <span class="highlight">위험한 건 도구가 강해지는 게 아니라, 그 도구를 떠날 수 없게 되는 것이다.</span> 무엇이 좋은지를 묻기 전에, 누가 그것을 쥐고 있는지를 먼저 보라고 그는 말한다.</p>
+      <div class="source">출처: The New Stack (2026) · Renewable Matter 인터뷰 (2026) · Verso Books 《Enshittification》(2025) · EFF</div>
+    </div>
+  </div>
+</article>
+
+<!-- Article 2: Simon Willison -->
+<article class="article">
+  <div class="article-tag">비즈니스 인사이트 · SIMON WILLISON · 인디 개발자</div>
+  <div class="article-title">자동화되는 건 코딩, 남는 건 그 나머지 전부</div>
+  <div class="article-summary">사이먼 윌리슨은 닥터로우와 다른 자리에 선다. 큰 회사에 속하지 않은 인디 개발자인 그는, 통합을 걱정하기보다 도구를 직접 집어 든다. 그의 관찰은 담담하다 — 명세를 코드로 바꾸는 일은 사라지고, '그 나머지 전부'가 오히려 커진다는 것.</div>
+  <div class="btn-wrap">
+    <button class="toggle-btn" onclick="var d=document.getElementById('d2'),b=this;d.classList.toggle('open');b.textContent=d.classList.contains('open')?'접기 ▲':'더 보기 ▼'">더 보기 ▼</button>
+    <button class="toggle-btn">🎧 오디오로 듣기 (준비 중)</button>
+  </div>
+  <div id="d2" class="article-detail">
+    <div class="detail-inner">
+      <div class="section-label">이 사람은 누구인가</div>
+      <p>사이먼 윌리슨은 웹 프레임워크 Django의 공동제작자이자, 데이터 도구 Datasette를 혼자 만들어 온 인디 개발자다. 거대 조직에 속하지 않고, 블로그 simonwillison.net에 LLM을 실제로 써 본 기록을 거의 매일 남긴다. 'prompt injection'이라는 말을 처음 붙인 사람이기도 하다. 거대 담론보다, 개인이 도구로 무엇을 할 수 있는지를 손으로 확인하는 실무가다.</p>
+      <div class="section-label">주요 활동과 이력</div>
+      <p>Django 공동제작 → 데이터 공개 도구 Datasette 개발 → 'prompt injection' 개념 명명 → LLM 실사용 기록을 매일 공개하는 블로깅 → 2026년 코딩 에이전트·바이브 코딩의 현실을 기록한 일련의 글(simonwillison.net, 2026.01·03·05).</p>
+      <div class="section-label">성공한 것과 한계로 남은 것</div>
+      <div class="grid">
+        <div class="box">
+          <div class="box-label">✓ 성공한 것</div>
+          <p>혼자서도 의미 있는 오픈소스 도구를 꾸준히 만들고 공개해, '개인도 도구를 쥘 수 있다'를 실증했다.</p>
+          <p>과장도 냉소도 없이, 직접 써 본 결과만 기록한다. 그래서 그의 관찰은 현장에서 신뢰받는다.</p>
+        </div>
+        <div class="box">
+          <div class="box-label">✗ 한계로 남은 것</div>
+          <p>'직접 쥘 수 있다'는 낙관은, 도구의 주인이 거대 기업으로 바뀌는 흐름 앞에서 시험대에 오른다.</p>
+          <p>실용에 집중하는 만큼, 권력·구조 같은 큰 질문은 그의 글 바깥에 남는다.</p>
+        </div>
+      </div>
+      <div class="section-label">인사이트</div>
+      <p class="insight-p">윌리슨의 2026년 관찰은 분명하다. <span class="highlight">상세한 명세를 코드 줄로 바꾸는 일, 바로 그게 자동화되고 있다. 그런데 코딩 에이전트와 오래 일할수록, 그 일을 뺀 '나머지 전부'가 오히려 더 커진다.</span> 무엇을 만들지 정하고, 검토하고, 유지보수하는 몫이 사람에게 남는다는 것이다.</p>
+      <p class="insight-p">그는 낙관을 공짜로 팔지 않는다. <span class="highlight">"코드를 두 배 빨리 쓴다면, 유지보수 비용도 절반으로 줄여야 한다."</span> 빨리 만드는 것 자체는 미덕이 아니며, 그 뒤에 남는 부담까지 줄여야 진짜 이득이라는 경고다.</p>
+      <p class="insight-p">닥터로우가 '누가 도구를 쥐는지를 경계하라'면, 윌리슨은 '그래도 직접 집어 들고 만들라'고 한다. <span class="highlight">통합이 휩쓰는 시대에, 한쪽은 구조를 보고 다른 쪽은 손을 움직인다.</span> 둘은 반대가 아니라, 같은 순간을 견디는 두 가지 방식이다.</p>
+      <div class="source">출처: simonwillison.net (2026.01.08 · 03.01 · 05.06) · Oxide and Friends (2026) · 2025: The year in LLMs</div>
+    </div>
+  </div>
+</article>
+
+<!-- Article 3: AI 브리핑 -->
+<article class="article">
+  <div class="article-tag">AI · 테크 브리핑 · 2026년 6월 17일</div>
+  <div class="article-title">독립의 시대가 저물고, 통합이 시작됐다</div>
+  <div class="article-summary">오늘의 뉴스는 한 방향을 가리킨다. 어제까지 독립 스타트업이던 AI 도구들이 거대 기업의 품으로 빨려 들어가고, 그 위에 국가 단위의 규칙이 얹히기 시작했다.</div>
+  <div class="btn-wrap">
+    <button class="toggle-btn" onclick="var d=document.getElementById('d3'),b=this;d.classList.toggle('open');b.textContent=d.classList.contains('open')?'접기 ▲':'더 보기 ▼'">더 보기 ▼</button>
+  </div>
+  <div id="d3" class="article-detail">
+    <div class="detail-inner">
+
+      <div class="news-item">
+        <div><span class="badge">M&amp;A</span><span class="news-title">SpaceX, 코딩 AI 'Cursor' 600억 달러에 인수</span></div>
+        <p><strong>무슨 일인가:</strong> SpaceX가 6월 16일 Cursor 제작사 Anysphere를 600억 달러 전액 주식 교환으로 인수한다고 SEC에 신고했다. 발표 직후 SpaceX 주가는 17% 올라 미국 4위 기업이 됐다. SpaceX는 그동안 xAI의 Colossus 슈퍼컴퓨터로 Cursor와 코딩 모델을 함께 학습해 왔다고 밝혔다.</p>
+        <p><strong>왜 중요한가:</strong> Cursor는 2024년 OpenAI 액셀러레이터를 거쳐 2년 만에 600억 달러짜리 인수 대상이 됐다. 그만큼 빠르게 컸지만, 점유율은 41%에서 26%로 떨어지고 현금 소진이 가팔랐다. 독립을 지키기엔 경쟁과 비용이 너무 빨랐다.</p>
+        <p><strong>인사이트:</strong> <span class="highlight">빠르게 큰다는 것과 혼자 선다는 것은 다른 문제다.</span> 성장 속도가 빠를수록, 거대 자본의 우산 밖에서 버티는 일은 더 어려워진다.</p>
+      </div>
+
+      <div class="news-item">
+        <div><span class="badge">시장</span><span class="news-title">AI 코딩 도구, 전부 거대 기업 소유가 되다</span></div>
+        <p><strong>무슨 일인가:</strong> Cursor 인수로 주요 AI 코딩 도구는 모두 빅테크 산하로 들어갔다. GitHub Copilot(Microsoft), Claude Code(Anthropic), Codex(OpenAI), Grok Build·Cursor(SpaceX). 독립 코딩 스타트업이 시장을 흔들던 시기가 사실상 끝났다.</p>
+        <p><strong>왜 중요한가:</strong> 불과 1년 전만 해도 작은 팀이 만든 코딩 도구가 업계를 휘저었다. 이제는 모델·컴퓨팅·유통을 쥔 쪽이 도구까지 흡수한다. 진입은 여전히 쉽지만, 끝까지 독립으로 남는 길은 좁아졌다.</p>
+        <p><strong>인사이트:</strong> <span class="highlight">기술이 평준화될수록, 승부는 누가 더 많은 자원을 쥐고 통합하느냐로 넘어간다.</span> 좋은 도구를 만드는 것과 그 도구를 끝까지 소유하는 것은 별개다.</p>
+      </div>
+
+      <div class="news-item">
+        <div><span class="badge">정책</span><span class="news-title">G7, AI 정상 오찬 — OpenAI·Anthropic·DeepMind 동석</span></div>
+        <p><strong>무슨 일인가:</strong> 6월 17일 G7은 OpenAI·Anthropic·구글 DeepMind 수장을 정상들과 한자리에 앉히는 이례적 세션을 열었다. 미스트랄의 아르튀르 멘쉬도 유일한 유럽 프런티어 기업으로 참석했다. 아동 보호와 최전선 AI 위험에 대한 '자발적(구속력 없는)' 약속이 나왔다.</p>
+        <p><strong>왜 중요한가:</strong> 기업이 만든 기술 위에, 처음으로 국가 단위의 규칙이 본격적으로 얹히기 시작했다. 구속력은 약해도, 누가 그 자리에 앉느냐가 곧 영향력의 지도가 된다.</p>
+        <p><strong>인사이트:</strong> <span class="highlight">통합이 자본에서 끝나지 않는다. 규칙을 만드는 테이블에 앉느냐가 다음 단계의 권력이다.</span></p>
+      </div>
+
+      <div class="source">출처: buildfastwithai.com (2026.06.16~17) · SEC 신고 · G7 공동성명 (2026.06.17)</div>
+    </div>
+  </div>
+</article>
+
+<!-- Article 4: 오늘의 신제품 -->
+<article class="article">
+  <div class="article-tag">오늘의 신제품 · PRODUCT HUNT · 2026년 6월 16일</div>
+  <div class="article-title">오늘의 신제품 3선</div>
+  <div class="article-summary">내 일을 기억하는 도구, Slack에 사는 직원, 코드 비용을 깎는 레이어 — 거대 모델 아래에서 '효율'을 파는 6월 16일 ProductHunt 상위 제품들이다.</div>
+  <div class="btn-wrap">
+    <button class="toggle-btn" onclick="var d=document.getElementById('d4'),b=this;d.classList.toggle('open');b.textContent=d.classList.contains('open')?'접기 ▲':'더 보기 ▼'">더 보기 ▼</button>
+  </div>
+  <div id="d4" class="article-detail">
+    <div class="detail-inner">
+
+      <div class="product-item">
+        <div class="product-name">Goldfish</div>
+        <p>옵션 키 한 번이면, 내가 무슨 일을 하는지 기억했다가 나처럼 답해 주는 맥용 AI 비서. 앱을 옮겨 다니며 일일이 맥락을 다시 설명할 필요 없이, 작성·요약·기억을 곁에서 거든다. 6월 16일 일간 1위.</p>
+      </div>
+
+      <div class="product-item">
+        <div class="product-name">MakersClaw</div>
+        <p>Slack·Teams·Telegram 안에 상주하는 'AI 직원'을 고용하는 서비스. 메신저 안에서 상시 돌아가며 고객 응대·영업·리서치 같은 일을 처리하고, 쓴 만큼만 비용을 낸다. 에이전트를 사람처럼 채용하는 발상이다.</p>
+      </div>
+
+      <div class="product-item">
+        <div class="product-name">Edgee Turbo Models</div>
+        <p>Claude Code에 Kimi K2.7-Code·MiniMax M2.7 같은 모델을 붙여 쓰게 해 주는 개발자 도구. LLM에 닿기 전 토큰을 압축해, 코드 품질은 유지하면서 비용을 최대 50%까지 깎는다. 통합의 시대에 '효율'을 파는 쪽이다.</p>
+      </div>
+
+      <div class="source">출처: ProductHunt 2026년 6월 16일 · producthunt.com/leaderboard</div>
+    </div>
+  </div>
+</article>
+
+<!-- 에디터 한마디 -->
+<div class="editor">
+  <p>도구가 거대 기업으로 빨려 들어가도, 누가 쥐었는지 경계하는 일도 직접 집어 들고 만드는 일도 결국 사람의 몫이다.</p>
+</div>
+
+<div class="nav-wrap">
+  <a href="vol65.html">← 이전 호</a>
+  <a href="archive.html">전체 보기</a>
+</div>
+
+<div class="footer">
+  <p>오늘의 밑줄 · 매일 발행 · <a href="https://jucheolkim.github.io" style="color:#aaa;">jucheolkim.github.io</a></p>
+</div>
+
+<script>
+</script>
+</body>
+</html>
