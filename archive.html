@@ -45,6 +45,7 @@ body { font-family: Georgia, serif; max-width: 680px; margin: 0 auto; padding: 4
 // 새 호 발행 시 이 배열 맨 앞에 한 줄만 추가하면 됩니다.
 // ============================================================
 var VOLS = [
+  { vol: 67, date: "2026년 6월 18일", title: "기술의 운명은 그 둘레의 구조가 정한다", tags: "Meredith Whittaker · Arvind Narayanan" },
   { vol: 66, date: "2026년 6월 17일", title: "통합의 시대, 누가 쥐고 있는지 보라", tags: "Cory Doctorow · Simon Willison" },
   { vol: 65, date: "2026년 6월 16일", title: "AGI를 기다릴 것인가, 지금 만들 것인가", tags: "Andrew Ng · Masayoshi Son" },
   { vol: 64, date: "2026년 6월 15일", title: "많이 던지는 사람과, 깊게 파는 사람", tags: "Marc Lou · Arvid Kahl" },
@@ -122,11 +123,11 @@ VOLS.forEach(function(v) {
   a.className = 'archive-item';
   a.innerHTML =
     '<div class="archive-left">' +
-      '<div class="archive-vol">Vol. ' + v.vol + ' \u00b7 ' + v.date + '</div>' +
+      '<div class="archive-vol">Vol. ' + v.vol + ' · ' + v.date + '</div>' +
       '<div class="archive-title">' + v.title + '</div>' +
       '<div class="archive-tags">' + v.tags + '</div>' +
     '</div>' +
-    '<div class="archive-meta">' + (v.vol === latestVol ? '\ucd5c\uc2e0\ud638' : '\u2192') + '</div>';
+    '<div class="archive-meta">' + (v.vol === latestVol ? '최신호' : '→') + '</div>';
   list.appendChild(a);
 });
 </script>

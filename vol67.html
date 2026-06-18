@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>오늘의 밑줄 · Vol.67</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap');
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { background: #f0efeb; }
+body { font-family: Georgia, serif; max-width: 680px; margin: 0 auto; padding: 40px 20px; color: #1a1a1a; background: #fff; word-break: keep-all; box-shadow: 0 0 40px rgba(0,0,0,0.06); }
+.header { text-align: center; border-top: 3px solid #1a1a1a; border-bottom: 3px solid #1a1a1a; padding: 12px 0; margin-bottom: 4px; }
+.header-sub { font-size: 11px; font-family: Arial, sans-serif; color: #888; letter-spacing: 2px; margin-bottom: 6px; }
+.header-title { font-size: 36px; font-weight: 800; letter-spacing: 0px; font-family: 'Nanum Myeongjo', Georgia, serif; white-space: nowrap; }
+.header-date { font-size: 11px; font-family: Arial, sans-serif; color: #888; margin-top: 6px; }
+.meta { display: flex; justify-content: space-between; border-bottom: 1px solid #e0e0e0; padding: 4px 0; margin-bottom: 28px; font-size: 10px; font-family: Arial, sans-serif; color: #888; }
+.nav-wrap { display: flex; justify-content: space-between; margin-bottom: 24px; font-size: 11px; font-family: Arial, sans-serif; }
+.nav-wrap a { color: #888; text-decoration: none; }
+.nav-wrap a:hover { text-decoration: underline; }
+.article { margin-bottom: 28px; padding-bottom: 28px; border-bottom: 1px solid #e0e0e0; }
+.article-tag { font-size: 10px; font-family: Arial, sans-serif; color: #888; letter-spacing: 1px; border-top: 2px solid #1a1a1a; padding-top: 8px; margin-bottom: 8px; }
+.article-title { font-size: 24px; font-weight: bold; line-height: 1.3; margin-bottom: 12px; font-family: 'Nanum Myeongjo', Georgia, serif; letter-spacing: -0.5px; }
+.article-summary { font-size: 13px; color: #555; line-height: 1.75; margin-bottom: 14px; }
+.btn-wrap { display: flex; gap: 6px; margin-bottom: 14px; }
+.toggle-btn { font-size: 11px; font-family: Arial, sans-serif; color: #555; background: none; border: 1px solid #ccc; border-radius: 6px; padding: 4px 10px; cursor: pointer; }
+.toggle-btn:hover { background: #f5f5f5; }
+.article-detail { display: none; }
+.article-detail.open { display: block; }
+.detail-inner { border-left: 2px solid #e0e0e0; padding-left: 16px; }
+.section-label { font-size: 10px; font-family: Arial, sans-serif; color: #888; letter-spacing: 1px; margin-bottom: 6px; margin-top: 16px; }
+.detail-inner p { font-size: 13px; color: #555; line-height: 1.75; margin-bottom: 8px; }
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 8px; }
+.box { background: #f5f5f5; border-radius: 8px; padding: 10px 12px; }
+.box-label { font-size: 11px; font-family: Arial, sans-serif; color: #888; margin-bottom: 6px; }
+.box p { font-size: 12px; color: #555; line-height: 1.65; margin-bottom: 6px; }
+.news-item { margin-bottom: 14px; padding-bottom: 14px; border-bottom: 1px solid #e0e0e0; }
+.news-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+.badge { display: inline-block; font-size: 10px; font-family: Arial, sans-serif; background: #f5f5f5; color: #888; padding: 2px 8px; border-radius: 4px; margin-right: 6px; }
+.news-title { font-size: 13px; font-weight: bold; }
+.news-item p { font-size: 12px; color: #555; line-height: 1.7; margin-top: 6px; }
+.product-name { font-size: 13px; font-weight: bold; color: #1a1a1a; margin-bottom: 4px; }
+.product-item { margin-bottom: 12px; padding-bottom: 12px; border-bottom: 1px solid #e0e0e0; }
+.product-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+.product-item p { font-size: 12px; color: #555; line-height: 1.7; }
+.source { font-size: 10px; font-family: Arial, sans-serif; color: #aaa; border-top: 1px solid #e0e0e0; padding-top: 8px; margin-top: 16px; }
+.highlight { font-weight: bold; color: #1a1a1a; }
+.insight-p { font-size: 15px !important; color: #333 !important; line-height: 1.85 !important; margin-bottom: 10px !important; }
+.editor { border-top: 2px solid #1a1a1a; padding-top: 10px; margin-bottom: 16px; }
+.editor p { font-size: 16px; color: #1a1a1a; line-height: 1.85; font-style: italic; font-family: 'Nanum Myeongjo', Georgia, serif; font-weight: 800; }
+.footer { border-top: 1px solid #e0e0e0; padding-top: 8px; text-align: center; font-size: 10px; font-family: Arial, sans-serif; color: #aaa; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-sub">ONEDAY DIGEST</div>
+  <div class="header-title">오늘의 밑줄</div>
+  <div class="header-date">2026년 6월 18일 · Vol. 67</div>
+</div>
+<div class="meta">
+  <span>비즈니스 인사이트 · AI·테크 브리핑 · 오늘의 신제품</span>
+  <span>jucheolkim.github.io</span>
+</div>
+
+<!-- Article 1: Meredith Whittaker -->
+<article class="article">
+  <div class="article-tag">비즈니스 인사이트 · MEREDITH WHITTAKER · Signal 재단</div>
+  <div class="article-title">AI는 어떤 의미로도 열려 있지 않다</div>
+  <div class="article-summary">메러디스 위태커는 사업가가 아니다. 데이터를 한 톨도 모으지 않는 비영리 메신저 Signal을 이끄는 사람이다. 그가 보는 AI는 '성능'의 문제가 아니다 — 누가 그 막대한 비용을 댈 수 있느냐로 주인이 정해지는, 구조적으로 닫힌 권력의 문제다.</div>
+  <div class="btn-wrap">
+    <button class="toggle-btn" onclick="var d=document.getElementById('d1'),b=this;d.classList.toggle('open');b.textContent=d.classList.contains('open')?'접기 ▲':'더 보기 ▼'">더 보기 ▼</button>
+    <button class="toggle-btn">🎧 오디오로 듣기 (준비 중)</button>
+  </div>
+  <div id="d1" class="article-detail">
+    <div class="detail-inner">
+      <div class="section-label">이 사람은 누구인가</div>
+      <p>메러디스 위태커는 비영리 Signal 재단의 회장이다. 구글에서 13년간 일하다 2018년 사내 부당함에 맞선 '구글 워크아웃'을 주도하며 나왔고, AI Now Institute를 공동설립해 AI를 권력·자본의 문제로 분석해 온 연구자이자 활동가다. 지금은 광고도 데이터 수집도 없는 암호화 메신저를 지키는 일을 한다. 도구의 성능보다, 그 도구가 누구의 것이고 무엇을 빨아들이는지를 묻는 사람이다.</p>
+      <div class="section-label">주요 활동과 이력</div>
+      <p>구글 13년 → 2018 구글 워크아웃 주도 후 퇴사 → AI Now Institute 공동설립 → Signal 재단 회장(2022~) → 2026년 다보스·여러 인터뷰에서 'AI 에이전트와 보안'의 위험을 연속 경고.</p>
+      <div class="section-label">성공한 것과 한계로 남은 것</div>
+      <div class="grid">
+        <div class="box">
+          <div class="box-label">✓ 성공한 것</div>
+          <p>Signal을 광고·데이터 없는 비영리 구조로 지켜내, '다른 방식도 가능하다'를 실증했다.</p>
+          <p>AI를 능력이 아니라 권력 집중의 문제로 보는 일관된 렌즈를 대중 담론에 새겼다.</p>
+        </div>
+        <div class="box">
+          <div class="box-label">✗ 한계로 남은 것</div>
+          <p>'열려 있지 않다'는 진단은 날카롭지만, 거대 자본 없이 대안을 어떻게 키울지의 경로는 옅다.</p>
+          <p>Signal조차 앱스토어·클라우드라는 거대 인프라 위에 얹혀 있다는 모순을 안고 간다.</p>
+        </div>
+      </div>
+      <div class="section-label">인사이트</div>
+      <p class="insight-p">위태커의 진단은 단호하다. <span class="highlight">"AI는 어떤 의미로도 열려 있지 않다."</span> 훈련 한 번에 1억 달러가 드는 기술은, 그 돈을 댈 수 있는 소수의 손에 구조적으로 묶인다. '오픈'이라는 말은 코드의 문제가 아니라 권력의 문제라는 것이다.</p>
+      <p class="insight-p">2026년 그가 거듭 경고한 건 에이전트다. <span class="highlight">기기 깊숙이 들어온 AI 에이전트는 여러 앱의 데이터에 접근해야 작동한다.</span> 그래서 진짜 취약점은 암호화가 뚫리는 게 아니라, "끔찍하게 허술하게 지어진 어떤 에이전트 시스템"이 그 옆에 자리 잡는 것이다.</p>
+      <p class="insight-p">그의 시선은 도구의 똑똑함을 묻지 않는다. <span class="highlight">누가 그것을 쥐고, 그것이 무엇을 빨아들이는지를 먼저 묻는다.</span> 오늘 안전을 명분으로 빗장이 걸리고, 막힌 자리를 다른 거대 자본이 채우는 풍경을, 그의 틀은 정확히 가리킨다.</p>
+      <div class="source">출처: Bloomberg (다보스, 2026.01) · The Stack 인터뷰 (2025.11) · AI Now Institute · Signal Foundation</div>
+    </div>
+  </div>
+</article>
+
+<!-- Article 2: Arvind Narayanan -->
+<article class="article">
+  <div class="article-tag">비즈니스 인사이트 · ARVIND NARAYANAN · 프린스턴대</div>
+  <div class="article-title">AI는 평범한 기술이다</div>
+  <div class="article-summary">아빈드 나라야난은 위태커와 다른 자리에 선다. 프린스턴대 교수인 그는 AI를 두려워하지도, 떠받들지도 않는다. 그의 답은 담담하다 — AI는 초지능도 만병통치약도 아니다. 전기나 인터넷처럼, 사람과 제도가 빚어내는 강력하지만 평범한 기술이다.</div>
+  <div class="btn-wrap">
+    <button class="toggle-btn" onclick="var d=document.getElementById('d2'),b=this;d.classList.toggle('open');b.textContent=d.classList.contains('open')?'접기 ▲':'더 보기 ▼'">더 보기 ▼</button>
+    <button class="toggle-btn">🎧 오디오로 듣기 (준비 중)</button>
+  </div>
+  <div id="d2" class="article-detail">
+    <div class="detail-inner">
+      <div class="section-label">이 사람은 누구인가</div>
+      <p>아빈드 나라야난은 프린스턴대 컴퓨터과학 교수다. 동료 사야시 카푸르와 함께 'AI Snake Oil'이라는 뉴스레터·책으로 AI 과대광고를 해부해 왔고, 2025년 'AI as Normal Technology(평범한 기술로서의 AI)' 에세이로 종말론과 과장 양쪽을 동시에 반박해 큰 반향을 얻었다. 사업가가 아니라, 증거로 거품을 걷어내는 연구자다.</p>
+      <div class="section-label">주요 활동과 이력</div>
+      <p>프린스턴 CS 교수 → 'AI Snake Oil' 뉴스레터·책 → 'AI as Normal Technology' 에세이(2025.9) → 2026년 팟캐스트·강연으로 프레임 확장 → 2027년 출간 예정 단행본 집필 중.</p>
+      <div class="section-label">성공한 것과 한계로 남은 것</div>
+      <div class="grid">
+        <div class="box">
+          <div class="box-label">✓ 성공한 것</div>
+          <p>'AI는 곧 종말' 대 '곧 천국' 사이에서, 증거에 기댄 드문 중간 지대를 세웠다.</p>
+          <p>영향은 '개발'이 아니라 '배치'에서 결정된다는, 손에 잡히는 지렛점을 제시했다.</p>
+        </div>
+        <div class="box">
+          <div class="box-label">✗ 한계로 남은 것</div>
+          <p>'평범하다'는 비유는 침착함을 주지만, 변화 속도를 과소평가한다는 비판도 받는다.</p>
+          <p>제도가 천천히 적응한다는 진단은, 당장 빨리 움직여야 하는 개인에겐 위안이 못 될 수 있다.</p>
+        </div>
+      </div>
+      <div class="section-label">인사이트</div>
+      <p class="insight-p">나라야난의 핵심은 한 줄로 압축된다. <span class="highlight">"이익과 위험은 AI가 개발될 때가 아니라 배치될 때 실현된다. 그래서 우리에겐 그 영향을 빚을 지렛점이 많다."</span> 기술의 운명은 연구실이 아니라 그것이 쓰이는 현장에서 정해진다는 것이다.</p>
+      <p class="insight-p">그는 확산이 생각보다 느리다고 본다. <span class="highlight">출시 1년이 지나도 'thinking' 모델을 써 본 사용자는 1%에도 못 미쳤다.</span> 진짜 병목은 모델의 똑똑함이 아니라, 조직과 제도가 그것을 받아들이는 속도다. "외부의 병목은 기술 설계를 개선한다고 넘을 수 있는 게 아니다."</p>
+      <p class="insight-p">위태커가 '누가 쥐고 있는지 경계하라'면, 나라야난은 '진정하라, 운명은 배치의 자리에서 정해진다'고 한다. <span class="highlight">한쪽은 집중을 두려워하고, 한쪽은 평범함을 신뢰한다.</span> 그러나 둘은 같은 곳을 가리킨다 — 도구 자체가 아니라, 그 둘레의 구조를 보라는 것.</p>
+      <div class="source">출처: 'AI as Normal Technology' 에세이 (2025.9) · normaltech.ai · Future Knowledge 팟캐스트 (2026.02) · O'Reilly Radar</div>
+    </div>
+  </div>
+</article>
+
+<!-- Article 3: AI 브리핑 -->
+<article class="article">
+  <div class="article-tag">AI · 테크 브리핑 · 2026년 6월 18일</div>
+  <div class="article-title">지키려고 닫았더니, 오히려 열려버렸다</div>
+  <div class="article-summary">오늘의 뉴스는 한 역설을 가리킨다. 안전을 명분으로 한 모델에 빗장이 걸리자, 그 자리를 중국산 오픈모델이 사흘 만에 채웠다. 통제는 표적을 막지 못하고, 곁에 선 사람을 먼저 가뒀다.</div>
+  <div class="btn-wrap">
+    <button class="toggle-btn" onclick="var d=document.getElementById('d3'),b=this;d.classList.toggle('open');b.textContent=d.classList.contains('open')?'접기 ▲':'더 보기 ▼'">더 보기 ▼</button>
+  </div>
+  <div id="d3" class="article-detail">
+    <div class="detail-inner">
+
+      <div class="news-item">
+        <div><span class="badge">정책</span><span class="news-title">"fix this code" 세 단어가 부른 수출통제, 보안계 300인이 반발</span></div>
+        <p><strong>무슨 일인가:</strong> 미국 정부가 Fable 5에 수출통제 빗장을 걸었는데, 발단이 정교한 탈옥이 아니라 "fix this code(이 코드를 고쳐라)"라는 평범한 방어 보안 작업이었다는 분석이 6월 18일 나왔다. 슈나이어·스타모스를 비롯한 보안 리더 300여 명이 freefable.org 공개서한으로 철회를 요구했고, 아모데이는 행정부와 직접 만났으나 해결은 무산됐다.</p>
+        <p><strong>왜 중요한가:</strong> 안전을 위해 잠근 통제가, 정작 공격자가 아니라 방어자에게서 필요한 능력을 먼저 빼앗는다는 비판이다. 막으려던 쪽은 그대로인데, 막힌 건 곁에 있던 사람들이다.</p>
+        <p><strong>인사이트:</strong> <span class="highlight">통제의 그물은 종종 표적이 아니라, 가장 가까이 선 정직한 사용자를 먼저 가둔다.</span></p>
+      </div>
+
+      <div class="news-item">
+        <div><span class="badge">오픈소스</span><span class="news-title">중국 Zhipu GLM-5.2, 72시간 만에 빈자리를 채우다</span></div>
+        <p><strong>무슨 일인가:</strong> Fable 5 접근이 막히자 사흘 만에 중국 Zhipu가 MIT 라이선스의 오픈모델 GLM-5.2를 내놨고, 갈 곳을 잃은 개발자들을 빠르게 흡수했다. 비미국 오픈모델로의 이동이 그만큼 가팔라졌다.</p>
+        <p><strong>왜 중요한가:</strong> 정책의 의도가 결과로 뒤집혔다. 한 미국 모델을 막자, 오히려 통제 밖 오픈모델의 채택이 앞당겨졌다. 빗장은 흐름을 멈추지 못했다.</p>
+        <p><strong>인사이트:</strong> <span class="highlight">물길을 막아도 물은 사라지지 않는다. 다른 길로 돌아 흐를 뿐이다.</span></p>
+      </div>
+
+      <div class="news-item">
+        <div><span class="badge">보안</span><span class="news-title">'에이전트재킹' — 가짜 에러로 코딩 AI를 통째로 탈취하다</span></div>
+        <p><strong>무슨 일인가:</strong> 악성 Sentry 에러 알림으로 Claude Code·Cursor·Codex 같은 AI 코딩 에이전트를 속여 명령을 실행시키는 새 공격이 6월 18일 보고됐다. 노출된 2,388개 조직에서 85%가 뚫렸다. 에이전트가 에러 모니터링 신호를 무턱대고 신뢰하는 틈을 노렸다.</p>
+        <p><strong>왜 중요한가:</strong> 모델이 똑똑해지는 동안, 진짜 구멍은 그 모델을 둘러싼 에이전트 배관에서 열렸다. 위협은 지능이 아니라 '연결'에서 온다.</p>
+        <p><strong>인사이트:</strong> <span class="highlight">도구를 강하게 만드는 것과, 그 도구를 안전하게 연결하는 것은 전혀 다른 일이다.</span></p>
+      </div>
+
+      <div class="source">출처: buildfastwithai.com (2026.06.18) · freefable.org 공개서한 · FIRST·보안 연구 보고 (2026.06.18)</div>
+    </div>
+  </div>
+</article>
+
+<!-- Article 4: 오늘의 신제품 -->
+<article class="article">
+  <div class="article-tag">오늘의 신제품 · PRODUCT HUNT · 2026년 6월 17일</div>
+  <div class="article-title">오늘의 신제품 3선</div>
+  <div class="article-summary">받아치는 디자인 도구, 저장소를 스스로 굴리는 에이전트, 내 맥 안에서만 도는 이메일 — '누가 쥐고 무엇을 연결하는가'를 저마다의 방식으로 답하는 6월 17일 ProductHunt 상위 제품들이다.</div>
+  <div class="btn-wrap">
+    <button class="toggle-btn" onclick="var d=document.getElementById('d4'),b=this;d.classList.toggle('open');b.textContent=d.classList.contains('open')?'접기 ▲':'더 보기 ▼'">더 보기 ▼</button>
+  </div>
+  <div id="d4" class="article-detail">
+    <div class="detail-inner">
+
+      <div class="product-item">
+        <div class="product-name">Framer 3.0</div>
+        <p>웹사이트 빌더 Framer의 대규모 개편. 에이전트·브랜칭·커뮤니티를 더해, 이제 캔버스가 사용자의 의도를 받아 스스로 디자인을 제안한다. 도구가 손을 대신하기 시작한 자리에서, 6월 17일 일간 1위에 올랐다.</p>
+      </div>
+
+      <div class="product-item">
+        <div class="product-name">Daemons by Charlie Labs</div>
+        <p>PR·이슈·CI·문서를 AI 에이전트가 알아서 굴러가게 두는 개발 자동화 도구. 사람이 일일이 챙기던 저장소의 잔일을, 상시 도는 에이전트에게 넘긴다. '연결을 어떻게 안전하게 맡길까'라는 오늘의 질문과 정확히 맞닿아 있다.</p>
+      </div>
+
+      <div class="product-item">
+        <div class="product-name">Quartz</div>
+        <p>집중을 위해 설계된 AI 이메일 클라이언트. 핵심은 '맥에서 로컬로 돈다'는 한 줄이다. 메일을 클라우드로 올리지 않고 기기 안에서 처리해, 편의와 프라이버시를 한쪽만 고르지 않으려 한다.</p>
+      </div>
+
+      <div class="source">출처: ProductHunt 2026년 6월 17일 · producthunt.com/leaderboard</div>
+    </div>
+  </div>
+</article>
+
+<!-- 에디터 한마디 -->
+<div class="editor">
+  <p>기술의 운명은 기술이 아니라, 그것을 둘러싼 사람과 제도가 정한다 — 빗장을 거는 손도, 그 빗장을 돌아 흐르는 길도 결국 사람이 만든다.</p>
+</div>
+
+<div class="nav-wrap">
+  <a href="vol66.html">← 이전 호</a>
+  <a href="archive.html">전체 보기</a>
+</div>
+
+<div class="footer">
+  <p>오늘의 밑줄 · 매일 발행 · <a href="https://jucheolkim.github.io" style="color:#aaa;">jucheolkim.github.io</a></p>
+</div>
+
+<script>
+</script>
+</body>
+</html>
