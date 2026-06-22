@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>오늘의 밑줄 · Vol.69</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap');
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { background: #f0efeb; }
+body { font-family: Georgia, serif; max-width: 680px; margin: 0 auto; padding: 40px 20px; color: #1a1a1a; background: #fff; word-break: keep-all; box-shadow: 0 0 40px rgba(0,0,0,0.06); }
+.header { text-align: center; border-top: 3px solid #1a1a1a; border-bottom: 3px solid #1a1a1a; padding: 12px 0; margin-bottom: 4px; }
+.header-sub { font-size: 11px; font-family: Arial, sans-serif; color: #888; letter-spacing: 2px; margin-bottom: 6px; }
+.header-title { font-size: 36px; font-weight: 800; letter-spacing: 0px; font-family: 'Nanum Myeongjo', Georgia, serif; white-space: nowrap; }
+.header-date { font-size: 11px; font-family: Arial, sans-serif; color: #888; margin-top: 6px; }
+.meta { display: flex; justify-content: space-between; border-bottom: 1px solid #e0e0e0; padding: 4px 0; margin-bottom: 28px; font-size: 10px; font-family: Arial, sans-serif; color: #888; }
+.nav-wrap { display: flex; justify-content: space-between; margin-bottom: 24px; font-size: 11px; font-family: Arial, sans-serif; }
+.nav-wrap a { color: #888; text-decoration: none; }
+.nav-wrap a:hover { text-decoration: underline; }
+.article { margin-bottom: 28px; padding-bottom: 28px; border-bottom: 1px solid #e0e0e0; }
+.article-tag { font-size: 10px; font-family: Arial, sans-serif; color: #888; letter-spacing: 1px; border-top: 2px solid #1a1a1a; padding-top: 8px; margin-bottom: 8px; }
+.article-title { font-size: 24px; font-weight: bold; line-height: 1.3; margin-bottom: 12px; font-family: 'Nanum Myeongjo', Georgia, serif; letter-spacing: -0.5px; }
+.article-summary { font-size: 13px; color: #555; line-height: 1.75; margin-bottom: 14px; }
+.btn-wrap { display: flex; gap: 6px; margin-bottom: 14px; }
+.toggle-btn { font-size: 11px; font-family: Arial, sans-serif; color: #555; background: none; border: 1px solid #ccc; border-radius: 6px; padding: 4px 10px; cursor: pointer; }
+.toggle-btn:hover { background: #f5f5f5; }
+.article-detail { display: none; }
+.article-detail.open { display: block; }
+.detail-inner { border-left: 2px solid #e0e0e0; padding-left: 16px; }
+.section-label { font-size: 10px; font-family: Arial, sans-serif; color: #888; letter-spacing: 1px; margin-bottom: 6px; margin-top: 16px; }
+.detail-inner p { font-size: 13px; color: #555; line-height: 1.75; margin-bottom: 8px; }
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 8px; }
+.box { background: #f5f5f5; border-radius: 8px; padding: 10px 12px; }
+.box-label { font-size: 11px; font-family: Arial, sans-serif; color: #888; margin-bottom: 6px; }
+.box p { font-size: 12px; color: #555; line-height: 1.65; margin-bottom: 6px; }
+.news-item { margin-bottom: 14px; padding-bottom: 14px; border-bottom: 1px solid #e0e0e0; }
+.news-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+.badge { display: inline-block; font-size: 10px; font-family: Arial, sans-serif; background: #f5f5f5; color: #888; padding: 2px 8px; border-radius: 4px; margin-right: 6px; }
+.news-title { font-size: 13px; font-weight: bold; }
+.news-item p { font-size: 12px; color: #555; line-height: 1.7; margin-top: 6px; }
+.product-name { font-size: 13px; font-weight: bold; color: #1a1a1a; margin-bottom: 4px; }
+.product-item { margin-bottom: 12px; padding-bottom: 12px; border-bottom: 1px solid #e0e0e0; }
+.product-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+.product-item p { font-size: 12px; color: #555; line-height: 1.7; }
+.source { font-size: 10px; font-family: Arial, sans-serif; color: #aaa; border-top: 1px solid #e0e0e0; padding-top: 8px; margin-top: 16px; }
+.highlight { font-weight: bold; color: #1a1a1a; }
+.insight-p { font-size: 15px !important; color: #333 !important; line-height: 1.85 !important; margin-bottom: 10px !important; }
+.editor { border-top: 2px solid #1a1a1a; padding-top: 10px; margin-bottom: 16px; }
+.editor p { font-size: 16px; color: #1a1a1a; line-height: 1.85; font-style: italic; font-family: 'Nanum Myeongjo', Georgia, serif; font-weight: 800; }
+.footer { border-top: 1px solid #e0e0e0; padding-top: 8px; text-align: center; font-size: 10px; font-family: Arial, sans-serif; color: #aaa; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-sub">ONEDAY DIGEST</div>
+  <div class="header-title">오늘의 밑줄</div>
+  <div class="header-date">2026년 6월 22일 · Vol. 69</div>
+</div>
+<div class="meta">
+  <span>비즈니스 인사이트 · AI·테크 브리핑 · 오늘의 신제품</span>
+  <span>jucheolkim.github.io</span>
+</div>
+
+<!-- Article 1: April Dunford -->
+<article class="article">
+  <div class="article-tag">비즈니스 인사이트 · APRIL DUNFORD · 포지셔닝 전문가</div>
+  <div class="article-title">고객은 당신이 AI를 쓰는지 신경 쓰지 않는다</div>
+  <div class="article-summary">에이프릴 던포드는 거대 기업 CEO가 아니다. 20여 년간 B2B 제품의 '자리매김(포지셔닝)'만 파고든 전문가이자 『Obviously Awesome』의 저자다. 모두가 'AI 네이티브'를 외치는 2026년, 그가 던진 말은 찬물 같다 — 고객은 당신이 AI를 쓰는지 궁금해하지 않는다고.</div>
+  <div class="btn-wrap">
+    <button class="toggle-btn" onclick="var d=document.getElementById('d1'),b=this;d.classList.toggle('open');b.textContent=d.classList.contains('open')?'접기 ▲':'더 보기 ▼'">더 보기 ▼</button>
+    <button class="toggle-btn">🎧 오디오로 듣기 (준비 중)</button>
+  </div>
+  <div id="d1" class="article-detail">
+    <div class="detail-inner">
+      <div class="section-label">이 사람은 누구인가</div>
+      <p>에이프릴 던포드는 B2B 테크 제품의 '자리매김(포지셔닝)'을 전문으로 하는 컨설턴트이자 작가다. 16개 스타트업에서 제품 마케팅을 이끌었고, 그 경험을 『Obviously Awesome』(2019)·『Sales Pitch』(2023)로 정리했다. 화려한 직함 대신, "고객이 당신 제품을 어떤 맥락에 놓고 보는가"라는 한 가지 질문을 끝까지 파는 사람이다.</p>
+      <div class="section-label">주요 활동과 이력</div>
+      <p>16개 스타트업 제품 마케팅 총괄 → 『Obviously Awesome』(2019)으로 포지셔닝 방법론 정립 → 『Sales Pitch』(2023) → 'Positioning Show' 팟캐스트 운영 → 2026년 5월 'Positioning in the Age of AI' 발표, 4월 팟캐스트에서 'AI는 차별점이 아니다'를 정면으로 짚음.</p>
+      <div class="section-label">성공한 것과 한계로 남은 것</div>
+      <div class="grid">
+        <div class="box">
+          <div class="box-label">✓ 성공한 것</div>
+          <p>'포지셔닝은 기능이 아니라 맥락'이라는 한 문장으로, 막연하던 마케팅을 실행 가능한 방법론으로 바꿨다.</p>
+          <p>'AI 네이티브'가 왜 차별점이 못 되는지, 모두가 그 말을 외치기 전에 먼저 짚었다.</p>
+        </div>
+        <div class="box">
+          <div class="box-label">✗ 한계로 남은 것</div>
+          <p>포지셔닝은 진짜 차별점이 있을 때만 작동한다 — 제품이 평범하면 어떤 자리매김도 그걸 메우지 못한다.</p>
+          <p>방법론은 명확하나, 빠르게 바뀌는 AI 시장에서 '언제 다시 자리를 잡을지'의 타이밍은 여전히 판단의 몫.</p>
+        </div>
+      </div>
+      <div class="section-label">인사이트</div>
+      <p class="insight-p">모두가 '우리는 AI를 씁니다'를 내걸 때, 던포드는 정반대를 말한다. <span class="highlight">"고객은 당신이 AI를 쓰는지 신경 쓰지 않는다. 당신이 그들의 비즈니스에 무엇을 해주는지만 본다."</span> 그는 'AI 네이티브'가 한때의 '클라우드 네이티브'와 같다고 본다 — 처음엔 차별점이었지만, 모두가 그렇게 되는 순간 아무 의미가 없어진다.</p>
+      <p class="insight-p">그렇다고 미래를 외면하라는 말은 아니다. <span class="highlight">"고객은 비전을 사지 않는다. 그들은 오늘 존재하는 문제를 풀려고 산다 — 자기가 고른 것이 앞으로도 보조를 맞출 거라는 확신과 함께."</span> 그래서 그의 처방은 간결하다. "비전으로 끌되, 문제로 닫아라(Lead with the vision, but close on the problem)."</p>
+      <p class="insight-p">던포드의 분별은 한 곳을 가리킨다. 도구가 흔해질수록, 차별점은 '무엇을 쓰는가'에서 멀어진다. <span class="highlight">남는 차이는 단 하나 — 고객의 어떤 문제를, 얼마나 또렷하게 풀어주는가다.</span></p>
+      <div class="source">출처: aprildunford.substack.com 'Positioning in the Age of AI' (2026.05.21) · 'Obviously Awesome'(2019) · The Positioning Show 팟캐스트 (2026)</div>
+    </div>
+  </div>
+</article>
+
+<!-- Article 2: Bob Moesta -->
+<article class="article">
+  <div class="article-tag">비즈니스 인사이트 · BOB MOESTA · Jobs-to-be-Done 공동 설계자</div>
+  <div class="article-title">수요를 만드는 건 제품이 아니라, 고객이 '못 하는 순간'이다</div>
+  <div class="article-summary">밥 모에스타는 유명 창업가가 아니다. 클레이튼 크리스텐슨과 'Jobs-to-be-Done'을 함께 설계한 사람이고, 평생 "사람들은 왜 바꾸는가"만 물어온 연구자다. 던포드가 '제품을 어떻게 자리매김할까'를 물을 때, 그는 정반대에서 출발한다 — 제품을 잊고, 고객의 고전(struggle)에서.</div>
+  <div class="btn-wrap">
+    <button class="toggle-btn" onclick="var d=document.getElementById('d2'),b=this;d.classList.toggle('open');b.textContent=d.classList.contains('open')?'접기 ▲':'더 보기 ▼'">더 보기 ▼</button>
+    <button class="toggle-btn">🎧 오디오로 듣기 (준비 중)</button>
+  </div>
+  <div id="d2" class="article-detail">
+    <div class="detail-inner">
+      <div class="section-label">이 사람은 누구인가</div>
+      <p>밥 모에스타는 'Jobs-to-be-Done(JTBD)' 이론의 공동 설계자다. 고(故) 클레이튼 크리스텐슨과 함께 "고객은 제품을 사는 게 아니라, 어떤 진전(progress)을 이루려 그것을 '고용한다'"는 관점을 다듬었다. 리와이어드 그룹(The Rewired Group)을 이끌며 수천 개 제품의 '사람들이 왜 바꾸는지'를 인터뷰로 캐온 실전가다.</p>
+      <div class="section-label">주요 활동과 이력</div>
+      <p>디트로이트의 엔지니어 출신 → 크리스텐슨과 JTBD 정립 → The Rewired Group 설립 → 『Demand-Side Sales 101』(2020) 저술 → 2026년 온라인 코스 재개편·팟캐스트로 '수요 측 사고(demand-side)'를 다시 퍼뜨리는 중.</p>
+      <div class="section-label">성공한 것과 한계로 남은 것</div>
+      <div class="grid">
+        <div class="box">
+          <div class="box-label">✓ 성공한 것</div>
+          <p>'기능'이 아니라 '고객이 이루려는 진전'에서 출발하는 관점으로, 혁신을 운(運)에서 방법으로 바꿨다.</p>
+          <p>'네 가지 힘(밀기·당기기·불안·습관)'으로 사람이 왜 바꾸고, 왜 안 바꾸는지를 도식화했다.</p>
+        </div>
+        <div class="box">
+          <div class="box-label">✗ 한계로 남은 것</div>
+          <p>수요 측 인터뷰는 깊지만 느리다 — 빠른 시장에서 모든 결정을 '고전의 순간' 인터뷰로 검증할 순 없다.</p>
+          <p>통찰을 실제 제품으로 옮기는 마지막 한 걸음은, 여전히 만드는 사람의 몫으로 남는다.</p>
+        </div>
+      </div>
+      <div class="section-label">인사이트</div>
+      <p class="insight-p">모에스타의 출발점은 제품이 아니다. <span class="highlight">"공급과 수요는 사람들 생각만큼 연결돼 있지 않다. 대부분 제품을 만들면 수요가 생긴다고 믿지만, 수요를 만드는 건 '고전하는 순간(struggling moment)'이다."</span> 기술이 수요를 만드는 게 아니라, 고객이 무언가를 못 해 답답한 그 순간이 수요를 만든다.</p>
+      <p class="insight-p">그는 두 가지 혁신을 가른다. 공급 측은 묻는다 — "이 기술이 있는데, 무슨 일을 시킬 수 있지?" 수요 측은 묻는다 — "고객은 어떤 진전을 원하고, 그걸 얼마나 값지게 여기지?" <span class="highlight">'AI로 무엇을 할까'는 공급 측 질문, '고객은 지금 무엇을 못 하고 있나'는 수요 측 질문이다. 시장은 후자에 돈을 낸다.</span></p>
+      <p class="insight-p">던포드가 '제품의 자리'를 다듬을 때, 모에스타는 '고객의 고전'을 캔다. <span class="highlight">출발점은 정반대지만 닿는 곳은 같다 — 결국 값을 만드는 건 기술이 아니라, 고객이 풀려는 문제다.</span></p>
+      <div class="source">출처: jobstobedone.org · 『Demand-Side Sales 101』(2020) · Grow A Small Business 팟캐스트 인터뷰 (2026)</div>
+    </div>
+  </div>
+</article>
+
+<!-- Article 3: AI 브리핑 -->
+<article class="article">
+  <div class="article-tag">AI · 테크 브리핑 · 2026년 6월 22일</div>
+  <div class="article-title">능력이 평준화되면, 차이는 능력 밖으로 내려간다</div>
+  <div class="article-summary">오늘의 뉴스는 한 방향을 가리킨다. 최고 성능이 더 이상 비싼 폐쇄 모델의 전유물이 아니게 되자, '우리 모델이 더 좋다'는 말의 값이 떨어진다. 능력이 흔해질수록, 승부는 '누구의 어떤 문제를 푸느냐'로 옮겨간다.</div>
+  <div class="btn-wrap">
+    <button class="toggle-btn" onclick="var d=document.getElementById('d3'),b=this;d.classList.toggle('open');b.textContent=d.classList.contains('open')?'접기 ▲':'더 보기 ▼'">더 보기 ▼</button>
+  </div>
+  <div id="d3" class="article-detail">
+    <div class="detail-inner">
+
+      <div class="news-item">
+        <div><span class="badge">오픈웨이트</span><span class="news-title">GLM-5.2, GPT-5.5를 1/6 비용으로 추월</span></div>
+        <p><strong>무슨 일인가:</strong> 중국 Zhipu AI(Z.ai)의 오픈웨이트 모델 GLM-5.2가 SWE-bench Pro에서 62.1점을 받아 GPT-5.5(58.6)를 앞섰다고 6월 22일 보도됐다. API 비용은 약 6분의 1 수준이다.</p>
+        <p><strong>왜 중요한가:</strong> 최고 성능이 더는 비싼 폐쇄 모델만의 것이 아니다. 능력이 평준화되면, '우리 모델이 더 좋다'는 한 줄로 버티던 우위가 빠르게 닳는다.</p>
+        <p><strong>인사이트:</strong> <span class="highlight">능력이 흔해질수록, 차별점은 능력 안이 아니라 고객의 문제 쪽으로 내려간다.</span></p>
+      </div>
+
+      <div class="news-item">
+        <div><span class="badge">시장</span><span class="news-title">ChatGPT 점유율, 사상 처음 50% 아래로</span></div>
+        <p><strong>무슨 일인가:</strong> OpenAI의 시장 점유율이 46.4%로 내려가 처음으로 절반 밑으로 떨어졌다고 6월 22일 집계됐다. 대안을 다시 따져본 사용자들이 Claude·Gemini로 분산된 결과다.</p>
+        <p><strong>왜 중요한가:</strong> 능력 격차가 좁혀지자 1위의 자리부터 흔들린다. 기능만으로 쌓은 우위는, 따라잡히는 순간 무너진다.</p>
+        <p><strong>인사이트:</strong> <span class="highlight">기능으로 번 자리는 기능으로 빼앗긴다. 끝까지 남는 차이는 '누구의 어떤 문제를 푸느냐'다.</span></p>
+      </div>
+
+      <div class="news-item">
+        <div><span class="badge">연구</span><span class="news-title">Anthropic 연구 — 코딩 실력보다 '분야 전문성'이 결과를 좌우한다</span></div>
+        <p><strong>무슨 일인가:</strong> Anthropic이 Claude Code 세션 40만 건을 분석한 결과, 프로그래밍 능력보다 해당 분야(도메인)에 대한 이해가 성과를 더 크게 좌우했다고 6월 22일 밝혔다.</p>
+        <p><strong>왜 중요한가:</strong> 도구를 잘 다루는 것보다, 무엇을 풀어야 하는지 아는 사람이 더 멀리 간다. 도구가 평준화될수록 더 그렇다.</p>
+        <p><strong>인사이트:</strong> <span class="highlight">도구가 같아지면, 차이는 '문제를 아는 깊이'에서 난다.</span></p>
+      </div>
+
+      <div class="news-item">
+        <div><span class="badge">보안</span><span class="news-title">'에이전트재킹' — AI 코딩 에이전트 노린 신종 공격, 2,388곳 피해</span></div>
+        <p><strong>무슨 일인가:</strong> 에러 추적 도구에 주입된 지시로 AI 코딩 에이전트의 신뢰를 악용하는 신종 공격이 수천 개 조직을 덮쳤다고 6월 22일 보도됐다. 피해 조직은 2,388곳으로 집계됐다.</p>
+        <p><strong>왜 중요한가:</strong> 에이전트를 들이는 속도만큼, '에이전트가 무엇을 믿게 둘지'의 통제는 따라가지 못하고 있다.</p>
+        <p><strong>인사이트:</strong> <span class="highlight">새 능력은 새 빈틈을 연다. 도입의 질문은 '쓸 수 있나'가 아니라 '믿겨도 되나'다.</span></p>
+      </div>
+
+      <div class="source">출처: buildfastwithai.com 'AI News Today' (2026.06.22) · 각 사 발표</div>
+    </div>
+  </div>
+</article>
+
+<!-- Article 4: 오늘의 신제품 -->
+<article class="article">
+  <div class="article-tag">오늘의 신제품 · PRODUCT HUNT · 2026년 6월 21일</div>
+  <div class="article-title">오늘의 신제품 3선</div>
+  <div class="article-summary">고객 한 명마다 전용 에이전트를 붙이는 도구, 받은편지함의 답답함을 정조준한 에이전트, 그리고 매일 반복되는 작은 불편 하나를 없애는 도구 — 6월 21일 ProductHunt 상위 제품들은 '기술'이 아니라 '누구의 어떤 문제'에서 출발한다.</div>
+  <div class="btn-wrap">
+    <button class="toggle-btn" onclick="var d=document.getElementById('d4'),b=this;d.classList.toggle('open');b.textContent=d.classList.contains('open')?'접기 ▲':'더 보기 ▼'">더 보기 ▼</button>
+  </div>
+  <div id="d4" class="article-detail">
+    <div class="detail-inner">
+
+      <div class="product-item">
+        <div class="product-name">Agent 37 Cloud</div>
+        <p>"모든 고객에게 각자의 에이전트를." 고객마다 전용 AI 에이전트(Hermes·OpenClaw)를 붙여 준다. 하나의 제품을 모두에게가 아니라, 고객 한 명의 일에 맞춘 에이전트라는 발상이다.</p>
+      </div>
+
+      <div class="product-item">
+        <div class="product-name">Atomic Mail Agentic</div>
+        <p>진짜 받은편지함을 통해 메일을 자율로 관리하는 AI 에이전트. '메일이 쌓여 손을 못 대는' 익숙한 고전의 순간을 정조준한다.</p>
+      </div>
+
+      <div class="product-item">
+        <div class="product-name">oioi</div>
+        <p>macOS·Windows·Linux용 빠르고 매끈한 클립보드 매니저. 거창한 AI가 아니라, 매일 반복되는 작은 답답함 하나를 정확히 없앤다.</p>
+      </div>
+
+      <div class="source">출처: ProductHunt 2026년 6월 21일 (발행 당일 집계 전, 직전 영업일 기준) · hunted.space</div>
+    </div>
+  </div>
+</article>
+
+<!-- 에디터 한마디 -->
+<div class="editor">
+  <p>모두가 같은 기술을 외칠 때, 차이는 고객이 무엇을 못 하고 있는지를 아는 데서 갈린다.</p>
+</div>
+
+<div class="nav-wrap">
+  <a href="vol68.html">← 이전 호</a>
+  <a href="archive.html">전체 보기</a>
+</div>
+
+<div class="footer">
+  <p>오늘의 밑줄 · 매일 발행 · <a href="https://jucheolkim.github.io" style="color:#aaa;">jucheolkim.github.io</a></p>
+</div>
+
+<script>
+</script>
+</body>
+</html>
