@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>오늘의 밑줄 · Vol.70</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap');
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { background: #f0efeb; }
+body { font-family: Georgia, serif; max-width: 680px; margin: 0 auto; padding: 40px 20px; color: #1a1a1a; background: #fff; word-break: keep-all; box-shadow: 0 0 40px rgba(0,0,0,0.06); }
+.header { text-align: center; border-top: 3px solid #1a1a1a; border-bottom: 3px solid #1a1a1a; padding: 12px 0; margin-bottom: 4px; }
+.header-sub { font-size: 11px; font-family: Arial, sans-serif; color: #888; letter-spacing: 2px; margin-bottom: 6px; }
+.header-title { font-size: 36px; font-weight: 800; letter-spacing: 0px; font-family: 'Nanum Myeongjo', Georgia, serif; white-space: nowrap; }
+.header-date { font-size: 11px; font-family: Arial, sans-serif; color: #888; margin-top: 6px; }
+.meta { display: flex; justify-content: space-between; border-bottom: 1px solid #e0e0e0; padding: 4px 0; margin-bottom: 28px; font-size: 10px; font-family: Arial, sans-serif; color: #888; }
+.nav-wrap { display: flex; justify-content: space-between; margin-bottom: 24px; font-size: 11px; font-family: Arial, sans-serif; }
+.nav-wrap a { color: #888; text-decoration: none; }
+.nav-wrap a:hover { text-decoration: underline; }
+.article { margin-bottom: 28px; padding-bottom: 28px; border-bottom: 1px solid #e0e0e0; }
+.article-tag { font-size: 10px; font-family: Arial, sans-serif; color: #888; letter-spacing: 1px; border-top: 2px solid #1a1a1a; padding-top: 8px; margin-bottom: 8px; }
+.article-title { font-size: 24px; font-weight: bold; line-height: 1.3; margin-bottom: 12px; font-family: 'Nanum Myeongjo', Georgia, serif; letter-spacing: -0.5px; }
+.article-summary { font-size: 13px; color: #555; line-height: 1.75; margin-bottom: 14px; }
+.btn-wrap { display: flex; gap: 6px; margin-bottom: 14px; }
+.toggle-btn { font-size: 11px; font-family: Arial, sans-serif; color: #555; background: none; border: 1px solid #ccc; border-radius: 6px; padding: 4px 10px; cursor: pointer; }
+.toggle-btn:hover { background: #f5f5f5; }
+.article-detail { display: none; }
+.article-detail.open { display: block; }
+.detail-inner { border-left: 2px solid #e0e0e0; padding-left: 16px; }
+.section-label { font-size: 10px; font-family: Arial, sans-serif; color: #888; letter-spacing: 1px; margin-bottom: 6px; margin-top: 16px; }
+.detail-inner p { font-size: 13px; color: #555; line-height: 1.75; margin-bottom: 8px; }
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 8px; }
+.box { background: #f5f5f5; border-radius: 8px; padding: 10px 12px; }
+.box-label { font-size: 11px; font-family: Arial, sans-serif; color: #888; margin-bottom: 6px; }
+.box p { font-size: 12px; color: #555; line-height: 1.65; margin-bottom: 6px; }
+.news-item { margin-bottom: 14px; padding-bottom: 14px; border-bottom: 1px solid #e0e0e0; }
+.news-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+.badge { display: inline-block; font-size: 10px; font-family: Arial, sans-serif; background: #f5f5f5; color: #888; padding: 2px 8px; border-radius: 4px; margin-right: 6px; }
+.news-title { font-size: 13px; font-weight: bold; }
+.news-item p { font-size: 12px; color: #555; line-height: 1.7; margin-top: 6px; }
+.product-name { font-size: 13px; font-weight: bold; color: #1a1a1a; margin-bottom: 4px; }
+.product-item { margin-bottom: 12px; padding-bottom: 12px; border-bottom: 1px solid #e0e0e0; }
+.product-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+.product-item p { font-size: 12px; color: #555; line-height: 1.7; }
+.source { font-size: 10px; font-family: Arial, sans-serif; color: #aaa; border-top: 1px solid #e0e0e0; padding-top: 8px; margin-top: 16px; }
+.highlight { font-weight: bold; color: #1a1a1a; }
+.insight-p { font-size: 15px !important; color: #333 !important; line-height: 1.85 !important; margin-bottom: 10px !important; }
+.editor { border-top: 2px solid #1a1a1a; padding-top: 10px; margin-bottom: 16px; }
+.editor p { font-size: 16px; color: #1a1a1a; line-height: 1.85; font-style: italic; font-family: 'Nanum Myeongjo', Georgia, serif; font-weight: 800; }
+.footer { border-top: 1px solid #e0e0e0; padding-top: 8px; text-align: center; font-size: 10px; font-family: Arial, sans-serif; color: #aaa; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-sub">ONEDAY DIGEST</div>
+  <div class="header-title">오늘의 밑줄</div>
+  <div class="header-date">2026년 6월 23일 · Vol. 70</div>
+</div>
+<div class="meta">
+  <span>비즈니스 인사이트 · AI·테크 브리핑 · 오늘의 신제품</span>
+  <span>jucheolkim.github.io</span>
+</div>
+
+<!-- Article 1: Ed Zitron -->
+<article class="article">
+  <div class="article-tag">비즈니스 인사이트 · ED ZITRON · 테크 비평가</div>
+  <div class="article-title">공짜로 굴러가는 것은 없다, 청구서가 늦을 뿐이다</div>
+  <div class="article-summary">에드 지트론은 거대 기업 CEO도, 투자자도 아니다. 작은 PR 회사를 운영하며 뉴스레터 'Where's Your Ed At'과 팟캐스트 'Better Offline'으로 AI 산업의 '돈 계산'을 끈질기게 따지는 비평가다. 모두가 AI의 가능성을 말할 때, 그는 단 하나를 묻는다 — 이거, 수지가 맞나?</div>
+  <div class="btn-wrap">
+    <button class="toggle-btn" onclick="var d=document.getElementById('d1'),b=this;d.classList.toggle('open');b.textContent=d.classList.contains('open')?'접기 ▲':'더 보기 ▼'">더 보기 ▼</button>
+    <button class="toggle-btn">🎧 오디오로 듣기 (준비 중)</button>
+  </div>
+  <div id="d1" class="article-detail">
+    <div class="detail-inner">
+      <div class="section-label">이 사람은 누구인가</div>
+      <p>에드 지트론은 영국 출신의 PR 종사자이자 테크 비평가다. 본업은 홍보 에이전시(EZPR) 운영이지만, 뉴스레터 'Where's Your Ed At'과 팟캐스트 'Better Offline'으로 더 알려졌다. AI 산업의 화려한 서사 대신 '단위 경제성(누가, 언제, 어떻게 돈을 버는가)'을 끝까지 캐묻는, 업계에서 가장 시끄러운 회의론자다.</p>
+      <div class="section-label">주요 활동과 이력</div>
+      <p>10대에 게임 기자로 시작 → PR 커리어 → 뉴스레터 'Where's Your Ed At' → 팟캐스트 'Better Offline' → 2026년 'AI's Economics Don't Make Sense' 등 연재와 블룸버그 출연으로 OpenAI·Anthropic의 비용 구조와 IPO에 대한 회의론을 정면으로 제기.</p>
+      <div class="section-label">성공한 것과 한계로 남은 것</div>
+      <div class="grid">
+        <div class="box">
+          <div class="box-label">✓ 성공한 것</div>
+          <p>AI 열광 한복판에서 '단위 경제성'이라는 질문을 공론장 한가운데로 끌어냈다.</p>
+          <p>무한 보조금이 끝나면 비용이 어디로 가는지를, 모두가 외면할 때 먼저 따져 물었다.</p>
+        </div>
+        <div class="box">
+          <div class="box-label">✗ 한계로 남은 것</div>
+          <p>2026년 들어 논점이 '경제성 분석'에서 '사기 의혹'으로 옮겨가며, 비판자들조차 논거가 거칠어졌다고 지적한다.</p>
+          <p>강한 단정이 때로 분석의 정밀함을 가린다 — 회의(懷疑)는 날카롭되, 결론이 앞서간다.</p>
+        </div>
+      </div>
+      <div class="section-label">인사이트</div>
+      <p class="insight-p">지트론의 출발점은 가능성이 아니라 장부다. 2026년 그는 블룸버그에서 이렇게 말했다. <span class="highlight">"AI 버블은 사기이고, 개인 투자자가 그 표적이다. AI에는 AWS나 Uber 같은 ROI가 없고, 버블 이후의 회복 서사도 없다."</span> 표현은 거칠지만 질문 자체는 단단하다 — 보조금으로 싸 보이는 가격표 뒤에서, 진짜 비용은 대체 어디로 갔는가.</p>
+      <p class="insight-p">그의 진단을 톤에서 떼어내면 이렇게 읽힌다. <span class="highlight">싸 보이는 것과 싼 것은 다르다.</span> 누군가가 비용을 대신 메우는 동안에만 가격이 낮을 뿐, 그 보조가 멈추는 순간 미뤄둔 비용은 청구서로 돌아온다. 오늘 도착한 뉴스들 — 무료 종료, 불어나는 부채, 전력망 경고 — 이 그 청구서의 첫 장이다.</p>
+      <p class="insight-p">그래서 그가 옳든 그르든, 남는 물음은 하나다. <span class="highlight">미뤄둔 비용은 사라지지 않는다. 보이지 않을 뿐, 어느 장부에선가 조용히 자란다.</span></p>
+      <div class="source">출처: wheresyoured.at 'AI's Economics Don't Make Sense' (2026) · Bloomberg / Better Offline 출연 발언 (2026) · @edzitron</div>
+    </div>
+  </div>
+</article>
+
+<!-- Article 2: Tyler Cowen -->
+<article class="article">
+  <div class="article-tag">비즈니스 인사이트 · TYLER COWEN · 경제학자</div>
+  <div class="article-title">지능이 흔해질수록, 비싸지는 건 사람 쪽이다</div>
+  <div class="article-summary">타일러 코웬은 조지메이슨대 경제학자이자 블로그 'Marginal Revolution'으로 알려진 사상가다. AI 비관론이 쏟아지는 2026년, 그는 정반대를 말한다 — 대량 실업은 오지 않는다. 다만 거의 모든 일이 바뀐다. 지능이 싸지는 만큼, 귀해지는 건 따로 있다는 것이다.</div>
+  <div class="btn-wrap">
+    <button class="toggle-btn" onclick="var d=document.getElementById('d2'),b=this;d.classList.toggle('open');b.textContent=d.classList.contains('open')?'접기 ▲':'더 보기 ▼'">더 보기 ▼</button>
+    <button class="toggle-btn">🎧 오디오로 듣기 (준비 중)</button>
+  </div>
+  <div id="d2" class="article-detail">
+    <div class="detail-inner">
+      <div class="section-label">이 사람은 누구인가</div>
+      <p>타일러 코웬은 조지메이슨대학 경제학 교수이자, 20년 넘게 이어온 블로그 'Marginal Revolution'의 운영자다. 다작 저술가이자 팟캐스터이며, 젊은 인재에게 소액을 빠르게 지원하는 'Emergent Ventures'를 이끈다. 그는 AI 시대의 가장 큰 병목이 기술이 아니라 사람이라고 본다.</p>
+      <div class="section-label">주요 활동과 이력</div>
+      <p>조지메이슨대 경제학 교수 → 블로그 'Marginal Revolution'·팟캐스트 'Conversations with Tyler' → Emergent Ventures 설립 → 2026년 Fortune 기고와 여러 인터뷰에서 'AI는 대량 실업이 아니라 적응(adjustment)의 문제'라는 관점을 거듭 강조.</p>
+      <div class="section-label">성공한 것과 한계로 남은 것</div>
+      <div class="grid">
+        <div class="box">
+          <div class="box-label">✓ 성공한 것</div>
+          <p>'AI=실업 공포' 프레임을 '적응과 재배치의 문제'로 다시 틀어, 무엇을 길러야 하는지(판단·맥락·주도성)를 가리켰다.</p>
+          <p>가장 위험한 쪽이 자격증으로 쌓아 올린 엘리트일 수 있다는, 직관과 반대되는 통찰을 던졌다.</p>
+        </div>
+        <div class="box">
+          <div class="box-label">✗ 한계로 남은 것</div>
+          <p>'판단과 지혜가 귀해진다'는 진단은 옳지만, 그것을 어떻게 빠르게 길러 널리 나눌지는 여전히 열린 숙제다.</p>
+          <p>낙관이, 지위가 뒤집히는 적응의 고통을 과소평가할 위험이 있다.</p>
+        </div>
+      </div>
+      <div class="section-label">인사이트</div>
+      <p class="insight-p">코웬의 진단은 담담하다. <span class="highlight">"AI는 대량 실업을 불러오지 않는다. 다만 대부분의 일을 바꿀 것이다."</span> 그가 보기에 지능 자체는 흔해진다. 그러면 가장 귀해지는 자원은 지혜·판단·맥락 — 가르쳐서 외우는 것이 아니라, 겪으며 길러지는 것들이다.</p>
+      <p class="insight-p">그래서 그의 처방은 의외로 인간 쪽을 향한다. <span class="highlight">"세상 속에 있고, 인간이고, 몸을 쓰는 일이 더 중요해질 것이다."</span> 그는 자신부터 글쓰기를 줄이고 멘토링과 사람을 마주하는 일을 늘렸다. 기계가 잘하는 쪽이 싸질수록, 사람만 할 수 있는 쪽의 값이 오른다는 계산이다.</p>
+      <p class="insight-p">지트론이 'AI의 비용은 어디로 갔나'를 물을 때, 코웬은 'AI의 값은 어디로 가나'를 묻는다. 한쪽은 청구서를, 한쪽은 영수증을 본다. <span class="highlight">둘이 함께 가리키는 건 하나다 — 싸 보이는 가격표 뒤에 있는, 진짜 장부.</span></p>
+      <div class="source">출처: Fortune 'Tyler Cowen on the biggest problem of the AI age' (2026.05.22) · Dwarkesh Podcast 인터뷰 (2026) · Marginal Revolution</div>
+    </div>
+  </div>
+</article>
+
+<!-- Article 3: AI 브리핑 -->
+<article class="article">
+  <div class="article-tag">AI · 테크 브리핑 · 2026년 6월 23일</div>
+  <div class="article-title">미뤄둔 청구서가, 한꺼번에 도착하고 있다</div>
+  <div class="article-summary">오늘의 뉴스는 한 방향을 가리킨다. 그동안 싸거나 공짜처럼 보이던 AI의 값이, 이제 제 가격표를 드러내기 시작했다. 무료는 끝나고, 부채는 불어나고, 전력과 책임의 한계가 동시에 청구된다. 미뤄둔 비용은 사라진 게 아니라, 줄지어 도착하는 중이다.</div>
+  <div class="btn-wrap">
+    <button class="toggle-btn" onclick="var d=document.getElementById('d3'),b=this;d.classList.toggle('open');b.textContent=d.classList.contains('open')?'접기 ▲':'더 보기 ▼'">더 보기 ▼</button>
+  </div>
+  <div id="d3" class="article-detail">
+    <div class="detail-inner">
+
+      <div class="news-item">
+        <div><span class="badge">비용</span><span class="news-title">Anthropic Fable 5, 무료 기간 종료 — 오늘부터 유료 크레딧으로</span></div>
+        <p><strong>무슨 일인가:</strong> 6월 9일 출시와 함께 13일간 무료로 제공되던 Claude Fable 5가 오늘(6/23)부터 구독에 포함되지 않고 별도 유료 크레딧으로 전환된다고 보도됐다. API 단가는 입력 100만 토큰당 $10, 출력 $50 수준이다.</p>
+        <p><strong>왜 중요한가:</strong> '무료 체험'은 비용이 없는 게 아니라, 누군가 잠시 대신 내준 것이다. 그 기간이 끝나면 진짜 가격표가 그대로 드러난다.</p>
+        <p><strong>인사이트:</strong> <span class="highlight">공짜로 시작한 것의 진짜 값은, 공짜가 끝나는 날 보인다.</span></p>
+      </div>
+
+      <div class="news-item">
+        <div><span class="badge">자본</span><span class="news-title">AI 인프라 부채, 올해 5,700억 달러로 거의 두 배</span></div>
+        <p><strong>무슨 일인가:</strong> 모건스탠리는 2026년 글로벌 AI 연계 부채가 약 5,700억 달러로 거의 두 배가 될 것으로 전망했다. 하이퍼스케일러와 프런티어 AI 기업의 막대한 인프라 투자가 그 동력이다.</p>
+        <p><strong>왜 중요한가:</strong> 지금의 성능은 상당 부분 빚으로 지어지고 있다. 빌린 돈에는 만기가 있고, 만기는 반드시 돌아온다.</p>
+        <p><strong>인사이트:</strong> <span class="highlight">속도를 빚으로 사면, 그 속도의 값은 나중에 이자까지 붙어 청구된다.</span></p>
+      </div>
+
+      <div class="news-item">
+        <div><span class="badge">전력</span><span class="news-title">美 FERC, 6개 전력망 운영사에 데이터센터 요금·신뢰성 '시정명령'</span></div>
+        <p><strong>무슨 일인가:</strong> 미국 연방에너지규제위원회(FERC)가 6월 18일 PJM·MISO·CAISO 등 6개 전력망 운영사에 60일 내 데이터센터 요금 체계를 정당화하거나 개편하고, 30일 내 신뢰성 보고서를 내라는 시정명령을 내렸다.</p>
+        <p><strong>왜 중요한가:</strong> AI의 비용은 돈만이 아니다. 전기·물·송전망 같은 물리적 한계가, 이제 규제의 형태로 청구되기 시작했다.</p>
+        <p><strong>인사이트:</strong> <span class="highlight">소프트웨어는 무한해 보여도, 그것을 돌리는 세계는 유한하다.</span></p>
+      </div>
+
+      <div class="news-item">
+        <div><span class="badge">책임</span><span class="news-title">독일 뮌헨 법원 — 구글 AI 답변의 허위에 '직접 책임'</span></div>
+        <p><strong>무슨 일인가:</strong> 뮌헨 지방법원이 구글의 AI 검색 요약(AI Overview)이 두 출판사를 허위로 사기·사업과 엮은 데 대해, 그 내용을 구글 '자신의 발언'으로 보고 직접 책임을 인정했다. 검색엔진 면책 판례는 적용되지 않는다고 봤다.</p>
+        <p><strong>왜 중요한가:</strong> AI가 말한 것에 대한 책임이 사라지지 않고 만든 쪽으로 돌아온다. 다른 AI 제공자에게도 번질 수 있는 선례다.</p>
+        <p><strong>인사이트:</strong> <span class="highlight">"AI가 한 말"이라는 변명은, 그 AI를 만든 사람 앞에서 멈춘다.</span></p>
+      </div>
+
+      <div class="source">출처: buildfastwithai.com 'AI News Today' (2026.06.23) · the-decoder.com · ferc.gov · 각 사 발표</div>
+    </div>
+  </div>
+</article>
+
+<!-- Article 4: 오늘의 신제품 -->
+<article class="article">
+  <div class="article-tag">오늘의 신제품 · PRODUCT HUNT · 2026년 6월 22일</div>
+  <div class="article-title">오늘의 신제품 3선</div>
+  <div class="article-summary">에이전트가 한 일을 검산해 주는 도구, 클라우드 비용에 기대지 않는 로컬 AI, 그리고 AI의 '기다림'이라는 보이지 않는 비용을 정면으로 다룬 발상 — 6월 22일 ProductHunt 상위 제품들은 약속이 아니라 '값을 어떻게 치를지'에서 출발한다.</div>
+  <div class="btn-wrap">
+    <button class="toggle-btn" onclick="var d=document.getElementById('d4'),b=this;d.classList.toggle('open');b.textContent=d.classList.contains('open')?'접기 ▲':'더 보기 ▼'">더 보기 ▼</button>
+  </div>
+  <div id="d4" class="article-detail">
+    <div class="detail-inner">
+
+      <div class="product-item">
+        <div class="product-name">AgentX</div>
+        <p>AI 에이전트를 평가해 문제 지점을 짚고, 한 번의 클릭으로 고쳐 준다. 에이전트를 들이는 진짜 비용은 '신뢰'다 — 누군가는 그 청구서를 검산해야 한다는 데서 출발한 도구.</p>
+      </div>
+
+      <div class="product-item">
+        <div class="product-name">Clawd</div>
+        <p>100% 로컬·오프라인 AI로 도는, 맥락을 읽는 브라우저 도우미. 거창한 클라우드가 아니라, 비용과 의존을 밖에 맡기지 않겠다는 선택이다.</p>
+      </div>
+
+      <div class="product-item">
+        <div class="product-name">uwait</div>
+        <p>"AI가 생각하는 동안, 돈을 번다." AI의 응답 대기 시간 — 평소 그냥 흘려보내던 보이지 않는 비용 — 을 정면으로 마주한 발상이다.</p>
+      </div>
+
+      <div class="source">출처: ProductHunt 2026년 6월 22일 (발행 당일 집계 전, 직전 영업일 기준) · producthunt.com</div>
+    </div>
+  </div>
+</article>
+
+<!-- 에디터 한마디 -->
+<div class="editor">
+  <p>미뤄둔 비용은 사라지지 않는다 — 청구서가 와야, 무엇이 진짜 값이었는지 드러난다.</p>
+</div>
+
+<div class="nav-wrap">
+  <a href="vol69.html">← 이전 호</a>
+  <a href="archive.html">전체 보기</a>
+</div>
+
+<div class="footer">
+  <p>오늘의 밑줄 · 매일 발행 · <a href="https://jucheolkim.github.io" style="color:#aaa;">jucheolkim.github.io</a></p>
+</div>
+
+<script>
+</script>
+</body>
+</html>
