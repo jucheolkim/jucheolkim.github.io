@@ -1,30 +1,63 @@
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>오늘의 밑줄</title>
+<meta name="description" content="매일, 덜 알려진 두 사람에게서 길어 올린 비즈니스 통찰 한 장면.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="오늘의 밑줄">
+<meta property="og:title" content="오늘의 밑줄">
+<meta property="og:description" content="매일, 덜 알려진 두 사람에게서 길어 올린 비즈니스 통찰 한 장면.">
+<meta property="og:url" content="https://jucheolkim.github.io/">
+<meta name="twitter:card" content="summary">
+<!-- 방문자 측정 (GoatCounter) -->
+<script data-goatcounter="https://oneday-newsletter.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap');
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { background: #f0efeb; }
+body { font-family: Georgia, serif; max-width: 680px; margin: 0 auto; padding: 80px 20px; color: #1a1a1a; background: #fff; min-height: 100vh; box-shadow: 0 0 40px rgba(0,0,0,0.06); text-align: center; }
+.header { border-top: 3px solid #1a1a1a; border-bottom: 3px solid #1a1a1a; padding: 16px 0; }
+.header-sub { font-size: 11px; font-family: Arial, sans-serif; color: #888; letter-spacing: 2px; margin-bottom: 6px; }
+.header-title { font-size: 40px; font-weight: 800; font-family: 'Nanum Myeongjo', Georgia, serif; }
+.tagline { font-size: 13px; color: #555; line-height: 1.7; margin: 20px 0 28px; }
+.msg { font-size: 12px; font-family: Arial, sans-serif; color: #aaa; margin-bottom: 8px; }
+.fallback { font-size: 13px; font-family: Arial, sans-serif; color: #1a1a1a; text-decoration: none; border-bottom: 1px solid #1a1a1a; padding-bottom: 1px; }
+</style>
 </head>
 <body>
+
+<div class="header">
+  <div class="header-sub">ONEDAY DIGEST</div>
+  <div class="header-title">오늘의 밑줄</div>
+</div>
+<p class="tagline">매일, 덜 알려진 두 사람에게서<br>길어 올린 비즈니스 통찰 한 장면.</p>
+<p class="msg">최신호를 불러오는 중…</p>
+<p><a class="fallback" id="fallback" href="archive.html">바로 안 열리면 전체 보기 →</a></p>
+
 <script>
-async function findLatestVol() {
+// 빈 화면 없이, 최신호로 빠르게 이동.
+// archive.html(VOLS 맨 앞이 최신호)을 한 번만 읽어 최신 vol 번호를 찾는다.
+(async function () {
+  try {
+    const res = await fetch('archive.html', { cache: 'no-store' });
+    const txt = await res.text();
+    const m = txt.match(/vol:\s*(\d+)/);   // VOLS 배열 첫 항목 = 최신호
+    if (m) { location.replace('vol' + m[1] + '.html'); return; }
+  } catch (e) { /* 아래 폴백으로 */ }
+
+  // 폴백: archive 를 못 읽으면 vol 파일을 순차 확인
   let latest = 0;
-  for (let i = 1; i <= 100; i++) {
+  for (let i = 1; i <= 300; i++) {
     try {
-      const res = await fetch(`vol${i}.html`, { method: 'HEAD' });
-      if (res.ok) {
-        latest = i;
-      } else {
-        break;
-      }
-    } catch {
-      break;
-    }
+      const r = await fetch('vol' + i + '.html', { method: 'HEAD' });
+      if (r.ok) latest = i; else break;
+    } catch (e) { break; }
   }
-  if (latest > 0) {
-    window.location.replace(`vol${latest}.html`);
-  }
-}
-findLatestVol();
+  if (latest > 0) location.replace('vol' + latest + '.html');
+  // 그래도 실패하면 화면의 "전체 보기" 링크가 남아 있음 (빈 화면 아님)
+})();
 </script>
 </body>
 </html>
