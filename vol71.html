@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>오늘의 밑줄 · Vol.71</title>
+<meta name="description" content="슬롭이 넘칠수록, 값은 알아보는 인간에게로 간다 — 코드와 예술, 두 현장에서 같은 신호를 읽다.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="오늘의 밑줄">
+<meta property="og:title" content="슬롭이 넘칠수록, 값은 알아보는 인간에게로 간다">
+<meta property="og:description" content="게르겔리 오로시 · 테드 지오이아 — 코드에도 예술에도 'AI 슬롭'이 넘친다. 값이 오르는 건 그걸 걸러내는 인간이다.">
+<meta property="og:url" content="https://jucheolkim.github.io/vol71.html">
+<meta name="twitter:card" content="summary">
+<!-- 방문자 측정 (GoatCounter) -->
+<script data-goatcounter="https://oneday-newsletter.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap');
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { background: #f0efeb; }
+body { font-family: Georgia, serif; max-width: 680px; margin: 0 auto; padding: 40px 20px; color: #1a1a1a; background: #fff; word-break: keep-all; box-shadow: 0 0 40px rgba(0,0,0,0.06); }
+.header { text-align: center; border-top: 3px solid #1a1a1a; border-bottom: 3px solid #1a1a1a; padding: 12px 0; margin-bottom: 4px; }
+.header-sub { font-size: 11px; font-family: Arial, sans-serif; color: #888; letter-spacing: 2px; margin-bottom: 6px; }
+.header-title { font-size: 36px; font-weight: 800; letter-spacing: 0px; font-family: 'Nanum Myeongjo', Georgia, serif; white-space: nowrap; }
+.header-date { font-size: 11px; font-family: Arial, sans-serif; color: #888; margin-top: 6px; }
+.meta { display: flex; justify-content: space-between; border-bottom: 1px solid #e0e0e0; padding: 4px 0; margin-bottom: 28px; font-size: 10px; font-family: Arial, sans-serif; color: #888; }
+.nav-wrap { display: flex; justify-content: space-between; margin-bottom: 24px; font-size: 11px; font-family: Arial, sans-serif; }
+.nav-wrap a { color: #888; text-decoration: none; }
+.nav-wrap a:hover { text-decoration: underline; }
+.article { margin-bottom: 28px; padding-bottom: 28px; border-bottom: 1px solid #e0e0e0; }
+.article-tag { font-size: 10px; font-family: Arial, sans-serif; color: #888; letter-spacing: 1px; border-top: 2px solid #1a1a1a; padding-top: 8px; margin-bottom: 8px; }
+.article-title { font-size: 24px; font-weight: bold; line-height: 1.3; margin-bottom: 12px; font-family: 'Nanum Myeongjo', Georgia, serif; letter-spacing: -0.5px; }
+.article-summary { font-size: 13px; color: #555; line-height: 1.75; margin-bottom: 14px; }
+.btn-wrap { display: flex; gap: 6px; margin-bottom: 14px; }
+.toggle-btn { font-size: 11px; font-family: Arial, sans-serif; color: #555; background: none; border: 1px solid #ccc; border-radius: 6px; padding: 4px 10px; cursor: pointer; }
+.toggle-btn:hover { background: #f5f5f5; }
+.article-detail { display: none; }
+.article-detail.open { display: block; }
+.detail-inner { border-left: 2px solid #e0e0e0; padding-left: 16px; }
+.section-label { font-size: 10px; font-family: Arial, sans-serif; color: #888; letter-spacing: 1px; margin-bottom: 6px; margin-top: 16px; }
+.detail-inner p { font-size: 13px; color: #555; line-height: 1.75; margin-bottom: 8px; }
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 8px; }
+.box { background: #f5f5f5; border-radius: 8px; padding: 10px 12px; }
+.box-label { font-size: 11px; font-family: Arial, sans-serif; color: #888; margin-bottom: 6px; }
+.box p { font-size: 12px; color: #555; line-height: 1.65; margin-bottom: 6px; }
+.source { font-size: 10px; font-family: Arial, sans-serif; color: #aaa; border-top: 1px solid #e0e0e0; padding-top: 8px; margin-top: 16px; }
+.highlight { font-weight: bold; color: #1a1a1a; }
+.insight-p { font-size: 15px !important; color: #333 !important; line-height: 1.85 !important; margin-bottom: 10px !important; }
+.editor { border-top: 2px solid #1a1a1a; padding-top: 10px; margin-bottom: 16px; }
+.editor p { font-size: 16px; color: #1a1a1a; line-height: 1.85; font-style: italic; font-family: 'Nanum Myeongjo', Georgia, serif; font-weight: 800; }
+.footer { border-top: 1px solid #e0e0e0; padding-top: 8px; text-align: center; font-size: 10px; font-family: Arial, sans-serif; color: #aaa; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-sub">ONEDAY DIGEST</div>
+  <div class="header-title">오늘의 밑줄</div>
+  <div class="header-date">2026년 6월 24일 · Vol. 71</div>
+</div>
+<div class="meta">
+  <span>오늘, 두 사람에게 밑줄</span>
+  <span>jucheolkim.github.io</span>
+</div>
+
+<!-- Article 1: Gergely Orosz -->
+<article class="article">
+  <div class="article-tag">비즈니스 인사이트 · GERGELY OROSZ · The Pragmatic Engineer</div>
+  <div class="article-title">AI가 코드를 쏟아낼수록, 값나가는 건 '슬롭을 걸러내는 사람'이다</div>
+  <div class="article-summary">게르겔리 오로시는 빅테크 CEO도, 유명 인사도 아니다. 헝가리 출신 엔지니어로, 'The Pragmatic Engineer'라는 뉴스레터 하나로 개발 현장에서 가장 신뢰받는 분석가가 된 사람이다. 2026년, 그는 엔지니어 900여 명에게 직접 물었다 — AI는 정말 우리를 더 낫게 만들고 있나?</div>
+  <div class="btn-wrap">
+    <button class="toggle-btn" onclick="var d=document.getElementById('d1'),b=this;d.classList.toggle('open');b.textContent=d.classList.contains('open')?'접기 ▲':'더 보기 ▼'">더 보기 ▼</button>
+    <button class="toggle-btn">🎧 오디오로 듣기 (준비 중)</button>
+  </div>
+  <div id="d1" class="article-detail">
+    <div class="detail-inner">
+      <div class="section-label">이 사람은 누구인가</div>
+      <p>오로시는 현역 엔지니어 출신의 독립 분석가다. Skype·Microsoft·Uber 등을 거친 뒤, 광고도 과장도 없이 "현장에서 실제로 무슨 일이 일어나는가"만 취재해 'The Pragmatic Engineer'를 업계에서 가장 많이 읽히는 기술 뉴스레터로 키웠다. 화려한 전망 대신 설문·인터뷰·데이터로 말한다.</p>
+      <div class="section-label">주요 활동과 이력</div>
+      <p>빅테크 엔지니어·엔지니어링 매니저 → 'The Pragmatic Engineer' 뉴스레터·팟캐스트 운영 → 2026년 4월, 엔지니어·리더 900명+ 설문으로 'AI가 소프트웨어 엔지니어에 미친 영향'을 발표.</p>
+      <div class="section-label">성공한 것과 한계로 남은 것</div>
+      <div class="grid">
+        <div class="box">
+          <div class="box-label">✓ 성공한 것</div>
+          <p>유행어 대신 현장 데이터로 — 'AI가 개발을 어떻게 바꾸는가'를 감이 아니라 숫자로 보게 했다.</p>
+          <p>엔지니어를 '빌더·시퍼·코스터'로 나눠, AI의 효과가 사람마다 정반대로 갈린다는 걸 드러냈다.</p>
+        </div>
+        <div class="box">
+          <div class="box-label">✗ 한계로 남은 것</div>
+          <p>설문·인터뷰는 깊지만 느리다 — 빠르게 바뀌는 시장의 모든 변화를 따라잡진 못한다.</p>
+          <p>'현장의 진실'은 표본에 따라 흔들린다 — 누구에게 물었느냐가 결론을 가른다.</p>
+        </div>
+      </div>
+      <div class="section-label">인사이트</div>
+      <p class="insight-p">오로시는 2026년 4월, 엔지니어 900여 명에게 직접 물었다. 결과는 한 방향이 아니었다. 그는 엔지니어를 셋으로 나눈다 — 품질을 좇는 '빌더', 결과를 좇는 '시퍼', 적당히 하는 '코스터'. AI는 이들에게 정반대로 작동했다. <span class="highlight">시퍼는 "단연 가장 열광적"으로 더 빨리 출시했지만, 빌더는 'AI 슬롭(slop)'을 검토하느라 시달렸고, 직접 코드를 짜는 시간이 줄며 '정체성을 잃는 느낌'을 호소했다.</span></p>
+      <p class="insight-p">핵심은 여기다. AI가 코드를 쏟아낼수록, 일의 무게중심은 '짜는 것'에서 '걸러내는 것'으로 옮겨간다. <span class="highlight">쏟아지는 결과물 중 무엇이 슬롭이고 무엇이 쓸 만한지 가려내는 눈 — 그게 값나가는 일이 된다.</span></p>
+      <p class="insight-p">그래서 오로시의 데이터가 가리키는 건 도구가 아니라 사람이다. 도구는 빨라졌지만, 그 속도가 진짜 값이 되려면 결국 누군가는 판단해야 한다.</p>
+      <div class="source">출처: newsletter.pragmaticengineer.com 'The impact of AI on software engineers in 2026' (2026.04.14) · The Pragmatic Engineer 독자 설문(900명+)</div>
+    </div>
+  </div>
+</article>
+
+<!-- Article 2: Ted Gioia -->
+<article class="article">
+  <div class="article-tag">비즈니스 인사이트 · TED GIOIA · The Honest Broker</div>
+  <div class="article-title">"그냥 인간으로 존재하는 것" — 그게 예술의 새 전략이 됐다</div>
+  <div class="article-summary">테드 지오이아는 차트에 오르는 스타가 아니다. 40년 넘게 음악과 문화를 써온 비평가이자, 'The Honest Broker'라는 뉴스레터로 조용히 수십만 독자를 모은 사람이다. AI 슬롭이 책·음악·이미지를 뒤덮은 2026년, 그는 뜻밖의 곳에서 값이 오르는 걸 본다 — 그냥 인간인 것.</div>
+  <div class="btn-wrap">
+    <button class="toggle-btn" onclick="var d=document.getElementById('d2'),b=this;d.classList.toggle('open');b.textContent=d.classList.contains('open')?'접기 ▲':'더 보기 ▼'">더 보기 ▼</button>
+    <button class="toggle-btn">🎧 오디오로 듣기 (준비 중)</button>
+  </div>
+  <div id="d2" class="article-detail">
+    <div class="detail-inner">
+      <div class="section-label">이 사람은 누구인가</div>
+      <p>지오이아는 재즈·문화사를 다룬 여러 권의 저자이자 평론가다. 유행을 좇지 않고 '진짜와 가짜'를 가르는 글로 'The Honest Broker'를 가장 많이 읽히는 문화 뉴스레터의 하나로 키웠다. 1988년에 이미 'AI 음악'을 경고했을 만큼, 기술이 창작에 무엇을 하는지 오래 지켜본 사람이다.</p>
+      <div class="section-label">주요 활동과 이력</div>
+      <p>음악·문화 비평가·저술가 → 'The Honest Broker' 운영 → 2026년 'AI 슬롭의 새로운 미학', 'The New Cool Thing: Being Human' 등으로 슬롭 범람과 인간 창작의 값을 연쇄적으로 다룸.</p>
+      <div class="section-label">성공한 것과 한계로 남은 것</div>
+      <div class="grid">
+        <div class="box">
+          <div class="box-label">✓ 성공한 것</div>
+          <p>'슬롭'이라는 말로, 모두가 어렴풋이 느끼던 AI 양산물의 정체를 또렷한 언어로 잡아냈다.</p>
+          <p>AI가 흔해질수록 '진짜 인간'의 값이 오른다는 역설을, 시장의 신호로 읽어냈다.</p>
+        </div>
+        <div class="box">
+          <div class="box-label">✗ 한계로 남은 것</div>
+          <p>'인간이라 값지다'는 통찰은 방향일 뿐 — 그것만으로 생계가 보장되진 않는다.</p>
+          <p>슬롭과 진짜를 가르는 '본능'은 누구에게나 똑같이 작동하진 않는다.</p>
+        </div>
+      </div>
+      <div class="section-label">인사이트</div>
+      <p class="insight-p">지오이아는 사람들이 왜 AI 양산물을 '슬롭'이라 부르는지 짚는다 — 본능적으로 인간의 창작과 다르다는 걸 알고, 마주하면 거부감을 느끼기 때문이다. 그런데 바로 그 거부감이 값을 만든다. <span class="highlight">"AI 슬롭 책이 넘치는 아마존의 시대에, 살아있는 인간 저자야말로 '저작의 궁극적 증명'이다."</span></p>
+      <p class="insight-p">그래서 그는 뜻밖의 전략을 말한다. <span class="highlight">"인간은 그 어느 때보다 높은 격(prestige)을 누린다 — 그저 모습을 드러내는 것만으로."</span> 예술의 새 비밀 전략이 "상상할 수 있는 가장 단순한 것, 즉 인간으로 존재하는 것" 위에 서 있다는 것.</p>
+      <p class="insight-p">오로시가 코드에서 '슬롭을 걸러내는 눈'의 값을 봤다면, 지오이아는 문화에서 '슬롭이 아닌 인간'의 값을 본다. <span class="highlight">출발은 스프레드시트와 미술관으로 정반대지만, 닿는 곳은 같다 — AI가 쏟아낼수록, 값나가는 건 그걸 알아보는 인간이다.</span></p>
+      <div class="source">출처: honest-broker.com 'The New Cool Thing: Being Human' (2026.02.26) · 'The New Aesthetics of Slop' (2026)</div>
+    </div>
+  </div>
+</article>
+
+<!-- 에디터 한마디 -->
+<div class="editor">
+  <p>코드에도, 예술에도 'AI 슬롭'이 넘친다. 그럴수록 값이 오르는 건 — 그걸 알아보고 걸러내는 인간 쪽이다.</p>
+</div>
+
+<div class="nav-wrap">
+  <a href="vol70.html">← 이전 호</a>
+  <a href="archive.html">전체 보기</a>
+</div>
+
+<div class="footer">
+  <p>오늘의 밑줄 · 매일 발행 · <a href="https://jucheolkim.github.io" style="color:#aaa;">jucheolkim.github.io</a></p>
+</div>
+
+<script>
+</script>
+</body>
+</html>
