@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>오늘의 밑줄 · Vol.77</title>
+<meta name="description" content="AI 시대의 실력은 어디서 오는가 — 한 사람은 '많이 아는 게 아니라 처음 보는 것에 적응하는 힘'이라 하고, 한 사람은 'AI에 기억을 넘기면 생각하는 힘 자체가 무너진다'고 한다.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="오늘의 밑줄">
+<meta property="og:title" content="AI 시대의 진짜 실력 — 적응이 먼저인가, 축적이 먼저인가">
+<meta property="og:description" content="프랑수아 촐레 · 바버라 오클리 — 한쪽은 '많이 아는 것에 속지 말라, 지능은 새것에 적응하는 효율'이라 하고, 한쪽은 'AI에 기억을 외주 주면 사고의 토대가 무너진다'고 한다.">
+<meta property="og:url" content="https://jucheolkim.github.io/vol77.html">
+<meta name="twitter:card" content="summary">
+<!-- 방문자 측정 (GoatCounter) -->
+<script data-goatcounter="https://oneday-newsletter.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap');
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { background: #f0efeb; }
+body { font-family: Georgia, serif; max-width: 680px; margin: 0 auto; padding: 40px 20px; color: #1a1a1a; background: #fff; word-break: keep-all; box-shadow: 0 0 40px rgba(0,0,0,0.06); }
+.header { text-align: center; border-top: 3px solid #1a1a1a; border-bottom: 3px solid #1a1a1a; padding: 12px 0; margin-bottom: 4px; }
+.header-sub { font-size: 11px; font-family: Arial, sans-serif; color: #888; letter-spacing: 2px; margin-bottom: 6px; }
+.header-title { font-size: 36px; font-weight: 800; letter-spacing: 0px; font-family: 'Nanum Myeongjo', Georgia, serif; white-space: nowrap; }
+.header-date { font-size: 11px; font-family: Arial, sans-serif; color: #888; margin-top: 6px; }
+.meta { display: flex; justify-content: space-between; border-bottom: 1px solid #e0e0e0; padding: 4px 0; margin-bottom: 28px; font-size: 10px; font-family: Arial, sans-serif; color: #888; }
+.nav-wrap { display: flex; justify-content: space-between; margin-bottom: 24px; font-size: 11px; font-family: Arial, sans-serif; }
+.nav-wrap a { color: #888; text-decoration: none; }
+.nav-wrap a:hover { text-decoration: underline; }
+.article { margin-bottom: 28px; padding-bottom: 28px; border-bottom: 1px solid #e0e0e0; }
+.article-tag { font-size: 10px; font-family: Arial, sans-serif; color: #888; letter-spacing: 1px; border-top: 2px solid #1a1a1a; padding-top: 8px; margin-bottom: 8px; }
+.article-title { font-size: 24px; font-weight: bold; line-height: 1.3; margin-bottom: 12px; font-family: 'Nanum Myeongjo', Georgia, serif; letter-spacing: -0.5px; }
+.article-summary { font-size: 13px; color: #555; line-height: 1.75; margin-bottom: 14px; }
+.btn-wrap { display: flex; gap: 6px; margin-bottom: 14px; }
+.toggle-btn { font-size: 11px; font-family: Arial, sans-serif; color: #555; background: none; border: 1px solid #ccc; border-radius: 6px; padding: 4px 10px; cursor: pointer; }
+.toggle-btn:hover { background: #f5f5f5; }
+.article-detail { display: none; }
+.article-detail.open { display: block; }
+.detail-inner { border-left: 2px solid #e0e0e0; padding-left: 16px; }
+.section-label { font-size: 10px; font-family: Arial, sans-serif; color: #888; letter-spacing: 1px; margin-bottom: 6px; margin-top: 16px; }
+.detail-inner p { font-size: 13px; color: #555; line-height: 1.75; margin-bottom: 8px; }
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 8px; }
+.box { background: #f5f5f5; border-radius: 8px; padding: 10px 12px; }
+.box-label { font-size: 11px; font-family: Arial, sans-serif; color: #888; margin-bottom: 6px; }
+.box p { font-size: 12px; color: #555; line-height: 1.65; margin-bottom: 6px; }
+.source { font-size: 10px; font-family: Arial, sans-serif; color: #aaa; border-top: 1px solid #e0e0e0; padding-top: 8px; margin-top: 16px; }
+.highlight { font-weight: bold; color: #1a1a1a; }
+.insight-p { font-size: 15px !important; color: #333 !important; line-height: 1.85 !important; margin-bottom: 10px !important; }
+.editor { border-top: 2px solid #1a1a1a; padding-top: 10px; margin-bottom: 16px; }
+.editor p { font-size: 16px; color: #1a1a1a; line-height: 1.85; font-style: italic; font-family: 'Nanum Myeongjo', Georgia, serif; font-weight: 800; }
+.footer { border-top: 1px solid #e0e0e0; padding-top: 8px; text-align: center; font-size: 10px; font-family: Arial, sans-serif; color: #aaa; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-sub">ONEDAY DIGEST</div>
+  <div class="header-title">오늘의 밑줄</div>
+  <div class="header-date">2026년 7월 2일 · Vol. 77</div>
+</div>
+<div class="meta">
+  <span>오늘, 두 사람에게 밑줄</span>
+  <span>jucheolkim.github.io</span>
+</div>
+
+<!-- Article 1: François Chollet -->
+<article class="article">
+  <div class="article-tag">비즈니스 인사이트 · FRANÇOIS CHOLLET · ARC Prize / Ndea</div>
+  <div class="article-title">많이 아는 것에 속지 말라 — 지능은 처음 보는 것에 적응하는 효율이다</div>
+  <div class="article-summary">프랑수아 촐레는 수백만 개발자가 쓰는 딥러닝 도구 Keras를 만든 엔지니어이자, AI가 '얼마나 똑똑한지'를 재는 잣대 ARC를 만든 사람이다. 그는 2026년에도 같은 말을 되풀이한다 — 모델을 아무리 키우고 데이터를 아무리 부어도, 그렇게는 진짜 지능이 오지 않는다고. 그가 보는 지능은 '얼마나 많이 아느냐'가 아니라, 처음 보는 문제에 얼마나 효율적으로 적응하느냐다.</div>
+  <div class="btn-wrap">
+    <button class="toggle-btn" onclick="var d=document.getElementById('d1'),b=this;d.classList.toggle('open');b.textContent=d.classList.contains('open')?'접기 ▲':'더 보기 ▼'">더 보기 ▼</button>
+    <button class="toggle-btn">🎧 오디오로 듣기 (준비 중)</button>
+  </div>
+  <div id="d1" class="article-detail">
+    <div class="detail-inner">
+      <div class="section-label">이 사람은 누구인가</div>
+      <p>촐레는 빅테크 거물이 아니다. 구글에서 오래 일한 엔지니어이자 연구자로, 수백만 명이 쓰는 딥러닝 라이브러리 Keras를 만들었다. 2024년 구글을 떠나 'AI를 더 키우는 법'이 아니라 'AI가 왜 새것에 약한가'를 파는 새 연구소 Ndea를 세웠다. 그가 만든 ARC는 사람은 쉽게 푸는데 최고 모델은 쩔쩔매는 퍼즐로, '규모=지능'이라는 공식에 계속 반례를 던진다.</p>
+      <div class="section-label">주요 활동과 이력</div>
+      <p>2015년 Keras 공개 → 2019년 논문 <em>On the Measure of Intelligence</em>에서 '지능=새 기술을 습득하는 효율'로 정의 → ARC Prize 창설(사람은 풀고 AI는 못 푸는 과제) → 2024년 구글 퇴사, 2025년 새 연구소 Ndea 설립('규모가 곧 지능은 아니다'에 베팅) → 2026년 초 ARC-AGI-3 공개. 사람은 대부분 푸는데 최신 모델 정답률은 1% 미만이다.</p>
+      <div class="section-label">성공한 것과 한계로 남은 것</div>
+      <div class="grid">
+        <div class="box">
+          <div class="box-label">✓ 성공한 것</div>
+          <p>'스케일만 키우면 된다'는 업계 합의에 측정 가능한 반례를 세웠다.</p>
+          <p>'지능이 무엇인가'를 감이 아니라 벤치마크로 논쟁하게 만들었다.</p>
+        </div>
+        <div class="box">
+          <div class="box-label">✗ 한계로 남은 것</div>
+          <p>ARC를 '푸는 것'이 지능의 전부냐는 반론은 여전히 남는다.</p>
+          <p>'새 구조가 답'이라지만, 그 구조를 아직 만들어 보이진 못했다.</p>
+        </div>
+      </div>
+      <div class="section-label">인사이트</div>
+      <p class="insight-p">촐레가 20년 가까이 되풀이하는 한 문장이 있다. <span class="highlight">"지능은 아는 것을 꺼내 쓰는 게 아니라, 과거를 얼마나 효율적으로 굴려 끊임없이 바뀌는 미래에 맞서느냐다."</span> 그는 기술(skill)과 지능(intelligence)을 가른다. 이미 난 길을 잘 달리는 건 기술이고, 없던 길을 내는 게 지능이라는 것.</p>
+      <p class="insight-p">그래서 그는 요즘의 열광에 찬물을 끼얹는다. 모델을 키우고 인터넷을 통째로 학습시켜도, ARC 점수는 오래 제자리였다. <span class="highlight">규모는 '아는 양'을 늘릴 뿐, '처음 보는 것에 적응하는 힘'을 주지 못한다.</span> 2026년 내놓은 ARC-3는 아예 '얼마나 적은 시도로 푸는가', 곧 효율까지 잰다. 많이 아는 것과 빨리 적응하는 것은 다른 능력이라는 선언이다.</p>
+      <p class="insight-p">이건 AI만의 얘기가 아니다. 정보가 공짜가 된 시대에 '얼마나 많이 저장했는가'로 사람을 재는 건 낡았다. 촐레의 잣대를 사람에게 옮기면 이렇다 — <span class="highlight">값나가는 건 쌓아 둔 지식의 양이 아니라, 한 번도 안 해 본 문제 앞에서 얼마나 빨리 길을 내느냐다.</span> 그는 답을 외운 자가 아니라, 낯선 것에 적응하는 자를 지능이라 부른다.</p>
+      <div class="source">출처: ARC Prize·ARC-AGI-3 기술 보고서(2026) · the-decoder 'the end of scaling'(2025~26) · StartupHub 'Ndea'(2026) · On the Measure of Intelligence(2019)</div>
+    </div>
+  </div>
+</article>
+
+<!-- Article 2: Barbara Oakley -->
+<article class="article">
+  <div class="article-tag">비즈니스 인사이트 · BARBARA OAKLEY · Learning How to Learn</div>
+  <div class="article-title">AI에 기억을 넘기는 순간, 생각하는 힘이 줄어든다</div>
+  <div class="article-summary">바버라 오클리는 세계에서 가장 많은 사람이 들은 공부법 강의 <em>Learning How to Learn</em>을 만든 공학 교수다. 그는 2026년, 촐레와 정반대 지점을 걱정한다 — 사람이 '어차피 AI에 물어보면 되니까' 하고 머리에 쌓기를 건너뛰면, 정작 생각하는 힘 자체가 무너진다는 것. 그는 이걸 '기억의 역설'이라 부른다.</div>
+  <div class="btn-wrap">
+    <button class="toggle-btn" onclick="var d=document.getElementById('d2'),b=this;d.classList.toggle('open');b.textContent=d.classList.contains('open')?'접기 ▲':'더 보기 ▼'">더 보기 ▼</button>
+    <button class="toggle-btn">🎧 오디오로 듣기 (준비 중)</button>
+  </div>
+  <div id="d2" class="article-detail">
+    <div class="detail-inner">
+      <div class="section-label">이 사람은 누구인가</div>
+      <p>오클리도 CEO가 아니다. 군 통역병에서 서른 넘어 공학으로 방향을 튼 늦깎이 공학 교수다. 신경과학자 테런스 세즈노스키와 함께 만든 온라인 강의 <em>Learning How to Learn</em>은 수백만 명이 들었다. 그가 파는 건 지식이 아니라 '뇌가 어떻게 배우는가'를 읽는 눈이다.</p>
+      <div class="section-label">주요 활동과 이력</div>
+      <p><em>A Mind for Numbers</em> 등 학습법 베스트셀러 저자 → 세계 최대 규모 온라인 강의 <em>Learning How to Learn</em> 운영 → 2025~26년 논문·저서 <em>The Memory Paradox: Why Our Brains Need Knowledge in an Age of AI</em>에서, 선진국의 IQ 하락(플린 효과의 역전)을 'AI·검색으로의 인지 외주'와 '암기 경시 교육'으로 설명한다.</p>
+      <div class="section-label">성공한 것과 한계로 남은 것</div>
+      <div class="grid">
+        <div class="box">
+          <div class="box-label">✓ 성공한 것</div>
+          <p>'암기는 구식'이라는 통념에 신경과학 근거로 반론을 세웠다.</p>
+          <p>도구를 반대하지 않으면서 '무엇을 내 머리에 남길 것인가'를 물었다.</p>
+        </div>
+        <div class="box">
+          <div class="box-label">✗ 한계로 남은 것</div>
+          <p>IQ 하락의 원인은 복잡한데 '인지 외주'로 좁게 몰았다는 비판.</p>
+          <p>무엇을 외우고 무엇을 맡길지, 그 경계는 여전히 흐리다.</p>
+        </div>
+      </div>
+      <div class="section-label">인사이트</div>
+      <p class="insight-p">오클리가 짚는 역설은 이렇다. <span class="highlight">"계산기와 스마트폰, AI에 생각을 계속 넘기면, 우리는 정보가 어디 저장되는지만 바꾸는 게 아니다."</span> 그 사이 쓰지 않는 기억 근육이 퇴화한다. 그는 최근 수십 년의 IQ 하락을 우연으로 보지 않는다 — 암기를 '주입식'이라며 몰아낸 교육을 받은 세대가, 정확히 그 하락을 겪고 있다는 것.</p>
+      <p class="insight-p">왜 외우는 게 중요한가. 머릿속에 내재화된 지식이 있어야 그걸 엮어 추론하고, 낯선 것과 연결하기 때문이다. <span class="highlight">"'어차피 검색하면 되지'라며 머리로 씨름하길 그만두면, 고차원 사고를 떠받치는 토대 자체가 약해진다."</span> 밖에 다 있으니 안에 둘 필요 없다는 논리가, 정작 안을 비운다는 역설이다.</p>
+      <p class="insight-p">그렇다고 도구를 버리라는 게 아니다. 그의 처방은 분명하다 — <span class="highlight">"강력한 도구는 내면의 지식을 대체하는 게 아니라, 보완하는 것으로 쓸 수 있다."</span> 촐레가 '많이 아는 것에 속지 말라' 했다면, 오클리는 '아무것도 안 쌓으면 적응할 재료조차 없다'고 답한다. AI에 기억을 넘기는 건 편하지만, 그 편함이 생각의 근육을 깎는다.</p>
+      <div class="source">출처: The Memory Paradox: Why Our Brains Need Knowledge in an Age of AI(2026, Springer) · barbaraoakley.com 'Why IQ Scores Are Dropping'(2025) · Learning How to Learn</div>
+    </div>
+  </div>
+</article>
+
+<!-- 에디터 한마디 -->
+<div class="editor">
+  <p>AI가 다 대신해 주는 시대에, 능력은 어디서 오는가. 두 사람은 반대편에 서서 같은 걸 지킨다. 촐레는 '데이터를 아무리 부어도 지능은 안 생긴다 — 값나가는 건 많이 아는 게 아니라 처음 보는 것에 적응하는 힘'이라 하고, 오클리는 '사람이 AI에 기억을 넘기면 그 적응을 떠받칠 토대가 무너진다 — 내 머리에 쌓인 것이 곧 생각의 재료'라 한다. 한쪽은 축적에 속지 말라 하고, 한쪽은 축적을 건너뛰지 말라 한다. 그러나 결론은 겹친다 — 능력은 규모로도, 외주로도 공짜가 되지 않는다. 새것에 부딪히는 수고도, 그걸 내 것으로 쌓는 수고도, 직접 겪은 자에게만 남는다.</p>
+</div>
+
+<div class="nav-wrap">
+  <a href="vol76.html">← 이전 호</a>
+  <a href="archive.html">전체 보기</a>
+</div>
+
+<div class="footer">
+  <p>오늘의 밑줄 · 매일 발행 · <a href="https://jucheolkim.github.io" style="color:#aaa;">jucheolkim.github.io</a></p>
+</div>
+
+<script>
+</script>
+</body>
+</html>
